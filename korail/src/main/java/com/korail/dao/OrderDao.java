@@ -13,12 +13,12 @@ public class OrderDao extends DBConn{
 		
 		ArrayList<OrderVo> orderList = new ArrayList<OrderVo>();
 		
-		String sql = "SELECT sstation, depPlandTime, stime, runtime, dstation, price, reservnum, trainnum, charnum, cancel FROM KTX_ORDER where mid='HONG1234'";
+		String sql = "SELECT sstation, depPlandTime, stime, dstation, price, reservnum, trainnum, chairnum, cancel, depPlaceId, arrPlaceId  FROM KTX_ORDER where id='HONG1234'";
 		
 		getPreparedStatement(sql);
 		
 		try {
-			/* pstmt.setString(1, mid); */
+			/* pstmt.setString(1, id); */
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -28,13 +28,14 @@ public class OrderDao extends DBConn{
 				 orderVo.setSstation(rs.getString(1)); 
 				 orderVo.setDepPlandTime(rs.getString(2));
 				 orderVo.setStime(rs.getString(3));
-				 orderVo.setRuntime(rs.getString(4));
-				 orderVo.setDstation(rs.getString(5));
-				 orderVo.setPrice(rs.getInt(6));
-				 orderVo.setReservnum(rs.getString(7));
-				 orderVo.setTrainnum(rs.getInt(8));
-				 orderVo.setCharnum(rs.getString(9));
-				 orderVo.setCancel(rs.getInt(10));
+				 orderVo.setDstation(rs.getString(4));
+				 orderVo.setPrice(rs.getInt(5));
+				 orderVo.setReservnum(rs.getString(6));
+				 orderVo.setTrainnum(rs.getInt(7));
+				 orderVo.setChairnum(rs.getString(8));
+				 orderVo.setCancel(rs.getInt(9));
+				 orderVo.setDepPlaceId(rs.getString(10));
+				 orderVo.setArrPlaceId(rs.getString(11));
 				 
 				 orderList.add(orderVo);
 			}
@@ -71,13 +72,13 @@ public class OrderDao extends DBConn{
 	
 	
 	/**
-	 * 영수증, 홈티켓 출력
+	 * 영수증, 홈티켓 출력, 예매 변경
 	 */
 	public OrderVo selected(String reservnum){
 		
 		OrderVo orderVo = new OrderVo();
 		
-		String sql = "SELECT sstation, depPlandTime, stime, runtime, dstation, price, reservnum, trainnum, charnum, cancel FROM KTX_ORDER where reservnum=? ";
+		String sql = "SELECT sstation, depPlandTime, stime, dstation, price, reservnum, trainnum, chairnum, cancel, depPlaceId, arrPlaceId  FROM KTX_ORDER where reservnum=? ";
 		
 		getPreparedStatement(sql);
 		
@@ -87,16 +88,17 @@ public class OrderDao extends DBConn{
 			
 			while(rs.next()) {
 				
-				 orderVo.setSstation(rs.getString(1)); 
+				orderVo.setSstation(rs.getString(1)); 
 				 orderVo.setDepPlandTime(rs.getString(2));
 				 orderVo.setStime(rs.getString(3));
-				 orderVo.setRuntime(rs.getString(4));
-				 orderVo.setDstation(rs.getString(5));
-				 orderVo.setPrice(rs.getInt(6));
-				 orderVo.setReservnum(rs.getString(7));
-				 orderVo.setTrainnum(rs.getInt(8));
-				 orderVo.setCharnum(rs.getString(9));
-				 orderVo.setCancel(rs.getInt(10));
+				 orderVo.setDstation(rs.getString(4));
+				 orderVo.setPrice(rs.getInt(5));
+				 orderVo.setReservnum(rs.getString(6));
+				 orderVo.setTrainnum(rs.getInt(7));
+				 orderVo.setChairnum(rs.getString(8));
+				 orderVo.setCancel(rs.getInt(9));
+				 orderVo.setDepPlaceId(rs.getString(10));
+				 orderVo.setArrPlaceId(rs.getString(11));
 				 
 			}
 			
@@ -115,7 +117,7 @@ public class OrderDao extends DBConn{
 		
 		ArrayList<OrderVo> orderList = new ArrayList<OrderVo>();
 		
-		String sql = "SELECT sstation, depPlandTime, stime, runtime, dstation, price, reservnum, trainnum, charnum, mid, cancel FROM KTX_ORDER";
+		String sql = "SELECT sstation, rdate, depPlandTime, stime, dtime, dstation, price, reservnum, trainnum, chairnum, id, cardnum  FROM KTX_ORDER order by rdate";
 		
 		getPreparedStatement(sql);
 		
@@ -128,16 +130,17 @@ public class OrderDao extends DBConn{
 				OrderVo orderVo = new OrderVo();
 				
 				 orderVo.setSstation(rs.getString(1)); 
-				 orderVo.setDepPlandTime(rs.getString(2));
-				 orderVo.setStime(rs.getString(3));
-				 orderVo.setRuntime(rs.getString(4));
-				 orderVo.setDstation(rs.getString(5));
-				 orderVo.setPrice(rs.getInt(6));
-				 orderVo.setReservnum(rs.getString(7));
-				 orderVo.setTrainnum(rs.getInt(8));
-				 orderVo.setCharnum(rs.getString(9));
-				 orderVo.setMid(rs.getString(10));
-				 orderVo.setCancel(rs.getInt(11));
+				 orderVo.setRdate(rs.getString(2)); 
+				 orderVo.setDepPlandTime(rs.getString(3));
+				 orderVo.setStime(rs.getString(4));
+				 orderVo.setDtime(rs.getString(5));
+				 orderVo.setDstation(rs.getString(6));
+				 orderVo.setPrice(rs.getInt(7));
+				 orderVo.setReservnum(rs.getString(8));
+				 orderVo.setTrainnum(rs.getInt(9));
+				 orderVo.setChairnum(rs.getString(10));
+				 orderVo.setId(rs.getString(11));
+				 orderVo.setCardnum(rs.getString(12));
 				 
 				 orderList.add(orderVo);
 			}

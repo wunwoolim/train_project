@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/reservationlist.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
+<script src="http://localhost:9000/ktx/js/reservation_jquery.js"></script>
+<style>
+	.hidden-span {
+            display: none;
+        }
+</style>
 </head>
 <body>
 <div>
@@ -15,17 +21,7 @@
 	<div id="contentWrap">
 	<div class="title_wrap_checkTicketingT">
 		<div class="title_wrap">
-			<div class="util">
-				<ul class="clfix">
-					<li class="account">sohyun990502@naver.com</li>
-					<li class="logout"><a href="/mbrs/lgn/logoutMain.do"><span>로그아웃</span></a></li>
-					<li><a href="/mbrs/mbrspage/myPageMain.do">마이페이지</a></li>
-					<li><a href="/mbrs/trprinqr/pymPtInqr.do">결제내역조회</a></li>
-					<li><a href="/etc/sitemap/SiteMap.do">사이트맵</a></li>
-				</ul>
-			</div>
-			<!-- <a href="#" class="back">back</a>
-			<a href="#" class="mo_toggle">메뉴</a> -->
+			<jsp:include page="../header.jsp"></jsp:include>
 			<h2>예매확인/취소/변경</h2>
 		</div>
 	</div>
@@ -50,26 +46,6 @@
 								<option value="/ugd/trmlbizr/Trmlbizr.do">터미널사업자협회</option>
 							</select>
 						</div>
-						<!-- <div class="selectric">
-							<p class="label">예매확인</p>
-							<b class="button">▾</b>
-						</div> -->
-						<!-- <div class="selectricItems" tabindex="-1">
-							<div class="selectricScroll">
-								<ul>
-									<li class="">고속버스예매</li>
-									<li class="selected">예매확인</li>
-									<li class="">운행정보</li>
-									<li class="">고속버스 프리패스/정기권</li>
-									<li class="">이용안내</li>
-									<li class="">공지사항</li>
-									<li class="">고객센터</li>
-									<li class="">전국고속버스운송사업조합</li>
-									<li class="last">터미널사업자협회</li>
-								</ul>
-							</div>
-						</div>
-						<input class="selectricInput" tabindex="0"> -->
 					</div>
 				</div>
 			</li>
@@ -83,19 +59,6 @@
 								<option value="/mrs/mrsrecplist.do">영수증 발행</option>
 							</select>
 						</div>
-						<!-- <div class="selectric">
-							<p class="label">예매 확인/취소/변경</p>
-							<b class="button">▾</b>
-						</div>
-							<div class="selectricItems" tabindex="-1">
-							<div class="selectricScroll">
-								<ul>
-									<li class="selected">예매 확인/취소/변경</li>
-									<li class="last">영수증 발행</li>
-								</ul>
-							</div>
-						</div>
-						<input class="selectricInput" tabindex="0"> -->
 					</div>
 				</div>
 			</li>
@@ -114,6 +77,8 @@
 							<span class="roundBox departure">${ovo.sstation}</span>
 							<span class="roundBox arrive">${ovo.dstation}</span>
 						</div>
+						<span class="hidden-span" id="updateDepPlaceId">${ovo.depPlaceId}</span>
+						<span class="hidden-span" id="updateArrPlaceId">${ovo.arrPlaceId}</span>
 					</div>
 					<div class="routeArea route_select">
 						<div class="box_inputForm click_box inselect" id="updatetimebox">
@@ -159,10 +124,10 @@
 			</form>
 		</div>
 		<p class="btns col1">
-			<input type="text" id="update_depPlandTime">
-			<input type="text" id="update_sstation">
-			<input type="text" id="update_dstation">
-			<a href="http://localhost:9000/korail/reservation_updatetable.do" class="btnL btn_confirm" id="reserv_search">조회하기</a>
+			<!-- <input type="text" id="update_depPlandTime">
+			<input type="text" id="update_depPlaceId">
+			<input type="text" id="update_arrPlaceId"> -->
+			<a href="http://localhost:9000/ktx/reservation_updatetable.do" class="btnL btn_confirm" id="reserv_search">조회하기</a>
 		</p>
 		<div class="section">
 			<ul class="desc_list">
@@ -173,6 +138,7 @@
 			</ul>
 		</div>
 	</div>
+	<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
 </div>
 </body>

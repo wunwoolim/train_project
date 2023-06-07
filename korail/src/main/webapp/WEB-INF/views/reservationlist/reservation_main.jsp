@@ -9,6 +9,11 @@
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/reservationlist.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/ktx/js/reservation_jquery.js"></script>
+<style>
+	.hidden-span {
+            display: none;
+        }
+</style>
 </head>
 <body>
 <div>
@@ -17,17 +22,7 @@
 	<div id="contentWrap">
 	<div class="title_wrap_checkTicketingT">
 		<div class="title_wrap">
-			<div class="util">
-				<ul class="clfix">
-					<li class="account">sohyun990502@naver.com</li>
-					<li class="logout"><a href="#"><span>로그아웃</span></a></li>
-					<li><a href="#">마이페이지</a></li>
-					<li><a href="#">결제내역조회</a></li>
-					<li><a href="#">사이트맵</a></li>
-				</ul>
-			</div>
-			<!-- <a href="#" class="back">back</a>
-			<a href="#" class="mo_toggle">메뉴</a> -->
+			<jsp:include page="../header.jsp"></jsp:include>
 			<h2>예매확인/취소/변경</h2>
 		</div>
 	</div>
@@ -44,12 +39,8 @@
 								<option value="/mrs/rotinf.do">고속버스예매</option>
 								<option value="/mrs/mrscfm.do" selected="selected">예매확인</option>
 								<option value="/oprninf/alcninqr/oprnAlcnPage.do">운행정보</option>
-								<option value="/adtnprdnew/frps/frpsPrchGd.do">고속버스 프리패스/정기권</option>
 								<option value="/ugd/mrsgd/Mrsgd.do">이용안내</option>
 								<option value="/cscn/ntcmttr/readNtcList.do">공지사항</option>
-								<option value="/cscn/qna/readQnaList.do">고객센터</option>
-								<option value="/ugd/bustrop/Bustrop.do">전국고속버스운송사업조합</option>
-								<option value="/ugd/trmlbizr/Trmlbizr.do">터미널사업자협회</option>
 							</select>
 						</div>
 						<!-- <div class="selectric">
@@ -134,7 +125,7 @@
 								<span class="roundBox arrive" id="dstation">${ovo.dstation}</span>
 							</div>
 							<div class="detail_info">
-								<span id="runtime">${ovo.runtime}소요</span> <!-- 예상소요시간 -->
+								<span id="runtime">소요</span> <!-- 예상소요시간 -->
 							</div>
 						</div>
 						<div class="routeArea route_wrap mob_route">
@@ -178,9 +169,11 @@
 					<div class="seat_detail">
 						<ul>
 							<li class="seatL" style="border-top: none;">
-								<span class="seatNum" id="charnum">${ovo.charnum}</span>
+								<span class="seatNum" id="chairnum">${ovo.chairnum}</span>
 							</li>
 						</ul>
+						<span class="hidden-span" id="depPlaceId">${ovo.depPlaceId}</span>
+						<span class="hidden-span" id="arrPlaceId">${ovo.arrPlaceId}</span>
 					</div>
 				</div>
 				</c:if>
@@ -191,10 +184,12 @@
 						<input type="hidden" id="clickVal_price" name="clickVal_price" />
 						<input type="hidden" id="clickVal_sstation" name="clickVal_sstation" />
 						<input type="hidden" id="clickVal_dstation" name="clickVal_dstation" />
-						<input type="hidden" id="clickVal_runtime" name="clickVal_runtime" />
+						<!-- <input type="hidden" id="clickVal_runtime" name="clickVal_runtime" /> -->
 						<input type="hidden" id="clickVal_reservnum" name="clickVal_reservnum" />
 						<input type="hidden" id="clickVal_trainnum" name="clickVal_trainnum" />
-						<input type="hidden" id="clickVal_charnum" name="clickVal_charnum" />
+						<input type="hidden" id="clickVal_chairnum" name="clickVal_chairnum" />
+						<input type="hidden" id="clickVal_depPlaceId" name="clickVal_depPlaceId" />
+						<input type="hidden" id="clickVal_arrPlaceId" name="clickVal_arrPlaceId" />
 					</div>
 				
 					<p class="btns multi mainclfix col4">
@@ -235,7 +230,7 @@
 								<span class="roundBox arrive">${ovo.dstation}</span>
 							</div>
 							<div class="detail_info">
-								<span>${ovo.runtime} 소요</span>
+								<span>소요</span>
 							</div>
 						</div>
 						<div class="routeArea route_wrap mob_route">
@@ -328,7 +323,7 @@
 										</tr>
 										<tr>
 											<th scope="row">좌석</th>
-											<td id="modal_charnum"></td>
+											<td id="modal_chairnum"></td>
 										</tr>
 									</tbody>
 								</table>

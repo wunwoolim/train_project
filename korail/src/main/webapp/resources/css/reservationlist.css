@@ -12,7 +12,7 @@
 
 /* 예매확인 상단 비쥬얼 */
 .title_wrap_checkTicketingT { 
-	background: url(http://localhost:9000/korail/images/visual_chkTicket_bg.gif) center 0 no-repeat; 
+	background: url(http://localhost:9000/ktx/images/visual_chkTicket_bg.gif) center 0 no-repeat; 
 	background-size: cover;
 }
 
@@ -190,7 +190,7 @@ ul, ol {
     width: 11px;
     height: 6px;
     margin-top: -3px;
-    background: url(http://localhost:9000/train_project/images/bu_selectArrow.png) 0 0 no-repeat;
+    background: url(http://localhost:9000/ktx/images/bu_selectArrow.png) 0 0 no-repeat;
     text-indent: -99999px;
 }
 
@@ -262,7 +262,7 @@ body, p, h1, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, thead, tbody, tr, th
 	left:0; top:0; 
 	z-index:200; 
 	width:60px; height:60px; 
-	background:url(http://localhost:9000/practice_sun/images/bg_issueTicket.png) 0 0 no-repeat; 
+	background:url(http://localhost:9000/ktx/images/bg_issueTicket.png) 0 0 no-repeat; 
 	background-size:100% auto;
 	} */
 	
@@ -273,7 +273,7 @@ body, p, h1, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, thead, tbody, tr, th
 	left:0; top:0; 
 	z-index:200; 
 	width:60px; height:60px; 
-	background:url(http://localhost:9000/practice_sun/images/bu_selectArrow.png) 0 0 no-repeat; 
+	background:url(http://localhost:9000/ktx/images/bu_selectArrow.png) 0 0 no-repeat; 
 	background-position:0 -60px; 
 	background-size:100% auto;
 	} */
@@ -333,7 +333,7 @@ body, p, h1, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, thead, tbody, tr, th
 .tab_type1 .tabs li.active a:after {
     display: inline-block;
     content: '';
-    /* background: url(http://localhost:9000/train_project/images/ico_tab_s_on.png) 0 0 no-repeat; */
+    /* background: url(http://localhost:9000/ktx/images/ico_tab_s_on.png) 0 0 no-repeat; */
     background-size: 100%;
     width: 11px;
     height: 12px;
@@ -1460,13 +1460,13 @@ button {
 }
 
 .box_searchId a span.ico_searchId {
-    background: url(http://localhost:9000/train_project/images/ico_searchId_s.png) 0 0 no-repeat;
+    background: url(http://localhost:9000/ktx/images/ico_searchId_s.png) 0 0 no-repeat;
 }
 .box_searchId a span.ico_searchPW {
-    background: url(http://localhost:9000/train_project/images/ico_searchPW_s.png) 0 0 no-repeat;
+    background: url(http://localhost:9000/ktx/images/ico_searchPW_s.png) 0 0 no-repeat;
 }
 .box_searchId a span.ico_joinUs {
-    background: url(http://localhost:9000/train_project/images/ico_joinUs_s.png) 0 0 no-repeat;
+    background: url(http://localhost:9000/ktx/images/ico_joinUs_s.png) 0 0 no-repeat;
 }
 
 input, textarea, button {
@@ -1892,7 +1892,7 @@ fieldset{
 .seat_detail > ul li.check_com:before, .seat_detail > ul li.cancel_com:before {background-position:97% 50%; background-size:96px 38px;}
 .seat_detail > ul li:first-child {border-top:none;}
 .seat_detail > ul li > span {display:inline-block; vertical-align:middle; line-height:50px;}
-.seat_detail > ul li .seatNum {width:30px; font-size:20px; color:#000;}
+.seat_detail > ul li .seatNum {width:100px; font-size:20px; color:#000;}
 .seat_detail > ul li .txt_blue {width:45px; margin:0 10px; font-size:14px; color:#68b3ce;}
 .seat_detail > ul li .ticketNum {font-size:14px; color:#999;}
 .seat_detail > ul li .ticketNum2 {margin-left:20px; font-size:14px; color:#999;}

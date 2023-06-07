@@ -15,10 +15,10 @@ $(document).ready(function(){
 		    $("#modal_date").text( $("#clickVal_depPlandTime").val());
 		    $("#modal_sstation").text( $("#clickVal_sstation").val());
 		    $("#modal_dstation").text( $("#clickVal_dstation").val());
-		    $("#modal_runtime").text( $("#clickVal_runtime").val());
+		   //$("#modal_runtime").text( $("#clickVal_runtime").val());
 		    $("#modal_reservnum").text( $("#clickVal_reservnum").val());
 		    $("#modal_trainnum").text( $("#clickVal_trainnum").val());
-		    $("#modal_charnum").text( $("#clickVal_charnum").val());
+		    $("#modal_chairnum").text( $("#clickVal_chairnum").val());
 		    
 		    $("#modal_reservnum_input").val( $("#clickVal_reservnum").val());
 		    
@@ -119,10 +119,12 @@ $(document).ready(function(){
             var price = $("#"+id+" #price").text();
             var sstation = $("#"+id+" #sstation").text();
             var dstation = $("#"+id+" #dstation").text();
-            var runtime = $("#"+id+" #runtime").text();
+            //var runtime = $("#"+id+" #runtime").text();
             var reservnum = $("#"+id+" #reservnum").text();
             var trainnum = $("#"+id+" #trainnum").text();
-            var charnum = $("#"+id+" #charnum").text();
+            var chairnum = $("#"+id+" #chairnum").text();
+            var depPlaceId = $("#"+id+" #depPlaceId").text();
+            var arrPlaceId = $("#"+id+" #arrPlaceId").text();
 
             // clickedValue에 데이터 설정
             $("#clickVal_depPlandTime").val(depPlandTime);
@@ -130,10 +132,12 @@ $(document).ready(function(){
             $("#clickVal_price").val(price);
             $("#clickVal_sstation").val(sstation);
             $("#clickVal_dstation").val(dstation);
-            $("#clickVal_runtime").val(runtime);
+            //$("#clickVal_runtime").val(runtime);
             $("#clickVal_reservnum").val(reservnum);
             $("#clickVal_trainnum").val(trainnum);
-            $("#clickVal_charnum").val(charnum);
+            $("#clickVal_chairnum").val(chairnum);
+            $("#clickVal_depPlaceId").val(depPlaceId);
+            $("#clickVal_arrPlaceId").val(arrPlaceId);
      });
 	
 	
@@ -181,9 +185,14 @@ $(document).ready(function(){
 	        var url = "reservation_update.do?reservnum=" + reservnum;
 	        window.location.href = url;
 	        
-	        var depPlandTime = $("#"+id+" #depPlandTime").text();
-            var sstation = $("#"+id+" #stime").text();
-            var dstation = $("#"+id+" #stime").text();
+	       /* 
+	       	var depPlandTime = $("#"+id+" #depPlandTime").text(); 
+            var depPlaceId = $("#"+id+" #depPlaceId").text();
+            var arrPlaceId = $("#"+id+" #arrPlaceId").text();
+	        $("#update_depPlandTime").val(depPlandTime);
+	        $("#update_depPlaceId").val(depPlaceId);
+            $("#update_arrPlaceId").val(arrPlaceId);
+            */
 	        
 	   	 } else {
 	        alert("홈티켓을 발행할 티켓을 선택해주세요.");

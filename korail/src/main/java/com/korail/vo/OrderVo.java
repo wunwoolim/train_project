@@ -2,8 +2,9 @@ package com.korail.vo;
 
 public class OrderVo {
 
-	String sstation, rdate, stime, runtime, dstation, reservnum, charnum, mid, depPlaceId, arrPlaceId, depPlandTime;
+	String sstation, rdate, stime, dtime, dstation, reservnum, chairnum, id, depPlaceId, arrPlaceId, depPlandTime, cardnum;
 	int price, trainnum, ticketQty, cancel;
+	
 	
 	public String getSstation() {
 		return sstation;
@@ -23,11 +24,11 @@ public class OrderVo {
 	public void setStime(String stime) {
 		this.stime = stime;
 	}
-	public String getRuntime() {
-		return runtime;
+	public String getDtime() {
+		return dtime;
 	}
-	public void setRuntime(String runtime) {
-		this.runtime = runtime;
+	public void setDtime(String dtime) {
+		this.dtime = dtime;
 	}
 	public String getDstation() {
 		return dstation;
@@ -41,17 +42,17 @@ public class OrderVo {
 	public void setReservnum(String reservnum) {
 		this.reservnum = reservnum;
 	}
-	public String getCharnum() {
-		return charnum;
+	public String getChairnum() {
+		return chairnum;
 	}
-	public void setCharnum(String charnum) {
-		this.charnum = charnum;
+	public void setChairnum(String chairnum) {
+		this.chairnum = chairnum;
 	}
-	public String getMid() {
-		return mid;
+	public String getId() {
+		return id;
 	}
-	public void setMid(String mid) {
-		this.mid = mid;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getDepPlaceId() {
 		return depPlaceId;
@@ -70,6 +71,12 @@ public class OrderVo {
 	}
 	public void setDepPlandTime(String depPlandTime) {
 		this.depPlandTime = depPlandTime;
+	}
+	public String getCardnum() {
+		return cardnum;
+	}
+	public void setCardnum(String cardnum) {
+		this.cardnum = cardnum;
 	}
 	public int getPrice() {
 		return price;
@@ -95,6 +102,8 @@ public class OrderVo {
 	public void setCancel(int cancel) {
 		this.cancel = cancel;
 	}
+	
+	
 
 	
 	

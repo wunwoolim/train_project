@@ -16,17 +16,7 @@
 	<div id="contentWrap">
 	<div class="title_wrap_checkTicketingT">
 		<div class="title_wrap">
-			<div class="util">
-				<ul class="clfix">
-					<li class="login"><a href="#"><span>로그인</span></a></li>
-					<li><a href="#">회원가입</a></li>
-					<li><a href="#">마이페이지</a></li>
-					<li><a href="#">결제내역조회</a></li>
-					<li><a href="#">사이트맵</a></li>
-				</ul>
-			</div>
-			<!-- <a href="#" class="back">back</a>
-			<a href="#" class="mo_toggle">메뉴</a> -->
+			<jsp:include page="../header.jsp"></jsp:include>
 			<h2>예매확인/취소/변경</h2>
 		</div>
 	</div>
@@ -489,6 +479,7 @@
 				<li>과거 예매 내역은 출발일 날짜기준 당일까지, 예매취소 내역은 과거3개월까지 조회 가능합니다.</li>
 			</ul>
 		</div>
+		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
 </div>		
 </body>

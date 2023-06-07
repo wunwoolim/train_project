@@ -22,7 +22,7 @@ public class ReservationlistController {
 	 * reservation_main.do - 예매내역
 	 */
 	@RequestMapping(value="/reservation_main.do", method=RequestMethod.GET)
-	public ModelAndView reservation_main(String mid) {
+	public ModelAndView reservation_main(String id) {
 		ModelAndView model = new ModelAndView();
 		
 		ArrayList<OrderVo> orderList = orderService.getSelect();
@@ -79,7 +79,7 @@ public class ReservationlistController {
 	
 	
 	/**
-	 * reservation_update.do - 예매확인 변경 폼
+	 * reservation_update.do - 예매 변경 폼
 	 */
 	@RequestMapping(value="/reservation_update.do", method=RequestMethod.GET)
 	@ResponseBody
