@@ -14,30 +14,9 @@
 <jsp:include page="../gnb.jsp"></jsp:include>
 	<div id ="contentWrap">
 	<div class="title_wrap in_process route_chk ticketingT">
-		<div class="util">
-			<ul class="clfix">
-				
-				<li class="login"><a href="/mbrs/lgn/loginMain.do"><span>로그인</span></a></li>
-				<li><a href="/mbrs/mbrsjoin/mbrsJoin.do">회원가입</a></li>
-				<li><a href="/mbrs/mbrspage/myPageMain.do">마이페이지</a></li>
-				<li><a href="/mbrs/trprinqr/pymPtInqr.do">결제내역조회</a></li>
-				<li><a href="/etc/sitemap/SiteMap.do">사이트맵</a></li>
-			</ul>
-			<!-- 170209 다국어선택 select수정 -->
-			<!-- <div class="select-box">
-				<div class="selectricWrapper"><div class="selectricHideSelect"><select name="lng_cd_navi" id="lng_cd_navi" title="다국어사이트 선택" tabindex="0">
-					<option value="KO" selected="selected">한국어</option>
-					<option value="EN">English</option>
-					<option value="CN">中文</option>
-					<option value="JP">日本語</option>
-				</select></div><div class="selectric"><p class="label">한국어</p><b class="button">▾</b></div><div class="selectricItems" tabindex="-1"><div class="selectricScroll"><ul><li class="selected">한국어</li><li class="">English</li><li class="">中文</li><li class="last">日本語</li></ul></div></div><input class="selectricInput" tabindex="0"></div>
-			</div> -->
-			<!-- //170209 다국어선택 select수정 -->
-		</div>
+		
+	<jsp:include page="../header.jsp"></jsp:include>
 	
-	<!-- <a href="#" class="back">back</a>
-	<a href="#" class="mo_toggle">메뉴</a>
-	 -->
 	 <h2>고속버스예매</h2>
 				
 				<ol class="process">
@@ -484,7 +463,7 @@
 								<div class="payment select-box default_txt" id="cardKindList">
 									<div class="selectricWrapper selectricOpen">
 									<div class="selectricHideSelect">
-									<select name="cardKndCd" id="cardKndCd" onchange="handleCardSelection(this);">
+									<select name="cardKndCd" id="cardKndCd">
 										<option value="0">카드를 선택하세요</option>
 										<option value="09">롯데</option>
 										<option value="24">하나</option>
@@ -532,20 +511,20 @@
 							<div class="box_inputForm card_num clfix">
 								<strong>카드번호</strong>
 								<span class="box_label">
-									<label for="cardNum1">입력</label>
-									<input type="text" name="cardNum1" id="cardNum1" class="input" maxlength="4" onkeydown="this.value = onlyNumPlus(this.value);" onkeyup="fnChkNext(this,'cardNum2')">
+									<label for="cardNum1"></label>
+									<input type="text" name="cardNum1" id="cardNum1" class="input" maxlength="4">
 								</span>
 								<span class="box_label">
-									<label for="cardNum2">입력</label>
-									<input type="text" name="cardNum2" id="cardNum2" class="input" maxlength="4" onkeydown="this.value = onlyNumPlus(this.value);" onkeyup="fnChkNext(this,'cardNum3')">
+									<label for="cardNum2"></label>
+									<input type="text" name="cardNum2" id="cardNum2" class="input" maxlength="4">
 								</span>
 								<span class="box_label">
-									<label for="cardNum3">입력</label>
-									<input type="password" name="cardNum3" id="cardNum3" class="input" maxlength="4" onkeydown="this.value = onlyNumPlus(this.value);" onkeyup="fnChkNext(this,'cardNum4')" data-tk-kbdtype="number" onfocus="tk.onKeyboard(this);">
+									<label for="cardNum3"></label>
+									<input type="password" name="cardNum3" id="cardNum3" class="input" maxlength="4">
 								</span>
 								<span class="box_label">
-									<label for="cardNum4">입력</label>
-									<input type="password" name="cardNum4" id="cardNum4" class="input" maxlength="4" onkeydown="this.value = onlyNumPlus(this.value);" onblur="fnChgCfmBtn();" data-tk-kbdtype="number" onfocus="tk.onKeyboard(this);">
+									<label for="cardNum4"></label>
+									<input type="password" name="cardNum4" id="cardNum4" class="input" maxlength="4">
 								</span>
 							</div>
 
@@ -557,14 +536,14 @@
 									<strong>유효기간 월(MONTH)</strong>
 									<span class="box_label">
 										<label for="cardMonth">2자리 입력(MM)</label>
-										<input type="text" name="cardMonth" id="cardMonth" class="input" maxlength="2" onkeydown="this.value = onlyNumPlus(this.value);" onblur="fnChgCfmBtn();">
+										<input type="text" name="cardMonth" id="cardMonth" class="input" maxlength="2">
 									</span>
 								</div>
 								<div class="box_inputForm">
 									<strong>유효기간 년(YEAR)</strong>
 									<span class="box_label">
 										<label for="cardYear">2자리 입력(YY)</label>
-										<input type="text" name="cardYear" id="cardYear" class="input" maxlength="2" onkeydown="this.value = onlyNumPlus(this.value);" onblur="fnChgCfmBtn();">
+										<input type="text" name="cardYear" id="cardYear" class="input" maxlength="2">
 									</span>
 								</div>
 							</div>
@@ -573,13 +552,11 @@
 									<strong>카드 비밀번호</strong>
 									<span class="box_label">
 										<label for="cardPw">**** 비밀번호 앞 2자리 입력</label> <!-- 170118 텍스트 수정 -->
-										<input type="password" name="cardPw" id="cardPw" class="input" maxlength="2" onkeydown="this.value = onlyNumPlus(this.value);" onblur="fnChgCfmBtn();" data-tk-kbdtype="number" onfocus="tk.onKeyboard(this);">
+										<input type="password" name="cardPw" id="cardPw" class="input" maxlength="2">
 									</span>
 								</div>
-								
-								
-								
 							</div>
+							
 							<!-- 카드결제 : 개인 -->
 							<div class="box_inputForm" id="indlBrdtCard">
 								<strong>생년월일 6자리(YYMMDD)</strong>

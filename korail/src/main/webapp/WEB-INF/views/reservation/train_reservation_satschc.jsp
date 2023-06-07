@@ -20,30 +20,8 @@
 <jsp:include page="../gnb.jsp"></jsp:include>
 	<div id ="contentWrap">
 	<div class="title_wrap in_process ticketingT">
-		<div class="util">
-			<ul class="clfix">
-				
-				<li class="login"><a href="/mbrs/lgn/loginMain.do"><span>로그인</span></a></li>
-				<li><a href="/mbrs/mbrsjoin/mbrsJoin.do">회원가입</a></li>
-				<li><a href="/mbrs/mbrspage/myPageMain.do">마이페이지</a></li>
-				<li><a href="/mbrs/trprinqr/pymPtInqr.do">결제내역조회</a></li>
-				<li><a href="/etc/sitemap/SiteMap.do">사이트맵</a></li>
-			</ul>
-			<!-- 170209 다국어선택 select수정 -->
-			<!-- <div class="select-box">
-				<div class="selectricWrapper"><div class="selectricHideSelect"><select name="lng_cd_navi" id="lng_cd_navi" title="다국어사이트 선택" tabindex="0">
-					<option value="KO" selected="selected">한국어</option>
-					<option value="EN">English</option>
-					<option value="CN">中文</option>
-					<option value="JP">日本語</option>
-				</select></div><div class="selectric"><p class="label">한국어</p><b class="button">▾</b></div><div class="selectricItems" tabindex="-1"><div class="selectricScroll"><ul><li class="selected">한국어</li><li class="">English</li><li class="">中文</li><li class="last">日本語</li></ul></div></div><input class="selectricInput" tabindex="0"></div>
-			</div> -->
-			<!-- //170209 다국어선택 select수정 -->
-		</div>
-	
-	<!-- <a href="#" class="back">back</a>
-	<a href="#" class="mo_toggle">메뉴</a>
-	 -->
+		<jsp:include page="../header.jsp"></jsp:include>
+	 
 	 <h2>고속버스예매</h2>
 				
 				<ol class="process">

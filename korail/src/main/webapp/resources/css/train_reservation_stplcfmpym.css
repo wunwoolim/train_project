@@ -9,33 +9,6 @@
     top: 0;
 }
 
-.util {
-    position: absolute;
-    top: 10px;
-    right: 30px;
-}
-.util li.login a span, .util li.logout a span {
-    padding: 4px 10px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #cfa346;
-    border: 1px solid #fff;
-}
-.util li {
-	/* display:inline-block; */
-	float: left;
-    vertical-align: top;
-}
-.util li a{
-	text-decoration:none;
-	font-size: 11px;
-    color: #fff;
-}
-.util > ul li a {
-    position: relative;
-    padding: 0 12px 0 8px;
-}
-
 
 .title_wrap {
 	background-image:url("http://localhost:9000/ktx/images/visual_route_bg.jpg");
