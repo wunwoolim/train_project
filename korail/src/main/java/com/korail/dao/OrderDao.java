@@ -2,9 +2,17 @@ package com.korail.dao;
 
 import java.util.ArrayList;
 
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import com.korail.vo.OrderVo;
 
+@Repository
 public class OrderDao extends DBConn{
+	
+	@Autowired
+	private SqlSessionTemplate sqlSession;	
 	
 	/**
 	 * 예매내역 출력
@@ -117,7 +125,7 @@ public class OrderDao extends DBConn{
 		
 		ArrayList<OrderVo> orderList = new ArrayList<OrderVo>();
 		
-		String sql = "SELECT sstation, rdate, depPlandTime, stime, dtime, dstation, price, reservnum, trainnum, chairnum, id, cardnum  FROM KTX_ORDER order by rdate";
+		String sql = "SELECT sstation, rdate, depPlandTime, stime, dtime, dstation, price, reservnum, trainnum, chairnum, id, cardnum,cancel FROM KTX_ORDER order by rdate";
 		
 		getPreparedStatement(sql);
 		
@@ -141,6 +149,7 @@ public class OrderDao extends DBConn{
 				 orderVo.setChairnum(rs.getString(10));
 				 orderVo.setId(rs.getString(11));
 				 orderVo.setCardnum(rs.getString(12));
+				 orderVo.setCancel(rs.getInt(13));
 				 
 				 orderList.add(orderVo);
 			}
@@ -153,6 +162,13 @@ public class OrderDao extends DBConn{
 	}
 	
 	
+	
+	
+	
+	public int insert(OrderVo orderVo) {
+		
+		return sqlSession.insert("mapper.order.payment", orderVo);
+	}
 	
 	
 }

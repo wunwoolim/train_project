@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="mapper.member">
+	
+	
+	<insert id="payment" parameterType="com.korail.vo.OrderVo">
+		insert into KTX_ORDER
+			(sstation,rdate,stime,dtime,dstation,price,trainnum,chairnum,ticketqty,id,depPlaceId,arrPlaceId,depPlandTime)
+		values
+			(#{sstation},#{rdate},#{stime},#{dtime},#{dstation},#{price},#{trainnum},#{chairnum},#{ticketqty},
+			'GUEST',#{depPlaceId},#{arrPlaceId},#{depPlandTime})
+	</insert>
+
+</mapper>

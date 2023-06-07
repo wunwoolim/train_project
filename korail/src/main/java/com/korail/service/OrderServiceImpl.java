@@ -33,5 +33,8 @@ public class OrderServiceImpl implements OrderService{
 		return orderDao.orderselect();
 	}
 
-
+	public int getPayment(OrderVo orderVo) {
+		
+		return orderDao.insert(orderVo);
+	}
 }

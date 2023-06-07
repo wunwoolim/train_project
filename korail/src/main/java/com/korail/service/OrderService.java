@@ -13,4 +13,7 @@ public interface OrderService {
 	public String getCancelResult(String reservnum);
 	
 	ArrayList<OrderVo> getOrderSelect();
+	
+	public int getPayment(OrderVo orderVo);
+	
 }

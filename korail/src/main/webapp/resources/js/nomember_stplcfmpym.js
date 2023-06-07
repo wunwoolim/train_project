@@ -14,7 +14,7 @@ $(document).ready(function(){
 		$(this).addClass("selected");
 		
 		 let selectedValue = $(this).text();
-		$(".selectric label").text(selectedValue);
+		$("#selectric .label").text(selectedValue);
 		
 	});
 	
@@ -30,5 +30,10 @@ $(document).ready(function(){
 		}
 	});
 	
+	//결제하기 클릭시 서브밋
+	$("#stplCfmBtn").click(function(){
+	
+		purchaseForm.submit();
+	});
 	
 });

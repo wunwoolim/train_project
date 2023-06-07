@@ -443,8 +443,10 @@
 					</div>
 				</div>
 				
+				
 				<h4 class="mo_page">결제정보 입력</h4>
 				<div class="custom_input clfix">
+					<form name="purchaseForm" id="purchaseForm" action="train_reservation_pymcfm.do" method="post">
 					<div class="tab_wrap inradio tab_type2" data-desc-id="tab-desc1"> <!-- 190109 수정 : data-desc-id 속성 추가 (값은 하단 설명 영역인 .tab_desc_wrap의 id와 매칭) -->					
 						
 						<div class="tab_conts" id="tab1" style="display: block;">
@@ -480,10 +482,12 @@
 										<option value="26">씨티</option>
 									</select>
 									</div>
-									<div class="selectric">
+									
+								<div class="selectric" id="selectric">
 										<p class="label">카드를 선택하세요</p>
 										<b class="button">▾</b>
-									</div>
+								</div>
+								
 									<div class="selectricItems" tabindex="-1" style="width: 636.667px; height: 500px;">
 										<div class="selectricScroll">
 											<ul>
@@ -504,7 +508,7 @@
 											</ul>
 										</div>
 									</div>
-									<input class="selectricInput" tabindex="0">
+									<input type="" class="selectricInput" name="" tabindex="0">
 									</div>
 								</div>
 							</div>
@@ -565,15 +569,7 @@
 									<input type="text" name="caBirth" id="caBirth" class="input" maxlength="6">
 								</span>
 							</div>
-							<!-- // 카드결제 : 개인 -->
-							<!-- 카드결제 : 법인 -->
-							<!-- <div class="box_inputForm" id="cprtBrnCard" style="display:none;">
-								<strong>사업자 등록번호</strong>
-								<span class="box_label">
-									<label for="comNumCard">(-)  없이 입력</label>
-									<input type="text" name="comNumCard" id="comNumCard" class="input" maxlength="10" onkeydown="this.value = onlyNumPlus(this.value);" onkeyup="fnChgCfmBtn();">
-								</span>
-							</div> -->
+						
 							<!-- // 카드결제  -->
 							<div class="box_inputForm click_box inselect" id="mipMmSel" style="display:none">
 								<strong>할부 개월수 (5만원 이상만 가능)</strong>
@@ -640,7 +636,7 @@
 						 
 					</div>
 				</div>
-			
+			</form>
 				
 					<div class="payment_sum" style="height: 385.481px;">
 						<div class="tbl_type3">
@@ -668,7 +664,7 @@
 							</table>
 						</div>
 						<p class="btn bottom">
-							<button type="button" id="stplCfmBtn" class="btnL btn_confirm ready" onclick="">결제하기</button>
+							<button type="button" id="stplCfmBtn" class="btnL btn_confirm ready" >결제하기</button>
 						</p>
 					</div>
 				</div>
