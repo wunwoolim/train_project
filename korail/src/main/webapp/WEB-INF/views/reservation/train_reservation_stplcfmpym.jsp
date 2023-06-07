@@ -338,7 +338,7 @@
 										<strong>휴대폰번호</strong>
 										<span class="box_label">
 											<label for="nonMbrsHp">휴대폰 번호를 입력하세요</label>
-											<input type="number" name="nonMbrsHp" id="nonMbrsHp" class="input" maxlength="11" onkeyup="lengthCheck(this); this.value = onlyNumPlus(this.value);" onblur="fnChgCfmBtn();">
+											<input type="number" name="nonMbrsHp" id="nonMbrsHp" class="input" maxlength="11" >
 										</span>
 										
 									</div>
@@ -347,10 +347,10 @@
 								
 								<div class="resend buy-t01">
 									<div class="box_inputForm">
-<!-- 										<strong>010-1234-5678(으)로</strong> -->
+										<strong>010-1234-5678(으)로</strong>
 										<span class="box_label">
 											<label for="nonMbrsPw">인증번호가 발송 완료되었습니다.</label>
-											<input type="text" name="nonMbrsPw" id="nonMbrsPw" class="input" onkeyup="this.value = onlyNumPlus(this.value);" onblur="fnChgCfmBtn();">
+											<input type="text" name="nonMbrsPw" id="nonMbrsPw" class="input" >
 										</span>
 										
 									</div>
@@ -362,7 +362,7 @@
 										<strong>수신된 인증번호</strong>
 										<span class="box_label">
 											<label for="nonMbrsAuthNo">인증번호를 입력하세요</label>
-											<input type="text" name="nonMbrsAuthNo" id="nonMbrsAuthNo" class="input" maxlength="6" onkeyup="this.value = onlyNumPlus(this.value);" onblur="fnChgCfmBtn();">
+											<input type="text" name="nonMbrsAuthNo" id="nonMbrsAuthNo" class="input" maxlength="6" >
 										</span>
 									</div> 
 								</div>
@@ -511,19 +511,19 @@
 							<div class="box_inputForm card_num clfix">
 								<strong>카드번호</strong>
 								<span class="box_label">
-									<label for="cardNum1"></label>
+									<label for="cardNum1">입력</label>
 									<input type="text" name="cardNum1" id="cardNum1" class="input" maxlength="4">
 								</span>
 								<span class="box_label">
-									<label for="cardNum2"></label>
+									<label for="cardNum2">입력</label>
 									<input type="text" name="cardNum2" id="cardNum2" class="input" maxlength="4">
 								</span>
 								<span class="box_label">
-									<label for="cardNum3"></label>
+									<label for="cardNum3">입력</label>
 									<input type="password" name="cardNum3" id="cardNum3" class="input" maxlength="4">
 								</span>
 								<span class="box_label">
-									<label for="cardNum4"></label>
+									<label for="cardNum4">입력</label>
 									<input type="password" name="cardNum4" id="cardNum4" class="input" maxlength="4">
 								</span>
 							</div>
@@ -562,7 +562,7 @@
 								<strong>생년월일 6자리(YYMMDD)</strong>
 								<span class="box_label">
 									<label for="caBirth">예)1980년11월11일 → 801111</label>
-									<input type="text" name="caBirth" id="caBirth" class="input" maxlength="6" onkeydown="this.value = onlyNumPlus(this.value);" onkeyup="fnChgCfmBtn();">
+									<input type="text" name="caBirth" id="caBirth" class="input" maxlength="6">
 								</span>
 							</div>
 							<!-- // 카드결제 : 개인 -->
@@ -637,12 +637,6 @@
 						
 							
 								<div class="tab_conts" id="tab2" style="display: none;">
-									
-									
-									
-						
-
-						
 						 
 					</div>
 				</div>
@@ -659,7 +653,7 @@
 								<tbody>
 									<tr>
 										<th scope="row" class="txt_black">예매금액</th>
-										<td><strong id="estmAmtView">38,000원</strong></td>
+										<td><strong id="estmAmtView">${ sessionScope.rvo.adultcharge }</strong></td>
 									</tr>
 									
 									<tr>
@@ -668,7 +662,7 @@
 									</tr>
 									<tr class="total">
 										<th scope="row" class="txt_black">총 결제금액</th>
-										<td class="totalPrice"><span id="tissuAmtView">38,000원</span></td>
+										<td class="totalPrice"><span id="tissuAmtView">${ sessionScope.rvo.adultcharge }</span></td>
 									</tr>
 								</tbody>
 							</table>

@@ -77,3 +77,11 @@
 .clfix_logout {
 	display : none;
 }
+
+.title_wrap h2 {
+    font-size: 34px;
+    color: #fff;
+    text-align: center;
+    margin: 0px;
+
+}

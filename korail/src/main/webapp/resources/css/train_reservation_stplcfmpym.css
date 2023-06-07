@@ -20,14 +20,6 @@
     
 }
 
-.title_wrap h2 {
-    font-size: 34px;
-    color: #fff;
-    text-align: center;
-    margin: 0px;
-
-}
-
 .title_wrap.in_process .process {
     display: inline-block;
     margin-top: 10px;
@@ -1129,6 +1121,9 @@ html:first-child select {
 }
 
 .box_inputForm.card_num .box_label + .box_label label {
+    padding-left: 10px;
+}
+.box_inputForm.card_num .box_label + .box_label {
     padding-left: 10px;
 }
 

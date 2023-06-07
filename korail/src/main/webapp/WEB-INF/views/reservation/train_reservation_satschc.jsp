@@ -235,7 +235,7 @@
 							<section class="box_detail total_price "> <!-- 총 결재금액일 시 class="total_price" 추가 -->
 								<div class="box_title">
 									<strong class="txt_tit">총 결제금액</strong>
-									<span class="sel_price" id="allTotAmtLocD">원</span>
+									<span class="sel_price" id="allTotAmtLocD">${ sessionScope.rvo.adultcharge }원</span>
 								</div>
 							</section>
 							<!-- //총 결제금액 -->
