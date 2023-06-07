@@ -146,10 +146,17 @@ public class ReservationlistController {
 	@RequestMapping(value="/reservation_updatetable.do", method=RequestMethod.GET)
 	public String reservation_updatetable() {
 		
-		return "/reservation/reservation_updatetable";
+		return "/reservationlist/reservation_updatetable";
 	} 
 	
-	
+	/**
+	 * admin_updatetable.do - 예매취소 전체 리스트 - 관리자페이지 
+	 */
+	@RequestMapping(value="/reservation_login.do", method=RequestMethod.GET)
+	public String reservation_login() {
+		
+		return "/reservationlist/reservation_login";
+	} 
 	
 	
 	
