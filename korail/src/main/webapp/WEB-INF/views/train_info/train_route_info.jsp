@@ -1,10 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-	<%@ page import="com.korail.vo.StationVo" %>
-		<%@ page import="com.korail.dao.StationDao" %>
-			<%@ page import="java.util.*" %>
-				<% String category=request.getParameter("category"); 
-				StationDao stationDao=new StationDao(); 
-				StationVo list = stationDao.select(category); %>
+	<%@ page import=" com.korail.vo.StationVo" %>
+		<%@ page import=" com.korail.dao.StationDao" %>
+			<%@ page import=" java.util.*" %>
 					
 					<!DOCTYPE html>
 					<html>
@@ -12,11 +9,11 @@
 					<head>
 						<meta charset="UTF-8">
 						<title>기차역 상세 정보</title>
-						<script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
-						<script src="http://localhost:9000/ktx/js/min.js"></script>
+						<script src="http://localhost:9000/train_project/js/jquery-3.6.4.min.js"></script>
+						<script src="http://localhost:9000/train_project/js/min.js"></script>
 						<script type="text/javascript"
 							src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6c229bd14220c7cc4fa6edf4d24c1d9e"></script>
-						<link rel="stylesheet" href="http://localhost:9000/ktx/css/min.css">
+						<link rel="stylesheet" href="http://localhost:9000/train_project/css/min.css">
 					</head>
 
 					<body>
@@ -26,16 +23,12 @@
 						<div id="contentWrap">
 							<div class="title-wrap">
 								<div class="title-background">
-									<ul class="banner">
-										<li><a href="#">로그인</a></li>
-										<li><a href="#">회원가입</a></li>
-										<li><a href="#">마이페이지</a></li>
-										<li><a href="#">결제내역조회</a></li>
-										<li><a href="#">사이트맵</a></li>
-									</ul>
-									<h1 class="title">KTX역</h1>
+									<jsp:include page="../header.jsp"></jsp:include>
+									
+									<h2 class="title">KTX역</h2>
 								</div>
 							</div>
+							
 							<div class="train-route">
 								<nav class="route">
 									<input type="hidden" id="route_name" class="route_name" value="kyeongbu">
@@ -142,7 +135,7 @@
 										</script>
 									</div>
 								</div>--%>
-								
+								<jsp:include page="../footer.jsp"></jsp:include>
 							</div>
 						</div>
 					</body>

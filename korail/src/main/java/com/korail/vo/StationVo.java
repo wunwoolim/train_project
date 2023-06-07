@@ -2,6 +2,16 @@ package com.korail.vo;
 
 public class StationVo {
 	String station, location, sphone, category, info, history, clink1, clink2, mlink, plink;
+	int rno;
+
+	
+	public int getRno() {
+		return rno;
+	}
+
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
 
 	public String getStation() {
 		return station;

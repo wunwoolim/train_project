@@ -15,14 +15,8 @@
 </div>
 	<div id="contentWrap">
 	<div class="title-wrap">
-		<ul class="banner">
-			<li><a href="#">로그인</a></li>
-			<li><a href="#">회원가입</a></li>
-			<li><a href="#">마이페이지</a></li>
-			<li><a href ="#">결제내역조회</a></li>
-			<li><a href="#">사이트맵</a></li>
-		</ul>
-		<h1 class="title">예매 안내</h1>
+		<jsp:include page="../header.jsp"></jsp:include>
+		<h2 class="title">예매 안내</h1>
 	</div>
 	<h2 class="title-reservation">홈페이지를 통한 예매는 당일 출발하는 기차의 출발시간 30분 이전까지 예매 가능합니다.</h2>
 	<h2 class="title-reservation">승차권 예매 발권</h2>
@@ -72,5 +66,6 @@
 		</tr>
 	</table>
 	</div>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

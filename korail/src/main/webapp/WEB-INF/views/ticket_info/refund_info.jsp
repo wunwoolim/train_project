@@ -14,14 +14,8 @@
 </div>
 	<div id="contentWrap">
 	<div class="title-wrap">
-		<ul class="banner">
-			<li><a href="#">로그인</a></li>
-			<li><a href="#">회원가입</a></li>
-			<li><a href="#">마이페이지</a></li>
-			<li><a href ="#">결제내역조회</a></li>
-			<li><a href="#">사이트맵</a></li>
-		</ul>
-		<h1 class="title">승차권 환불 안내</h1>
+		<jsp:include page="../header.jsp"></jsp:include>
+		<h2 class="title">승차권 환불 안내</h2>
 	</div>
 	<h2 class="title-refund">카드결제로 예매한 기차 승차권 환불 규정에 대한 안내입니다.</h2>
 	<h3 class="title-refund">승차권 환불 규정</h3>
@@ -38,5 +32,6 @@
 		</div>
 	</div>
 	</div>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

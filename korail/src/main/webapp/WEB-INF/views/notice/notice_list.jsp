@@ -15,14 +15,8 @@
 </div>
 	<div id="contentWrap">
 	<div class="title-wrap">
-		<ul class="banner">
-			<li><a href="#">로그인</a></li>
-			<li><a href="#">회원가입</a></li>
-			<li><a href="#">마이페이지</a></li>
-			<li><a href ="#">결제내역조회</a></li>
-			<li><a href="#">사이트맵</a></li>
-		</ul>
-		<h1 class="title">공지사항</h1>
+		<jsp:include page="../header.jsp"></jsp:include>
+		<h2 class="title">공지사항</h2>
 	</div>
 	<h2 class="title-notice">KTX 홈페이지의 새로운 소식을 확인하세요.</h2>
 	<div class="search">
@@ -53,5 +47,6 @@
 		</tr>
 	</table>
 	</div>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>

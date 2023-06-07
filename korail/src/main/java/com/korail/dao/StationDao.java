@@ -6,26 +6,31 @@ import com.korail.vo.StationVo;
 
 public class StationDao extends DBConn {
 	
-	public StationVo select(String k) {
+	public StationVo select(String category, int rno) {
 		StationVo stationVo = new StationVo();
-		String sql = "SELECT STATION, LOCATION, SPHONE, CATEGORY, INFO, HISTORY, CLINK1, CLINK2, MLINK, PLINK "
-				+ "FROM(SELECT STATION, LOCATION, SPHONE, CATEGORY, INFO, HISTORY, CLINK1, CLINK2, MLINK, PLINK "
-				+ "FROM KTX_STATION WHERE CATEGORY=? ORDER BY MLINK DESC) WHERE ROWNUM = 1";
+		String sql = "SELECT RNO, STATION, LOCATION, SPHONE, CATEGORY, INFO, HISTORY, CLINK1, CLINK2, MLINK, PLINK" + 
+				" FROM (SELECT ROWNUM RNO, STATION, LOCATION, SPHONE, CATEGORY, INFO, HISTORY, CLINK1, CLINK2, MLINK, PLINK" + 
+				"        FROM( SELECT STATION, LOCATION, SPHONE, CATEGORY, INFO, HISTORY, CLINK1, CLINK2, MLINK, PLINK" + 
+				"                FROM KTX_STATION WHERE CATEGORY=? ORDER BY MLINK DESC))" + 
+				" WHERE RNO = ?";
 		getPreparedStatement(sql);
 		try {
-			pstmt.setString(1, k);
+			pstmt.setString(1, category);
+			pstmt.setInt(2, rno);
+			
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
-				stationVo.setStation(rs.getString(1));
-				stationVo.setLocation(rs.getString(2));
-				stationVo.setSphone(rs.getString(3));
-				stationVo.setCategory(rs.getString(4));
-				stationVo.setInfo(rs.getString(5));
-				stationVo.setHistory(rs.getString(6));
-				stationVo.setClink1(rs.getString(7));
-				stationVo.setClink2(rs.getString(8));
-				stationVo.setMlink(rs.getString(9));
-				stationVo.setPlink(rs.getString(10));
+				stationVo.setRno(rs.getInt(1));
+				stationVo.setStation(rs.getString(2));
+				stationVo.setLocation(rs.getString(3));
+				stationVo.setSphone(rs.getString(4));
+				stationVo.setCategory(rs.getString(5));
+				stationVo.setInfo(rs.getString(6));
+				stationVo.setHistory(rs.getString(7));
+				stationVo.setClink1(rs.getString(8));
+				stationVo.setClink2(rs.getString(9));
+				stationVo.setMlink(rs.getString(10));
+				stationVo.setPlink(rs.getString(11));
 				
 			}
 		} catch (Exception e) {

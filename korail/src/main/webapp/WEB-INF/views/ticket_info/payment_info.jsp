@@ -15,14 +15,8 @@
 </div>
 	<div id="contentWrap">
 	<div class="title-wrap">
-		<ul class="banner">
-			<li><a href="#">로그인</a></li>
-			<li><a href="#">회원가입</a></li>
-			<li><a href="#">마이페이지</a></li>
-			<li><a href ="#">결제내역조회</a></li>
-			<li><a href="#">사이트맵</a></li>
-		</ul>
-		<h1 class="title">결제 안내</h1>
+		<jsp:include page="../header.jsp"></jsp:include>
+		<h2 class="title">결제 안내</h2>
 	</div>
 	<h2 class="title-payment">홈페이지를 통한 예매 시 카드결제 또는 계좌이체의 결제수단을 이용하실 수 있습니다.</h2>
 	<h3 class="title-payment">카드결제</h3>
@@ -35,5 +29,6 @@
 		</ul>
 	</div>
 	</div>
+	<jsp:include page="../footer.jsp"></jsp:include>
 </body>
 </html>
