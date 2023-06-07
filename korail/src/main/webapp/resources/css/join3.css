@@ -1,0 +1,207 @@
+#contentWrap {
+    left: 220px;
+    width: calc(100% - 220px);
+    min-width: 708px;
+    position: absolute;
+    top: 0;
+}
+
+
+
+
+.loginBox{
+border:1px solid gray;
+width:700px;
+padding-left:50px;
+
+} 
+
+.login_ti{
+	margin:0;
+	padding:0;
+}
+
+.title_wrap.loginT{
+	background : url("http://localhost:9000/train_project/images/visual_joinT_bg.gif")center 0 no-repeat;
+	background-size: cover;
+	color:white;
+	font-size: 34px;
+	font-weight: normal;
+}	
+	
+.title_wrap {
+    position: relative;
+    background: #214c5a;
+    height: 180px;
+    padding-top: 75px;
+    text-align: center;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+	
+.util{
+	position: absolute;
+	top:0px;
+	right: 30px;	
+	}
+.util ul {
+    float: left;
+}
+.util > ul li {
+    float: left;
+    vertical-align: top;
+}
+.util li.account, .util > ul li a {
+    position: relative;
+    padding: 0 12px 0 8px;
+}
+.util li a, .util select {
+    font-size: 11px;
+    color: #fff;
+}
+.util li.login a span, .util li.logout a span {
+    padding: 4px 10px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #cfa346;
+    border: 1px solid #fff;
+}
+.util li a, .util select {
+    font-size: 11px;
+    color: #fff;
+}
+.util > ul li a:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 3px;
+    right: 0;
+    width: 1px;
+    height: 10px;
+    border-left: 1px solid #fff;
+    opacity: 0.4;
+}
+
+
+ul{
+list-style:none;
+}
+
+input{
+	padding: 10px;
+}
+input[type ='radio']{
+	margin-left: 10px;
+}
+
+.space{
+	padding:10px;
+	margin-right: 40px;	
+
+}
+	.page{
+	height:100%;
+	margin:0;
+}
+.join_input , .btn_ch {
+height:51px;
+}
+.join_input{
+width: 450px;
+margin:auto;
+border-radius:3px;
+border: 1px solid gray;
+height:51px;
+}
+.join_input2{
+width: 380px;
+margin:auto;
+border-radius:3px;
+border: 1px solid gray;
+height:51px;
+}
+.join_input1{
+width: 350px;
+margin:auto;
+border-radius:3px;
+border: 1px solid gray;
+height:51px;
+}
+.check_btn{
+		  width: 90px;
+  height: 40px;
+  margin: auto 0;
+  color:white;
+  background:#66CCFF;
+  border:none;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.email_input{
+width: 180px;
+margin:auto;
+height:51px;
+border-radius:3px;
+border: 1px solid gray;
+} 
+.info_birth{
+	width: 360px;
+margin:auto;
+border-radius:3px;
+border: 1px solid gray;
+}
+.wrapper{
+	  text-align: center;
+	
+}
+
+#info_id{
+	position:relative;
+}
+#info_id button{
+
+  position: absolute;
+  width: 90px;
+  height: 40px;
+  top: 0;
+  bottom: 0;
+  right: 340px;
+  margin: auto 0;
+  color:white;
+  background:#66CCFF;
+  border:none;
+  border-radius: 5px;
+}
+.join_list li{
+	padding :10px;
+	display: list-item;
+    text-align: START;
+    MARGIN-LEFT: 50PX;
+}
+.join_list p{
+	margin : 10px;
+}
+
+#btnJoin{
+	  width: 90px;
+  height: 40px;
+  margin: auto 0;
+  color:white;
+  background:#66CCFF;
+  border:none;
+  border-radius: 5px;
+}
+.join_bo{
+	border: 1px solid black;
+    width: 60%;
+    margin-left: 300px;
+    text-align: center;
+}	
+
+.girl_jo{
+	margin-left:10px;
+}
+	
+}
