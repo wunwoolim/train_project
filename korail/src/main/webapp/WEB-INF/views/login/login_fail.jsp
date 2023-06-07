@@ -17,10 +17,10 @@
 			
 			<ul>
 			<li>
-			<a href="http://localhost:9000/train_project/login.do"><span>로그인</span></a>
+			<a href="http://localhost:9000/ktx/login.do"><span>로그인</span></a>
 			</li>
 			<li>
-			<a href="http://localhost:9000/train_project/join.do"><span>회원가입</span></a>
+			<a href="http://localhost:9000/ktx/join.do"><span>회원가입</span></a>
 			</li>
 			<li>
 			<a href="#"><span>마이페이지</span></a>
@@ -41,9 +41,9 @@
 <div class="content">
 		<section class="login_fail">
 			<h1 class="title">로그인 실패</h1>
-			<img src="http://localhost:9000/train_project/images/login_fail.png">
+			<img src="http://localhost:9000/ktx/login_fail.do">
 			<h1 class="title">로그인에 실패하셨습니다.</h1>
-			<a href="http://localhost:9000/train_project/login.do"><span>로그인</span>
+			<a href="http://localhost:9000/ktx/login.do"><span>로그인</span>
 				<button type="button" class="btn_style">로그인 페이지 이동</button>
 			</a>
 		</section>

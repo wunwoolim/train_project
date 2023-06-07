@@ -57,7 +57,7 @@
 						</div>
 						</li>
 		<li>		
-				<button type="button"  class ="btnJoin">  인증번호 발송</button>
+				<button type="button"  class ="btnJoin" onclick ="location.href='http://localhost:9000/ktx/join3.do'">  인증번호 발송</button>
 		</li>	
 	
 	</ul>	

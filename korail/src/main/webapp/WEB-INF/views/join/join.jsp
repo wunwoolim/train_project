@@ -54,7 +54,7 @@
 		<h1>개인정보 수집 및 이용동의(필수)		</h1>
 		<span class="custom_check"><input type="checkbox"  name="agree" id ="agree1" value="동의"><label for="agree1">동의</label></span>
 	</div>
-			<iframe id = video1 src="http://localhost:9000/train_project/joinpolicy.do" scrolling="yes"></iframe>
+			<iframe id = video1 src="http://localhost:9000/ktx/joinpolicy.do" scrolling="yes"></iframe>
 			
 	
 	<div class="terms_wrap" id="service" style="overflow:auto">
@@ -63,7 +63,7 @@
 			</div>
 	
 	<div class="scroll_agreement">
-	<iframe  id="video2" src ="http://localhost:9000/train_project/joinpolicy1.do" scrolling="yes"></iframe>
+	<iframe  id="video2" src ="http://localhost:9000/ktx/joinpolicy1.do" scrolling="yes"></iframe>
 		
 		</div>
 			<!-- <div class="btn_logbox">
@@ -71,7 +71,7 @@
 						<button type="button" class ="btn_style1" > 전체 약관에 동의합니다. </button>
 				</div> -->
 		<div class="btn_logbox">		
-						<button type="reset" class="btn_style3" onclick ="location.href='http://localhost:9000/train_project/join2.do'">전체 약관에 동의합니다.</button>			
+						<button type="reset" class="btn_style3" onclick ="location.href='http://localhost:9000/ktx/join2.do'">전체 약관에 동의합니다.</button>			
 						<!-- <button type="button" class="btn_style2" onclick ="location.href='http://localhost:9000/train_project/login.do'">동의하지않음</button> -->
 		</div>
 		</section>

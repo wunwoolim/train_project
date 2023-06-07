@@ -43,6 +43,7 @@
 			<h1 class="title">관리자 - 회원관리</h1>			
 			<table class = "amem_table">
 				<tr>
+					<th>번호</th>
 					<th>아이디</th>
 					<th>비밀번호</th>
 					<th>이름</th>
@@ -64,8 +65,14 @@
 					<td>${memberVo.gender }</td>
 					<td>${memberVo.mdate }</td>
 				</tr>	
-				</c:forEach>	
+				</c:forEach>
+				<tr>
+					<td colspan="5"><div id="ampaginationsm"></div></td>
+				</tr>	
 			</table>
+			
+			
+			
 		</section>
 	</div>
 

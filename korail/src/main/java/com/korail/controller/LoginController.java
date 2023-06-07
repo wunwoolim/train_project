@@ -1,4 +1,6 @@
-package com.korail.controller;
+	package com.korail.controller;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.korail.service.MemberService;
 import com.korail.vo.MemberVo;
+import com.korail.vo.SessionVo;
 
 @Controller
 public class LoginController {
@@ -15,6 +18,28 @@ public class LoginController {
 	@Autowired
 	private MemberService memberService;
 
+	
+	/**
+	 * logout.do - 로그아웃
+	 */
+	@RequestMapping(value="/logout.do", method=RequestMethod.GET)
+	public ModelAndView logout(HttpSession session) {
+		ModelAndView model = new ModelAndView();
+		//String sid = (String)session.getAttribute("sid");
+		SessionVo svo = (SessionVo)session.getAttribute("svo");
+		if(svo != null) {
+			session.invalidate();
+			model.addObject("logout_result", "ok");
+		}
+		
+		model.setViewName("index");
+		
+		return model;
+	}
+	
+	
+	
+	
 	
 	
 	@RequestMapping(value="/login.do", method=RequestMethod.GET)
@@ -36,7 +61,7 @@ public class LoginController {
 			//index 이동
 			//viewName = "index";  viewResolver를 호출--> index.jsp: header.do,footer.do 호출안됨
 			model.addObject("login_result", "ok");
-			model.setViewName("index");  //sendRedirect 
+			model.setViewName("redirect:/train_reservation_rotinf.do");  //sendRedirect 
 		}else {
 			//login_fail.jsp
 			model.setViewName("redirect:/login_fail.do");
