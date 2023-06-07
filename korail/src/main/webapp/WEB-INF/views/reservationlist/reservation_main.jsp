@@ -125,7 +125,7 @@
 								<span class="roundBox arrive" id="dstation">${ovo.dstation}</span>
 							</div>
 							<div class="detail_info">
-								<span id="runtime">소요</span> <!-- 예상소요시간 -->
+								<!-- <span id="runtime">소요</span> --> <!-- 예상소요시간 -->
 							</div>
 						</div>
 						<div class="routeArea route_wrap mob_route">
@@ -194,10 +194,10 @@
 				
 					<p class="btns multi mainclfix col4">
 				
-						<a href="http://localhost:9000/korail/reservation_update.do"  class="btnL btn_cancel" id="change_btn">시간변경</a>
-						<a href="http://localhost:9000/korail/reservation_receipt.do" target="_blank"  class="btnL btn_cancel" id="receipt_btn">영수증 발행</a>
+						<a href="http://localhost:9000/ktx/reservation_update.do"  class="btnL btn_cancel" id="change_btn">시간변경</a>
+						<a href="http://localhost:9000/ktx/reservation_receipt.do" target="_blank"  class="btnL btn_cancel" id="receipt_btn">영수증 발행</a>
 						<a href="#" onclick="fnRecpCanInfo(0,'');" class="btnL btn_cancel" id="cancelReserv">예매취소</a>
-						<a href="http://localhost:9000/korail/reservation_hometicket.do" target="_blank"  class="btnL btn_confirm" id="hometicket_btn">홈티켓 발행</a>
+						<a href="http://localhost:9000/ktx/reservation_hometicket.do" target="_blank"  class="btnL btn_confirm" id="hometicket_btn">홈티켓 발행</a>
 					</p>
 					<ul class="desc_list marT30">
 						<li>과거 예매 내역은 출발일 날짜 기준 당일까지, 예매 취소 내역은 과거 3개월까지 조회 가능합니다.</li>
@@ -230,7 +230,7 @@
 								<span class="roundBox arrive">${ovo.dstation}</span>
 							</div>
 							<div class="detail_info">
-								<span>소요</span>
+								<!-- <span>소요</span> -->
 							</div>
 						</div>
 						<div class="routeArea route_wrap mob_route">
@@ -286,7 +286,7 @@
 			<div class="pop">
 			<div class="title type_blue">예매취소
 				<span class="remodal-close" >
-					<img src="http://localhost:9000/train_project/images/close_mobile.png">
+					<img src="http://localhost:9000/ktx/images/close_mobile.png">
 				</span>
 			</div>
 			<!-- 팝업content -->

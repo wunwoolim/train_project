@@ -75,7 +75,7 @@ $(document).ready(function(){
 			success : function(result){//문자타입으로 보냈지만 script에서는 타입 정해진거 없음 따라서 숫자타입임
 				if(result == 1){
 					alert("취소가 완료되었습니다.");
-					$(location).attr("href","http://localhost:9000/korail/reservation_main.do");
+					$(location).attr("href","http://localhost:9000/ktx/reservation_main.do");
 				}else{
 					alert("예매취소에 실패하였습니다.");
 				}
@@ -244,7 +244,7 @@ $(document).ready(function(){
 	        var url = "reservation_receipt.do?reservnum=" + reservnum;
 	        window.location.href = url;
 	   	 } else {
-	        alert("영수증을 발행할 티켓을 선택해주세요.");
+	        
 	  	 }
 	});
 	

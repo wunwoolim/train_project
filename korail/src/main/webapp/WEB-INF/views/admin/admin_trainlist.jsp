@@ -20,17 +20,7 @@
 	<div id="contentWrap">
 		<div class="title_wrap_checkTicketingT">
 			<div class="title_wrap">
-				<div class="util">
-					<ul class="clfix">
-						<li class="account">sohyun990502@naver.com</li>
-						<li class="logout"><a href="#"><span>로그아웃</span></a></li>
-						<li><a href="#">마이페이지</a></li>
-						<li><a href="#">결제내역조회</a></li>
-						<li><a href="#">사이트맵</a></li>
-					</ul>
-				</div>
-				<!-- <a href="#" class="back">back</a>
-				<a href="#" class="mo_toggle">메뉴</a> -->
+				<jsp:include page="../header.jsp"></jsp:include>
 				<h2>KTX 시간표</h2>
 			</div>
 		</div>
@@ -48,6 +38,7 @@
 			<input type="hidden" id="start" >
 			<input type="hidden" id="end" >
 		</div>
+		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
 </body>
 </html>

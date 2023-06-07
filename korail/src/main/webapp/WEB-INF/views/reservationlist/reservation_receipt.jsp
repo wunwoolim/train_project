@@ -18,10 +18,10 @@
 			</ul>
 			<p class="btnBox">
 			<button type="button" onclick="window.print();" class="print">
-				<img src="http://localhost:9000/train_project/korail/btn_print_blue.gif" alt="프린트버튼">
+				<img src="http://localhost:9000/ktx/images/btn_print_blue.gif" alt="프린트버튼">
 			</button>
 			</p>
-			<span class="bg_line01"><img src="http://localhost:9000/korail/images/img_line_print.png" alt="라인"></span>
+			<span class="bg_line01"><img src="http://localhost:9000/ktx/images/img_line_print.png" alt="라인"></span>
 		</div>
 		<div class="receiptWrap">
 			<div class="head_top">
@@ -32,7 +32,7 @@
 					<li>상호 : (주)중앙고속</li>
 					<li>사업자 번호 : 219-81-01636</li>
 				</ul>
-				<span class="bg_dashed"><img src="http://localhost:9000/korail/images/bg_dashed.png"></span>
+				<span class="bg_dashed"><img src="http://localhost:9000/ktx/images/bg_dashed.png"></span>
 			</div>
 			<div class="box_dot">
 				<ul>
@@ -46,7 +46,7 @@
 					<li>취소수수료<span class="taR fr">0원</span></li>
 					<li class="txt_strong">결제금액<span class="taR fr">11,800원</span></li>
 				</ul>
-				<span class="bg_dashed"><img src="http://localhost:9000/korail/images/bg_dashed.png"></span>
+				<span class="bg_dashed"><img src="http://localhost:9000/ktx/images/bg_dashed.png"></span>
 			</div>
 			<div class="box_row">
 				<ul>

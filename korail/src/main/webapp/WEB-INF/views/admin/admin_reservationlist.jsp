@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/reservationlist.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
-<script src="http://localhost:9000/ktx/js/reservation_jquery.js"></script>
+<!-- <script src="http://localhost:9000/ktx/js/reservation_jquery.js"></script> -->
 
 <style>
 </style>
@@ -19,29 +19,21 @@
 	<div id="contentWrap">
 		<div class="title_wrap_checkTicketingT">
 			<div class="title_wrap">
-				<div class="util">
-					<ul class="clfix">
-						<li class="account">sohyun990502@naver.com</li>
-						<li class="logout"><a href="#"><span>로그아웃</span></a></li>
-						<li><a href="#">마이페이지</a></li>
-						<li><a href="#">결제내역조회</a></li>
-						<li><a href="#">사이트맵</a></li>
-					</ul>
-				</div>
-				<!-- <a href="#" class="back">back</a>
-				<a href="#" class="mo_toggle">메뉴</a> -->
-				<h2>예매 관리</h2>
+				<jsp:include page="../header.jsp"></jsp:include>
+				<h2>예매 리스트</h2>
 			</div>
 		</div>
 		<!-- ---------------------content---------------------------->		
 		<div id="admin_reservationlist">
 			<table>
 			  <tr class="admin_table_title">
+			  	<th>예매일자</th>
 			    <th>출발역</th>
 			    <th>도착역</th>
 			    <th>출발일</th>
 			    <th>출발시간</th>
-			    <th>소요시간</th>
+			    <th>도착시간</th>
+			    <!-- <th>소요시간</th> -->
 			    <th>운임</th>
 			    <th>예매번호</th>
 			    <th>열차번호</th>
@@ -51,16 +43,18 @@
 			   <c:forEach var="ovo" items="${orderList}">
 			      <c:if test="${ovo.cancel == 0}">
 			        <tr class="admin_reserv" id="${ovo.reservnum}">
+			          <td>${ovo.rdate}</td>
 			          <td>${ovo.sstation}</td>
 			          <td>${ovo.dstation}</td>
 			          <td>${ovo.depPlandTime}</td>
 			          <td>${ovo.stime}</td>
-			          <td>${ovo.runtime}</td>
+			          <td>${ovo.dtime}</td>
+			          <%-- <td>${ovo.runtime}</td> --%>
 			          <td>${ovo.price}</td>
 			          <td class="admin_reservnum">${ovo.reservnum}</td>
 			          <td>${ovo.trainnum}</td>
-			          <td>${ovo.charnum}</td>
-			          <td>${ovo.mid}</td>
+			          <td>${ovo.chairnum}</td>
+			          <td>${ovo.id}</td>
 			        </tr>
 			      </c:if>
 			    </c:forEach>
@@ -70,6 +64,7 @@
 		  	</div>
 		  	<button></button>
 		</div>
+		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
 </body>
 </html>

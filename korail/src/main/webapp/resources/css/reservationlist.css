@@ -1701,11 +1701,13 @@ fieldset{
 #trainList{
 	text-align:center;
 	margin:30px;
+	font-size:15pt;
 }
 
 #testTable {
 	border-collapse: collapse; /* 테이블 셀 경계를 합칩니다. */
     width: 100%;
+    
 }
 #testTable th, #testTable td {
     border: 1px solid black; /* 셀 경계를 표시합니다. */
@@ -1715,6 +1717,7 @@ fieldset{
 #testTable th {
     background-color: #f2f2f2; /* 헤더 셀 배경색을 지정합니다. */
  }
+ 
 
 
 /******************************

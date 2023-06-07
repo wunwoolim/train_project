@@ -141,16 +141,16 @@ public class ReservationlistController {
 	
 	
 	/**
-	 * admin_updatetable.do - 예매취소 전체 리스트 - 관리자페이지 
+	 * reservation_updatetime.do - 예매변경 2번째 페이지 (배차조회)
 	 */
-	@RequestMapping(value="/reservation_updatetable.do", method=RequestMethod.GET)
-	public String reservation_updatetable() {
+	@RequestMapping(value="/reservation_updatetime.do", method=RequestMethod.GET)
+	public String reservation_updatetime() {
 		
-		return "/reservationlist/reservation_updatetable";
+		return "/reservationlist/reservation_updatetime";
 	} 
 	
 	/**
-	 * admin_updatetable.do - 예매취소 전체 리스트 - 관리자페이지 
+	 * reservation_login.do - 예매확인 회원/비회원 로그인 페이지
 	 */
 	@RequestMapping(value="/reservation_login.do", method=RequestMethod.GET)
 	public String reservation_login() {

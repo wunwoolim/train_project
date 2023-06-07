@@ -18,14 +18,14 @@
 		</ul>
 		<p class="btnBox">
 			<button type="button" onclick="window.print();" class="homeT_btn">
-				<img src="http://localhost:9000/korail/images/btn_print_blue.gif" alt="프린트버튼">
+				<img src="http://localhost:9000/ktx/images/btn_print_blue.gif" alt="프린트버튼">
 			</button>
 		</p>
 	</div>		
 	<div class="print_body">
-		<span class="bg_line01"><img src="http://localhost:9000/korail/images/img_line_print.png" alt="라인"></span>
+		<span class="bg_line01"><img src="http://localhost:9000/ktx/images/img_line_print.png" alt="라인"></span>
 		<div class="ticketArea">
-			<img src="http://localhost:9000/korail/images/img_ticket.gif" alt="티켓" class="img_ticket">
+			<img src="http://localhost:9000/ktx/images/img_ticket.gif" alt="티켓" class="img_ticket">
 			<strong class="receipt_tit">ktx 홈티켓</strong>
 			<div class="box_section sec01">
 				<ul>
@@ -95,10 +95,10 @@
 		</div>
 	</div>
 	<div class="print_footer">
-		<span class="bg_line01"><img src="http://localhost:9000/korail/images/img_line_print.png" alt="라인"></span>
+		<span class="bg_line01"><img src="http://localhost:9000/ktx/images/img_line_print.png" alt="라인"></span>
 		<p class="homticket_p01">• 본 승차권을 위·변조 및 부정 사용하여 적발될 경우, 형법 제214조, 제231조, 제236조에 의거 형사 고발조치 됩니다.</p>
 		<p class="homticket_p02">• 승차시 승차권 내용 및 QR코드가 인쇄된 상단부(절취선 기준)를 소지하시고 탑승하시기 바랍니다.</p>
-		<span class="bg_line04"><img src="http://localhost:9000/korail/images/img_line_print.png" alt="라인"></span>
+		<span class="bg_line04"><img src="http://localhost:9000/ktx/images/img_line_print.png" alt="라인"></span>
 	</div>
 </div>
 </body>
