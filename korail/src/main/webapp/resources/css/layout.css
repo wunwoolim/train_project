@@ -19,7 +19,7 @@ div {
 }
 
 body {
-	background: url(../images/common/loading.gif) no-repeat -9999px -9999px;
+	background: url(../images/loading.gif) no-repeat -9999px -9999px;
 }
 
 .sub #wrap:before {
@@ -44,17 +44,6 @@ body {
 	clear: both;
 }
 
-#gnb h1 {
-	height: 110px;
-	padding-top: 44px;
-	padding-top: 28px;
-}
-
-#gnb h1 a {
-	display: block;
-	font-size: 0;
-}
-
 .myAccount {
 	top: -13px;
 	position: relative;
@@ -67,7 +56,7 @@ body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, thead,
 	padding: 0;
 	font-weight: normal;
 	color: #666;
-	font-family: 'Malgun Gothic', '맑은고딕', sans-serif;
+	font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
 	font-size: 12px;
 	line-height: 1.5;
 	letter-spacing: -0.03em;
@@ -112,15 +101,7 @@ ul {
 	padding: 9px;
 }
 
-#gnb h1 a {
-	background: url(../images/common/logo_pc.png) center 0 no-repeat;
-	padding-top: 56px;
-	font-size: 13px;
-	font-weight: bold;
-	text-align: center;
-	display: block;
-	max-width: 219px;
-}
+
 
 a {
 	text-decoration: none;
@@ -155,7 +136,7 @@ body, input, select, div, textarea, table, button {
 
 .mypage_title {
 	height: 512px;
-	background: url(../images/page/visual_pc_mypage.jpg) 50% 0 no-repeat;
+	background: url(../images/visual_pc_mypage.jpg) 50% 0 no-repeat;
 	background-size: cover;
 }
 
@@ -249,7 +230,7 @@ body, input, select, div, textarea, table, button {
 
 .mypage_title {
 	height: 512px;
-	background: url(../images/page/visual_pc_mypage.jpg) 50% 0 no-repeat;
+	background: url(../images/visual_pc_mypage.jpg) 50% 0 no-repeat;
 	background-size: cover;
 }
 
@@ -292,7 +273,7 @@ option {
 }
 
 .util .selectric .button {
-	background-image: url(/images/common/bu_selectArrowW.png);
+	background-image: url(../images/bu_selectArrowW.png);
 }
 
 .selectric .button {
@@ -303,7 +284,7 @@ option {
 	width: 11px;
 	height: 6px;
 	margin-top: -3px;
-	background: url(/images/common/bu_selectArrow.png) 0 0 no-repeat;
+	background: url(../images/cbu_selectArrow.png) 0 0 no-repeat;
 	text-indent: -99999px;
 }
 
@@ -370,7 +351,7 @@ ul.myPage_list {
 }
 
 .myPage_list li.history .row .txt_myMenu {
-	background: url(../images/page/bg_myPage_list01.png) 50% 0 no-repeat;
+	background: url(../images/bg_myPage_list01.png) 50% 0 no-repeat;
 }
 
 .myPage_list li .row .txt_myMenu {
@@ -401,15 +382,15 @@ a:hover, a:active, a:focus {
 }
 
 .myPage_list li.additional .row .txt_myMenu {
-	background: url(../images/page/bg_myPage_list02.png) 50% 0 no-repeat;
+	background: url(../images/bg_myPage_list02.png) 50% 0 no-repeat;
 }
 
 .myPage_list li.mileage .row .txt_myMenu {
-	background: url(../images/page/bg_myPage_list03.png) 50% 0 no-repeat;
+	background: url(../images/bg_myPage_list03.png) 50% 0 no-repeat;
 }
 
 .myPage_list li.payment .row .txt_myMenu {
-	background: url(../images/page/bg_myPage_list04.png) 50% 0 no-repeat;
+	background: url(../images/bg_myPage_list04.png) 50% 0 no-repeat;
 }
 
 .ico_mileage {
@@ -417,7 +398,7 @@ a:hover, a:active, a:focus {
 	width: 18px;
 	height: 14px;
 	margin-left: 5px;
-	background: url(../images/page/ico_premium_s_on.png) 0 0 no-repeat;
+	background: url(../images/ico_premium_s_on.png) 0 0 no-repeat;
 	vertical-align: middle;
 	text-indent: -9999px;
 }
@@ -465,7 +446,7 @@ strong {
 }
 
 .btn_sm_link_blue {
-	background: url(../images/common/bg_btnCancel_small.png) 100% 50%
+	background: url(../images/bg_btnCancel_small.png) 100% 50%
 		no-repeat;
 	background-size: 7px auto;
 	text-decoration: underline;
@@ -615,7 +596,7 @@ p.noti {
 
 .btn_sm_link_white {
 	padding-right: 14px;
-	background: url(../images/common/bg_btnLink_small.png) 100% 50%
+	background: url(../images/bg_btnLink_small.png) 100% 50%
 		no-repeat;
 	background-size: 7px auto;
 	text-decoration: underline;
@@ -630,7 +611,7 @@ p.noti {
 }
 
 .depth1 li a {
-	font-family: 'Malgun Gothic', '맑은고딕', sans-serif;
+	font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
 	font-weight: 500;
 	font-size: 13px;
 }

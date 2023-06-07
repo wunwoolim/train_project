@@ -25,8 +25,8 @@
 				<p class="foot_copy">COPYRIGHT© 2016. WWW.KOBUS.CO.KR . ALL RIGHT RESERVED</p>
 				
 				<p class="foot_com">
-					<a href="/ugd/bustrop/Bustrop.do"><img src="./images/common/sfoot_com1.png" alt="KOBUS 전국고속버스운송사업조합"></a> 
-					<a href="/ugd/trmlbizr/Trmlbizr.do"><img src="./images/common/sfoot_com2.png" alt="전국여객자동차터미널사업자협회"></a>
+					<a href="/ugd/bustrop/Bustrop.do"><img src="http://localhost:9000/ktx/images/sfoot_com1.png" alt="KOBUS 전국고속버스운송사업조합"></a> 
+					<a href="/ugd/trmlbizr/Trmlbizr.do"><img src="http://localhost:9000/ktx/images/sfoot_com2.png" alt="전국여객자동차터미널사업자협회"></a>
 				</p>
 			</div>
 		</div>
