@@ -35,12 +35,8 @@ $(document).ready(function() {
 				} 
 		initAjax(route, rno, station, 'c');
 		
-		});	//onClick
-					
-		
-		
-		
-		
+		});	//onClick	
+	
 		function initAjax(category, rno, station, type) {
 			$.ajax({
 				url : "train_route_info_json.do?category="+category+"&rno="+rno+"&station="+station+"&type="+type,
@@ -99,9 +95,11 @@ $(document).ready(function() {
 							count = 0;
 						}
 						$(".title").text(arr[count]);
-						var sname = arr[count];
+						var station = arr[count];
+						var route = 
+						alert(station);
 						//initAjax(arr[count]);
-						initAjax(route, rno, sname, 's');
+						initAjax(route, rno, station, 's');
 					});		
 						
 					
@@ -112,6 +110,8 @@ $(document).ready(function() {
 							count = 2;
 						}
 						$(".title").text(arr[count]);
+						var sname = arr[count];
+						initAjax(route, rno, station, 's');
 					});	
 			
 				}	//success
