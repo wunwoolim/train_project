@@ -13,7 +13,7 @@ $(document).ready(function(){
 				count++;
 				seat +="<div class='box'>";
 			 	seat +="<span class='seatBox'>";
-				seat +="<img src='http://localhost:9000/ktx/images/seat_p.gif'>";
+				seat +="<img src='http://localhost:9000/ktx/images/seat_p.gif' id='chairImg' style='opacity: 0.5;'>";
 				seat +=  count 
 				seat +="</span></div>";
 		
@@ -28,6 +28,7 @@ $(document).ready(function(){
 	//좌석 선택 이벤트
 	
 	$(".box").click(function(){
+		
 		//alert($("#chldCnt").text() + "호차 " + $(this).text()+"좌석");
 		let seatNum = $("#chldCnt").text() + "호 " + $(this).text()+"좌석";
 		$("#seatNum").val(seatNum);
@@ -47,6 +48,15 @@ $(document).ready(function(){
 	});
 	
 	
+	
+	//모달창의 로그인 비로그인 클릭시 이벤트 - 예매 변경
+	$("#btn_nonmember_update").click(function(){
+		updateseatForm.submit();
+	});
+	
+	$("#btn_confirm_update").click(function(){
+		updateseatForm.submit();
+	});
 	
 	
 	
@@ -126,8 +136,6 @@ $(document).ready(function(){
 		$("#btn_nonmember").click(function(){
 			//window.location.href = "http://localhost:9000/ktx/train_reservation_stplcfmpym.do";
 		});
-	  
-	  
 	  
 	  
 	  

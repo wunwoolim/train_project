@@ -11,9 +11,9 @@
 <script src="http://localhost:9000/ktx/js/alcnsrch.js"></script>
 <script src="http://localhost:9000/ktx/js/reservation_jquery.js"></script>
 <script>
-let startId = "${sessionScope.rvo.startId}";
-let endId = "${sessionScope.rvo.endId}";
-let rtime = "${sessionScope.rvo.rtime}";
+let startId = "${ovo.depPlaceId}";
+let endId = "${ovo.arrPlaceId}";
+let rtime = "${ovo.depPlandTime}";
 
 
 let url ="https://apis.data.go.kr/1613000/TrainInfoService/getStrtpntAlocFndTrainInfo?serviceKey=fia82dW58XZekM3fyfsYQjw24d3TDN%2FOCdtbCQWjlYjltamNE5UGs23S0OiE%2BdghuBeQ%2Bt%2FLjncovmHroyfk1Q%3D%3D&pageNo=1&numOfRows=10&_type=json&depPlaceId=" + startId +"&arrPlaceId="+ endId +"&depPlandTime="+ rtime + "&trainGradeCode=00";
@@ -85,7 +85,7 @@ $.getJSON(url, function(citys){
 	    $("#rtimes").val(rtimes);
 		
 		
-		 testForm.submit();
+		updateForm.submit();
 		
 	});
 	
@@ -187,7 +187,7 @@ $.getJSON(url, function(citys){
 						<div class="bustime_wrap">
 							
 						</div>
-						<form name='testForm' id='testForm' action='train_reservation_satschc.do' method='post'>
+						<form name='updateForm' id='updateForm' action='reservation_updatechair.do' method='post'>
 							<input type="hidden" name="depplacename" id="depplacename">
 							<input type="hidden" name="arrplacename" id="arrplacename">
 							<input type="hidden" name="start_date" id="start_date">
@@ -196,9 +196,7 @@ $.getJSON(url, function(citys){
 							<input type="hidden" name="trainno" id="trainno">
 							<input type="hidden" name="adultcharge" id="adultcharge">
 							<input type="hidden" name="rtimes" id="rtimes">
-						
 						</form>
-						
 					</div>
 				</div>
 						<!-- //우측 detailBox -->

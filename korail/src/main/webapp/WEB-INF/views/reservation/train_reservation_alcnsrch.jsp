@@ -199,7 +199,6 @@ $.getJSON(url, function(citys){
 							<input type="hidden" name="trainno" id="trainno">
 							<input type="hidden" name="adultcharge" id="adultcharge">
 							<input type="hidden" name="rtimes" id="rtimes">
-						
 						</form>
 						
 					</div>

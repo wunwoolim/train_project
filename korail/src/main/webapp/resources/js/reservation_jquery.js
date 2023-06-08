@@ -208,26 +208,26 @@ $(document).ready(function(){
     	
 	    $(".admin_reserv").click(function(event) {
 				
-				var id=$(this).attr("id");
-				var reservnum = $("#"+id+" .admin_reservnum").text();
-				$("#admin_input").val(reservnum);
+			var id=$(this).attr("id");
+			var reservnum = $("#"+id+" .admin_reservnum").text();
+			$("#admin_input").val(reservnum);
 				
 	    	$(".admin_reserv.selected").removeClass("selected");
     			
-    			// 클릭한 행에 선택된 클래스 추가
-    			$(this).addClass("selected");
-    
-    			// 클릭한 행에 CSS 스타일 적용
-    			$(this).css("background-color", "#D7F1FA");
-    
-	    		// 이전에 클릭한 행 css초기화
-    			 if (previousRow !== null) {
-     			 	previousRow.removeClass("selected");
-    			 	previousRow.css("background-color", "");
-    			}
-    			
-    			// 이전에 선택된 행 업데이트
-   				 previousRow = $(this);
+			// 클릭한 행에 선택된 클래스 추가
+			$(this).addClass("selected");
+
+			// 클릭한 행에 CSS 스타일 적용
+			$(this).css("background-color", "#D7F1FA");
+
+    		// 이전에 클릭한 행 css초기화
+			 if (previousRow !== null) {
+ 			 	previousRow.removeClass("selected");
+			 	previousRow.css("background-color", "");
+			}
+			
+			// 이전에 선택된 행 업데이트
+			 previousRow = $(this);
     			
    				
   		});
@@ -239,10 +239,11 @@ $(document).ready(function(){
 		
 		event.preventDefault();
 
-	   	 if ($("#clickVal_reservnum").val() != "") {
-	        var reservnum = $("#clickVal_reservnum").val();
-	        var url = "reservation_receipt.do?reservnum=" + reservnum;
+	   	 if ($("#update_reservnum").text() != "") {
+	        var reservnum = $("#update_reservnum").text();
+	        var url = "reservation_updatetime.do?reservnum=" + reservnum;
 	        window.location.href = url;
+	        
 	   	 } else {
 	        
 	  	 }

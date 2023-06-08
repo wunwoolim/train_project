@@ -83,6 +83,9 @@ public class ReservationController {
 			String depplacename, String arrplacename, String start_date, String end_date, String traingradename, String trainno, String adultcharge, String rtimes) {
 		//ModelAndView model = new ModelAndView();
 		
+		System.out.println(depplacename);
+		
+		
 		ReservationVo rvo = (ReservationVo)session.getAttribute("rvo");
 		rvo.setDepplacename(depplacename);
 		rvo.setArrplacename(arrplacename);

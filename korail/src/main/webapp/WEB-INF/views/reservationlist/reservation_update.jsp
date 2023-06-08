@@ -77,8 +77,7 @@
 							<span class="roundBox departure">${ovo.sstation}</span>
 							<span class="roundBox arrive">${ovo.dstation}</span>
 						</div>
-						<span class="hidden-span" id="updateDepPlaceId">${ovo.depPlaceId}</span>
-						<span class="hidden-span" id="updateArrPlaceId">${ovo.arrPlaceId}</span>
+						<span class="hidden-span" id="update_reservnum">${ovo.reservnum}</span>
 					</div>
 					<div class="routeArea route_select">
 						<div class="box_inputForm click_box inselect" id="updatetimebox">
@@ -127,7 +126,7 @@
 			<!-- <input type="text" id="update_depPlandTime">
 			<input type="text" id="update_depPlaceId">
 			<input type="text" id="update_arrPlaceId"> -->
-			<a href="http://localhost:9000/ktx/reservation_updatetable.do" class="btnL btn_confirm" id="reserv_search">조회하기</a>
+			<a href="http://localhost:9000/ktx/reservation_updatetime.do" class="btnL btn_confirm" id="reserv_search">조회하기</a>
 		</p>
 		<div class="section">
 			<ul class="desc_list">
