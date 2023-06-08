@@ -14,27 +14,7 @@
 
 <div id="contentWrap">
 <div class= "title_wrap loginT">
-			<div class="util">
-			
-			<ul>
-			<li>
-			<a href="http://localhost:9000/train_project/login.do"><span>로그인</span></a>
-			</li>
-			<li>
-			<a href="http://localhost:9000/train_project/join.do"><span>회원가입</span></a>
-			</li>
-			<li>
-			<a href="#"><span>마이페이지</span></a>
-			</li>
-			
-			<li>
-			<a href="#"><span>결제내역조회</span></a>
-			</li>
-			<li>
-			<a href="#"><span>사이트맵</span></a>
-			</li>
-			 </ul>
-			 </div>
+			<jsp:include page="../header.jsp"></jsp:include>
 			 <h2 class="login_ti">회원가입</h2>
 		 </div>	
 	
@@ -63,6 +43,7 @@
 	</ul>	
 					
 	</form>
+		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
 	</div>
 

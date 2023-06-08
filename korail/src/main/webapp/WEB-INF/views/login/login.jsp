@@ -20,34 +20,9 @@
 <div id="contentWrap">
 <!--header  -->
 		<div class= "title_wrap loginT">
-			<div class="util">
-			
-			<ul>
-			<li>
-			<a href="http://localhost:9000/train_project/login.do"><span>로그인</span></a>
-			</li>
-			<li>
-			<a href="http://localhost:9000/train_project/join.do"><span>회원가입</span></a>
-			</li>
-			<li>
-			<a href="#"><span>마이페이지</span></a>
-			</li>
-			
-			<li>
-			<a href="#"><span>결제내역조회</span></a>
-			</li>
-			<li>
-			<a href="#"><span>사이트맵</span></a>
-			</li>
-			 </ul>
-			 </div>
+			<jsp:include page="../header.jsp"></jsp:include>
 			 <h2 class= "login_ti" >로그인</h2>
 		 </div>	
-	
-	
-	
-	
-	
 	<!--body  -->
 	
 	<div class ="page">
@@ -84,7 +59,7 @@
 				</div>
 					</p>
 				<div class="box_find">
-					<a href ="http://localhost:9000/train_project/find_id1.do"><span> 아이디 찾기</span></a>
+					<a href ="http://localhost:9000/train_project/find_id1.do"><span class ="find1"> 아이디 찾기</span></a>
 					<a href ="#"> <span>비밀번호 찾기</span></a>
 				</div>
 				
@@ -97,7 +72,7 @@
 		</div>
 	
 	<!--footer  -->
-
+	<jsp:include page="../footer.jsp"></jsp:include>
 
 	</div>
 </div>

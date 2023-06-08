@@ -22,7 +22,7 @@ padding-left:50px;
 }
 
 .title_wrap.loginT{
-	background : url("http://localhost:9000/train_project/images/visual_joinT_bg.gif")center 0 no-repeat;
+	background : url("http://localhost:9000/ktx/images/visual_joinT_bg.gif")center 0 no-repeat;
 	background-size: cover;
 	color:white;
 	font-size: 34px;
@@ -89,7 +89,6 @@ list-style:none;
 }
 .v_noti	h2 {
 	
-	border:1px solid blue;
 	text-align:center;
 	    font-size: 30px;
 	}
@@ -118,6 +117,7 @@ list-style:none;
   background:#66CCFF;
   border:none;
   border-radius: 5px;
+  margin: 20px;
 }
 .loginBoth:last-child{
 	text-align:center;

@@ -7,6 +7,34 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/admin_member.css">
+<link rel="stylesheet" href="http://localhost:9000/ktx/css/am-pagination.css">
+<script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
+<script src="http://localhost:9000/ktx/js/am-pagination.js"></script>
+<script>
+	$(document).ready(function(){
+		var pager = jQuery('#ampaginationsm').pagination({
+		
+		    maxSize: '${maxSize}',	    		// max page size
+		    totals: '${totals}',	// total pages	
+		    page: '${page}',		// initial page		
+		    pageSize: '${pageSize}',			// max number items per page
+		
+		    // custom labels		
+		    lastText: '&raquo;&raquo;', 		
+		    firstText: '&laquo;&laquo;',		
+		    prevText: '&laquo;',		
+		    nextText: '&raquo;',
+				     
+		    btnSize:'sm'	// 'sm'  or 'lg'		
+		});
+		
+		jQuery('#ampaginationsm').on('am.pagination.change',function(e){
+			   jQuery('.showlabelsm').text('The selected page no: '+e.page);
+	           $(location).attr('href', "http://localhost:9000/mycgv_jsp/board_list.do?page="+e.page);         
+	    });
+		
+ 	});
+</script> 
 </head>
 <body>
 <div>
@@ -14,27 +42,7 @@
 <div id="contentWrap">
 <!--header  -->
 		<div class= "title_wrap loginT">
-			<div class="util">
-			
-			<ul>
-			<li>
-			<a href="http://localhost:9000/ktx/login.do"><span>로그인</span></a>
-			</li>
-			<li>
-			<a href="http://localhost:9000/ktx/join.do"><span>회원가입</span></a>
-			</li>
-			<li>
-			<a href="#"><span>마이페이지</span></a>
-			</li>
-			
-			<li>
-			<a href="#"><span>결제내역조회</span></a>
-			</li>
-			<li>
-			<a href="#"><span>사이트맵</span></a>
-			</li>
-			 </ul>
-			 </div>
+		<jsp:include page="../header.jsp"></jsp:include>
 			 <h2 class= "login_ti" >로그인</h2>
 		 </div>	
 <!--contents  -->
@@ -67,11 +75,19 @@
 				</tr>	
 				</c:forEach>
 				<tr>
-					<td colspan="5"><div id="ampaginationsm"></div></td>
+					<td colspan="9" class="paging"><div id="ampaginationsm" class="paging"></div></td>
 				</tr>	
 			</table>
 			
-			
+			<form action ="memberList.do" class ="mem_search">
+				<select name ="ch1" class ="search_put">
+					<option value ="custname">이름</option>
+					<option value ="id">아이디</option>
+				</select>
+				<input type ="text" name ="ch2" class ="search_put1">
+				<input type = "submit" class ="search_put" value ="검색하기">
+			</form>		
+				
 			
 		</section>
 	</div>
@@ -79,7 +95,7 @@
 
 
 
-
+<jsp:include page="../footer.jsp"></jsp:include>
 </div>
 </div>
 </body>

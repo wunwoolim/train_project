@@ -41,5 +41,4 @@ public class Admin_memberController {
 		return model;
 	}
 		
-	
 }

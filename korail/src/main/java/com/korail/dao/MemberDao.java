@@ -18,6 +18,15 @@ public class MemberDao implements MyktxDao{
 	
 	
 	/**
+	 * 회원관리 검색
+	 */
+	
+	public List<MemberVo> memberSelectAll(MemberVo membervo) {
+		return sqlSession.selectList("member-mapper.memberSelectAll", membervo);
+	}
+	
+	
+	/**
 	 * select - 회원리스트
 	 */
 	@Override

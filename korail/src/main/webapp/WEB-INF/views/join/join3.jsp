@@ -15,40 +15,20 @@
 <div id="contentWrap">
 <!--header  -->
 		<div class= "title_wrap loginT">
-			<div class="util">
-			
-			<ul>
-			<li>
-			<a href="http://localhost:9000/train_project/login.do"><span>로그인</span></a>
-			</li>
-			<li>
-			<a href="http://localhost:9000/train_project/join.do"><span>회원가입</span></a>
-			</li>
-			<li>
-			<a href="#"><span>마이페이지</span></a>
-			</li>
-			
-			<li>
-			<a href="#"><span>결제내역조회</span></a>
-			</li>
-			<li>
-			<a href="#"><span>사이트맵</span></a>
-			</li>
-			 </ul>
-			 </div>
+			<jsp:include page="../header.jsp"></jsp:include>
 			 <h2 class= "login_ti" >회원가입</h2>
 		 </div>	
 	
 <div class="page">
 	<div class ="wrapper">
-		<h1> 회원정보를 입력해주세요</h2>
+		<h1> 회원정보를 입력해주세요</h1>
 		
 		<form name ="joinForm"  action ="join_proc.do"  method ="post">
 		<div class ="join_bo">
 		<ul class="join_list">
 		<li>
 		<!-- <div class ="join_1" id="info_id"> -->
-			<div>	<p>아이디</p> </div>
+			<div>	<p>아이디</p><span id="idcheck_msg"></span> </div>
 			<input type="text" id ="id"  class ="join_input1" name ="id" placeholder ="아이디입력(6~20자)"/>
 			<button type="button" class ="check_btn" id="btnIdCheck" >중복체크</button> 
 			<span id="idcheck_msg"></span>
@@ -57,11 +37,12 @@
 		
 		<li>
 		<div>	<p>비밀번호</p> </div>
-			<input type="text" class="join_input" name ="pass" id ="pass" placeholder ="비밀번호 입력(문자,숫자,특수문자 포함 8~20자)">
+			<input type="text" class="join_input" name ="pass" id ="pass" 
+			aceholder ="비밀번호 입력(문자,숫자,특수문자 포함 8~20자)">
 		</li>
 		<li>	
 		<div>	<p>비밀번호 확인</p> </div>
-			<input type="text" class="join_input" name ="pass" id ="cpass" placeholder ="비밀번호 재입력">
+			<input type="text" class="join_input" name ="cpass" id ="cpass" placeholder ="비밀번호 재입력">
 			 <span id="cmsg"></span>
 		</li>
 		<li>
@@ -102,11 +83,12 @@
 		<li>		
 				<button type="button" id ="btnJoin">  회원가입</button>
 		</li>	
-		</div>
 				</ul>
+		</div>
 				</form>
 			</div>
 		</div>
+		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
 	</div>
 </body>

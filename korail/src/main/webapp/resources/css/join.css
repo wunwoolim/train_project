@@ -22,7 +22,7 @@ padding-left:50px;
 }
 
 .title_wrap.loginT{
-	background : url("http://localhost:9000/train_project/images/visual_joinT_bg.gif")center 0 no-repeat;
+	background : url("http://localhost:9000/ktx/images/visual_joinT_bg.gif")center 0 no-repeat;
 	background-size: cover;
 	color:white;
 	font-size: 34px;

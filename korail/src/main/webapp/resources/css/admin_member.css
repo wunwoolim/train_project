@@ -22,7 +22,7 @@ padding-left:50px;
 }
 
 .title_wrap.loginT{
-	background : url("http://localhost:9000/train_project/images/visual_joinT_bg.gif")center 0 no-repeat;
+	background : url("http://localhost:9000/ktx/images/visual_joinT_bg.gif")center 0 no-repeat;
 	background-size: cover;
 	color:white;
 	font-size: 34px;
@@ -91,8 +91,30 @@ list-style:none;
 
 
 .amem_table{
+	    border: 1px solid black;
+    width: 70%;
+    height: 300px;
+    text-align: center;
+}
+.amem_table tr{
 	border:1px solid black;
 }
-.amem_table th, td{
-	border:1px solid black;
+.mem_search{
+	    width: 	 650px;
+	    text-align: center;
+	    margin-left: 250px;
+	    margin-top: 30px;
+}
+.search_put{
+	height: 30px;
+	margin:10px;
+	width:100px;
+}
+.search_put1{
+	height: 30px;
+	margin:10px;
+	width: 250px;
+}
+.paging{
+height:	30px;
 }

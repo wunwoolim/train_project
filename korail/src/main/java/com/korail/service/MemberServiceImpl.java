@@ -14,12 +14,16 @@ public class MemberServiceImpl implements  MemberService{
 
 	@Autowired
 	private MemberDao memberDao;
-	
-	/* @Override */
 	/*
-	 * public int getTotalRowCount() { MemberDao memberDao = new MemberDao(); return
-	 * memberDao.totalRowCount(); }
+	 * @Override public int getTotalRowCount() { MemberDao memberDao = new
+	 * MemberDao(); return memberDao.totalRowCount(); }
 	 */
+	
+	
+	
+	
+	
+	
 	
 	@Override
 	public ArrayList<MemberVo> getList(int startCount, int endCount){
@@ -48,4 +52,5 @@ public class MemberServiceImpl implements  MemberService{
 	 public int getLoginResult(MemberVo memberVo) {
 		 return memberDao.loginCheck(memberVo); 
 	 }
+	 
 }
