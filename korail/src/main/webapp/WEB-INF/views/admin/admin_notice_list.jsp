@@ -16,7 +16,7 @@
 	<div id="contentWrap">
 	<div class="title-wrap">
 		<jsp:include page="../header.jsp"></jsp:include>
-	<h2 class="title">관리자 - 공지사항</h2>
+	<h2 class="title_station">관리자 - 공지사항</h2>
 	</div>
 	<table class="notice_list">
 		<tr>
@@ -27,19 +27,19 @@
 		</tr>
 		<tr>
 			<td>1</td>
-			<td><a href="admin_notice_content.do">KTX 공지사항 입니다.</a></td>
+			<td><a href="http://localhost:9000/ktx/admin_notice_content.do">KTX 공지사항 입니다.</a></td>
 			<td>1000</td>
 			<td>2023-05-18</td>
 		</tr>
 		<tr>
 			<td colspan="4">
 			<div class="button">
-				<a href="admin_notice_write.do" class="btn">등록하기</a>
+				<a href="http://localhost:9000/ktx/admin_notice_write.do" class="btn">등록하기</a>
 			</div>
 			</td>
 		</tr>
 	</table>
-	</div>
 	<jsp:include page="../footer.jsp"></jsp:include>
+	</div>
 </body>
 </html>

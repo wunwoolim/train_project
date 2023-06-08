@@ -9,11 +9,11 @@
 					<head>
 						<meta charset="UTF-8">
 						<title>기차역 상세 정보</title>
-						<script src="http://localhost:9000/train_project/js/jquery-3.6.4.min.js"></script>
-						<script src="http://localhost:9000/train_project/js/min.js"></script>
+						<script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
+						<script src="http://localhost:9000/ktx/js/min.js"></script>
 						<script type="text/javascript"
 							src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6c229bd14220c7cc4fa6edf4d24c1d9e"></script>
-						<link rel="stylesheet" href="http://localhost:9000/train_project/css/min.css">
+						<link rel="stylesheet" href="http://localhost:9000/ktx/css/min.css">
 					</head>
 
 					<body>
@@ -25,7 +25,7 @@
 								<div class="title-background">
 									<jsp:include page="../header.jsp"></jsp:include>
 									
-									<h2 class="title">KTX역</h2>
+									<h2 class="title_station">KTX역</h2>
 								</div>
 							</div>
 							
@@ -38,7 +38,7 @@
 										<li><span class="underline" id="kyeongjeon">경전선</span></li>
 										<li><span class="underline" id="jeonla">전라선</span></li>
 										<li><span class="underline" id="kangleung">강릉선</span></li>
-										<li><span class="underline" id="joogang">중앙선</span></li>
+										<li><span class="underline" id="joongang">중앙선</span></li>
 										<li><span class="underline" id="joongbu">중부내륙선</span></li>
 									</ul>
 									<div class="line"></div>
@@ -48,9 +48,9 @@
 										<div class="station-section two-column">
 											<div class="col-left">
 												<% for(StationVo stationVo : list){ %>
-													<img src="http://localhost:9000/project/images/<%=stationVo.getClink1() %>"
+													<img src="http://localhost:9000/ktx/images/<%=stationVo.getClink1() %>"
 														class="train_category">
-													<img src="http://localhost:9000/project/images/<%=stationVo.getClink2() %>"
+													<img src="http://localhost:9000/ktx/images/<%=stationVo.getClink2() %>"
 														class="category_map">
 											</div>
 											<div class="col-right">
@@ -58,7 +58,8 @@
 													<h2 class="title">
 														<%=stationVo.getStation() %>
 													</h2>
-													<div class="container-mover">
+													<div class=
+													"container-mover">
 														<button id="before"><</button>
 														<button id="next">></button>
 													</div>

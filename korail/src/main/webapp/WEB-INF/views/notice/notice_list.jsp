@@ -34,11 +34,13 @@
 		<tr>
 			<th>번호</th>
 			<th>제목</th>
+			<th>조회수</th>
 			<th>등록일자</th>
 		</tr>
 		<tr>
 			<td>1</td>
 			<td>개인정보 처리방침 약관 개정 안내</td>
+			<td>100</td>
 			<td>2021/07/19</td>
 		</tr>
 		<tr>
@@ -46,7 +48,7 @@
 			
 		</tr>
 	</table>
-	</div>
 	<jsp:include page="../footer.jsp"></jsp:include>
+	</div>
 </body>
 </html>

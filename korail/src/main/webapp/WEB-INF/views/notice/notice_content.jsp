@@ -5,9 +5,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>공지사항 상세 내용</title>
-	<script src="http://localhost:9000/train_project/js/jquery-3.6.4.min.js"></script>
-	<script src="http://localhost:9000/train_project/js/min.js"></script>
-	<link rel="stylesheet" href="http://localhost:9000/train_project/css/min.css">
+	<script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
+	<script src="http://localhost:9000/ktx/js/min.js"></script>
+	<link rel="stylesheet" href="http://localhost:9000/ktx/css/min.css">
 </head>
 <body>
 <div class="body">
@@ -16,7 +16,7 @@
 	<div id="contentWrap">
 	<div class="title-wrap">
 		<jsp:include page="../header.jsp"></jsp:include>
-		<h2 class="title">공지사항</h2>
+		<h2 class="title_station">공지사항</h2>
 	</div>
 	<table class="notice_content">
 		<tr>
@@ -35,7 +35,7 @@
 			<td>1000</td>
 		</tr>
 		<tr>
-			<th>작성일자</th>
+			<th>등록일자</th>
 			<td>2023-05-18</td>
 		</tr>
 		<tr>
@@ -47,7 +47,7 @@
 			</td>
 		</tr>
 	</table>
-	</div>
 	<jsp:include page="../footer.jsp"></jsp:include>
+	</div>
 </body>
 </html>

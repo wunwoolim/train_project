@@ -29,17 +29,20 @@ public class TrainController {
 	
 	@RequestMapping(value="/train_route_info_json.do", method=RequestMethod.GET, produces="text/plain;charset=UTF-8")
 	@ResponseBody
-	public String train_route_info_json(String category, String rno) {
+	public String train_route_info_json(String category, String rno , String station, String type) {
+		System.out.println(category);
+		System.out.println(rno);
+		System.out.println(station);
+		System.out.println(type);
 		
 		StationDao stationDao = new StationDao();
-		
-		StationVo stationVo = stationDao.select(category, Integer.parseInt(rno));
+		StationVo stationVo = stationDao.select(category, Integer.parseInt(rno), station, type);
 		ArrayList<String> stationList = stationDao.getStationList(category);
 		
 		JsonArray station_array = new JsonArray();
-		for(String station: stationList) {
+		for(String sname: stationList) {
 			JsonObject station_list = new JsonObject();
-			station_list.addProperty("station", station);
+			station_list.addProperty("station", sname);
 			station_array.add(station_list);
 		}
 		JsonObject jlist = new JsonObject();

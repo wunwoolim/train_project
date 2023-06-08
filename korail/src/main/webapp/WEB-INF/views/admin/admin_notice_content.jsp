@@ -40,15 +40,15 @@
 		<tr>
 			<td colspan="2">
 			<div class="button">
-				<a href="admin_notice_update.jsp" class="btn">수정하기</a>
-				<a href="admin_notice_delete.jsp" class="btn">삭제하기</a>
-				<a href="admin_notice_list.jsp" class="btn">리스트</a>
-				<a href="http://localhost:9000/train_project/notice/notice_content.do" class="btn">관리자홈</a>
+				<a href="http://localhost:9000/ktx/admin_notice_update.do" class="btn">수정하기</a>
+				<a href="http://localhost:9000/ktx/admin_notice_delete.do" class="btn">삭제하기</a>
+				<a href="http://localhost:9000/ktx/admin_notice_list.do" class="btn">리스트</a>
+				<a href="#" class="btn">관리자홈</a>
 					</div>
 			</td>
 		</tr>
 	</table>
-	</div>
 	<jsp:include page="../footer.jsp"></jsp:include>
+	</div>
 </body>
 </html>

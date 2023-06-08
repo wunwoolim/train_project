@@ -8,6 +8,7 @@ body {
 	padding: 0px;
 	
 }
+
 .title-wrap {
 	width: 1700px;
 	height: 105px;
@@ -20,6 +21,13 @@ body {
 }
 
 .title {
+	text-align: center;
+	color: black;
+	font-weight: 700;
+	padding: 30px 0;
+}
+
+.title_station {
 	text-align: center;
 	color: black;
 	font-weight: 700;
@@ -447,6 +455,7 @@ h1 {
 .refund {
 	display: flex;
 	padding: 20px;
+	margin-bottom: 400px;
 }
 
 .refund .col-left {
@@ -474,6 +483,10 @@ h1 {
 	color: black;
 }
 
+.payment > ul > li:last-of-type {
+		margin-bottom: 300px;
+	}
+
 #contentWrap {
     left: 220px;
     width: calc(100% - 220px);
@@ -489,8 +502,9 @@ h1 {
 
 .notice_content {
 	width: 70%;
-	margin: auto;
+	margin: 200px auto;
 	text-align: center;
+	box-sizing: border-box;
 }
 
 .notice_write, .notice_update, .notice_delete {
@@ -509,12 +523,16 @@ h1 {
 	padding: 10px 0;
 }
 
-.notice_list {
+.notice_list, .notice-search {
 	width: 50%;
-	margin: auto;
+	margin: 200px auto;
 }
 
 .notice_list tr:last-child td {
+	border: none;
+}
+
+.notice-search tr:last-child td {
 	border: none;
 }
 
@@ -523,6 +541,7 @@ table.notice_content th {
 	color:#333;	
 	width:140px;
 	padding:10px 0;
+	border: 1px solid black;
 }
 
 .notice_list tr>td {
@@ -532,13 +551,18 @@ table.notice_content th {
 .notice_list tr:first-child>th {
 	background-color: #ddd;
 }
+.notice-search tr>td {
+	text-align: center;
+}
 
-.notice_list th, .notice_list td {
-	border-collapse: collapse;
+.notice-search tr:first-child>th {
+	background-color: #ddd;
 }
 
 .notice_content th, td {
 	border-collapse: collapse;
+	border: 1px solid black;
+	padding: 20px 0;
 }
 
 .notice_content tr:last-child td {
@@ -562,8 +586,30 @@ table.notice_content tr:last-child td button:first-child {
 	margin-right:10px;
 }
 
+.notice_write {
+	margin: 200px auto;	
+}
+
+.notice_write tr:last-child>td {
+	border: none;
+}
+
 .notice_write tr>th {
 	background-color: #ddd;
+	width: 30px;
+}
+
+.notice_update, .notice_delete {
+	margin: 200px auto;
+}
+
+.notice_update tr:last-child>td {
+	border: none;
+}
+
+.notice_update tr>th {
+	background-color: #ddd;
+	width: 30px;
 }
 
 .notice_update tr>th {

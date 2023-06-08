@@ -37,14 +37,14 @@
 				<div class="button">
 					<a href="#" class="btn">수정완료</a>
 					<a href="#" class="btn">다시쓰기</a>
-					<a href="admin_notice_content.do" class="btn">이전페이지</a>
-					<a href="admin_notice_list.do" class="btn">리스트</a>	
+					<a href="http://localhost:9000/ktx/admin_notice_content.do" class="btn">이전페이지</a>
+					<a href="http://localhost:9000/ktx/admin_notice_list.do" class="btn">리스트</a>	
 				</div>						
 				</td>				
 			</tr>
 		</table>
 	</form>
-	</div>
 	<jsp:include page="../footer.jsp"></jsp:include>
+	</div>
 </body>
 </html>

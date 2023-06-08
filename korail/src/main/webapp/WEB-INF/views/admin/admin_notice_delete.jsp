@@ -21,7 +21,7 @@
 	<form name="form-delete" action="#" method="get">
 		<table class="notice_delete">
 			<tr>
-				<td><img src="http://localhost:9000/project/images/trash.jpg" id="trash"></td>
+				<td><img src="http://localhost:9000/ktx/images/trash.jpg" id="trash"></td>
 			</tr>
 			<tr>					
 				<td>정말로 삭제 하시겠습니까?</td>
@@ -30,14 +30,14 @@
 				<td colspan="2">
 				<div class="button">
 					<a href="#" class="btn">삭제완료</a>
-					<a href="admin_notice_content.do" class="btn">이전페이지</a>
-					<a href="admin_notice_list.do" class="btn">리스트</a>		
+					<a href="http://localhost:9000/ktx/admin_notice_content.do" class="btn">이전페이지</a>
+					<a href="http://localhost:9000/ktx/admin_notice_list.do" class="btn">리스트</a>		
 						</div>					
 				</td>				
 			</tr>				
 		</table>
 	</form>
-	</div>
 	<jsp:include page="../footer.jsp"></jsp:include>
+	</div>
 </body>
 </html>
