@@ -32,6 +32,8 @@
 							<div class="train-route">
 								<nav class="route">
 									<input type="hidden" id="route_name" class="route_name" value="kyeongbu">
+									<input type="hidden" id="station_count1" value="1">
+									<input type="hidden" id="station_count2" value="2">
 									<ul>
 										<li><span class="underline" id="kyeongbu">경부선</span></li>
 										<li><span class="underline" id="honam">호남선</span></li>

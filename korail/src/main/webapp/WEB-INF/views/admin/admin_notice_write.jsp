@@ -35,8 +35,8 @@
 			<tr>
 				<td colspan="2">
 				<div class="button">
-					<a href="#" class="btn">등록완료</a>
-					<a href="#" class="btn">다시쓰기</a>
+					<button type="button" class="btn" id="finish">등록완료</button>
+					<button type="reset" class="btn" id="again">다시쓰기</button>
 					<a href="http://localhost:9000/ktx/admin_notice_list.do" class="btn">리스트</a>
 					<a href="#" class="btn">관리자홈</a>
 					</div>
