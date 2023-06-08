@@ -7,7 +7,7 @@ $(document).ready(function(){
 		$(".selectricItems").css("display","block");
 	});
 	  
-	$(".selectricScroll li").click(function(){
+	$(document).on("click", ".selectricScroll li", function(){
 		//
 		$(".selectricScroll").removeClass("selected");
 		//클래스 추가
@@ -15,8 +15,14 @@ $(document).ready(function(){
 		
 		 let selectedValue = $(this).text();
 		$("#selectric .label").text(selectedValue);
+		$(".selectricInput").val(selectedValue);
+		
+		//alert(selectedValue);
+		$(".selectricItems").css("display","none");
 		
 	});
+	
+	
 	
 	//카드 정보 입력 이벤트
 	$(".box_inputForm span").click(function(){

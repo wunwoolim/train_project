@@ -167,6 +167,8 @@ public class OrderDao extends DBConn{
 	
 	public int insert(OrderVo orderVo) {
 		
+		
+		
 		return sqlSession.insert("mapper.order.payment", orderVo);
 	}
 	
