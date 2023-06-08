@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.korail.service.NoticeService;
 import com.korail.service.PageServiceImpl;
-import com.mycgv_jsp.vo.NoticeVo;
+import com.korail.vo.NoticeVo;
 
 @Controller
 public class AdminController {
