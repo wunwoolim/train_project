@@ -2,6 +2,7 @@ package com.korail.service;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.korail.dao.OrderDao;
@@ -10,7 +11,8 @@ import com.korail.vo.OrderVo;
 @Service
 public class OrderServiceImpl implements OrderService{
 	
-	private OrderDao orderDao = new OrderDao();
+	@Autowired
+	private OrderDao orderDao;
 	
 	@Override
 	public ArrayList<OrderVo> getSelect() {
@@ -32,7 +34,8 @@ public class OrderServiceImpl implements OrderService{
 	public ArrayList<OrderVo> getOrderSelect(){
 		return orderDao.orderselect();
 	}
-
+	
+	@Override
 	public int getPayment(OrderVo orderVo) {
 		
 		return orderDao.insert(orderVo);

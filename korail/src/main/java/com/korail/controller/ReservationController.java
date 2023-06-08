@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.korail.service.CardinfoServiceImpl;
 import com.korail.service.OrderService;
+import com.korail.vo.CardinfoVo;
 import com.korail.vo.OrderVo;
 import com.korail.vo.ReservationVo;
 
@@ -18,33 +20,58 @@ public class ReservationController {
 	@Autowired
 	private OrderService orderService;
 	
+	@Autowired 
+	private CardinfoServiceImpl cardService;
 	/*
 	 * 결제 완료 페이지 
 	 */
 	@RequestMapping(value="/train_reservation_pymcfm.do", method=RequestMethod.POST)
-	public OrderVo train_reservation_pymcfm(HttpSession session,String seatNum, Integer ticketQty,String startId ,String endId,String rtime
-			,String depplacename, String arrplacename, String start_date, String end_date, String traingradename, Integer trainno, Integer adultcharge, String rtimes) {
+	public ModelAndView train_reservation_pymcfm(HttpSession session, OrderVo orderVo, CardinfoVo cardVo) {
+		ModelAndView model = new ModelAndView();
+		ReservationVo rvo = (ReservationVo)session.getAttribute("rvo");
 		
-		OrderVo orderVo = (OrderVo)session.getAttribute("rvo");
-		
-		orderVo.setSstation(depplacename);
-		orderVo.setRdate(rtime);
-		orderVo.setStime(start_date);
-		orderVo.setDtime(end_date);
-		orderVo.setDstation(arrplacename);
-		/* orderVo.setReservnum(stime); */
-		orderVo.setChairnum(seatNum);
-		/* orderVo.setId(memberId); */
-		orderVo.setDepPlaceId(startId);
-		orderVo.setArrPlaceId(endId);
-		orderVo.setDepPlandTime(rtimes);
-		/* orderVo.setCardnum(stime); */
-		orderVo.setPrice(adultcharge);
-		orderVo.setTrainnum(trainno);
-		orderVo.setTicketqty(ticketQty);
+		/*
+		 * System.out.println(rvo.getDepplacename());
+		 * System.out.println(rvo.getRtime()); System.out.println(rvo.getStart_date());
+		 * System.out.println(rvo.getEnd_date());
+		 * System.out.println(rvo.getArrplacename());
+		 * System.out.println(rvo.getSeatNum()); System.out.println(rvo.getStartId());
+		 * System.out.println(rvo.getEndId());
+		 * System.out.println(Integer.parseInt(rvo.getAdultcharge()));
+		 * System.out.println(Integer.parseInt(rvo.getTrainno()));
+		 * System.out.println(Integer.parseInt(rvo.getTicketQty()));
+		 */
+		System.out.println(cardVo.getBirthday());
+		System.out.println(cardVo.getCardcomp());
+		System.out.println(cardVo.getCardnum());
+		//System.out.println(cardVo.getRecognizenum());
 		
 		
-		return orderVo;
+		orderVo.setSstation(rvo.getDepplacename());
+		orderVo.setStime(rvo.getStart_date());
+		orderVo.setDtime(rvo.getEnd_date());
+		orderVo.setDstation(rvo.getArrplacename());
+		/* orderVo.setReservnum(); */
+		orderVo.setChairnum(rvo.getSeatNum());
+		/* orderVo.setId(); */
+		orderVo.setDepPlaceId(rvo.getStartId());
+		orderVo.setArrPlaceId(rvo.getEndId());
+		orderVo.setDepPlandTime(rvo.getRtimes());
+		/* orderVo.setCardnum(); */
+		orderVo.setPrice(Integer.parseInt(rvo.getAdultcharge()));
+		orderVo.setTrainnum(Integer.parseInt(rvo.getTrainno()));
+		orderVo.setTicketqty(Integer.parseInt(rvo.getTicketQty()));
+		
+		orderService.getPayment(orderVo);
+		cardService.getPayment(cardVo);
+		
+		
+		
+		
+		model.setViewName("/reservation/train_reservation_pymcfm");
+		
+		
+		return model;
 	}
 	
 	

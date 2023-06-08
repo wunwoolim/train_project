@@ -447,6 +447,7 @@
 				<h4 class="mo_page">결제정보 입력</h4>
 				<div class="custom_input clfix">
 					<form name="purchaseForm" id="purchaseForm" action="train_reservation_pymcfm.do" method="post">
+					
 					<div class="tab_wrap inradio tab_type2" data-desc-id="tab-desc1"> <!-- 190109 수정 : data-desc-id 속성 추가 (값은 하단 설명 영역인 .tab_desc_wrap의 id와 매칭) -->					
 						
 						<div class="tab_conts" id="tab1" style="display: block;">
@@ -454,7 +455,7 @@
 								<strong>카드종류</strong>
 								<span class="radio_wrap">
 									<span class="custom_radio">
-										<input type="radio" id="caPerson" name="payCard" checked="true" onclick="fnCardKindSel('indl')">
+										<input type="radio" id="caPerson" name="payCard" checked="true">
 										<label for="caPerson">개인</label>
 									</span>
 									
@@ -508,8 +509,8 @@
 											</ul>
 										</div>
 									</div>
-									<input type="" class="selectricInput" name="" tabindex="0">
 									</div>
+									<input type="text" class="selectricInput" name="cardcomp">
 								</div>
 							</div>
 							<div class="box_inputForm card_num clfix">
@@ -566,69 +567,11 @@
 								<strong>생년월일 6자리(YYMMDD)</strong>
 								<span class="box_label">
 									<label for="caBirth">예)1980년11월11일 → 801111</label>
-									<input type="text" name="caBirth" id="caBirth" class="input" maxlength="6">
+									<input type="text" name="birthday" id="birthday" class="input" maxlength="6">
 								</span>
 							</div>
 						
-							<!-- // 카드결제  -->
-							<div class="box_inputForm click_box inselect" id="mipMmSel" style="display:none">
-								<strong>할부 개월수 (5만원 이상만 가능)</strong>
-								<div class="payment select-box value box_bottom">
-									<div class="selectricWrapper">
-									<div class="selectricHideSelect">
-									<select name="mipMm" id="mipMm" title="할부 개월수선택" tabindex="0">
-										<option value="0">일시불</option>
-										<!-- 개월 선택 -->
-										
-											<option value="2">2 개월</option>
-										
-											<option value="3">3 개월</option>
-										
-											<option value="4">4 개월</option>
-										
-											<option value="5">5 개월</option>
-										
-											<option value="6">6 개월</option>
-										
-											<option value="7">7 개월</option>
-										
-											<option value="8">8 개월</option>
-										
-											<option value="9">9 개월</option>
-										
-											<option value="10">10 개월</option>
-										
-											<option value="11">11 개월</option>
-										
-											<option value="12">12 개월</option>
-										
-									</select>
-									</div>
-									<div class="selectric">
-									<p class="label add">일시불</p>
-									<b class="button">▾</b>
-									</div>
-									<div class="selectricItems" tabindex="-1">
-									<div class="selectricScroll">
-									<ul>
-									<li class="selected">일시불</li>
-									<li class="">2 개월</li>
-									<li class="">3 개월</li>
-									<li class="">4 개월</li>
-									<li class="">5 개월</li>
-									<li class="">6 개월</li>
-									<li class="">7 개월</li>
-									<li class="">8 개월</li>
-									<li class="">9 개월</li>
-									<li class="">10 개월</li>
-									<li class="">11 개월</li>
-									<li class="last">12 개월</li>
-									</ul>
-									</div>
-									</div>
-									<input class="selectricInput" tabindex="0"></div>
-								</div>
-							</div>
+							
 						</div>
 						
 							

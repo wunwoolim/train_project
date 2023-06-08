@@ -1,7 +1,7 @@
 package com.korail.vo;
 
 public class CardinfoVo {
-	String cardnum,recognizenum,birthday,cardcomp,cardNum1,cardNum2,cardNum3,cardNum4;
+	String cardnum,recognizenum,birthday,cardcomp,cardNum1,cardNum2,cardNum3,cardNum4,cardMonth,cardYear,cardPw;
 	
 	
 	public String getCardNum1() {
