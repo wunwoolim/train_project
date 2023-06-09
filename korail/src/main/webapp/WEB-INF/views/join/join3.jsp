@@ -28,17 +28,17 @@
 		<ul class="join_list">
 		<li>
 		<!-- <div class ="join_1" id="info_id"> -->
-			<div>	<p>아이디</p><span id="idcheck_msg"></span> </div>
+			<div>	<p>아이디</p><span id="idcheck_msg"></span>
 			<input type="text" id ="id"  class ="join_input1" name ="id" placeholder ="아이디입력(6~20자)"/>
 			<button type="button" class ="check_btn" id="btnIdCheck" >중복체크</button> 
 			<span id="idcheck_msg"></span>
 	<!-- 	</div> -->	
+			 </div>
 		</li>	
 		
 		<li>
 		<div>	<p>비밀번호</p> </div>
-			<input type="text" class="join_input" name ="pass" id ="pass" 
-			aceholder ="비밀번호 입력(문자,숫자,특수문자 포함 8~20자)">
+			<input type="text" class="join_input" name ="pass" id ="pass" 	placeholder ="비밀번호 입력(문자,숫자,특수문자 포함 8~20자)">
 		</li>
 		<li>	
 		<div>	<p>비밀번호 확인</p> </div>

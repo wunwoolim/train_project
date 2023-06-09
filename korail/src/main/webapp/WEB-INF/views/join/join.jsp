@@ -34,7 +34,7 @@
 		<h1>개인정보 수집 및 이용동의(필수)		</h1>
 		<span class="custom_check"><input type="checkbox"  name="agree" id ="agree1" value="동의"><label for="agree1">동의</label></span>
 	</div>
-			<iframe id = video1 src="http://localhost:9000/ktx/joinpolicy.do" scrolling="yes"></iframe>
+			<iframe id = video1 src="http://localhost:9000/ktx/joinpolicy.do" scrolling="yes" style ="border:1px solid black"></iframe>
 			
 	
 	<div class="terms_wrap" id="service" style="overflow:auto">
@@ -43,7 +43,7 @@
 			</div>
 	
 	<div class="scroll_agreement">
-	<iframe  id="video2" src ="http://localhost:9000/ktx/joinpolicy1.do" scrolling="yes"></iframe>
+	<iframe  id="video2" src ="http://localhost:9000/ktx/joinpolicy1.do" scrolling="yes" style ="border:1px solid black"></iframe>
 		
 		</div>
 			<!-- <div class="btn_logbox">

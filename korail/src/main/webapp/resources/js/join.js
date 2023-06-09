@@ -26,7 +26,6 @@ $(document).ready(function(){
 	********************************************/
 
 		$("#btnIdCheck").click(function(){
-		alert("111");
 		if($("#id").val() == ""){
 			alert("아이디를 입력해주세요");
 			$("#id").focus();
@@ -35,7 +34,6 @@ $(document).ready(function(){
 			$.ajax({
 				url : "id_check.do?id="+$("#id").val(),
 				success : function(result){
-				alert(result);
 					if(result == 1){
 						$("#idcheck_msg").text("이미 사용중인 아이디 입니다. 다시 입력해주세요")
 						.css("color","red").css("font-size","11px").css("display","block")
@@ -120,6 +118,7 @@ $(document).ready(function(){
 			return false;
 		}else{
 			//서버전송
+			alert("회원가입에 성공하셨습니다.")
 			joinForm.submit();
 		}
 	});	//btnJoin
