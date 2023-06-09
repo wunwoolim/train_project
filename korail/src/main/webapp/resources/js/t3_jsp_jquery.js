@@ -510,14 +510,13 @@ $(document).ready(function() {
 		        output += '</td>';
 		        output += '<td><span class="tbl_ico ico_departure">' + + obj.time + " " + obj.stime + '<span class="txt_date"> 고속 </span></span></td>';
 		        output += '<td> 일반 ' + obj.qty + '<br></td>';
-		        output += '<td><span class="txt_price">' + obj.price + '원</span> <span class="txt_div">' + '</span></td>';
-				if (obj.cancel === '1') {
-					obj.cancel = "";
-				    output += '<td class="bg_payment_cancel" style="background: url(./images/bg_payment_cancel_s.png) 100% 100% no-repeat;">' + obj.cancel + '</td>';
+		        output += '<td><span class="txt_price">' + obj.price + '원</span> <span class="txt_div"> 카드 </span></td>';
+				if (obj.cancel === 1){
+				  output += '<td class="bg_payment_cancel" style="background: url(./images/bg_payment_cancel_s.png) 100% 100% no-repeat;"></td>';
 				} else {
-					obj.cancel = "";
-				    output += '<td class="bg_payment_cancel">' + obj.cancel + '</td>';
+				  output += '<td class="bg_payment_cancel"></td>';
 				}
+
 		        output += '</tr>';
 			}
 				output += '</tbody>';
