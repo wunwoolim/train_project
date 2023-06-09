@@ -9,9 +9,9 @@
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/ktx/js/reservation_jquery.js"></script>
 <style>
-	.hidden-span {
+	.hidden-span, #traintime, .return{
             display: none;
-        }
+        } 
 </style>
 </head>
 <body>
@@ -77,46 +77,38 @@
 							<span class="roundBox departure">${ovo.sstation}</span>
 							<span class="roundBox arrive">${ovo.dstation}</span>
 						</div>
-						<span class="hidden-span" id="update_reservnum">${ovo.reservnum}</span>
+						<span class="hidden-span" id="update_depPlaceId">${ovo.depPlaceId}</span>
+						<span class="hidden-span" id="update_arrPlaceId">${ovo.arrPlaceId}</span>
 					</div>
 					<div class="routeArea route_select">
 						<div class="box_inputForm click_box inselect" id="updatetimebox">
-							<strong>시간</strong>
-							<div class="payment select-box value">
-								<div class="selectricWrapper">
-									<div class="selectricHideSelect">
-										<select name="timeChoice" id="timeChoice" onchange="fnTimeChoice(this);" title="시간 선택" tabindex="0">
-											<option value="0-1">00:00</option>
-											<option value="00">01:00</option>
-											<option value="01">02:00</option>
-											<option value="02">03:00</option>
-											<option value="03">04:00</option>
-											<option value="04">05:00</option>
-											<option value="05">06:00</option>
-											<option value="06">07:00</option>
-											<option value="07">08:00</option>
-											<option value="08">09:00</option>
-											<option value="9">10:00</option>
-											<option value="10">11:00</option>
-											<option value="11">12:00</option>
-											<option value="12">13:00</option>
-											<option value="13">14:00</option>
-											<option value="14">15:00</option>
-											<option value="15">16:00</option>
-											<option value="16">17:00</option>
-											<option value="17">18:00</option>
-											<option value="18">19:00</option>
-											<option value="19">20:00</option>
-											<option value="20">21:00</option>
-											<option value="21">22:00</option>
-											<option value="22">23:00</option>
-										</select>
+							<strong>날짜</strong>
+							<ul class="date">
+								<li>
+									<div class="date_picker_wrap">
+										<span class="name">가는날</span>
+										<p class="text">
+										<span class="text_date text_date1" id="starttime"></span>
+										<span class="text_date text_date1" id="traintime"></span>
+										<input type="text" id="datepicker11" readonly="" class="hasDatepicker">
+										<img class="ui-datepicker-trigger" src="http://localhost:9000/ktx/images/ico_calender.png" alt="달력" title="달력">
+										</p>
+										
 									</div>
-									<div class="selectric">
-										<p class="label add">${ovo.stime}</p><b class="button">▾</b>
+								</li>
+								
+								<li class="return">
+									<div class="date_picker_wrap">
+										<span class="name">오는날</span>
+										<p class="text">
+										<span class="text_date text_date2"></span>
+										<input type="text" id="datepicker22" readonly="" class="hasDatepicker">
+										<img class="ui-datepicker-trigger" src="http://localhost:9000/ktx/images/ico_calender.png" alt="달력" title="달력">
+										</p>
 									</div>
-								</div>
-							</div>
+								</li>
+							</ul>
+							<jsp:include page="../reservcalender.jsp"></jsp:include>
 						</div>
 					</div>
 				</div>

@@ -11,8 +11,8 @@
 		insert into KTX_ORDER
 			(sstation,rdate,stime,dtime,dstation,price,reservnum,trainnum,chairnum,ticketqty,id,cancel,depPlaceId,arrPlaceId,depPlandTime,cardnum)
 		values
-			(#{sstation},sysdate,#{stime},#{dtime},#{dstation},#{price},'1234',#{trainnum},#{chairnum},#{ticketqty},
-			'GUEST','0',#{depPlaceId},#{arrPlaceId},#{depPlandTime},'123456789')
+			(#{sstation},sysdate,#{stime},#{dtime},#{dstation},#{price},#{reservnum},#{trainnum},#{chairnum},#{ticketqty},
+			'GUEST','0',#{depPlaceId},#{arrPlaceId},#{depPlandTime},#{cardnum})
 	</insert>
 
 </mapper>

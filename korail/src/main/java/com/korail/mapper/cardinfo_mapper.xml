@@ -11,7 +11,7 @@
 		insert into KTX_CARDINFO
 			(cardcomp,cardnum,recognizenum,birthday)
 		values
-			(#{cardcomp},#{cardnum},'recognizenum',#{birthday})
+			(#{cardcomp},#{cardnum},#{recognizenum},#{birthday})
 	</insert>
 
 </mapper>

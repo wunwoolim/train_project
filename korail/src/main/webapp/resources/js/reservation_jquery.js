@@ -100,7 +100,7 @@ $(document).ready(function(){
 	    // 현재 클릭한 요소에 CSS 적용
 	    let id=$(this).attr("id");
 	    //alert(id);
-		$("#"+id+"> .routeHead").css("background", "#D7F1FA	");
+		$("#"+id+"> .routeHead").css("background", "#D7F1FA");
 		
 		// 현재 클릭한 요소를 이전 요소로 저장
   		previousElement = $(this);
@@ -235,19 +235,18 @@ $(document).ready(function(){
 	/*******************************
 			 예매변경 - 조회하기버튼 클릭
 	 *******************************/
-	$("#reserv_search").click(function(){
+	$("#reserv_search").click(function(event){
+	    event.preventDefault();
+	
+	    var traintime = $("#traintime").text();
+	    var depPlaceId = $("#update_depPlaceId").text();
+	    var arrPlaceId = $("#update_arrPlaceId").text();
+	
 		
-		event.preventDefault();
-
-	   	 if ($("#update_reservnum").text() != "") {
-	        var reservnum = $("#update_reservnum").text();
-	        var url = "reservation_updatetime.do?reservnum=" + reservnum;
-	        window.location.href = url;
-	        
-	   	 } else {
-	        
-	  	 }
-	});
+	
+	    var url = "reservation_updatetime.do?traintime=" + encodeURIComponent(traintime) + "&depPlaceId=" + encodeURIComponent(depPlaceId) + "&arrPlaceId=" + encodeURIComponent(arrPlaceId);
+	    window.location.href = url;
+});
 	
 	
 	

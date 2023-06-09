@@ -226,6 +226,7 @@
 					<div class="routeBody">
 						<div class="routeArea route_wrap cancel_com">
 							<div class="inner">
+								<span class="roundBox_start">출발</span>
 								<span class="roundBox departure">${ovo.sstation}</span>
 								<span class="roundBox arrive">${ovo.dstation}</span>
 							</div>

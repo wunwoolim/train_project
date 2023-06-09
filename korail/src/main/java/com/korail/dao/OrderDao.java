@@ -21,7 +21,7 @@ public class OrderDao extends DBConn{
 		
 		ArrayList<OrderVo> orderList = new ArrayList<OrderVo>();
 		
-		String sql = "SELECT sstation, depPlandTime, stime, dstation, price, reservnum, trainnum, chairnum, cancel, depPlaceId, arrPlaceId  FROM KTX_ORDER where id='HONG1234'";
+		String sql = "SELECT sstation, depPlandTime, stime, dstation, price, reservnum, trainnum, chairnum, cancel, depPlaceId, arrPlaceId  FROM KTX_ORDER where id='GUEST'";
 		
 		getPreparedStatement(sql);
 		

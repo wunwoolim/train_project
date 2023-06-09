@@ -1,5 +1,7 @@
 package com.korail.controller;
 
+import java.util.UUID;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +31,7 @@ public class ReservationController {
 	public ModelAndView train_reservation_pymcfm(HttpSession session, OrderVo orderVo, CardinfoVo cardVo) {
 		ModelAndView model = new ModelAndView();
 		ReservationVo rvo = (ReservationVo)session.getAttribute("rvo");
-		
+		UUID uuid = UUID.randomUUID();
 		/*
 		 * System.out.println(rvo.getDepplacename());
 		 * System.out.println(rvo.getRtime()); System.out.println(rvo.getStart_date());
@@ -44,29 +46,31 @@ public class ReservationController {
 		System.out.println(cardVo.getBirthday());
 		System.out.println(cardVo.getCardcomp());
 		System.out.println(cardVo.getCardnum());
-		//System.out.println(cardVo.getRecognizenum());
-		
+		//System.out.println(cardVo.getRecognizenum()); //승인번호
+		cardVo.setRecognizenum(uuid.toString().replaceAll("-", "").substring(0, 10));
 		
 		orderVo.setSstation(rvo.getDepplacename());
 		orderVo.setStime(rvo.getStart_date());
 		orderVo.setDtime(rvo.getEnd_date());
 		orderVo.setDstation(rvo.getArrplacename());
-		/* orderVo.setReservnum(); */
+		orderVo.setReservnum(uuid.toString().substring(0, 8));  //예매 번호
 		orderVo.setChairnum(rvo.getSeatNum());
 		/* orderVo.setId(); */
 		orderVo.setDepPlaceId(rvo.getStartId());
 		orderVo.setArrPlaceId(rvo.getEndId());
 		orderVo.setDepPlandTime(rvo.getRtimes());
-		/* orderVo.setCardnum(); */
+		orderVo.setCardnum(cardVo.getCardnum());
 		orderVo.setPrice(Integer.parseInt(rvo.getAdultcharge()));
 		orderVo.setTrainnum(Integer.parseInt(rvo.getTrainno()));
 		orderVo.setTicketqty(Integer.parseInt(rvo.getTicketQty()));
+		
+		
 		
 		orderService.getPayment(orderVo);
 		cardService.getPayment(cardVo);
 		
 		
-		
+		System.out.println(cardVo.getRecognizenum());
 		
 		model.setViewName("/reservation/train_reservation_pymcfm");
 		
@@ -109,8 +113,6 @@ public class ReservationController {
 	public String train_reservation_satschc(ReservationVo reservationVo, HttpSession session,
 			String depplacename, String arrplacename, String start_date, String end_date, String traingradename, String trainno, String adultcharge, String rtimes) {
 		//ModelAndView model = new ModelAndView();
-		
-		System.out.println(depplacename);
 		
 		
 		ReservationVo rvo = (ReservationVo)session.getAttribute("rvo");
@@ -167,5 +169,11 @@ public class ReservationController {
 	public String train_reservation_rotinf() {
 		
 		return "/reservation/train_reservation_rotinf";
+	}
+	
+	@RequestMapping(value="/main_train.do", method=RequestMethod.GET)
+	public String main_train() {
+		
+		return "main_train";
 	}
 }
