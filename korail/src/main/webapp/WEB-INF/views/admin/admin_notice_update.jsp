@@ -18,7 +18,7 @@
 		<jsp:include page="../header.jsp"></jsp:include>
 	<h2 class="title">관리자 - 공지사항</h2>
 	</div>
-	<form name="form-update" action="#" method="get">
+	<form id="form_update" name="form_update" action="admin_notice_update_proc.do" method="post">
 		<table class="notice_update">
 			<tr>
 				<th>제목</th>

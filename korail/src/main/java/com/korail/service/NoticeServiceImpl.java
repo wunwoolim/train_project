@@ -1,48 +1,53 @@
 package com.korail.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.korail.dao.NoticeDao;
 import com.korail.vo.NoticeVo;
 
 @Service("noticeService")
 public class NoticeServiceImpl implements NoticeService {
 
+	@Autowired NoticeDao noticeDao;
+	
 	@Override
 	public int getInsert(NoticeVo noticeVo) {
-		// TODO Auto-generated method stub
-		return 0;
+		return noticeDao.insert(noticeVo);
+	}
+	
+	@Override
+	public ArrayList<NoticeVo> getSelect(int startCount, int endCount){
+		ArrayList<NoticeVo> rlist = new ArrayList<NoticeVo>();
+		List<Object> list = noticeDao.select(startCount, endCount);
+		for(Object obj : list) {
+			NoticeVo noticeVo = (NoticeVo)obj;
+			rlist.add(noticeVo);
+		}
+		return rlist;
+	}
+	
+	@Override
+	public NoticeVo getSelect(String nid) {
+		return noticeDao.select(nid);
+	}
+	
+	@Override
+	public int getUpdate(NoticeVo noticeVo) {
+		return noticeDao.update(noticeVo);
+	}
+	
+	@Override
+	public int getDelete(String nid) {
+		return noticeDao.delete(nid);
 	}
 
 	@Override
-	public ArrayList<NoticeVo> getSelect(int startCount, int endCount) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public NoticeVo getSelect(String bid) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int getUpdate(NoticeVo boardVo) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int getDelete(String bid) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void getUpdateHits(String bid) {
-		// TODO Auto-generated method stub
-		
+	public void getUpdateHits(String nid) {
+		noticeDao.updateHits(nid);
 	}
 
 }

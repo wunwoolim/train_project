@@ -18,7 +18,7 @@
 		<jsp:include page="../header.jsp"></jsp:include>
 	<h2 class="title">관리자 - 공지사항</h2>
 	</div>
-	<form name="form-delete" action="#" method="get">
+	<form id="form_delete" name="form_delete" action="admin_notice_delete_proc.do" method="post">
 		<table class="notice_delete">
 			<tr>
 				<td><img src="http://localhost:9000/ktx/images/trash.jpg" id="trash"></td>

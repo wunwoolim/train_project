@@ -21,28 +21,27 @@
 	<table class="notice_content">
 		<tr>
 			<th>제목</th>
-			<td>KTX 공지사항 입니다.</td>
+			<td>${noticeVo.ntitle}</td>
 		</tr>
 		<tr>
 			<th>내용</th>
 			<td>
-				2023년 5월 23일 기준 전체 시스템 점검 예정입니다.<br>
-				참고해주세요.
+				${noticeVo.ncontent}
 			</td>
 		</tr>
 		<tr>
 			<th>조회수</th>
-			<td>1000</td>
+			<td>${noticeVo.nhits}</td>
 		</tr>
 		<tr>
 			<th>등록일자</th>
-			<td>2023-05-18</td>
+			<td>${noticeVo.ndate}</td>
 		</tr>
 		<tr>
 			<td colspan="2">
 			<div class="button">
-				<a href="notice_list.jsp" class="btn">리스트</a>
-				<a href="http://localhost:9000/project/notice/notice_content.jsp" class="btn">홈으로</a>
+				<a href="notice_list.do" class="btn">리스트</a>
+				<a href="http://localhost:9000/ktx/notice_content.do" class="btn">홈으로</a>
 				</div>
 			</td>
 		</tr>

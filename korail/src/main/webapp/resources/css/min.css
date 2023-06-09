@@ -401,15 +401,6 @@ h1 {
   transform: translateX(0);
 }
 
-#again:hover {
-	color: black;
-}
-
-#finish:hover {
-	color: black;
-}
-
-
 .reservation {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -693,4 +684,8 @@ table.notice_content tr:last-child td button:first-child {
 
 #date {
 	margin: 10px;
+}
+
+#form_write:hover {
+	cursor: pointer;
 }

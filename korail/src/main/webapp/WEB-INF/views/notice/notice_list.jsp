@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,34 @@
 	<title>공지사항 리스트</title>
 	<script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 	<script src="http://localhost:9000/ktx/js/min.js"></script>
+	<script src="http://localhost:9000/ktx/js/am-pagination.js"></script>
 	<link rel="stylesheet" href="http://localhost:9000/ktx/css/min.css">
+	<link rel="stylesheet" href="http://localhost:9000/ktx/css/am-pagination.css">
+	<script>
+	$(document).ready(function(){
+		var pager = jQuery('#ampaginationsm').pagination({
+		
+		    maxSize: '${maxSize}',	    		// max page size
+		    totals: '${totals}',	// total pages	
+		    page: '${page}',		// initial page		
+		    pageSize: '${pageSize}',			// max number items per page
+		
+		    // custom labels		
+		    lastText: '&raquo;&raquo;', 		
+		    firstText: '&laquo;&laquo;',		
+		    prevText: '&laquo;',		
+		    nextText: '&raquo;',
+				     
+		    btnSize:'sm'	// 'sm'  or 'lg'		
+		});
+		
+		jQuery('#ampaginationsm').on('am.pagination.change',function(e){
+			   jQuery('.showlabelsm').text('The selected page no: '+e.page);
+	           $(location).attr('href', "http://localhost:9000/ktx/notice_list.do?page="+e.page);         
+	    });
+		
+ 	});
+</script>
 </head>
 <body>
 <div class="body">
@@ -37,14 +65,16 @@
 			<th>조회수</th>
 			<th>등록일자</th>
 		</tr>
+		<c:forEach var="NoticeVo" items="${list}">
 		<tr>
-			<td>1</td>
-			<td>개인정보 처리방침 약관 개정 안내</td>
-			<td>100</td>
-			<td>2021/07/19</td>
+			<td>${noticeVo.rno}</td>
+			<td><a href="notice_content.do?nid=${noticeVo.nid}">${noticeVo.ntitle}</a></td>
+			<td>${noticeVo.nhits}</td>
+			<td>${noticeVo.ndate}</td>
 		</tr>
+		</c:forEach>
 		<tr>
-			<td colspan="3">< 1 2 3 4 5 6 7 8 9 10></td>
+			<td colspan="3"><div id="ampaginationsm"></div></td>
 			
 		</tr>
 	</table>

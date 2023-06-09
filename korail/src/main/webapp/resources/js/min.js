@@ -236,3 +236,16 @@ $(document).ready(function() {
 		//https://apis.data.go.kr/1613000/TrainInfoService/getStrtpntAlocFndTrainInfo?serviceKey=fia82dW58XZekM3fyfsYQjw24d3TDN%2FOCdtbCQWjlYjltamNE5UGs23S0OiE%2BdghuBeQ%2Bt%2FLjncovmHroyfk1Q%3D%3D&pageNo=1&numOfRows=10&_type=json&depPlaceId=NAT010000&arrPlaceId=NAT011668&depPlandTime=20230403&trainGradeCode=00
 	
 });	
+
+//공지사항 등록
+$(document).ready(function() {
+	$("#btnSubmit").click(function() {
+		if($("#notice_title").val() == "") {
+			alert("제목을 입력해주세요.");
+			$("#notice_title").focus();
+			return false;
+		} else {
+			writeForm.submit();
+		}
+	});
+});
