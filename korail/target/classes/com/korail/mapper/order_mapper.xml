@@ -15,6 +15,13 @@
 			'GUEST','0',#{depPlaceId},#{arrPlaceId},#{depPlandTime},#{cardnum})
 	</insert>
 
+	<update id="updatePayment" parameterType="com.korail.vo.OrderVo">
+		update ktx_order set 
+			rdate=sysdate, stime=#{stime}, dtime=#{dtime}, price=#{price}, trainnum=#{trainnum}, 
+			chairnum=#{chairnum}, ticketqty=#{ticketqty}, depPlandTime=#{depPlandTime}, cardnum=#{cardnum}
+		where reservnum=#{reservnum}
+	</update>
+
 </mapper>
 
 

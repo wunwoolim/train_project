@@ -1,6 +1,7 @@
 package com.korail.controller;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,8 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.korail.service.OrderService;
+import com.korail.vo.CardinfoVo;
 import com.korail.vo.OrderVo;
-import com.korail.vo.ReservationVo;
 import com.korail.vo.UpdateVo;
 
 @Controller
@@ -21,6 +22,8 @@ public class ReservationlistController {
 	
 	@Autowired
 	private OrderService orderService;
+	
+	
 	
 	/**
 	 * reservation_main.do - 예매내역
@@ -143,13 +146,19 @@ public class ReservationlistController {
 	 */
 	@RequestMapping(value="/reservation_update.do", method=RequestMethod.GET)
 	@ResponseBody
-	public ModelAndView reservation_update(String reservnum) {
+	public ModelAndView reservation_update(HttpSession session, String reservnum) {
 		ModelAndView model = new ModelAndView();
 		
 		OrderVo orderVo = orderService.getSelected(reservnum);
 		
+		UpdateVo uvo = new UpdateVo();
+		uvo.setReservnum(reservnum);
+		
 		model.addObject("ovo", orderVo);
+		
 		model.setViewName("/reservationlist/reservation_update");
+		
+		session.setAttribute("uvo", uvo);
 		
 		return model;
 	}
@@ -162,13 +171,12 @@ public class ReservationlistController {
 	@RequestMapping(value="/reservation_updatetime.do", method=RequestMethod.GET)
 	public String reservation_updatetime(HttpSession session, String traintime,String depPlaceId,String arrPlaceId ) {
 		
-		UpdateVo uvo = new UpdateVo();
+		UpdateVo uvo = (UpdateVo)session.getAttribute("uvo");
 		
+		System.out.println(uvo.getReservnum());
 		uvo.setRtime(traintime);
 		uvo.setStartId(depPlaceId);
 		uvo.setEndId(arrPlaceId);
-		
-		session.setAttribute("uvo", uvo);
 		
 		return "/reservationlist/reservation_updatetime";
 	} 
@@ -209,11 +217,53 @@ public class ReservationlistController {
 		uvo.setSeatNum(seatNum);
 		uvo.setTicketQty(ticketQty);
 		
+		System.out.println(seatNum);
+		System.out.println(ticketQty);
+		
 		
 		//model.addObject("seatNum", reservationVo.getSeatNum() );
 		
 		//model.setViewName("/reservation/train_reservation_stplcfmpym");
 		return "/reservationlist/reservation_updatepay";
+	}
+	
+	
+	/**
+	 * reservation_update_proc - 마지막 - 예매변경 처리
+	 */
+	@RequestMapping(value="/reservation_updatepay_proc.do", method=RequestMethod.POST)
+	public String reservation_updatepay_proc(HttpSession session, OrderVo orderVo, CardinfoVo cardVo) {
+		String viewName="";
+		UpdateVo uvo = (UpdateVo)session.getAttribute("uvo");
+	
+		/*
+		 * UUID uuid = UUID.randomUUID();
+		 * 
+		 * cardVo.setRecognizenum(uuid.toString().replaceAll("-", "").substring(0, 10));
+		 */
+		orderVo.setReservnum(uvo.getReservnum());
+		orderVo.setSstation(uvo.getDepplacename());
+		orderVo.setStime(uvo.getStart_date());
+		orderVo.setDtime(uvo.getEnd_date());
+		orderVo.setDstation(uvo.getArrplacename());
+		orderVo.setChairnum(uvo.getSeatNum());
+		/* orderVo.setId(); */
+		orderVo.setDepPlaceId(uvo.getStartId());
+		orderVo.setArrPlaceId(uvo.getEndId());
+		orderVo.setDepPlandTime(uvo.getRtimes());
+		orderVo.setCardnum(cardVo.getCardnum());
+		orderVo.setPrice(Integer.parseInt(uvo.getAdultcharge()));
+		orderVo.setTrainnum(Integer.parseInt(uvo.getTrainno()));
+		orderVo.setTicketqty(Integer.parseInt(uvo.getTicketQty()));
+		
+		int result = orderService.getPaymentUpdate(orderVo);
+		//cardService.getPaymentUpdate(cardVo);
+		if(result == 1) {
+			viewName = "redirect:/reservation_main.do";
+		}else {
+			//에러페이지
+		}
+		return viewName;
 	}
 	
 }//class

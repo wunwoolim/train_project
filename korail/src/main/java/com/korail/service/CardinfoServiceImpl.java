@@ -12,7 +12,11 @@ public class CardinfoServiceImpl {
 	private CardinfoDao cardinfoDao;
 	
 	
-	public int getPayment(CardinfoVo coardVo) {
-		return cardinfoDao.insert(coardVo);
+	public int getPayment(CardinfoVo cardVo) {
+		return cardinfoDao.insert(cardVo);
+	}
+	
+	public int getPaymentUpdate(CardinfoVo cardVo) {
+		return cardinfoDao.insertUpdate(cardVo);
 	}
 }

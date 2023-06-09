@@ -22,12 +22,12 @@
 	<div class="title_wrap_checkTicketingT">
 		<div class="title_wrap">
 			<jsp:include page="../header.jsp"></jsp:include>
-			<h2>예매확인/취소/변경</h2>
+			<h2>예매 변경</h2>
 		</div>
 	</div>
 	
 	<!------------------------ 예매변경 ---------------------------->
-	<div class="breadcrumb">
+	<!-- <div class="breadcrumb">
 		<ul class="breadcrumb_list">
 			<li><a href="/main.do">HOME</a></li>
 			<li>
@@ -49,13 +49,13 @@
 					</div>
 				</div>
 			</li>
-			<!-- 예매확인 -->
+			
 			<li>
 				<div class="select-box">
 					<div class="selectricWrapper selectric-select">
 						<div class="selectricHideSelect">
 							<select name="" id="" class="select" tabindex="0">
-								<option value="/mrs/mrscfm.do" selected="selected">예매 확인/취소/변경</option>
+								<option value="/mrs/mrscfm.do" selected="selected">예매 변경</option>
 								<option value="/mrs/mrsrecplist.do">영수증 발행</option>
 							</select>
 						</div>
@@ -63,18 +63,20 @@
 				</div>
 			</li>
 		</ul>
-	</div>
+	</div> -->
 	<!------------------------ 예매확인하기 ---------------------------->
-	<div class="page">
-		<h3 class="update">시간/등급 변경</h3>
+	<div class="page" id="page_updateC">
+		<h3 class="update">출발일 변경</h3>
 		<div class="change_wrap custom_input">
 			<form name="mrschangefrm" id="mrschangefrm" method="post" action="/mrs/mrschantimestep1.do">
 				<div class="routeBody clfix">
-					<div class="routeArea route_wrap">
+					<div class="routeArea route_wrap" id="update_routeArea">
 						<p id="updatedate" class="date">${ovo.depPlandTime}</p>
 						<p id="updatetime" class="time">${ovo.stime}</p>
 						<div class="inner" id="updateinner">
+							<span class="roundBox_start">출발</span>
 							<span class="roundBox departure">${ovo.sstation}</span>
+							<span class="roundBox_end">도착</span>
 							<span class="roundBox arrive">${ovo.dstation}</span>
 						</div>
 						<span class="hidden-span" id="update_depPlaceId">${ovo.depPlaceId}</span>
@@ -82,16 +84,15 @@
 					</div>
 					<div class="routeArea route_select">
 						<div class="box_inputForm click_box inselect" id="updatetimebox">
-							<strong>날짜</strong>
+							<strong>출발일</strong>
 							<ul class="date">
 								<li>
 									<div class="date_picker_wrap">
-										<span class="name">가는날</span>
 										<p class="text">
 										<span class="text_date text_date1" id="starttime"></span>
 										<span class="text_date text_date1" id="traintime"></span>
 										<input type="text" id="datepicker11" readonly="" class="hasDatepicker">
-										<img class="ui-datepicker-trigger" src="http://localhost:9000/ktx/images/ico_calender.png" alt="달력" title="달력">
+										<img class="ui-datepicker-trigger" id="calenderImg" src="http://localhost:9000/ktx/images/ico_calender.png" alt="달력" title="달력">
 										</p>
 										
 									</div>

@@ -16,4 +16,5 @@ public interface OrderService {
 	
 	public int getPayment(OrderVo orderVo);
 	
+	public int getPaymentUpdate(OrderVo orderVo);
 }

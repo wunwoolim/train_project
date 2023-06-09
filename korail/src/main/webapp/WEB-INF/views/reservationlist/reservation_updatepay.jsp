@@ -8,6 +8,12 @@
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/train_reservation_stplcfmpym.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/ktx/js/nomember_stplcfmpym.js"></script>
+<style>
+.title_wrap { 
+	background: url(http://localhost:9000/ktx/images/visual_chkTicket_bg.gif) center 0 no-repeat; 
+	background-size: cover;
+	}
+</style>
 </head>
 <body>
 <div>
@@ -17,12 +23,12 @@
 		
 	<jsp:include page="../header.jsp"></jsp:include>
 	
-	 <h2>고속버스예매</h2>
-		<ol class="process">
+	 <h2>예매변경</h2>
+		<!-- <ol class="process">
 			<li >예매정보입력</li>
 			<li class="active">결제정보입력</li>
 			<li class="last">예매완료</li>
-		</ol>
+		</ol> -->
 	</div>
 
 	<div class="page page_payment depth3">
@@ -445,7 +451,7 @@
 				
 				<h4 class="mo_page">결제정보 입력</h4>
 				<div class="custom_input clfix">
-					<form name="purchaseForm" id="purchaseForm" action="train_reservation_pymcfm.do" method="post">
+					<form name="purchaseForm" id="purchaseForm" action="reservation_updatepay_proc.do" method="post">
 					<div class="tab_wrap inradio tab_type2" data-desc-id="tab-desc1"> <!-- 190109 수정 : data-desc-id 속성 추가 (값은 하단 설명 영역인 .tab_desc_wrap의 id와 매칭) -->					
 						
 						<div class="tab_conts" id="tab1" style="display: block;">

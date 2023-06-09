@@ -2,9 +2,17 @@ package com.korail.vo;
 
 public class UpdateVo {
 	
-	String ticketQty,startId,endId,start_add,end_add,rtime,depplacename, arrplacename,start_date,end_date,traingradename,trainno,adultcharge,rtimes,seatNum;
+	String reservnum, ticketQty,startId,endId,start_add,end_add,rtime,depplacename, arrplacename,start_date,end_date,traingradename,trainno,adultcharge,rtimes,seatNum;
 	
 	
+	public String getReservnum() {
+		return reservnum;
+	}
+
+	public void setReservnum(String reservnum) {
+		this.reservnum = reservnum;
+	}
+
 	public String getTicketQty() {
 		return ticketQty;
 	}

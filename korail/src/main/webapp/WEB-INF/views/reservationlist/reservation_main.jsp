@@ -28,7 +28,7 @@
 	</div>
 	
 	<!------------------------ 메뉴바 ---------------------------->
-	<div class="breadcrumb">
+	<!-- <div class="breadcrumb">
 		<ul class="breadcrumb_list">
 			<li><a href="/main.do">HOME</a></li>
 			<li>
@@ -43,7 +43,7 @@
 								<option value="/cscn/ntcmttr/readNtcList.do">공지사항</option>
 							</select>
 						</div>
-						<!-- <div class="selectric">
+						 <div class="selectric">
 							<p class="label">예매확인</p>
 							<b class="button">▾</b>
 						</div> -->
@@ -62,11 +62,10 @@
 								</ul>
 							</div>
 						</div>
-						<input class="selectricInput" tabindex="0"> -->
+						<input class="selectricInput" tabindex="0"> 
 					</div>
 				</div>
 			</li>
-			<!-- 예매확인 -->
 			<li>
 				<div class="select-box">
 					<div class="selectricWrapper selectric-select">
@@ -88,12 +87,12 @@
 								</ul>
 							</div>
 						</div>
-						<input class="selectricInput" tabindex="0"> -->
+						<input class="selectricInput" tabindex="0">
 					</div>
 				</div>
 			</li>
 		</ul>
-	</div>
+	</div> -->
 	<!------------------------ 예매확인하기 ---------------------------->
 	<div class="page">
 	<div class="tab_type1">
@@ -112,7 +111,7 @@
 				<div class="box_detail_info" id="${ovo.reservnum}">
 					<div class="routeHead">
 						<p class="date" id="depPlandTime">${ovo.depPlandTime}</p>
-						<p class="stime" id="stime">${ovo.stime}출발</p>
+						<p class="stime" id="stime">${ovo.stime}  출발</p>
 						<p class="ticketPrice">총 결제금액
 							<span class="price" id="price">${ovo.price}원</span>
 							<span class="txt_div">(카드)</span>
@@ -121,7 +120,9 @@
 					<div class="routeBody">
 						<div class="routeArea route_wrap">
 							<div class="inner">
+								<span class="roundBox_start">출발</span>
 								<span class="roundBox departure" id="sstation">${ovo.sstation}</span>
+								<span class="roundBox_end">도착</span>
 								<span class="roundBox arrive" id="dstation">${ovo.dstation}</span>
 							</div>
 							<div class="detail_info">
@@ -218,7 +219,7 @@
 				<c:if test="${ovo.cancel == 1}">
 				<div class="box_detail_info">
 					<div class="routeHead">
-						<p class="date txt_black">${ovo.depPlandTime}&nbsp;${ovo.stime}출발</p>
+						<p class="date txt_black">${ovo.depPlandTime}&nbsp;${ovo.stime}  출발</p>
 						<p class="ticketPrice cancel">취소일시 
 							<span class="txt_cancelDate">2023. 05. 01(월)15:00</span>
 						</p>
@@ -228,6 +229,7 @@
 							<div class="inner">
 								<span class="roundBox_start">출발</span>
 								<span class="roundBox departure">${ovo.sstation}</span>
+								<span class="roundBox_end">도착</span>
 								<span class="roundBox arrive">${ovo.dstation}</span>
 							</div>
 							<div class="detail_info">

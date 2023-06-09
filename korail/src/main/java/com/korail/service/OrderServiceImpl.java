@@ -40,4 +40,9 @@ public class OrderServiceImpl implements OrderService{
 		
 		return orderDao.insert(orderVo);
 	}
+	
+	@Override
+	public int getPaymentUpdate(OrderVo orderVo) {
+		return orderDao.updatePayment(orderVo);
+	}
 }

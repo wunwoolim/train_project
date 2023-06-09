@@ -164,12 +164,20 @@ public class OrderDao extends DBConn{
 	
 	
 	
-	
+	/**
+	 * 抗概贸府
+	 */
 	public int insert(OrderVo orderVo) {
 		
-		
-		
 		return sqlSession.insert("mapper.order.payment", orderVo);
+	}
+	
+	/**
+	 * 抗概贸府
+	 */
+	public int updatePayment(OrderVo orderVo) {
+		
+		return sqlSession.update("mapper.order.updatePayment", orderVo);
 	}
 	
 	

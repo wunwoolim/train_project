@@ -14,4 +14,9 @@
 			(#{cardcomp},#{cardnum},#{recognizenum},#{birthday})
 	</insert>
 
+<!-- 	<update id="paymentUpdate" parameterType="com.korail.vo.CardinfoVo" >
+		update KTX_CARDINFO set
+			cardcomp=#{cardcomp},cardnum=#{cardnum},recognizenum=#{recognizenum},birthday=#{birthday}
+		where 
+	</update> -->
 </mapper>

@@ -9,6 +9,11 @@
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/ktx/js/satschc.js"></script>
 <style>
+.title_wrap { 
+	background: url(http://localhost:9000/ktx/images/visual_chkTicket_bg.gif) center 0 no-repeat; 
+	background-size: cover;
+	}
+
 .box{
 	border:1px solid red;
 	display:inline-block;
@@ -21,12 +26,7 @@
 	<div id ="contentWrap">
 	<div class="title_wrap in_process ticketingT">
 		<jsp:include page="../header.jsp"></jsp:include>
-	 	<h2>고속버스예매</h2>
-		<ol class="process">
-			<li class="active">예매정보입력</li>
-			<li>결제정보입력</li>
-			<li class="last">예매완료</li>
-		</ol>
+	 	<h2>예매 변경</h2>
 	</div>
 
 	<div class="page" id="seatChcPage">
