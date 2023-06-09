@@ -9,5 +9,7 @@ public interface MemberService {
 	public int getIdCheckResult(String id);
 	public int getJoinResult(MemberVo memberVo); 	
 	 public ArrayList<MemberVo> getList(int startCount, int endCount); 
+	public ArrayList<MemberVo> getList(int startCount, int endCount, String category, String cvalue);
+
 		/* public int getTotalRowCount(); */
 }

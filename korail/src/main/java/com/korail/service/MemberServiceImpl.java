@@ -24,7 +24,17 @@ public class MemberServiceImpl implements  MemberService{
 	
 	
 	
-	
+	@Override
+	public ArrayList<MemberVo> getList(int startCount, int endCount, String category, String cvalue){
+		ArrayList<MemberVo> rlist = new ArrayList<MemberVo>();
+		List<Object> list = memberDao.select(startCount, endCount, category , cvalue);
+		for(Object obj : list) {
+			MemberVo memberVo = (MemberVo)obj;
+			rlist.add(memberVo);
+		}
+		return rlist;
+	}
+
 	@Override
 	public ArrayList<MemberVo> getList(int startCount, int endCount){
 		ArrayList<MemberVo> rlist = new ArrayList<MemberVo>();

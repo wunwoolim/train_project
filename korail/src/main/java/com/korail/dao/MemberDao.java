@@ -26,6 +26,25 @@ public class MemberDao implements MyktxDao{
 	}
 	
 	
+	
+	/**
+	 * select - 회원리스트
+	 */
+	public List<Object> select(int startCount, int endCount, String category, String cvalue) {
+		Map<String, String> param = new HashMap<String, String>();
+		param.put("start", String.valueOf(startCount));
+		param.put("end", String.valueOf(endCount));
+		param.put("category", category);
+		param.put("cvalue", cvalue);
+		
+		return sqlSession.selectList("mapper.member.search_list",param);
+	}
+	
+	
+	
+	
+	
+	
 	/**
 	 * select - 회원리스트
 	 */

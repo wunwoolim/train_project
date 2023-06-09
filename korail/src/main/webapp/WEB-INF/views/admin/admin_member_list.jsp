@@ -33,7 +33,27 @@
 	           $(location).attr('href', "http://localhost:9000/mycgv_jsp/board_list.do?page="+e.page);         
 	    });
 		
+		$("#member_search").click(function(){
+			alert("222");
+			if ( $("#category").val() == "custname"){
+					if($("#cvalue").val() == ""){
+						alert("이름을 입력해주세요");
+						$("#cvalue").focus(); 
+						return false;
+					}
+			}else if($("#category").val() =="id"){
+					if($("#cvalue").val() == ""  ){
+						alert("아이디를 입력해주세요");
+						 $("#cvalue").focus(); 
+						 return false;
+					}
+			}
+			sform1.submit();		
+
+		});
+		
  	});
+	
 </script> 
 </head>
 <body>
@@ -43,12 +63,12 @@
 <!--header  -->
 		<div class= "title_wrap loginT">
 		<jsp:include page="../header.jsp"></jsp:include>
-			 <h2 class= "login_ti" >로그인</h2>
+			 <h2 class= "login_ti" >회원관리</h2>
 		 </div>	
 <!--contents  -->
 <div class="admin_member">
 		<section class="notice">
-			<h1 class="title">관리자 - 회원관리</h1>			
+			<h1 class="title_am">관리자 - 회원관리</h1>			
 			<table class = "amem_table">
 				<tr>
 					<th>번호</th>
@@ -79,13 +99,15 @@
 				</tr>	
 			</table>
 			
-			<form action ="memberList.do" class ="mem_search">
-				<select name ="ch1" class ="search_put">
+			<form action ="admin_member_search.do" class ="mem_search" name ="sform1" method ="POST">
+				<select name ="category" class ="search_put" id="category">
+					<option value ="total">전체</option>
 					<option value ="custname">이름</option>
 					<option value ="id">아이디</option>
 				</select>
-				<input type ="text" name ="ch2" class ="search_put1">
-				<input type = "submit" class ="search_put" value ="검색하기">
+				<input type ="text" name ="cvalue" class ="search_put1" id="cvalue">
+				<input type ="hidden" name ="page" value=1>
+				<button type = "button" class ="search_put"  id ="member_search">검색하기</button>
 			</form>		
 				
 			

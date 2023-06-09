@@ -23,9 +23,37 @@ public class Admin_memberController {
 	
 	
 	
+	@RequestMapping(value="/admin_member_search.do", method=RequestMethod.POST)
+	public ModelAndView admin_member_search(String page, String category,String cvalue) {
+		System.out.println(page);
+		System.out.println(category);
+		System.out.println(cvalue);
+		Map<String, Integer> param = null;
+		
+		ModelAndView model = new ModelAndView();
+		if(category.equals("total")){
+			param = pageService.getPageResult(page, "member");		
+		}else {
+			param = pageService.getPageResult(page, "member", category, cvalue);		
+			
+		}
+		ArrayList<MemberVo> list 
+		= memberService.getList(param.get("startCount"), param.get("endCount"),category, cvalue);
+		model.addObject("list", list);
+		model.addObject("totals", param.get("dbCount"));
+		model.addObject("pageSize", param.get("pageSize"));
+		model.addObject("maxSize", param.get("maxSize"));
+		model.addObject("page", param.get("page"));
+		
+		model.setViewName("/admin/admin_member_list");
+		
+		return model;
+	}
+
+	
+	
 	@RequestMapping(value="/admin_member.do", method=RequestMethod.GET)
 	public ModelAndView admin_member_list(String page) {
-
 		ModelAndView model = new ModelAndView();
 		Map<String, Integer> param = pageService.getPageResult(page, "member");		
 		ArrayList<MemberVo> list 

@@ -113,6 +113,7 @@ margin:auto;
 border-radius:3px;
 border: 1px solid gray;
 height:51px;
+margin-left:30px;
 }
 .join_input2{
 width: 380px;
@@ -204,4 +205,3 @@ border: 1px solid gray;
 	margin-left:10px;
 }
 	
-}

@@ -80,8 +80,8 @@
 			<span class="girl_jo">남자</span><input  type ="radio"  name ="gender" id ="gender"  value ="g" >
 		</li>
 			
-		<li>		
-				<button type="button" id ="btnJoin">  회원가입</button>
+		<li style ="text-align:center" >		
+				<button type="button" id ="btnJoin" >  회원가입</button>
 		</li>	
 				</ul>
 		</div>
