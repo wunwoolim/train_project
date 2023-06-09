@@ -13,17 +13,17 @@
 			<ul class="clfix_login">
 				<li class="login"><a href=""><span>로그인</span></a></li>
 				<li><a href="">회원가입</a></li>
-				<li><a href="">마이페이지</a></li>
-				<li><a href="">결제내역조회</a></li>
-				<li><a href="">사이트맵</a></li>
+				<li><a href="http://localhost:9000/ktx/my_page.do">마이페이지</a></li>
+				<li><a href="http://localhost:9000/ktx/pmyhis.do">결제내역조회</a></li>
+				<li><a href="http://localhost:9000/ktx/sitemap.do">사이트맵</a></li>
 			</ul>
 			
 			<ul class="clfix_logout">
 				<li class="account">id</li>
 				<li class="logout"><a href=""><span>로그아웃</span></a></li>
-				<li><a href="">마이페이지</a></li>
-				<li><a href="">결제내역조회</a></li>
-				<li><a href="">사이트맵</a></li>
+				<li><a href="http://localhost:9000/ktx/my_page.do">마이페이지</a></li>
+				<li><a href="http://localhost:9000/ktx/pmyhis.do">결제내역조회</a></li>
+				<li><a href="http://localhost:9000/ktx/sitemap.do">사이트맵</a></li>
 			</ul>
 	</div>
 	

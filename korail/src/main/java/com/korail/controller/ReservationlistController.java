@@ -160,16 +160,17 @@ public class ReservationlistController {
 	 * reservation_updatetime.do - 예매변경 2번째 페이지 (배차조회)
 	 */
 	@RequestMapping(value="/reservation_updatetime.do", method=RequestMethod.GET)
-	@ResponseBody
-	public ModelAndView reservation_updatetime(String reservnum) {
-		ModelAndView model = new ModelAndView();
+	public String reservation_updatetime(HttpSession session, String traintime,String depPlaceId,String arrPlaceId ) {
 		
-		OrderVo orderVo = orderService.getSelected(reservnum);
+		UpdateVo uvo = new UpdateVo();
 		
-		model.addObject("ovo", orderVo);
-		model.setViewName("/reservationlist/reservation_updatetime");
+		uvo.setRtime(traintime);
+		uvo.setStartId(depPlaceId);
+		uvo.setEndId(arrPlaceId);
 		
-		return model;
+		session.setAttribute("uvo", uvo);
+		
+		return "/reservationlist/reservation_updatetime";
 	} 
 	
 	
@@ -182,8 +183,7 @@ public class ReservationlistController {
 			String depplacename, String arrplacename, String start_date, String end_date, String traingradename, String trainno, String adultcharge, String rtimes) {
 		
 		//System.out.println(depplacename);
-		
-		UpdateVo uvo = new UpdateVo();
+		UpdateVo uvo = (UpdateVo)session.getAttribute("uvo");
 		
 		uvo.setDepplacename(depplacename);
 		uvo.setArrplacename(arrplacename);
@@ -193,9 +193,7 @@ public class ReservationlistController {
 		uvo.setTrainno(trainno);
 		uvo.setAdultcharge(adultcharge);
 		uvo.setRtimes(rtimes);
-		
-		
-		session.setAttribute("uvo", uvo);
+			
 		
 		return "/reservationlist/reservation_updatechair";
 	}

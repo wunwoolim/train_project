@@ -9,7 +9,11 @@
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/ktx/js/rotinf.js"></script>
 <script src="http://localhost:9000/ktx/js/rotinf2.js"></script>
-
+<style>
+	#traintime {
+            display: none;
+        }
+</style>
 
 </head>
 
@@ -80,7 +84,8 @@
 									<div class="date_picker_wrap">
 										<span class="name">가는날</span>
 										<p class="text">
-										<span class="text_date text_date1" id="traintime">20230516</span>
+										<span class="text_date text_date1" id="starttime"></span>
+										<span class="text_date text_date1" id="traintime"></span>
 										<input type="text" id="datepicker11" readonly="" class="hasDatepicker">
 										<img class="ui-datepicker-trigger" src="http://localhost:9000/ktx/images/ico_calender.png" alt="달력" title="달력">
 										</p>
@@ -92,13 +97,14 @@
 									<div class="date_picker_wrap">
 										<span class="name">오는날</span>
 										<p class="text">
-										<span class="text_date text_date2">20230516</span>
+										<span class="text_date text_date2"></span>
 										<input type="text" id="datepicker22" readonly="" class="hasDatepicker">
 										<img class="ui-datepicker-trigger" src="http://localhost:9000/ktx/images/ico_calender.png" alt="달력" title="달력">
 										</p>
 									</div>
 								</li>
 							</ul>
+							<jsp:include page="../reservcalender.jsp"></jsp:include>
 							<div class="grade">
 								<span class="name">등급</span>
 								<p>

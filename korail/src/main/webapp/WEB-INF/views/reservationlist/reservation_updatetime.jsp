@@ -11,9 +11,9 @@
 <script src="http://localhost:9000/ktx/js/alcnsrch.js"></script>
 <script src="http://localhost:9000/ktx/js/reservation_jquery.js"></script>
 <script>
-let startId = "${ovo.depPlaceId}";
-let endId = "${ovo.arrPlaceId}";
-let rtime = "${ovo.depPlandTime}";
+let startId = "${sessionScope.uvo.startId}";
+let endId = "${sessionScope.uvo.endId}";
+let rtime = "${sessionScope.uvo.rtime}";
 
 
 let url ="https://apis.data.go.kr/1613000/TrainInfoService/getStrtpntAlocFndTrainInfo?serviceKey=fia82dW58XZekM3fyfsYQjw24d3TDN%2FOCdtbCQWjlYjltamNE5UGs23S0OiE%2BdghuBeQ%2Bt%2FLjncovmHroyfk1Q%3D%3D&pageNo=1&numOfRows=10&_type=json&depPlaceId=" + startId +"&arrPlaceId="+ endId +"&depPlandTime="+ rtime + "&trainGradeCode=00";

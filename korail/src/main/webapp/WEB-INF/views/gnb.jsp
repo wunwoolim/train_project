@@ -6,13 +6,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/gnb.css">
-<script src="http://localhost:9000/ktx/js/t3_jsp_jquery.js"></script>
 </head>
 <body>
 	<div id="gnb" class="gnb_pc">
 		<h1 class="logo" style="margin-bottom: 0px; height:105px;" >
 		
-			<a href="#"><img class="gnb_logo" src="http://localhost:9000/ktx/images/free-icon-train.png">승차권 통합 예매</a>
+			<a href="http://localhost:9000/ktx/main_train.do">
+			<img class="gnb_logo" src="http://localhost:9000/ktx/images/free-icon-train.png">KTX 통합 예매</a>
 		</h1>
 		<div id="menu">
 			<ul class="depth1" style="padding-left:30px;">

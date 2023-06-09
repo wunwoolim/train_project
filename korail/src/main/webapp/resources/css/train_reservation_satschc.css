@@ -718,28 +718,6 @@ strong {
     position: relative;
 }
 
-.route_wrap .inner:before {
-    display: block;
-    content: "";
-    position: absolute;
-    left: 37px;
-    top: 0;
-    width: 1px;
-    height: 100%;
-    background-color: #fff;
-}
-
-.route_wrap .inner:before {
-    display: block;
-    content: "";
-    position: absolute;
-    left: 37px;
-    top: 0;
-    width: 1px;
-    height: 100%;
-    background-color: #fff;
-}
-
 .compare_wrap .route_wrap .roundBox:first-child, 
 .buscheck_wrap .route_wrap .roundBox:first-child {
     padding-bottom: 10px;
@@ -757,9 +735,10 @@ strong {
     padding-left: 67px;
     font-size: 22px;
     color: #f7f7f7;
+    padding-bottom: 10px;
 }
 
-.route_wrap .roundBox:before {
+.roundBox_start {
     display: block;
     position: absolute;
     left: 20px;
@@ -773,14 +752,18 @@ strong {
     text-align: center;
     line-height: 35px;
 }
-
-.route_wrap .arrive:before {
-    content: "µµÂø";
-}
-
-
-.route_wrap .departure:before {
-    content: "Ãâ¹ß";
+.roundBox_end{
+	display: block;
+    position: absolute;
+    left: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #74b3c7;
+    font-size: 12px;
+    text-align: center;
+    line-height: 35px;
 }
 
 .detail_info {

@@ -139,9 +139,6 @@ ul, ol {
     position: relative;
 }
 
-.buscheck_wrap .route_wrap .roundBox:first-child {
-    padding-bottom: 10px;
-}
 .route_wrap .roundBox {
     display: block;
     overflow: hidden;
@@ -150,6 +147,7 @@ ul, ol {
     padding-left: 67px;
     font-size: 22px;
     color: #f7f7f7;
+    padding-bottom: 10px;
 }
 
 .detail_info {
@@ -556,15 +554,7 @@ img, fieldset, button {
 }
 
 
-.route_wrap .departure:before {
-    content: "Ãâ¹ß";
-}
-
-.route_wrap .arrive:before {
-    content: "µµÂø";
-}
-
-.route_wrap .roundBox:before {
+.roundBox_start {
     display: block;
     position: absolute;
     left: 20px;
@@ -578,6 +568,20 @@ img, fieldset, button {
     text-align: center;
     line-height: 35px;
 }
+.roundBox_end{
+	display: block;
+    position: absolute;
+    left: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #74b3c7;
+    font-size: 12px;
+    text-align: center;
+    line-height: 35px;
+}
+
 .buscheck_wrap .route_wrap .roundBox:first-child:after, .buscheck_wrap .route_wrap .inner .transfer:after {
     display: block;
     content: "";

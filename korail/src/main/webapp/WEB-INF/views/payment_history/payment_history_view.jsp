@@ -138,7 +138,7 @@
 										</ul>
 									</div>
 									<input type="hidden" id="pageNo" name="pageNo" value="1">
-									<jsp:include page="./calender.jsp"></jsp:include>
+									<jsp:include page="/paycal.do"></jsp:include>
 									<p class="btns col1">
 										<a class="btnL btn_confirm">조회</a>
 									</p>
