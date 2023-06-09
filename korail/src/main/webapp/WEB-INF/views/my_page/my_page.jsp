@@ -10,7 +10,7 @@
 </head>
 <body class="sub KO">
 	<div id="wrap">
-		<jsp:include page="../gnb.jsp"></jsp:include>
+		<jsp:include page="../gnb2.jsp"></jsp:include>
 		<div id="contentWrap">
 			<div class="dimmed" style="display: none;"></div>
 			<div id="contents" style="padding-top: 0px;">

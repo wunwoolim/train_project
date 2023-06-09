@@ -1,5 +1,5 @@
 .title_wrap.mypageT {
-	background: url(../images/page/visual_pc_mypage.jpg) center 0 no-repeat;
+	background: url(../images/visual_pc_mypage.jpg) center 0 no-repeat;
 	background-size: cover;
 }
 
@@ -9,11 +9,29 @@
 	border-bottom: none;
 }
 
+.txt_purple {
+	color: #bc4ac0;
+}
+
 .tab_wrap .tabs li {
 	border-bottom: 1px solid #e6e6e6;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 12px 0 12px 30px;
+}
+
+input[type="radio"][id^="status"], input[type="radio"][id^="term"] {
+	width: 5%;
+	height: 15px;
+	opacity: 0;
+}
+
+span[class^='custom_radio']	label {
+	color: #bfbfbf;
+}
+
+[class^='custom_radio'] input {
+	position: absolute;
 }
 
 .active a {
@@ -44,10 +62,10 @@ ul.tabs.violet.mypage_tabs.col3 {
 }
 
 .tab_wrap .tabs li:last-child {
-	background: -webkit-linear-gradient(left, rgba(238, 238, 238, 1) 0%,
-		rgba(236, 236, 236, 1) 50%, rgba(233, 233, 233, 1) 74%,
-		rgba(223, 223, 223, 1) 88%, rgba(216, 216, 216, 1) 93%,
-		rgba(213, 213, 213, 1) 95%, rgba(193, 193, 193, 1) 100%);
+	background: -webkit-linear-gradient(left, rgb(255 254 254) 0%,
+		rgba(236, 236, 236, 1) 50%, rgb(248, 247, 247) 74%, rgb(245, 245, 245)
+		88%, rgb(232, 232, 232) 93%, rgb(231, 231, 231) 95%,
+		rgb(229, 229, 229) 100%);
 }
 
 .active img {
@@ -95,7 +113,7 @@ ul.innerBox.col4 {
 }
 
 .custom_radio label {
-	/* 	background: url(../images/common/custom_chk_s.png) right 0 no-repeat; */
+	/* 	background: url(../images/custom_chk_s.png) right 0 no-repeat; */
 	
 }
 
@@ -202,7 +220,7 @@ table.tbl_search_result {
 }
 
 .tbl_ico.ico_departure {
-	background: url(../images/page/bg_ico_departure.png) 0 8px no-repeat;
+	background: url(../images/bg_ico_departure.png) 0 8px no-repeat;
 	background-size: 14px auto;
 }
 
@@ -291,11 +309,6 @@ table.tbl_search_result {
 	padding-left: 20px;
 }
 
-.bg_payment_cancel {
-	background: url(../images/page/bg_payment_cancel_s.png) 100% 100%
-		no-repeat;
-}
-
 .desc_list li, p.bul {
 	padding-left: 8px;
 	text-indent: -8px;
@@ -330,7 +343,7 @@ span.paging {
 	text-align: center;
 }
 /********************
-		 筌뤴뫀�뼎筌∽옙 
+		 嶺뚮ㅄ維�占쎈펿嶺뚢댙�삕 
 *********************/
 input.calendar {
 	display: none;
@@ -339,7 +352,7 @@ input.calendar {
 span.ui-icon.ui-icon-circle-triangle-w {
 	width: 20px;
 	height: 20px;
-	background: url(../images/common/btn_datepicker_arrow.gif) 0 0 no-repeat;
+	background: url(../images/btn_datepicker_arrow.gif) 0 0 no-repeat;
 }
 
 .ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span
@@ -351,7 +364,7 @@ span.ui-icon.ui-icon-circle-triangle-w {
 .ui-datepicker .ui-icon {
 	width: 43px;
 	height: 20px;
-	background: url(../images/common/btn_datepicker_arrow.gif) 0 0 no-repeat;
+	background: url(../images/btn_datepicker_arrow.gif) 0 0 no-repeat;
 }
 
 .datepicker-table td {

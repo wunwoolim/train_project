@@ -10,7 +10,7 @@
 	<div class="with_modal">
 		<!-- 회원탈퇴 -->
 		<div class="with_modal_contents">
-			<form name="withForm" method="post">
+			<form name="withForm" method="post" action ="mypage_proc.do">
 				<div class="cont">
 					<p class="txt">
 						<span class="accent">알림</span><br> <br>탈퇴하시려면 사이트에 등록된 비밀번호를 입력하신 후, <br>회원탈퇴 버튼을 클릭해주세요. <br>탈퇴하시면 모든 데이터가 삭제됩니다.<br>고속버스 통합 회원을 탈퇴하시겠습니까?
@@ -23,16 +23,16 @@
 						</div>
 					</div>
 				</div>
-			</form>
 			<div class="btns">
 				<button type="button" class="remodal-cancel" id="with-cancle">취소</button>
 				<button type="button" class="remodal-confirm" id="with-confirm">회원탈퇴</button>
 			</div>
+			</form>
 		</div>
 
 
 		<div class="pass_modal_cotents">
-			<form name="passForm" method="post">
+			<form name="passForm" method="post" action ="mypage_proc.do">
 				<div class="cont">
 					<p class="txt">
 						<span class="accent">알림</span><br> <br>안전한 고속버스 홈페이지 사용을 위하여 <br>새로운 비밀번호로 교체하세요.
@@ -61,7 +61,7 @@
 
 
 		<div class="phonenum_modal_cotents">
-			<form name="phonenumForm" method="post">
+			<form name="phonenumForm" method="post" action ="mypage_proc.do">
 				<div class="cont">
 					<p class="txt">
 						<span class="accent">현재 사이트에 등록된 비밀번호와 변경하실 새로운 휴대폰 번호를 입력하세요.</span>

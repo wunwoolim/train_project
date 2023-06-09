@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	
-	
+	var checked;
 
 	/***************************************************************************
 	 * 
@@ -39,7 +39,7 @@ $(document).ready(function() {
 					$(".phonenum_modal_cotents").toggle().css("display", "block");
 				}
 			});
-		
+
 			/**
 			 * 마이페이지 회원탈퇴 취소, 영역 외 클릭
 			 */
@@ -50,7 +50,6 @@ $(document).ready(function() {
 				$(".pass_modal_cotents").toggle().css("display", "none");
 				$(".phonenum_modal_cotents").toggle().css("display", "none");
 			});
-
 			
 			/**
 			 * 마이페이지 회원탈퇴 완료
@@ -58,9 +57,25 @@ $(document).ready(function() {
 			
 			$("#with-confirm").click(function() {
 				if ($("input[name='usrPw']").val() === "") {
-					withForm.submit();
-					$(".with_modal").toggle().css("display", "none");
-					alert("회원탈퇴 완료");
+					alert("비밀번호 입력");
+					$("#usrPw").focus();
+				} else {
+					$.ajax({
+					url : "mypage_verification.do?",
+					type : "post",
+					data : {
+						pass: $("#usrPw").val()
+					},
+					
+					success:function(result) {
+						if(result == 1) {
+						alert("회원탈퇴 완료");
+						} else if (result ==0) {
+						alert("wrong");
+						}
+					}
+					
+					});	
 					// 로그아웃 처리
 				}
 			});
@@ -118,13 +133,27 @@ $(document).ready(function() {
 	/**
 	 * gnb 클릭 이벤트
 	 */
-	$(".depth").click(function() {
-		if ($(".depth2").css("display") === "none") {
-			$(".depth2").toggle().css("display", "block");
-		} else {
-			$(".depth2").toggle().css("display", "none");
-		}
-	});
+		$(".depth2").click(function() {
+			if ($(".depth2-1").css("display") === "none") {
+				$(".depth2-1").toggle().css("display", "block");
+			} else {
+				$(".depth2-1").toggle().css("display", "none");
+			}
+		});
+		$(".depth3").click(function() {
+			if ($(".depth3-1").css("display") === "none") {
+				$(".depth3-1").toggle().css("display", "block");
+			} else {
+				$(".depth3-1").toggle().css("display", "none");
+			}
+		});
+		$(".depth4").click(function() {
+			if ($(".depth4-1").css("display") === "none") {
+				$(".depth4-1").toggle().css("display", "block");
+			} else {
+				$(".depth4-1").toggle().css("display", "none");
+			}
+		});
 	
 	
 	/***************************************************************************
@@ -132,8 +161,53 @@ $(document).ready(function() {
      *	payment_history_view
 	 * 
 	***************************************************************************/
-
 	
+	  // '전체' 라디오 버튼이 선택되도록 설정
+	  $('input[type="radio"][name="status"]').eq(0).prop('checked', true);
+	  
+	  // '전체' 라디오 버튼에 대한 checked 값을 가져와서 확인
+	  checked = $('input[name="status"]:checked').val();
+  
+		$('input[type="radio"][name="status"]').eq(0).prop('checked', true);
+		 $('#status01').prop('checked', true);
+		  var firstTermRadio = $('input[type="radio"][name="status"]').eq(0);
+		  firstTermRadio.siblings('label').css({
+		    color: 'black',
+		    fontWeight: 'bold'
+		  });
+		$('input[type="radio"][name="term"], input[type="radio"][name="status"]').change(function() {
+		  // 해당 그룹의 라디오 버튼 가져오기
+		  var radioButtons = $(this).closest('form').find('input[type="radio"][name="' + $(this).attr('name') + '"]');
+		
+		  // 이미지 삭제
+		  radioButtons.siblings('label').find('img').remove();
+		
+		  // 모든 라디오 버튼의 label 스타일을 초기화
+		  radioButtons.siblings('label').css({
+		    color: '#bfbfbf',
+		    fontWeight: 'normal'
+		  });
+		
+		  if ($(this).is(':checked')) {
+		    $(this).siblings('label').css({
+		      color: 'black',
+		      fontWeight: 'bold'
+		    });
+		
+		    // 공통된 img 생성 로직
+		    var img = $('<img>').attr({
+		      src: './images/pmy_checked.png',
+		      style: 'position: absolute; width: 15px; height: 15px; transform: translate(4px, 1px);'
+		    });
+		
+		    // 생성한 img 태그를 라벨의 자식 요소로 추가
+		    $(this).siblings('label').append(img);
+		  }
+		});
+  		$('input[name="status"]').change(function() {
+		checked = $('input[name="status"]:checked').val();
+//		alert(checked);
+		});
 	/**
 	 * 결제내역 조회 달력 클릭 이벤트 
 	 */
@@ -193,7 +267,6 @@ $(document).ready(function() {
 		  
 		// 날짜 선택 이벤트
 		
-		
 		let dayOfWeekString = '';
 	    switch (new Date().getDay()) {
 	      case 0:
@@ -218,35 +291,11 @@ $(document).ready(function() {
 	        dayOfWeekString = '토';
 	        break;
 	    }
-		let ldm = '';
-		switch (new Date(new Date().getFullYear(), (new Date().getMonth() + 1), 0).getDay()) {
-		  case 0:
-		    ldm = '일';
-		    break;
-		  case 1:
-		    ldm = '월';
-		    break;
-		  case 2:
-		    ldm = '화';
-		    break;
-		  case 3:
-		    ldm = '수';
-		    break;
-		  case 4:
-		    ldm = '목';
-		    break;
-		  case 5:
-		    ldm = '금';
-		    break;
-		  case 6:
-		    ldm = '토';
-		    break;
-		}
 
 		var currentDate = new Date().getFullYear() + ". " + (new Date().getMonth() + 1) + ". " + new Date().getDate() + ". " + dayOfWeekString;
 		document.getElementsByClassName('text_date text_date1')[0].textContent = currentDate;
 		
-		var monthLastDate = new Date().getFullYear() + ". " + (new Date().getMonth() + 1) + ". " + new Date(new Date().getFullYear(), (new Date().getMonth() + 1), 0).getDate() + ". " + ldm;
+		var monthLastDate = new Date().getFullYear() + ". " + (new Date().getMonth() + 1) + ". " + new Date(new Date().getFullYear(), (new Date().getMonth() + 1), 0).getDate() + ". " + dayOfWeekString;
 		document.getElementsByClassName('text_date text_date2')[0].textContent = monthLastDate; 
 		
 		const dateElements = document.querySelectorAll('.cdate');
@@ -290,23 +339,35 @@ $(document).ready(function() {
 		      document.getElementsByClassName('text_date text_date2')[0].textContent
 		       = currentYear + '. ' + currentMonth + '. ' + selectedDate + '. ' + dayOfWeekString;
 		    }
-		  });
+		  });		
 		});
 		}
 		
+		let selectedText = '';
 		const date = new Date();
-
 		makeCalendar(date);
-
-		// 이전달 이동
-		document.querySelector(`.prevDay`).onclick = () => {
-		makeCalendar(new Date(date.setMonth(date.getMonth() - 1)));
-		}
-
-		// 다음달 이동
-		document.querySelector(`.nextDay`).onclick = () => {
-		makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
-		}
+	
+			// 이전달 이동
+			document.querySelector(`.prevDay`).onclick = () => {
+			  const textDateElement1 = document.getElementsByClassName('text_date text_date1')[0];
+			  const textDateElement2 = document.getElementsByClassName('text_date text_date2')[0];
+			  const previousContent1 = textDateElement1.textContent; // 이전 내용 저장	
+			  const previousContent2 = textDateElement2.textContent; // 이전 내용 저장
+			  makeCalendar(new Date(date.setMonth(date.getMonth() - 1)));
+			  textDateElement1.textContent = previousContent1; // 이전 내용 다시 설정
+			  textDateElement2.textContent = previousContent2; // 이전 내용 다시 설정
+			}
+			
+			// 다음달 이동
+			document.querySelector(`.nextDay`).onclick = () => {
+			  const textDateElement1 = document.getElementsByClassName('text_date text_date1')[0];
+			  const textDateElement2 = document.getElementsByClassName('text_date text_date2')[0];
+			  const previousContent1 = textDateElement1.textContent; // 이전 내용 저장
+			  const previousContent2 = textDateElement2.textContent; // 이전 내용 저장
+			  makeCalendar(new Date(date.setMonth(date.getMonth() + 1)));
+			  textDateElement1.textContent = previousContent1; // 이전 내용 다시 설정
+			  textDateElement2.textContent = previousContent2; // 이전 내용 다시 설정
+			}
 
 		
 		//기간 선택시 날짜 변경
@@ -368,28 +429,104 @@ $(document).ready(function() {
 	 * 
 	***************************************************************************/
 	
-	
-	//조회 시작일과 조회 종료일 오류
 	 
 	$(".btnL.btn_confirm").click(function() {
 		var day1 = document.getElementsByClassName('text_date text_date1')[0].textContent;
 		var day2 = document.getElementsByClassName('text_date text_date2')[0].textContent;
-	  
+		
 		var parts1 = day1.split(". ");
 		var parts2 = day2.split(". ");
 	  
-		var date1 = parts1[0] + "-" + parseInt(parts1[1]) + "-" + parts1[2];
-		var date2 = parts2[0] + "-" + parseInt(parts2[1]) + "-" + parts2[2];
-	  
-		if (date1 < date2) {
-		  alert("good");
-		  alert(date1);
-		  alert(date2);
+		var date1 = new Date(parts1[0], parseInt(parts1[1]) - 1, parts1[2]);
+		var date2 = new Date(parts2[0], parseInt(parts2[1]) - 1, parts2[2]);
+		
+		function formatDate(date) {
+		  var year = date.getFullYear();
+		  var month = date.getMonth() + 1;
+		  var day = date.getDate();
+		
+		  month = month < 10 ? '0' + month : month;
+		  day = day < 10 ? '0' + day : day;
+		
+		  return year + '-' + month + '-' + day;
+		}
+		
+		var date1Str = formatDate(date1);
+		var date2Str = formatDate(date2);
+		
+		if (date1 <= date2) {
+		  initAjax('HONG1234', date1Str, date2Str, checked);
+//			  alert(date1);
 		} else {
-		  alert("wrong");
-		  alert(date1);
-		  alert(date2);
+		  alert("잘못된 조회");
 		}
 	});
 	
+	if (checked == "payments" || checked == "all") {
+	  checked = 0;
+	} else {
+	  checked = 1;
+	}
+
+	function initAjax(id, date1Str, date2Str, checked) {
+	  $.ajax({
+	    url: "paypment_json_data.do?id=" + id + "&date1Str=" + date1Str + "&date2Str=" + date2Str + "&checked=" + checked,
+	    method: 'POST',
+	    success: function(response) {
+//	    alert(id + date1 + date2 + checked);
+			let jdata = JSON.parse(response);
+			
+		        let output = '<table class="tbl_search_result">';
+		        output += '<colgroup>';
+		        output += '<col style="width: 11%;">';
+		        output += '<col style="width: 7%;">';
+		        output += '<col style="width: 16%;">';
+		        output += '<col style="width: 24%;">';
+		        output += '<col style="width: 17%;">';
+		        output += '<col style="width: 12%;">';
+		        output += '<col style="width: auto%;">';
+		        output += '</colgroup>';
+		        output += '<thead>';
+		        output += '<tr>';
+		        output += '<th scope="col">결제일시</th>';
+		        output += '<th scope="col">구분</th>';
+		        output += '<th scope="col">노선</th>';
+		        output += '<th scope="col">배차정보</th>';
+		        output += '<th scope="col">매수</th>';
+		        output += '<th scope="col">결제금액</th>';
+		        output += '<th scope="col">상세조회</th>';
+		        output += '</tr>';
+		        output += '</thead>';
+		        output += '<tbody>';
+				
+				for (obj of jdata.jlist) {
+		        output += '<tr>';
+		        output += '<td>' + obj.rdate + '</td>';
+		        output += '<td><span class="txt_purple"> 편도 </span></td>';
+		        output += '<td>';
+		        output += '<div class="tbl_routeBox">';
+		        output += '<span class="roundBox">' + obj.sstation + '</span> <span class="roundBox">' + obj.dstation + '</span>';
+		        output += '</div>';
+		        output += '</td>';
+		        output += '<td><span class="tbl_ico ico_departure">' + + obj.time + " " + obj.stime + '<span class="txt_date"> 고속 </span></span></td>';
+		        output += '<td> 일반 ' + obj.qty + '<br></td>';
+		        output += '<td><span class="txt_price">' + obj.price + '원</span> <span class="txt_div">' + '</span></td>';
+				if (obj.cancel === '1') {
+					obj.cancel = "";
+				    output += '<td class="bg_payment_cancel" style="background: url(./images/bg_payment_cancel_s.png) 100% 100% no-repeat;">' + obj.cancel + '</td>';
+				} else {
+					obj.cancel = "";
+				    output += '<td class="bg_payment_cancel">' + obj.cancel + '</td>';
+				}
+		        output += '</tr>';
+			}
+				output += '</tbody>';
+				output += '</table>';
+				
+			//output 출력
+			$("table.tbl_search_result").remove();
+			$("div.search_result_wrap").after(output);
+	    } // success
+	  }); // ajax
+	}
 });

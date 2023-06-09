@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>고속버스통합예매 - 결제내역 조회</title>
+<title>고속버스통합예매 - 우대예약 등록</title>
 
 <link rel="styleSheet" type="text/css"
 	href="http://localhost:9000/ktx/css/payment_history.css">
@@ -20,7 +20,7 @@
 			<div id="contentWrap">
 				<div class="dimmed"></div>
 				<div id="contents" style="padding-top: 0px;">
-					<jsp:include page="/header_payment.do"></jsp:include>
+					<jsp:include page="/header_sreser.do"></jsp:include>
 					<div class="page">
 						<div class="tab_wrap tab_type1">
 							<ul class="tabs violet mypage_tabs col3">

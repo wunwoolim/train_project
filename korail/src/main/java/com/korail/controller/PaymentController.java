@@ -1,5 +1,9 @@
 package com.korail.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -8,9 +12,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.korail.service.PmyhisServiceImpl;
+import com.korail.vo.OrderVo;
 
 @Controller
 public class PaymentController {
+	
+	@Autowired
+	private PmyhisServiceImpl pmyService;
 
 	/**
 	 * Payment_histroy
@@ -37,32 +46,41 @@ public class PaymentController {
 	 * Payment_history_json
 	 * 
 	 */
-	/*
-	 * @RequestMapping(value="/plahis_json_data.do", method = RequestMethod.POST,
-	 * produces="text/plain;charset=UTF-8")
-	 * 
-	 * @ResponseBody public String plahis_json_data(String per) { // Map<String,
-	 * Integer> param = PaymentServiceImpl.getPageResult(per, "board"); //
-	 * ArrayList<BoardVo> list // = boardService.getSelect(param.get("startCount"),
-	 * param.get("endCount"));
-	 * 
-	 * JsonObject jlist = new JsonObject(); JsonArray jarray = new JsonArray();
-	 * 
-	 * for(Payment_historyVo phv : list) { JsonObject jobj = new JsonObject(); //{}
-	 * jobj.addProperty("bid", phv.getBid()); //{rno:1}
-	 * jobj.addProperty("PaymentDateTime", phv.getPaymentDateTime()); //{rno:1}
-	 * jobj.addProperty("Category", phv.getCategory()); //{rno:1}
-	 * jobj.addProperty("Route", phv.getRoute()); //{rno:1}
-	 * jobj.addProperty("DispatchInfo", phv.getDispatchInfo()); //{rno:1}
-	 * jobj.addProperty("Quantity", phv.getQuantity()); //{rno:1}
-	 * jobj.addProperty("PaymentAmount", phv.getPaymentAmount()); //{rno:1}
-	 * jobj.addProperty("DetailedInfo", phv.getDetailedInfo()); //{rno:1}
-	 * 
-	 * jarray.add(jobj); } jlist.add("jlist", jarray); jlist.addProperty("totals",
-	 * param.get("dbCount")); jlist.addProperty("pageSize", param.get("pageSize"));
-	 * jlist.addProperty("maxSize", param.get("maxSize")); jlist.addProperty("page",
-	 * param.get("page"));
-	 * 
-	 * return new Gson().toJson(jlist); }
-	 */
+	@RequestMapping(value="/paypment_json_data.do", method = RequestMethod.POST,
+			produces="text/plain;charset=UTF-8")
+	@ResponseBody
+	public String plahis_json_data(String id, String date1Str, String date2Str, String checked) {
+		//Payment_historyVo payVo =  pymService.getPageResult(bid);
+		HashMap<String, String> param = new HashMap<String, String>();
+		
+		System.out.println("id : " + id);
+		System.out.println("date1Str : " + date1Str);
+		System.out.println("date2Str : " + date2Str);
+		System.out.println("checked : " + checked);
+		param.put("id", id);
+		param.put("date1", date1Str);
+		param.put("date2", date2Str);
+		param.put("cancel", checked);
+		ArrayList<OrderVo> list 
+		= pmyService.getSelect(param);
+		
+	JsonObject jlist = new JsonObject();
+	JsonArray jarray = new JsonArray();
+	
+	for(OrderVo phv : list) {
+		JsonObject jobj = new JsonObject();  //{}
+		jobj.addProperty("rdate", phv.getRdate()); //{rno:1}
+		jobj.addProperty("sstation", phv.getSstation());
+		jobj.addProperty("dstation", phv.getDstation());
+		jobj.addProperty("stime", phv.getStime());
+		jobj.addProperty("price", phv.getPrice());
+		jobj.addProperty("qty", phv.getTicketqty());
+		jobj.addProperty("time", phv.getDepPlandTime());
+		jobj.addProperty("cancel", phv.getCancel());
+		jarray.add(jobj);
+	}
+	jlist.add("jlist", jarray);	
+	System.out.println(jlist.toString());
+	return new Gson().toJson(jlist);
+	}
 }

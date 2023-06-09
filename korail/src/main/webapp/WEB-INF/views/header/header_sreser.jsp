@@ -7,11 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="title_wrap mypageT">
-		<jsp:include page="../header.jsp"></jsp:include>
-		<h2>
-			<span onclick="">결제내역 조회</span>
-		</h2>
+	<div class="title_wrap businessT">
+		<jsp:include page="../header/header_util.jsp"></jsp:include>
+		<h2>맞춤형 우대예약 등록</h2>
 	</div>
 </body>
 </html>

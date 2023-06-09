@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="title_wrap mypage_title">
-		<jsp:include page="../header/header_util.jsp"></jsp:include>
+		<jsp:include page="../header.jsp"></jsp:include>
 		<h2>마이페이지</h2>
 		<div class="inner">
 			<ul class="myPage_list ">
