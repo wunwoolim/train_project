@@ -11,9 +11,9 @@
 		<div class="foot_bottom clfix">
 			<div class="foot_cont">
 				<p class="foot_menu">
-					<a href="svcStpl.do">서비스 이용약관</a> 
-					<a href="IndlStpl.do" class="indl">개인정보 처리방침</a> 
-					<a href="BusStpl.do">고속버스 운송약관</a> 
+					<a href="http://localhost:9000/ktx/svcStpl.do">서비스 이용약관</a> 
+					<a href="http://localhost:9000/ktx/IndlStpl.do" class="indl">개인정보 처리방침</a> 
+					<a href="http://localhost:9000/ktx/BusStpl.do">고속버스 운송약관</a> 
 					<a href="http://www.tmoney.co.kr" class="btn_intro_footer" target="_blank">티머니</a> 
 					<a>고객센터 1644-9030</a>
 				</p>
