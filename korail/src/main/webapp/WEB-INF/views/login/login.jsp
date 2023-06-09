@@ -39,13 +39,13 @@
 						<li> 
 						<div class="login_id">
 						<h4>아이디</h4>
-                		<input type="text" name="id" class ="input"id="id" placeholder="아이디를 입력하세요">
+                		<input type="text" name="id" class ="input" id="id" placeholder="아이디를 입력하세요">
 						</div>
 						</li>	
 						<li> 						
 						<div class="login_pass">
 						<h4>비밀번호</h4>
-                		<input type="text" name="pass" class ="input"id="pass" placeholder="비밀번호를 입력하세요">
+                		<input type="text" name="pass" class ="input" id="pass" placeholder="비밀번호를 입력하세요">
 						</div>
 						</li>
 						
@@ -65,7 +65,7 @@
 				
 				
 				
-			
+				
 			</form>
 				</div>
 			</div>

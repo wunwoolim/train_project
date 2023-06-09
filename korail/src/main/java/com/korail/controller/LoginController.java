@@ -54,14 +54,24 @@ public class LoginController {
 	 */
 	@RequestMapping(value="/login_proc.do", method=RequestMethod.POST)
 	public ModelAndView login_proc(MemberVo memberVo) {
+		System.out.println(memberVo.getId());
+		System.out.println(memberVo.getPass());
+		System.out.println(memberVo.getPagename());
+		
+		
 		ModelAndView model = new ModelAndView();
 		int result = memberService.getLoginResult(memberVo);
+		
 		
 		if(result == 1) {
 			//index 이동
 			//viewName = "index";  viewResolver를 호출--> index.jsp: header.do,footer.do 호출안됨
+			if(memberVo.getPagename().equals("mainlogin")) {
 			model.addObject("login_result", "ok");
 			model.setViewName("redirect:/train_reservation_rotinf.do");  //sendRedirect 
+			}else if(memberVo.getPagename().equals("reservation")){
+				model.setViewName("redirect:/train_reservation_stplcfmpym.do");
+			}
 		}else {
 			//login_fail.jsp
 			model.setViewName("redirect:/login_fail.do");

@@ -160,6 +160,7 @@ $.getJSON(url, function(citys){
 							<img class="ui-datepicker-trigger" src="http://localhost:9000/ktx/images/ico_calender.png" alt="달력" title="달력">
 							<span class="calender"></span>
 						</div>
+						<%-- <jsp:include page="../reservcalender.jsp"></jsp:include> --%>
 					</div>
 					
 					<div class="detailBox_body clfix">

@@ -4,9 +4,16 @@ public class MemberVo {
 	String id, pass, name, email1, email2, tel, phonenumber , year , month, date,
 	gender;
 	int rno;
-	String mid, email , pnumber, birth , mdate;
+	String mid, email , pnumber, birth , mdate,pagename;
 	
 	
+	
+	public String getPagename() {
+		return pagename;
+	}
+	public void setPagename(String pagename) {
+		this.pagename = pagename;
+	}
 	public String getId() {
 		return id;
 	}

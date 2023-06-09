@@ -278,13 +278,14 @@
 						<div class="inner">
 							<fieldset>
 								<legend>회원로그인</legend>
+								<form name ="loginForm"  action="login_proc.do" method="post">
 								<ul class="loginList">
 									<li>
 										<div class="box_inputForm">
 											<strong>아이디</strong>
 											<span class="box_label">
 												<label for="">아이디를 입력하세요</label>
-												<input type="text" name="usrId" id="usrId" class="input" onkeyup="">
+												<input type="text" name="id" id="id" class="input" >
 											</span>
 										</div>
 									</li>
@@ -293,16 +294,20 @@
 											<strong>비밀번호</strong>
 											<span class="box_label">
 												<label for="usrPwd">비밀번호를 입력하세요</label>
-												<input type="password" name="usrPwd" id="usrPwd" class="input" onkeyup="" data-tk-kbdtype="qwerty" onfocus="">
+												<input type="password" name="pass" id="pass" class="input" onkeyup="" data-tk-kbdtype="qwerty">
 											</span>
 										</div>
 									</li>
 								</ul>
-							</fieldset>
-							<input type="hidden" id="popUpDvs" name="popUpDvs" value="Y">
-							<p class="btn_squareBox">
-								<button type="button" class="btn_confirm ready" id="btn_confirm">로그인</button>
-							</p>
+									<input type="text" name="pagename" class ="input" id="pagename" value="reservation">
+									
+								</fieldset>
+								<input type="hidden" id="popUpDvs" name="popUpDvs" value="Y">
+								
+								<p class="btn_squareBox">
+									<button type="button" class="btn_confirm ready" id="btn_confirm">로그인</button>
+								</p>
+							</form>
 							
 							
 							
