@@ -45,7 +45,9 @@
 				
 					<div class="route_wrap" id="satsRotInfo">
 						<div class="inner">
+							<p class="roundBox_start">출발</p>
 							<p class="roundBox departure " id="satsDeprTmlNm"> ${ sessionScope.rvo.depplacename }</p><!-- 출발지 -->
+							<p class="roundBox_end">도착</p>
 							<p class="roundBox arrive " id="satsArvlTmlNm">${ sessionScope.rvo.arrplacename }</p><!-- 도착지 -->
 						</div>
 						<div class="detail_info">

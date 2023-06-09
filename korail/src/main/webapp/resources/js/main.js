@@ -20,6 +20,7 @@ $(document).ready(function(){
 			  $("#snglRotAll").css("background","#fff");
 			  $("#snglRotAll a").css('color', '#68b3ce');
 			  $("#rtrpRotAll").css("background","#ececec");
+			  $(".date .text_date").css("font-size","24px");
 			  $(".date .return").css("display","none");
 			  $(".date li").css("width","100%");
 			  $("#rtrpRotAll a").css("color","#333");
@@ -31,6 +32,7 @@ $(document).ready(function(){
 			$("#snglRotAll a").css("color","#333");
 			$("#rtrpRotAll").css("background","#fff");
 			$("#rtrpRotAll a").css('color','#68b3ce');
+			$(".date .text_date").css("font-size","17px");
 			$('.date.return').show();// 왕복일 경우 오는 날짜 입력 폼 보이기
 			$(".date li").css("display","block").css("width","calc(50% - 4px)");
 		    $(".date_picker_wrap").css("position","relative").css("height","100%").css("padding","12px 15px").css("box-sizing","border-box");

@@ -12,7 +12,7 @@
 		<h1 class="logo" style="margin-bottom: 0px; height:105px;" >
 		
 			<a href="http://localhost:9000/ktx/main_train.do">
-			<img class="gnb_logo" src="http://localhost:9000/ktx/images/free-icon-train.png">승차권 통합 예매</a>
+			<img class="gnb_logo" src="http://localhost:9000/ktx/images/free-icon-train.png">KTX 통합 예매</a>
 		</h1>
 		<div id="menu">
 			<ul class="depth1" style="padding-left:30px;">

@@ -44,17 +44,17 @@
 
 	<!-- pc/tablet -->
 	<div class="main_box clfix" id="mainID">
-		<h2 class="mainh2">즐거운 여행의 시작과 끝, 프리미엄 버스와 함께!</h2>
+		<h2 class="mainh2">즐거운 여행의 시작과 끝, KTX와 함께!</h2>
 		
 		<div class="main_cont" style="display: block;">
 			<div class="route_box">
 				<div class="tab_wrap tab_type1" id="rtrpYnAll">
-					<ul class="tabs col2">
+					<ul class="tabs col2 clear">
 						<li class="oneway active" id="snglRotAll">
-							<a href="#" onclick="fnPathDvsChk('snglRot');">편도</a>
+							<a href="#" >편도</a>
 						</li>
 						<li class="roundtrip" id="rtrpRotAll">
-							<a href="#" onclick="fnPathDvsChk('rtrp')">왕복</a>
+							<a href="#" >왕복</a>
 						</li>
 					</ul>
 					
@@ -101,7 +101,7 @@
 									<span class="name">오는날</span>
 									<p class="text">
 									<span class="text_date text_date2">\</span>
-									<input type="text" id="datepicker2" readonly="" class="hasDatepicker">
+									<input type="text" id="datepicker22" readonly="" class="hasDatepicker">
 									<img class="ui-datepicker-trigger" src="http://localhost:9000/ktx/images/ico_calender.png" alt="달력" title="달력">
 									</p>
 								</div>
@@ -135,13 +135,13 @@
 					<span class="stit">이용안내</span>
 					<ul class="clifx">
 						<li class="info1" style="width:33.333%">
-						<a href=".do">예매안내</a>
+						<a href="http://localhost:9000/ktx/reservation_info.do">예매안내</a>
 						</li>
 						<li class="info2" style="width:33.333%">
-						<a href=".do">환불안내</a>
+						<a href="http://localhost:9000/ktx/refund_info.do">환불안내</a>
 						</li>
 						<li class="info4" style="width:33.333%">
-						<a href=".do">기차역안내</a>
+						<a href="http://localhost:9000/ktx/train_route_info.do">기차역안내</a>
 						</li>
 					</ul>
 				</div>

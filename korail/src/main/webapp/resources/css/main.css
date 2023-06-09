@@ -1102,7 +1102,10 @@ input[type="checkbox"], input[type="radio"] {
     text-decoration: none;
 }
 
-
+.route_box div.date, .route_box ul.date li {
+    position: relative;
+    float: right;
+}
 
 
 
