@@ -266,4 +266,34 @@ public class ReservationlistController {
 		return viewName;
 	}
 	
+	
+	
+	
+	
+	/**
+	 * admin_main.do - 관리자 메인
+	 */
+	@RequestMapping(value="/admin_main.do", method=RequestMethod.GET)
+	public String admin_main() {
+		
+		return "/admin/admin_main";
+	} 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }//class

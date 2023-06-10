@@ -97,6 +97,8 @@ $(document).ready(function(){
 				code +="</table>"
 				code +="</div> </form>"
 				
+				
+				
 				$("div#d2").remove();
 				
 				$("div#trainList").after(code);

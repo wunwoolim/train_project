@@ -12,6 +12,9 @@
 <script src="http://localhost:9000/ktx/js/reservation_jquery.js"></script>
 <script src="http://localhost:9000/ktx/js/ktx_getJson.js"></script>
 <style>
+	#d2{
+		margin-bottom: 70px;
+	}
 </style>
 </head>
 <body>
