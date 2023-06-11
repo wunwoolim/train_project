@@ -30,11 +30,7 @@ public class TrainController {
 	@RequestMapping(value="/train_route_info_json.do", method=RequestMethod.GET, produces="text/plain;charset=UTF-8")
 	@ResponseBody
 	public String train_route_info_json(String category, String rno , String station, String type) {
-		System.out.println(category);
-		System.out.println(rno);
-		System.out.println(station);
-		System.out.println(type);
-		
+	
 		StationDao stationDao = new StationDao();
 		StationVo stationVo = stationDao.select(category, Integer.parseInt(rno), station, type);
 		ArrayList<String> stationList = stationDao.getStationList(category);
@@ -77,17 +73,5 @@ public class TrainController {
 		return new Gson().toJson(jlist);			
 		
 	}
-	
-	/*
-	 * @RequestMapping(value="/train_route_info_json_list.do",
-	 * method=RequestMethod.GET, produces="text/plain;charset=UTF-8")
-	 * 
-	 * @ResponseBody public ModelAndView train_route_info_json_list(String category)
-	 * { ModelAndView model = new ModelAndView(); StationDao stationDao = new
-	 * StationDao(); ArrayList<StationVo> stationVo =
-	 * stationDao.selectCategory(category);
-	 * 
-	 * }
-	 */
 	
 }

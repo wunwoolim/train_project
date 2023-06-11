@@ -21,29 +21,28 @@
 	<table class="notice_content">
 		<tr>
 			<th>제목</th>
-			<td>KTX 공지사항 입니다.</td>
+			<td>${noticeVo.ntitle}</td>
 		</tr>
 		<tr>
 			<th>내용</th>
-			<td>2023년 5월 23일 기준 전체 시스템 점검 예정입니다.<br>
-				참고해주세요.
+			<td>${noticeVo.ncontent}
 			</td>
 		</tr>
 		<tr>
 			<th>조회수</th>
-			<td>1000</td>
+			<td>${noticeVo.nhits}</td>
 		</tr>
 		<tr>
 			<th>작성일자</th>
-			<td>2023-05-18</td>
+			<td>${noticeVo.ndate}</td>
 		</tr>
 		<tr>
 			<td colspan="2">
 			<div class="button">
-				<a href="http://localhost:9000/ktx/admin_notice_update.do" class="btn">수정하기</a>
-				<a href="http://localhost:9000/ktx/admin_notice_delete.do" class="btn">삭제하기</a>
-				<a href="http://localhost:9000/ktx/admin_notice_list.do" class="btn">리스트</a>
-				<a href="#" class="btn">관리자홈</a>
+				<a href="admin_notice_update.do?nid=${noticeVo.nid}" class="btn">수정하기</a>
+				<a href="admin_notice_delete.do?nid=${noticeVo.nid}" class="btn">삭제하기</a>
+				<a href="admin_notice_list.do" class="btn">리스트</a>
+				<a href="admin_main.do" class="btn">관리자홈</a>
 					</div>
 			</td>
 		</tr>

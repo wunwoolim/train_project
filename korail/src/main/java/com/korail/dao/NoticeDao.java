@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.korail.vo.NoticeVo;
 
 @Repository
-public class NoticeDao implements MyktxDao{
+public class NoticeDao implements MyktxDao {
 
 	@Autowired
 	private SqlSessionTemplate sqlSession;

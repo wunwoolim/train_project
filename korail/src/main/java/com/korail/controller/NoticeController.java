@@ -34,7 +34,7 @@ public class NoticeController {
 		model.addObject("maxSize", param.get("maxSize"));
 		model.addObject("page", param.get("page"));
 		
-		model.setViewName("notice/notice_list");
+		model.setViewName("/notice/notice_list");
 		return model;
 	}
 	
@@ -43,12 +43,12 @@ public class NoticeController {
 		ModelAndView model = new ModelAndView();
 		
 		NoticeVo noticeVo = noticeService.getSelect(nid);
-		if(noticeVo == null) {
+		if(noticeVo != null) {
 			noticeService.getUpdateHits(nid);
 		}
 		
 		model.addObject("noticeVo", noticeVo);
-		model.setViewName("notice/notice_content");
+		model.setViewName("/notice/notice_content");
 		
 		return model;
 	}

@@ -12,7 +12,8 @@ import com.korail.vo.NoticeVo;
 @Service("noticeService")
 public class NoticeServiceImpl implements NoticeService {
 
-	@Autowired NoticeDao noticeDao;
+	@Autowired 
+	private NoticeDao noticeDao;
 	
 	@Override
 	public int getInsert(NoticeVo noticeVo) {

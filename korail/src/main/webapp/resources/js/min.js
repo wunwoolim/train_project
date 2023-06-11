@@ -124,9 +124,7 @@ $(document).ready(function() {
 				
 			});	//ajax
 			
-		}//initAjax
-		
-		init();	
+		}//initAjax	
 
 	});	//ready
 	
@@ -247,5 +245,30 @@ $(document).ready(function() {
 		} else {
 			writeForm.submit();
 		}
+	});
+	
+	$("#btnAgain").click(function() {
+		$('#form_write').trigger("reset");
+		
+	});
+	
+//공지사항 수정
+	$("#btnSubmit_update").click(function() {
+		if($("#notice_title").val() == "") {
+			alert("제목을 입력해주세요.");
+			$("#notice_title").focus();
+			return false;
+		} else {
+			updateForm.submit();
+		}
+	});
+	
+	$("#btnAgain_update").click(function() {
+		$('#form_update').trigger("reset");
+		
+	});
+	
+	$("#btnSubmit_delete").click(function() {
+		deleteForm.submit();
 	});
 });

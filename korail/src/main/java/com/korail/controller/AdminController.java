@@ -99,7 +99,7 @@ public class AdminController {
 	public ModelAndView admin_notice_delete(String nid) {
 		ModelAndView model = new ModelAndView();
 		model.addObject("nid", nid);
-		model.setViewName("/admin/admin_notice_update");
+		model.setViewName("/admin/admin_notice_delete");
 		
 		return model;
 	}

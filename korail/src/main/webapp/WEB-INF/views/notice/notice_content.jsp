@@ -40,8 +40,8 @@
 		<tr>
 			<td colspan="2">
 			<div class="button">
-				<a href="notice_list.do" class="btn">리스트</a>
-				<a href="http://localhost:9000/ktx/notice_content.do" class="btn">홈으로</a>
+				<a href="http://localhost:9000/ktx/notice_list.do" class="btn">리스트</a>
+				<a href="#" class="btn">홈으로</a>
 				</div>
 			</td>
 		</tr>

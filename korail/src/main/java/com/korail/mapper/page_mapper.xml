@@ -10,7 +10,7 @@
 		select count(*) 
 		from
 		<if test='sname == "notice"'>
-			mycgv_notice
+			ktx_notice
 		</if>
 		<if test='sname == "member"'>
 			mycgv_member

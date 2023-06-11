@@ -58,14 +58,14 @@
 			<button type="reset">다시입력</button> 
 		</form>
 	</div>
-	<table class="notice-search">
+	<table class="notice_search">
 		<tr>
 			<th>번호</th>
 			<th>제목</th>
 			<th>조회수</th>
 			<th>등록일자</th>
 		</tr>
-		<c:forEach var="NoticeVo" items="${list}">
+		<c:forEach var="noticeVo" items="${list}">
 		<tr>
 			<td>${noticeVo.rno}</td>
 			<td><a href="notice_content.do?nid=${noticeVo.nid}">${noticeVo.ntitle}</a></td>

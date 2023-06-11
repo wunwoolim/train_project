@@ -78,23 +78,24 @@ body {
 	padding: 0 10px;
 }
 
-.notice-search {
-	display: flex;
-	justify-content: center;
+.notice_search {
+	
 	margin: 30px 0;
+	width: 50%;
 }
 
-.notice-search th, .notice-search td {
-	font-size: 16px;
+.notice_search th {
+	font-size: 12px;
 	text-align: center;
 	border-collapse: collapse;
 	padding: 20px 15px;
 }
 
-.notice-search tr:last-child td {
+.notice_search tr:last-child td {
 	border: none;
+	width: 70%;
+	margin: auto;
 }
-
 .payment-content {
 	text-align: center;
 	color: black;
@@ -366,6 +367,7 @@ h1 {
 	margin: 20px;
 	display: flex;
 	justify-content: flex-end;
+
 }
 
 .btn {
@@ -512,7 +514,7 @@ h1 {
 }
 
 .notice_write, .notice_update, .notice_delete {
-	width: 50%;
+	width: 100%;
 	margin: auto;
 	border: none;
 }
@@ -527,16 +529,20 @@ h1 {
 	padding: 10px 0;
 }
 
-.notice_list, .notice-search {
-	width: 50%;
-	margin: 200px auto;
+.notice_list, .notice_search {
+	width: 70%;
+	margin: auto;
+}
+
+.notice_content {
+	text-align: center;
 }
 
 .notice_list tr:last-child td {
 	border: none;
 }
 
-.notice-search tr:last-child td {
+.notice_search tr:last-child td {
 	border: none;
 }
 
@@ -555,11 +561,11 @@ table.notice_content th {
 .notice_list tr:first-child>th {
 	background-color: #ddd;
 }
-.notice-search tr>td {
+.notice_search tr>td {
 	text-align: center;
 }
 
-.notice-search tr:first-child>th {
+.notice_search tr:first-child>th {
 	background-color: #ddd;
 }
 
@@ -578,7 +584,6 @@ table.notice_content tr:first-child td {
 }
 
 table.notice_content tr:nth-child(2) td {
-	padding-left:20px;
 	text-indent:0px;
 }
 
@@ -686,6 +691,43 @@ table.notice_content tr:last-child td button:first-child {
 	margin: 10px;
 }
 
-#form_write:hover {
+#btnSubmit:hover {
 	cursor: pointer;
+}
+
+#btnAgain:hover {
+	cursor: pointer;
+}
+
+#btnSubmit_update:hover {
+	cursor: pointer;
+}
+
+#btnAgain_update:hover {
+	cursor: pointer;
+}
+
+#btnSubmit_delete:hover {
+	cursor: pointer;
+}
+
+#button {
+	width: 50%;
+	margin: 0 auto 200px auto;
+}
+
+#ampaginationsm {
+	margin: 20px auto;
+	text-align: center;
+	width: 100%;
+}
+
+.am-pagination-default {
+	display: flex;
+	justify-content: center;
+	width: 70%;
+}
+
+.notice_list {
+	margin: 200px auto;
 }
