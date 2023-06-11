@@ -18,7 +18,7 @@
  		});
    </script>
 <body>
-<div class="body">
+<div class="body">a
 <jsp:include page="../gnb.jsp"></jsp:include>
 </div>
 	<div id="contentWrap">
