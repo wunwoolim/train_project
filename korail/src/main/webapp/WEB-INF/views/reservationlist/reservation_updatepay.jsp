@@ -401,7 +401,6 @@
 							<div class="inner">
 								
 									
-									
 										<span class="roundBox departure">${ sessionScope.uvo.depplacename }</span>
 										<span class="roundBox arrive">${ sessionScope.uvo.arrplacename }</span>
 									
