@@ -26,14 +26,14 @@ public class LoginController {
 	@RequestMapping(value="/logout.do", method=RequestMethod.GET)
 	public ModelAndView logout(HttpSession session) {
 		ModelAndView model = new ModelAndView();
-		//String sid = (String)session.getAttribute("sid");
-		SessionVo svo = (SessionVo)session.getAttribute("svo");
+		//String id = (String)session.getAttribute("id");
+		SessionVo svo = (SessionVo)session.getAttribute("svo"); 
 		if(svo != null) {
 			session.invalidate();
 			model.addObject("logout_result", "ok");
 		}
 		
-		model.setViewName("index");
+		model.setViewName("main_train");
 		
 		return model;
 	}
@@ -60,15 +60,18 @@ public class LoginController {
 		
 		
 		ModelAndView model = new ModelAndView();
-		int result = memberService.getLoginResult(memberVo);
+		SessionVo svo = memberService.getLoginResult(memberVo);
 		
 		
-		if(result == 1) {
+		if(svo.getLoginResult() == 1) {
+			
 			//index 이동
 			//viewName = "index";  viewResolver를 호출--> index.jsp: header.do,footer.do 호출안됨
 			if(memberVo.getPagename().equals("mainlogin")) {
+			session.setAttribute("svo" , svo);
 			model.addObject("login_result", "ok");
-			model.setViewName("redirect:/train_reservation_rotinf.do");  //sendRedirect 
+			model.setViewName("redirect:/train_reservation_rotinf.do"); //sendRedirect 
+			
 			}else if(memberVo.getPagename().equals("reservation")){
 				 rvo.setSeatNum(memberVo.getSeatNum());
 				 rvo.setTicketQty(memberVo.getTicketQty());

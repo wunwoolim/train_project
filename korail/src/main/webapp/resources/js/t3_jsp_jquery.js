@@ -463,7 +463,7 @@ $(document).ready(function() {
 		var date2Str = formatDate(date2);
 		
 		if (date1 <= date2) {
-		  initAjax('HONG1234', date1Str, date2Str, checked);
+		  initAjax('GUEST', date1Str, date2Str, checked);
 //			  alert(date1);
 		} else {
 		  alert("잘못된 조회");
@@ -512,7 +512,7 @@ $(document).ready(function() {
 				for (obj of jdata.jlist) {
 				
 				var time = obj.time.substr(0, 4) + '.' + obj.time.substr(4, 2) + '.' + obj.time.substr(6, 2);
- 				var stime = obj.stime.substr(0, 2) + ':' + obj.stime.substr(2, 2);
+ 				var stime = obj.stime.substr(0, 2) + ':' + obj.stime.substr(3, 3);
 		        
 		        output += '<tr>';
 		        output += '<td>' + obj.rdate + '</td>';

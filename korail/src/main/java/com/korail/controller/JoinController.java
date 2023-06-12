@@ -74,7 +74,7 @@ public class JoinController {
 		int result = memberService.getJoinResult(memberVo);
 		if(result == 1) {
 			model.addObject("join_result", "ok");
-			model.setViewName("/login/login");
+			model.setViewName("/login/login1");
 		}else {
 			//회원가입 실패 - 에러페이지 호출
 		}

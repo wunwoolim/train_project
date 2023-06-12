@@ -23,10 +23,24 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<beans:bean id="memberService" class="com.korail.service.MemberServiceImpl"></beans:bean>
-	<beans:bean id="orderService" class="com.korail.service.OrderServiceImpl"></beans:bean>
+	<!-- <beans:bean id="memberService" class="com.korail.service.MemberServiceImpl"></beans:bean>
+	<beans:bean id="orderService" class="com.korail.service.OrderServiceImpl"></beans:bean> -->
 	
+	<!-- sessionAuthInterceptor -->
+	<beans:bean id="sessionAuthInterceptor" class="com.korail.interceptor.SessionAuthInterceptor">
+	</beans:bean> 
 	
+	<!-- sessionAuthInterceptor check request -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/mypage.do"/>
+			<beans:ref bean="sessionAuthInterceptor"></beans:ref>
+		</interceptor>
+		<interceptor>
+			<mapping path="/admin*"/>
+			<beans:ref bean="sessionAuthInterceptor"></beans:ref>
+		</interceptor>
+	</interceptors>
 	
 	
 	<context:component-scan base-package="com.korail.ktx" />

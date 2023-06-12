@@ -10,6 +10,7 @@ $(document).ready(function(){
 	for(let i = 0; i<height; i++){
 				seat += "<div>";
 		for(let j = 0; j<width; j++){
+		
 				count++;
 				seat +="<div class='box'>";
 			 	seat +="<span class='seatBox'>";

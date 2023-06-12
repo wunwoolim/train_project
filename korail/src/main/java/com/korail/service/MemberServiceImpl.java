@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.korail.dao.MemberDao;
 import com.korail.vo.MemberVo;
+import com.korail.vo.SessionVo;
 
 @Service("memberService")
 public class MemberServiceImpl implements  MemberService{
@@ -54,7 +55,7 @@ public class MemberServiceImpl implements  MemberService{
 	}	
 	
 	 @Override 
-	 public int getLoginResult(MemberVo memberVo) {
+	 public SessionVo getLoginResult(MemberVo memberVo) {
 		 return memberDao.loginCheck(memberVo); 
 	 }
 	 
