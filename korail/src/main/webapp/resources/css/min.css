@@ -722,12 +722,6 @@ table.notice_content tr:last-child td button:first-child {
 	width: 100%;
 }
 
-.am-pagination-default {
-	display: flex;
-	justify-content: center;
-	width: 70%;
-}
-
 .notice_list {
 	margin: 200px auto;
 }

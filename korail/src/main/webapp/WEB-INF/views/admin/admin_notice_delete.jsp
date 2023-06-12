@@ -31,7 +31,7 @@
 				<td colspan="2">
 				<div class="button">
 					<a id="btnSubmit_delete" class="btn" >삭제완료</a>
-					<a href="admin_notice_content.do?nid=${noticeVo.nid}" class="btn">이전페이지</a>
+					<a href="admin_notice_content.do?nid=${nid}" class="btn">이전페이지</a>
 					<a href="http://localhost:9000/ktx/admin_notice_list.do" class="btn">리스트</a>		
 						</div>					
 				</td>				

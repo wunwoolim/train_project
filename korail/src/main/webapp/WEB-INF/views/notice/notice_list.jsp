@@ -11,6 +11,11 @@
 	<script src="http://localhost:9000/ktx/js/am-pagination.js"></script>
 	<link rel="stylesheet" href="http://localhost:9000/ktx/css/min.css">
 	<link rel="stylesheet" href="http://localhost:9000/ktx/css/am-pagination.css">
+	<style>
+		#ampaginationsm {
+			width: 100%;
+		}
+	</style>
 	<script>
 	$(document).ready(function(){
 		var pager = jQuery('#ampaginationsm').pagination({
@@ -74,7 +79,7 @@
 		</tr>
 		</c:forEach>
 		<tr>
-			<td colspan="3"><div id="ampaginationsm"></div></td>
+			<td colspan="5" class="paging"><div id="ampaginationsm" class="paging"></div></td>
 			
 		</tr>
 	</table>
