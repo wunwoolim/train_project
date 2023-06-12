@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/gnb.css">
-<script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
+<!-- <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script> -->
 <script>
 $(document).ready(function() {
   let infoMenuVisible = false;

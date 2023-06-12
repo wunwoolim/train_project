@@ -8,10 +8,10 @@
 	<meta charset="UTF-8">
 	<title>관리자 공지사항 리스트</title>
 	<script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
-	<script src="http://localhost:9000/ktx/js/min.js"></script>
+	<!-- <script src="http://localhost:9000/ktx/js/min.js"></script> -->
 	<link rel="stylesheet" href="http://localhost:9000/ktx/css/min.css">
 	<link rel="stylesheet" href="http://localhost:9000/ktx/css/am-pagination.css">
-	<script src="http://localhost:9000/ktx/js/am-pagination.js"></script>
+	<!-- <script src="http://localhost:9000/ktx/js/am-pagination.js"></script> -->
 	<script>
 	$(document).ready(function(){
 		var pager = jQuery('#ampaginationsm').pagination({

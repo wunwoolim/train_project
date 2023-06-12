@@ -89,7 +89,7 @@ body {
 	font-size: 12px;
 	text-align: center;
 	border-collapse: collapse;
-	padding: 20px 15px;
+	padding: none;
 }
 
 .notice_search tr:last-child td {
@@ -567,7 +567,8 @@ table.notice_content th {
 }
 
 .notice_search tr:first-child>th {
-	background-color: #ddd;
+	background-color: #E91E63;
+	color: #FFF;
 }
 
 .notice_content th, td {
@@ -697,4 +698,8 @@ table.notice_content tr:last-child td button:first-child {
 	display: flex; 
 	justify-content: center;
 	align-items: center;
+}
+
+.notice_search tr:nth-child(even) {
+  background: #F5F4F4;
 }

@@ -6,7 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>공지사항 리스트</title>
-	<script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
+    <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 	<script src="http://localhost:9000/ktx/js/min.js"></script>
 	<script src="http://localhost:9000/ktx/js/am-pagination.js"></script>
 	<link rel="stylesheet" href="http://localhost:9000/ktx/css/min.css">
@@ -18,6 +18,7 @@
 	</style>
 	<script>
 	$(document).ready(function(){
+		alert("1111");
 		var pager = jQuery('#ampaginationsm').pagination({
 		
 		    maxSize: '${maxSize}',	    		// max page size
@@ -57,6 +58,7 @@
 			<select>
 				<option value="title">제목</option>
 				<option value="content">내용</option>
+				<option value="title_content">제목+내용</option>
 			</select>
 			<input type="text" name="search-notification" maxlength=100 autocomplete="off" placeholder="검색어를 입력하세요" required>
 			<button type="submit">검색</button> 
@@ -80,7 +82,6 @@
 		</c:forEach>
 		<tr>
 			<td colspan="5" class="paging"><div id="ampaginationsm" class="paging"></div></td>
-			
 		</tr>
 	</table>
 	<jsp:include page="../footer.jsp"></jsp:include>

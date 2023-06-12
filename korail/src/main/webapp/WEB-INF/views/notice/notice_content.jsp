@@ -5,7 +5,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>공지사항 상세 내용</title>
-	<script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 	<script src="http://localhost:9000/ktx/js/min.js"></script>
 	<link rel="stylesheet" href="http://localhost:9000/ktx/css/min.css">
 </head>
@@ -42,7 +41,9 @@
 			<div class="button">
 				<a href="http://localhost:9000/ktx/notice_list.do" class="btn">리스트</a>
 				<a href="#" class="btn">홈으로</a>
-				</div>
+				<a href="#" class="btn"><</a>
+				<a href="#" class="btn">></a>
+			</div>
 			</td>
 		</tr>
 	</table>
