@@ -694,7 +694,7 @@ h4 + .desc, .h4_box + .desc {
     color: #000;
 }
 
-.route_wrap .roundBox:before {
+.roundBox_start {
     display: block;
     position: absolute;
     left: 20px;
@@ -708,20 +708,21 @@ h4 + .desc, .h4_box + .desc {
     text-align: center;
     line-height: 35px;
 }
-
-.routeArea.route_wrap .roundBox:before {
-    border: 2px solid #e6e6e6;
-    color: #999;
-    box-sizing: border-box;
+.roundBox_end{
+	display: block;
+    position: absolute;
+    left: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #74b3c7;
+    font-size: 12px;
+    text-align: center;
+    line-height: 35px;
 }
 
-.route_wrap .departure:before {
-    content: "Ãâ¹ß";
-}
 
-.route_wrap .arrive:before {
-    content: "µµÂø";
-}
 
 .routeArea .detail_info {
     margin-bottom: 0;

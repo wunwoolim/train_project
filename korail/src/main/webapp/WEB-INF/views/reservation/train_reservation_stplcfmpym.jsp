@@ -396,8 +396,9 @@
 							<div class="inner">
 								
 									
-									
+										<p class="roundBox_start">출발</p>
 										<span class="roundBox departure">${ sessionScope.rvo.depplacename }</span>
+										<p class="roundBox_end">도착</p>
 										<span class="roundBox arrive">${ sessionScope.rvo.arrplacename }</span>
 									
 								

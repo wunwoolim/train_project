@@ -34,6 +34,8 @@ $(document).ready(function(){
 		$("#seatNum").val(seatNum);
 		$("#seatNum1").val(seatNum);
 		$("#seatNum2").val(seatNum);
+		$(".box img").css("opacity", "0.5");
+		$(this).find("img").css("opacity","1.0");
 		$("#passengersNum").text($("#adltCnt").text());
 		let ticketQty = $("#adltCnt").text();
 		$("#ticketQty1").val(ticketQty);
