@@ -15,7 +15,7 @@
 	}
 
 .box{
-	border:1px solid red;
+	/* border:1px solid red; */
 	display:inline-block;
 }
 </style>
