@@ -4,10 +4,22 @@ public class MemberVo {
 	String id, pass, name, email1, email2, tel, phonenumber , year , month, date,
 	gender;
 	int rno;
-	String mid, email , pnumber, birth , mdate,pagename;
+	String mid, email , pnumber, birth , mdate,pagename,seatNum,ticketQty;
 	
 	
 	
+	public String getSeatNum() {
+		return seatNum;
+	}
+	public void setSeatNum(String seatNum) {
+		this.seatNum = seatNum;
+	}
+	public String getTicketQty() {
+		return ticketQty;
+	}
+	public void setTicketQty(String ticketQty) {
+		this.ticketQty = ticketQty;
+	}
 	public String getPagename() {
 		return pagename;
 	}

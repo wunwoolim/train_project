@@ -31,20 +31,23 @@ $(document).ready(function(){
 		
 		//alert($("#chldCnt").text() + "호차 " + $(this).text()+"좌석");
 		let seatNum = $("#chldCnt").text() + "호 " + $(this).text()+"좌석";
-		$("#seatNum").val(seatNum);
+		$("#seatNum1").val(seatNum);
+		$("#seatNum2").val(seatNum);
 		$("#passengersNum").text($("#adltCnt").text());
 		let ticketQty = $("#adltCnt").text();
-		$("#ticketQty").val(ticketQty);
+		$("#ticketQty1").val(ticketQty);
+		$("#ticketQty2").val(ticketQty);
 		
 	});
 	
-	//모달창의 로그인 비로그인 클릭시 이벤트
+	//모달창의  비로그인 클릭시 이벤트
 	$("#btn_nonmember").click(function(){
-		seatForm.submit();
+		lgnUsrInfForm.submit();
 	});
 	
+	//모달창의  로그인 클릭시 이벤트
 	$("#btn_confirm").click(function(){
-		seatForm.submit();
+		loginForm.submit();
 	});
 	
 	

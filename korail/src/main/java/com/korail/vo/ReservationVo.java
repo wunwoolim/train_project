@@ -2,9 +2,59 @@ package com.korail.vo;
 
 public class ReservationVo {
 	
-	String ticketQty,startId,endId,start_add,end_add,rtime,depplacename, arrplacename,start_date,end_date,traingradename,trainno,adultcharge,rtimes,seatNum;
+	String ticketQty1,ticketQty2,ticketQty,seatNum,startId,endId,start_add,end_add,rtime,depplacename, arrplacename,start_date,end_date,traingradename,trainno,adultcharge,rtimes,seatNum1,seatNum2;
+	String division,id;
 	
 	
+	
+	public String getTicketQty1() {
+		return ticketQty1;
+	}
+
+	public void setTicketQty1(String ticketQty1) {
+		this.ticketQty1 = ticketQty1;
+	}
+
+	public String getTicketQty2() {
+		return ticketQty2;
+	}
+
+	public void setTicketQty2(String ticketQty2) {
+		this.ticketQty2 = ticketQty2;
+	}
+
+	public String getSeatNum1() {
+		return seatNum1;
+	}
+
+	public void setSeatNum1(String seatNum1) {
+		this.seatNum1 = seatNum1;
+	}
+
+	public String getSeatNum2() {
+		return seatNum2;
+	}
+
+	public void setSeatNum2(String seatNum2) {
+		this.seatNum2 = seatNum2;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getDivision() {
+		return division;
+	}
+
+	public void setDivision(String division) {
+		this.division = division;
+	}
+
 	public String getTicketQty() {
 		return ticketQty;
 	}

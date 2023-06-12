@@ -41,8 +41,8 @@ public class ReservationController {
 		 * System.out.println(rvo.getEndId());
 		 * System.out.println(Integer.parseInt(rvo.getAdultcharge()));
 		 * System.out.println(Integer.parseInt(rvo.getTrainno()));
-		 * System.out.println(Integer.parseInt(rvo.getTicketQty()));
 		 */
+		System.out.println(Integer.parseInt(rvo.getId()));
 		System.out.println(cardVo.getBirthday());
 		System.out.println(cardVo.getCardcomp());
 		System.out.println(cardVo.getCardnum());
@@ -79,27 +79,31 @@ public class ReservationController {
 	}
 	
 	
+	
 	/*
-	 * 회원 결제 페이지
+	 * 비회원 결제 페이지
 	 */
-	@RequestMapping(value="/train_reservation_member_stplcfmpym.do", method=RequestMethod.POST)
-	public String train_reservation_member_stplcfmpym() {
+	@RequestMapping(value="/train_reservation_stplcfmpym1.do", method=RequestMethod.GET)
+	public String train_reservation_stplcfmpym1(HttpSession session) {
 		
-		return "/reservation/train_reservation_member_stplcfmpym";
+		
+		return "/reservation/train_reservation_stplcfmpym";
 	}
 	
 	/*
 	 * 비회원 결제 페이지
 	 */
-	@RequestMapping(value="/train_reservation_stplcfmpym.do", method=RequestMethod.POST)
-	public String train_reservation_stplcfmpym(ReservationVo reservationVo, HttpSession session, String seatNum, String ticketQty) {
+	@RequestMapping(value="/train_reservation_stplcfmpym2.do", method=RequestMethod.POST)
+	public String train_reservation_stplcfmpym2(ReservationVo reservationVo, HttpSession session) {
 		//ModelAndView model = new ModelAndView();
 		ReservationVo rvo = (ReservationVo)session.getAttribute("rvo");
 		
-		rvo.setSeatNum(seatNum);
-		rvo.setTicketQty(ticketQty);
+		rvo.setSeatNum(reservationVo.getSeatNum2());
+		rvo.setTicketQty(reservationVo.getTicketQty2());
+		rvo.setId("GUEST");
 		
 		
+
 		//model.addObject("seatNum", reservationVo.getSeatNum() );
 		
 		//model.setViewName("/reservation/train_reservation_stplcfmpym");

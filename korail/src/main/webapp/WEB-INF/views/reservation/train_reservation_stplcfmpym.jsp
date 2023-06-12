@@ -347,7 +347,7 @@
 								
 								<div class="resend buy-t01">
 									<div class="box_inputForm">
-										<strong>010-1234-5678(으)로</strong>
+										<strong></strong>
 										<span class="box_label">
 											<label for="nonMbrsPw">인증번호가 발송 완료되었습니다.</label>
 											<input type="text" name="nonMbrsPw" id="nonMbrsPw" class="input" >
@@ -404,6 +404,7 @@
 							</div>
 							<div class="detail_info">
 								<span id="takeDrtm">4시간 15분 소요</span>
+								<span>${ sessionScope.rvo.id }</span>
 							</div>
 						</div>
 						<div class="routeArea route_wrap mob_route">

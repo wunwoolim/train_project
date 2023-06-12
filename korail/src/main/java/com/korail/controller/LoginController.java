@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.korail.service.MemberService;
 import com.korail.vo.MemberVo;
+import com.korail.vo.ReservationVo;
 import com.korail.vo.SessionVo;
 
 @Controller
@@ -53,11 +54,14 @@ public class LoginController {
 	 * login_proc.do - 로그인 처리
 	 */
 	@RequestMapping(value="/login_proc.do", method=RequestMethod.POST)
-	public ModelAndView login_proc(MemberVo memberVo) {
-		System.out.println(memberVo.getId());
-		System.out.println(memberVo.getPass());
-		System.out.println(memberVo.getPagename());
+	public ModelAndView login_proc(MemberVo memberVo, HttpSession session) {
 		
+		ReservationVo rvo = (ReservationVo)session.getAttribute("rvo");
+		
+		rvo.setSeatNum(memberVo.getSeatNum());
+		rvo.setTicketQty(memberVo.getTicketQty());
+			
+	
 		
 		ModelAndView model = new ModelAndView();
 		int result = memberService.getLoginResult(memberVo);
@@ -70,7 +74,7 @@ public class LoginController {
 			model.addObject("login_result", "ok");
 			model.setViewName("redirect:/train_reservation_rotinf.do");  //sendRedirect 
 			}else if(memberVo.getPagename().equals("reservation")){
-				model.setViewName("redirect:/train_reservation_stplcfmpym.do");
+				model.setViewName("redirect:/train_reservation_stplcfmpym1.do");
 			}
 		}else {
 			//login_fail.jsp

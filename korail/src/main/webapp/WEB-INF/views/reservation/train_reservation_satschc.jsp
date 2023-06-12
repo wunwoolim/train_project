@@ -196,10 +196,9 @@
 									<strong class="txt_tit">선택좌석</strong>
 								</div>
 								<div>
-									<form name="seatForm" id="seatForm" action="train_reservation_stplcfmpym.do" method="post">
-										<input type="text" name="seatNum" id="seatNum">
-										<input type="hidden" name="ticketQty" id ="ticketQty">
-									</form>
+									
+										
+									
 								</div>
 							</section>
 							<!-- //선택좌석 -->
@@ -269,22 +268,22 @@
 				로그인
 				<span class="modalclose"></span>
 			</div>
-		<form id="lgnUsrInfForm" name="lgnUsrInfForm">
+		
 			<div class="cont">
 				<div class="login_wrap pop">
 					<div class="box_login">
 						<h3 class="pop_h3 mob_h3">회원 로그인</h3>
 						<p class="h3_desc">회원으로 예매하시면 예매 후 아이디/비밀번호로 간편하게 조회가 가능합니다.</p>
 						<div class="inner">
+		<form name ="loginForm"  action="login_proc.do" method="post">
 							<fieldset>
 								<legend>회원로그인</legend>
-								<form name ="loginForm"  action="login_proc.do" method="post">
 								<ul class="loginList">
 									<li>
 										<div class="box_inputForm">
 											<strong>아이디</strong>
 											<span class="box_label">
-												<label for="">아이디를 입력하세요</label>
+												<label for=""></label>
 												<input type="text" name="id" id="id" class="input" >
 											</span>
 										</div>
@@ -293,21 +292,23 @@
 										<div class="box_inputForm">
 											<strong>비밀번호</strong>
 											<span class="box_label">
-												<label for="usrPwd">비밀번호를 입력하세요</label>
+												<label for="usrPwd"></label>
 												<input type="password" name="pass" id="pass" class="input" onkeyup="" data-tk-kbdtype="qwerty">
 											</span>
 										</div>
 									</li>
 								</ul>
-									<input type="text" name="pagename" class ="input" id="pagename" value="reservation">
+									<input type="hidden" name="pagename" class ="input" id="pagename" value="reservation">
 									
 								</fieldset>
 								<input type="hidden" id="popUpDvs" name="popUpDvs" value="Y">
 								
 								<p class="btn_squareBox">
 									<button type="button" class="btn_confirm ready" id="btn_confirm">로그인</button>
+									<input type="hidden" name="seatNum" id="seatNum1">
+									<input type="hidden" name="ticketQty" id ="ticketQty1">
 								</p>
-							</form>
+		</form>
 							
 							
 							
@@ -317,6 +318,8 @@
 							</div>
 						</div>
 					</div>
+					
+		<form id="lgnUsrInfForm" name="lgnUsrInfForm" action="train_reservation_stplcfmpym2.do" method="post">
 					<div class="box_login non-member">
 						<div class="inner">
 							<h3 class="pop_h3 mob_h3">비회원 예매</h3>
@@ -326,14 +329,14 @@
 							</p>
 							<!--fnNonUsrMrs() 각 페이지의 해당 함수의 기능제어 요망  -->
 						</div>
-					</div>			
+					</div>
+					<input type="hidden" name="division" id="division" value="nomember">	
+					<input type="hidden" name="seatNum2" id="seatNum2" >
+					<input type="hidden" name="ticketQty2" id ="ticketQty2">
+		</form>
+		
 				</div>
-			</div>
-			<!-- <input type="hidden" id="hidfrmId" name="hidfrmId" value="lgnUsrInfForm">
-			<input type="hidden" id="transkeyUuid_lgnUsrInfForm" name="transkeyUuid_lgnUsrInfForm" value="f37fa89ba7cd9984a920d7cc83fdc1ce8355b5619b0eccc088e86d3024edb79b">
-			<input type="hidden" id="transkey_usrPwd_lgnUsrInfForm" name="transkey_usrPwd_lgnUsrInfForm" value="">
-			<input type="hidden" id="transkey_HM_usrPwd_lgnUsrInfForm" name="transkey_HM_usrPwd_lgnUsrInfForm" value=""> -->
-		</form>		
+			</div>	
 		</div>
 	</div>
 
