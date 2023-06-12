@@ -128,11 +128,9 @@ $(document).ready(function() {
 
 	});	//ready
 	
-	
-	//기차 시간표 검색
-	$(document).ready(function(){
+$(document).ready(function(){
 	init();
-	
+		
 	function init(){
 		let url = "https://apis.data.go.kr/1613000/TrainInfoService/getCtyCodeList?serviceKey=fia82dW58XZekM3fyfsYQjw24d3TDN%2FOCdtbCQWjlYjltamNE5UGs23S0OiE%2BdghuBeQ%2Bt%2FLjncovmHroyfk1Q%3D%3D&_type=json";
 		$.getJSON(url, function(city){
@@ -165,7 +163,7 @@ $(document).ready(function() {
 		$("#start_train").change(function(){
 			$("#start").val($(this).val());
 	});
-
+	
 	// 도착역
 	
 	let url = "https://apis.data.go.kr/1613000/TrainInfoService/getCtyCodeList?serviceKey=fia82dW58XZekM3fyfsYQjw24d3TDN%2FOCdtbCQWjlYjltamNE5UGs23S0OiE%2BdghuBeQ%2Bt%2FLjncovmHroyfk1Q%3D%3D&_type=json";
@@ -203,9 +201,7 @@ $(document).ready(function() {
 		$("#btnsearch").click(function(){
 			
 			let url ="https://apis.data.go.kr/1613000/TrainInfoService/getStrtpntAlocFndTrainInfo?serviceKey=fia82dW58XZekM3fyfsYQjw24d3TDN%2FOCdtbCQWjlYjltamNE5UGs23S0OiE%2BdghuBeQ%2Bt%2FLjncovmHroyfk1Q%3D%3D&pageNo=1&numOfRows=10&_type=json&depPlaceId="+$("#start").val() +"&arrPlaceId="+$("#end").val()+"&depPlandTime="+$("#traintime").val()+"&trainGradeCode=00";
-//					  https://apis.data.go.kr/1613000/TrainInfoService/getStrtpntAlocFndTrainInfo?serviceKey=fia82dW58XZekM3fyfsYQjw24d3TDN%2FOCdtbCOWjlYjltamNE5UGs23500iE%2BdghuBeQ%2Bt%2FLincovmHroyfk1Q%3D%3D&pageNo=1&numOfRows=10&_type=json&depPlaceld=NAT010000SarrPlaceld=NAT014445&depPlandTime=20230510&trainGradeCode=00
-					 /* https://apis.data.go.kr/1613000/TrainInfoService/getStrtpntAlocFndTrainInfo?serviceKey=fia82dW58XZekM3fyfsYQjw24d3TDN%2FOCdtbCQWjlYjltamNE5UGs23S0OiE%2BdghuBeQ%2Bt%2FLjncovmHroyfk1Q%3D%3D&pageNo=1&numOfRows=10&_type=json&depPlaceId=NAT010000&arrPlaceId=NAT011668&depPlandTime=20230403&trainGradeCode=00
-*/			$.getJSON(url, function(citys){
+					 			$.getJSON(url, function(citys){
 				let code = "<form name='testForm' action='testProc.jsp' method='post'><div id='d2'>";
 					code += "<table id='testTable'><tr><th>출발역</th><th>도착역</th><th>출발일시</th><th>도착시간</th><th>열차명</th><th>열차번호</th><th>운임</th></tr>";
 				for(kobi of citys.response.body.items.item){
@@ -223,17 +219,16 @@ $(document).ready(function() {
 
 				code +="</table>"
 				code +="</div> </form>"
-					
+						
 				$("div#d2").remove();
 				
-				$("body").append(code);
+				$("div#trainList").after(code);
 				
 				});
 		})
+
+});
 	
-		//https://apis.data.go.kr/1613000/TrainInfoService/getStrtpntAlocFndTrainInfo?serviceKey=fia82dW58XZekM3fyfsYQjw24d3TDN%2FOCdtbCQWjlYjltamNE5UGs23S0OiE%2BdghuBeQ%2Bt%2FLjncovmHroyfk1Q%3D%3D&pageNo=1&numOfRows=10&_type=json&depPlaceId=NAT010000&arrPlaceId=NAT011668&depPlandTime=20230403&trainGradeCode=00
-	
-});	
 
 //공지사항 등록
 $(document).ready(function() {

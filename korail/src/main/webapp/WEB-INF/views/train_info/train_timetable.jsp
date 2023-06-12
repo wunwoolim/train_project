@@ -8,8 +8,8 @@
 	<title>기차 시간표</title>
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/reservationlist.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
-<script src="http://localhost:9000/ktx/js/reservation_jquery.js"></script>
 <script src="http://localhost:9000/ktx/js/ktx_getJson.js"></script>
+
 <style>
 	#d2{
 		margin-bottom: 70px;

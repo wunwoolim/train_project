@@ -37,7 +37,7 @@
 			<select id="end_train"></select>
 			
 			<input type="text" name="traintime"  placeholder="날짜입력 예)20200701" id="traintime">
-			<button type="button" id="btnsearch">조회</button>
+			<button type="button" id="btnsearch" class="btn2">조회</button>
 			<input type="hidden" id="start" >
 			<input type="hidden" id="end" >
 		</div>
