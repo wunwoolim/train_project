@@ -198,3 +198,13 @@ font-weight: 1000px;
 .find1{
 margin-right:10px;
 }
+
+.admin{
+	text-align:center;
+}
+.admin_box{
+	height:300px;
+	text-align:center;
+    padding-top: 100px;
+	
+}

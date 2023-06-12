@@ -23,6 +23,13 @@ public class Admin_memberController {
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
 	@RequestMapping(value="/admin_member_search.do", method=RequestMethod.POST)
 	public ModelAndView admin_member_search(String page, String category,String cvalue) {
 		System.out.println(page);

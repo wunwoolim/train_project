@@ -34,7 +34,6 @@
 	    });
 		
 		$("#member_search").click(function(){
-			alert("222");
 			if ( $("#category").val() == "custname"){
 					if($("#cvalue").val() == ""){
 						alert("이름을 입력해주세요");
