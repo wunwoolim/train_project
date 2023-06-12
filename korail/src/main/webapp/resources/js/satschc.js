@@ -31,6 +31,7 @@ $(document).ready(function(){
 		
 		//alert($("#chldCnt").text() + "호차 " + $(this).text()+"좌석");
 		let seatNum = $("#chldCnt").text() + "호 " + $(this).text()+"좌석";
+		$("#seatNum").val(seatNum);
 		$("#seatNum1").val(seatNum);
 		$("#seatNum2").val(seatNum);
 		$("#passengersNum").text($("#adltCnt").text());
@@ -42,6 +43,7 @@ $(document).ready(function(){
 	
 	//모달창의  비로그인 클릭시 이벤트
 	$("#btn_nonmember").click(function(){
+		
 		lgnUsrInfForm.submit();
 	});
 	

@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+
 	
 	//카드사 선택 이벤트
 	$(".selectricOpen").click(function() {

@@ -10,7 +10,6 @@
 <script src="http://localhost:9000/ktx/js/satschc.js"></script>
 <style>
 .box{
-	border:1px solid red;
 	display:inline-block;
 }
 </style>
@@ -196,7 +195,7 @@
 									<strong class="txt_tit">선택좌석</strong>
 								</div>
 								<div>
-									
+								<input type="text" name="seatNum" id="seatNum" >
 										
 									
 								</div>

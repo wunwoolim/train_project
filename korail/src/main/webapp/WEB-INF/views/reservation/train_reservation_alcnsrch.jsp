@@ -127,7 +127,6 @@ $.getJSON(url, function(citys){
 							</div>
 							<div class="detail_info">
 								<span id="takeDrtm">2시간 50분 소요</span>
-								<span id="dist">227.9 Km</span>
 							</div>
 							<div class="btn_r">
 								<a href="#none" class="btn btn_modify white">수정</a>

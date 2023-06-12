@@ -59,10 +59,6 @@ public class LoginController {
 		ReservationVo rvo = (ReservationVo)session.getAttribute("rvo");
 		
 		
-		
-		
-		System.out.println(memberVo.getId());
-		
 		ModelAndView model = new ModelAndView();
 		int result = memberService.getLoginResult(memberVo);
 		
@@ -74,9 +70,10 @@ public class LoginController {
 			model.addObject("login_result", "ok");
 			model.setViewName("redirect:/train_reservation_rotinf.do");  //sendRedirect 
 			}else if(memberVo.getPagename().equals("reservation")){
-				  rvo.setSeatNum(memberVo.getSeatNum());
-				  rvo.setTicketQty(memberVo.getTicketQty());
+				 rvo.setSeatNum(memberVo.getSeatNum());
+				 rvo.setTicketQty(memberVo.getTicketQty());
 				 rvo.setId(memberVo.getId()); 
+				 
 				model.setViewName("redirect:/train_reservation_stplcfmpym1.do");
 			}
 		}else {
