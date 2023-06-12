@@ -1,7 +1,5 @@
 $(document).ready(function() {
-		function bye(event) {
-			alert("bye");
-		};
+
 	/*********************************************
 	*
 	* 우대예약 등록
@@ -162,6 +160,9 @@ $(document).ready(function() {
 			}
 		});
 		
+		function bye(event) {
+			alert("bye");
+		};
 
 	/***************************************************************************
 	 * 

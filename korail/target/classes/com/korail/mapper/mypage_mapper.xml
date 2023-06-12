@@ -6,9 +6,9 @@
     
 <mapper namespace="mapper.mypage">
 
-	<update id="pass" parameterType="java.util.HashMap">
-		UPDATE KTX_MEMBER SET pass=#{cpass} WHERE pass=#{npass} 
-	</update>
+<!-- 	<update id="pass" parameterType="java.util.HashMap"> -->
+<!-- 		UPDATE KTX_MEMBER SET pass=#{cpass} WHERE pass=#{npass} ADN ID=#{id} -->
+<!-- 	</update> -->
 	
 <!-- 	<update id="pnumber" parameterType="java.lang.String"> -->
 <!-- 		UPDATE KTX_MEMBER SET PHONENUMBER=#{cpnumber} WHERE PHONENUMBER=#{npnumber}  -->
