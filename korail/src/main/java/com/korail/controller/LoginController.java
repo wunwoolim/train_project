@@ -60,8 +60,9 @@ public class LoginController {
 		
 		rvo.setSeatNum(memberVo.getSeatNum());
 		rvo.setTicketQty(memberVo.getTicketQty());
-			
-	
+		rvo.setId(memberVo.getId());
+		
+		System.out.println(memberVo.getId());
 		
 		ModelAndView model = new ModelAndView();
 		int result = memberService.getLoginResult(memberVo);

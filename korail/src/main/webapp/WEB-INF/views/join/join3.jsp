@@ -38,11 +38,11 @@
 		
 		<li>
 		<div>	<p>비밀번호</p> </div>
-			<input type="text" class="join_input" name ="pass" id ="pass" 	placeholder ="비밀번호 입력(문자,숫자,특수문자 포함 8~20자)">
+			<input type="password" class="join_input" name ="pass" id ="pass" 	placeholder ="비밀번호 입력(문자,숫자,특수문자 포함 8~20자)">
 		</li>
 		<li>	
 		<div>	<p>비밀번호 확인</p> </div>
-			<input type="text" class="join_input" name ="cpass" id ="cpass" placeholder ="비밀번호 재입력">
+			<input type="password" class="join_input" name ="cpass" id ="cpass" placeholder ="비밀번호 재입력">
 			 <span id="cmsg"></span>
 		</li>
 		<li>
@@ -71,7 +71,7 @@
 		</li>	
 		<li >
 		<div>	<p>출생년도</p> </div>
-			<input type="text"  class="join_input" name ="birth" id="birth"  placeholder ="출생년도 4자리를 입력해주새요">
+			<input type="text"  class="join_input" name ="birth" id="birth"  placeholder ="출생년도 4자리를 입력해주새요"maxlength="6">
 		</li>	
 		<li>
 			<div>	<p>성별</p> </div>

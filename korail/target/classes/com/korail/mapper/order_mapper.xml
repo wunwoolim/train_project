@@ -12,7 +12,7 @@
 			(sstation,rdate,stime,dtime,dstation,price,reservnum,trainnum,chairnum,ticketqty,id,cancel,depPlaceId,arrPlaceId,depPlandTime,cardnum)
 		values
 			(#{sstation},sysdate,#{stime},#{dtime},#{dstation},#{price},#{reservnum},#{trainnum},#{chairnum},#{ticketqty},
-			'GUEST','0',#{depPlaceId},#{arrPlaceId},#{depPlandTime},#{cardnum})
+			#{id},'0',#{depPlaceId},#{arrPlaceId},#{depPlandTime},#{cardnum})
 	</insert>
 
 	<update id="updatePayment" parameterType="com.korail.vo.OrderVo">

@@ -42,11 +42,12 @@ public class ReservationController {
 		 * System.out.println(Integer.parseInt(rvo.getAdultcharge()));
 		 * System.out.println(Integer.parseInt(rvo.getTrainno()));
 		 */
-		System.out.println(Integer.parseInt(rvo.getId()));
+		System.out.println(rvo.getId());
 		System.out.println(cardVo.getBirthday());
 		System.out.println(cardVo.getCardcomp());
 		System.out.println(cardVo.getCardnum());
 		//System.out.println(cardVo.getRecognizenum()); //승인번호
+		
 		cardVo.setRecognizenum(uuid.toString().replaceAll("-", "").substring(0, 10));
 		
 		orderVo.setSstation(rvo.getDepplacename());
@@ -55,7 +56,7 @@ public class ReservationController {
 		orderVo.setDstation(rvo.getArrplacename());
 		orderVo.setReservnum(uuid.toString().substring(0, 8));  //예매 번호
 		orderVo.setChairnum(rvo.getSeatNum());
-		/* orderVo.setId(); */
+		orderVo.setId(rvo.getId());
 		orderVo.setDepPlaceId(rvo.getStartId());
 		orderVo.setArrPlaceId(rvo.getEndId());
 		orderVo.setDepPlandTime(rvo.getRtimes());
@@ -81,7 +82,7 @@ public class ReservationController {
 	
 	
 	/*
-	 * 비회원 결제 페이지
+	 * 회원 결제 페이지
 	 */
 	@RequestMapping(value="/train_reservation_stplcfmpym1.do", method=RequestMethod.GET)
 	public String train_reservation_stplcfmpym1(HttpSession session) {
