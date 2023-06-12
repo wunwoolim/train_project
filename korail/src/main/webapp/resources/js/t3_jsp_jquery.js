@@ -1,5 +1,7 @@
 $(document).ready(function() {
-
+		function bye(event) {
+			alert("bye");
+		};
 	/*********************************************
 	*
 	* 우대예약 등록
@@ -74,10 +76,10 @@ $(document).ready(function() {
 			});
 			
 			/**
-			 * 마이페이지 회원탈퇴 완료
+			 * 마이페이지 비밀번호 변경완료
 			 */
 			
-			$("#with-confirm").click(function() {
+			$("#pass-confimr").click(function() {
 				if ($("input[name='usrPw']").val().trim() === "") {
 					alert("비밀번호 입력");
 					$("#usrPw").focus();
@@ -98,20 +100,6 @@ $(document).ready(function() {
 					// 로그아웃 처리
 				}
 			});
-			
-			/**
-			 * 마이페이지 비밀번호 변경 완료
-			 */
-			
-			$("#pass-confimr").click(function() {
-				if ($("input[name='usrPw3']").val() === "") {
-					passForm.submit();
-					$(".with_modal").toggle().css("display", "none");
-					alert("비밀번호 변경 완료");
-					// 로그아웃 처리
-				}
-			});
-			
 			/**
 			 * 마이페이지 비밀번호 확인
 			 */
@@ -173,8 +161,8 @@ $(document).ready(function() {
 				$(".depth4-1").toggle().css("display", "none");
 			}
 		});
-	
-	
+		
+
 	/***************************************************************************
 	 * 
      *	payment_history_view

@@ -12,7 +12,7 @@
 			AND cancel=1
 		</if>
 		<if test='status=="payments"'>
-			AND cancel=1
+			AND cancel=0
 		</if>
 	</select>
 
