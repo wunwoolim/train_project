@@ -21,10 +21,12 @@
 <jsp:include page="../gnb.jsp"></jsp:include>
 </div>
 	<div id="contentWrap">
-	<div class="title-wrap">
-		<jsp:include page="../header.jsp"></jsp:include>
-		<h2 class="title">기차 시간표</h2>
-	</div>
+		<div class="train_timetable">
+			<div class="title-wrap">
+				<jsp:include page="../header.jsp"></jsp:include>
+				<h2 class="title">기차 시간표</h2>
+			</div>
+		</div>
 	<div id="trainList">
 		<span class="start_span">출발지</span>
 		<select id="start_city"></select>
@@ -36,8 +38,8 @@
 		
 		<input type="text" name="traintime" placeholder="날짜입력 예)20200701" id="traintime">
 		<button type="button" id="btnsearch">조회</button>
-		<input type="hidden" id="start" >
-		<input type="hidden" id="end" >
+		<input type="hidden" id="start">
+		<input type="hidden" id="end">
 	</div>
 	
 	<jsp:include page="../footer.jsp"></jsp:include>

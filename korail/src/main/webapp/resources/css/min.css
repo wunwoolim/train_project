@@ -692,3 +692,9 @@ table.notice_content tr:last-child td button:first-child {
 .notice_list {
 	margin: 200px auto;
 }
+
+#testTable {
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+}
