@@ -640,13 +640,13 @@ table.notice_content tr:last-child td button:first-child {
 	padding: 10px 0;
 }
 
-.trainlist {
+#trainList {
 	display: flex; 
 	justify-content: center;
 	align-items: center;
 }
 
-.trainlist span {
+#trainList span {
 	margin: 10px;
 }
 

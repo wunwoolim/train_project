@@ -6,7 +6,7 @@
 
 	<meta charset="UTF-8">
 	<title>기차 시간표</title>
-<link rel="stylesheet" href="http://localhost:9000/ktx/css/reservationlist.css">
+<link rel="stylesheet" href="http://localhost:9000/ktx/css/min.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/ktx/js/ktx_getJson.js"></script>
 
@@ -17,30 +17,30 @@
 </style>
 </head>
 <body>
+<div class="body">
 <jsp:include page="../gnb.jsp"></jsp:include>
-	<!------------------------ 타이틀 ---------------------------->
+</div>
 	<div id="contentWrap">
-		<div class="title_wrap_checkTicketingT">
-			<div class="title_wrap">
-				<jsp:include page="../header.jsp"></jsp:include>
-				<h2>KTX 시간표</h2>
-			</div>
-		</div>
-		<div id="trainList">
-			<span class="start_span">출발지</span>
-			<select id="start_city"></select>
-			<select id="start_train"></select>
-			
-			<span class="end_span">도착지</span>
-			<select id="end_city"></select>
-			<select id="end_train"></select>
-			
-			<input type="text" name="traintime"  placeholder="날짜입력 예)20200701" id="traintime">
-			<button type="button" id="btnsearch">조회</button>
-			<input type="hidden" id="start" >
-			<input type="hidden" id="end" >
-		</div>
-		<jsp:include page="../footer.jsp"></jsp:include>
+	<div class="title-wrap">
+		<jsp:include page="../header.jsp"></jsp:include>
+		<h2 class="title">기차 시간표</h2>
 	</div>
+	<div id="trainList">
+		<span class="start_span">출발지</span>
+		<select id="start_city"></select>
+		<select id="start_train"></select>
+		
+		<span class="end_span">도착지</span>
+		<select id="end_city"></select>
+		<select id="end_train"></select>
+		
+		<input type="text" name="traintime" placeholder="날짜입력 예)20200701" id="traintime">
+		<button type="button" id="btnsearch">조회</button>
+		<input type="hidden" id="start" >
+		<input type="hidden" id="end" >
+	</div>
+	
+	<jsp:include page="../footer.jsp"></jsp:include>
+</div>
 </body>
 </html>
