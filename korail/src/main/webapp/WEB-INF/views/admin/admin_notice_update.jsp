@@ -17,7 +17,7 @@
 	<div class="title-wrap">
 		<jsp:include page="../header.jsp"></jsp:include>
 	<h2 class="title">관리자 - 공지사항</h2>
-	</div>a
+	</div>
 	<form id="form_update" name="updateForm" action="admin_notice_update_proc.do" method="post">
 		<input type="hidden" name="nid" value="${noticeVo.nid}">
 		<table class="notice_update">
