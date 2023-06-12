@@ -114,6 +114,7 @@ ul {
 
 .depth1 li {
 	padding: 9px;
+	cursor: pointer;
 }
 
 a {
