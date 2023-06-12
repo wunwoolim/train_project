@@ -14,7 +14,7 @@ public class SessionAuthInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		
 		HttpSession session = request.getSession();
-		SessionVo svo = (SessionVo) session.getAttribute("svo");
+		SessionVo svo = (SessionVo)session.getAttribute("svo");
 		
 		if(svo == null) {
 			response.sendRedirect("/ktx/login.do");

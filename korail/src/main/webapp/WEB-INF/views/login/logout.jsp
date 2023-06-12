@@ -9,6 +9,6 @@
 	
 	out.write("<script>");
 	out.write("alert('로그아웃에 성공하셨습니다');");
-	out.write("location.href='http://localhost:9000/mycgv_jsp/index.jsp';");
+	out.write("location.href='http://localhost:9000/ktx/logout.do';");
 	out.write("</script>");
 %>

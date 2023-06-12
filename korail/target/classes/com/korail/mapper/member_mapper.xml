@@ -52,7 +52,7 @@
 	
 	
 	
-	<select id="login"  parameterType="com.korail.vo.MemberVo"  resultType="int">
+	<select id="login"  parameterType="com.korail.vo.MemberVo"  resultType="com.korail.vo.SessionVo">
 		select count(*) loginResult, name, id
 		FROM KTX_MEMBER where id=#{id} and pass=#{pass} group by name, id
 	</select>
