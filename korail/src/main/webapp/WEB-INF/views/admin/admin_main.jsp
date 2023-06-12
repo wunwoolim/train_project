@@ -36,7 +36,7 @@
  
 }
 
-a:hover{
+.admin_main a:hover{
  border: 3px solid #68b3ce;
 }
 

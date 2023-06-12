@@ -16,6 +16,7 @@
 				<li><a href="http://localhost:9000/ktx/mypage.do">마이페이지</a></li>
 				<li><a href="http://localhost:9000/ktx/pmyhis.do">결제내역조회</a></li>
 				<li><a href="http://localhost:9000/ktx/sitemap.do">사이트맵</a></li>
+				<li><a href="http://localhost:9000/ktx/admin_main.do" style="color:#cfa346; font-weight:bold;">admin</a></li>
 			</ul>
 			
 			<ul class="clfix_logout">

@@ -64,7 +64,7 @@ $(document).ready(function() {
 						<li><a href="http://localhost:9000/ktx/reservation_info.do">예매 안내</a></li>
 					</ul>
 				</li>
-				<li><a href="http://localhost:9000/ktx/admin_main.do">공지사항</a></li>
+				<li><a href="http://localhost:9000/ktx/notice_list.do">공지사항</a></li>
 			</ul>
 		</div>
 	</div>
