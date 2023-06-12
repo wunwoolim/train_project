@@ -301,7 +301,9 @@
 					<div class="routeBody">
 						<div class="routeArea route_wrap">
 							<div class="inner">
+								<span class="roundBox_start">출발</span>
 								<span class="roundBox departure" id="modal_sstation"></span>
+								<span class="roundBox_end">도착</span>
 								<span class="roundBox arrive" id="modal_dstation"></span>
 							</div>
 							<div class="detail_info">
