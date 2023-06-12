@@ -45,7 +45,7 @@
 					<ul class="depth4-1" style="padding-left: 2px; display: none;"">
 						<li><a href="my_page.do">나의정보수정</a></li>
 						<li><a href="#">안심로그인등록</a></li>
-						<li><a href="#">우대예약 등록</a></li>
+						<li><a href="s_reservation.do">우대예약 등록</a></li>
 						<li><a href="#">간편구매 정보 등록</a></li>
 						<!-- 다자녀, 임신부, 기초생활수급자 -->
 						<li><a href="my_page.do">회원탈퇴</a></li>

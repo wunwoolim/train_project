@@ -40,5 +40,11 @@ public class HeaderContorller {
 
 		return "/header/header_sitemap";
 	}
+	
+	@RequestMapping(value = "/header_sreser.do", method = RequestMethod.GET)
+	public String header_sreser() {
+		
+		return "/header/header_sreser";
+	}
 
 }

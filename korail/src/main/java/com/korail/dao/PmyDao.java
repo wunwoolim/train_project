@@ -17,7 +17,7 @@ public class PmyDao {
 	
 	public List<OrderVo> check(HashMap<String, String> param) {
 	    List<OrderVo> result = sqlSession.selectList("mapper.pmy.check", param);
-	    System.out.println("Dao Result: " + result.toString());
+//	    System.out.println("Dao Result: " + result.toString());
 	    return result;
 	}
 

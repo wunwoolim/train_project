@@ -19,11 +19,6 @@ public class MemberServiceImpl implements  MemberService{
 	 * MemberDao(); return memberDao.totalRowCount(); }
 	 */
 	
-	
-	
-	
-	
-	
 	@Override
 	public ArrayList<MemberVo> getList(int startCount, int endCount, String category, String cvalue){
 		ArrayList<MemberVo> rlist = new ArrayList<MemberVo>();

@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="title_wrap businessT">
-		<jsp:include page="../header/header_util.jsp"></jsp:include>
+		<jsp:include page="../header.jsp"></jsp:include>
 		<h2>사이트맵</h2>
 	</div>
 </body>

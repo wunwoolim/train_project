@@ -53,14 +53,14 @@ public class PaymentController {
 		//Payment_historyVo payVo =  pymService.getPageResult(bid);
 		HashMap<String, String> param = new HashMap<String, String>();
 		
-		System.out.println("id : " + id);
-		System.out.println("date1Str : " + date1Str);
-		System.out.println("date2Str : " + date2Str);
-		System.out.println("checked : " + checked);
+//		System.out.println("id : " + id);
+//		System.out.println("date1Str : " + date1Str);
+//		System.out.println("date2Str : " + date2Str);
+//		System.out.println("checked : " + checked);
 		param.put("id", id);
 		param.put("date1", date1Str);
 		param.put("date2", date2Str);
-		param.put("cancel", checked);
+		param.put("status", checked);
 		ArrayList<OrderVo> list 
 		= pmyService.getSelect(param);
 		
@@ -76,7 +76,7 @@ public class PaymentController {
 		jobj.addProperty("price", phv.getPrice());
 		jobj.addProperty("qty", phv.getTicketqty());
 		jobj.addProperty("time", phv.getDepPlandTime());
-		jobj.addProperty("cancel", phv.getCancel());
+		jobj.addProperty("status", phv.getCancel());
 		jarray.add(jobj);
 	}
 	jlist.add("jlist", jarray);	

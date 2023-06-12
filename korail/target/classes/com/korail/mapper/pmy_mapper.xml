@@ -8,6 +8,24 @@
 		
 	<select id="check" parameterType="java.util.HashMap" resultType="com.korail.vo.OrderVo">
 	    SELECT * FROM KTX_ORDER WHERE id=#{id} AND DepPlandTime BETWEEN to_date(#{date1}, 'yyyy/mm/dd') AND to_date(#{date2}, 'yyyy/mm/dd')
+		<if test='status=="cancel"'>
+			AND cancel=1
+		</if>
+		<if test='status=="payments"'>
+			AND cancel=1
+		</if>
 	</select>
+
+<!-- 	<update id="pass" parameterType="java.lang.String"> -->
+<!-- 		UPDATE KTX_MEMBER SET pass=#{cpass} WHERE pass=#{npass}  -->
+<!-- 	</update> -->
+	
+<!-- 	<update id="pnumber" parameterType="java.lang.String"> -->
+<!-- 		UPDATE KTX_MEMBER SET PHONENUMBER=#{cpnumber} WHERE PHONENUMBER=#{npnumber}  -->
+<!-- 	</update> -->
+	
+<!-- 	<delete id="secession" parameterType="java.lang.String"> -->
+<!-- 		DELETE FROM KTX_MEMBER WHERE ID=#{id} -->
+<!-- 	</delete> -->
 	
 </mapper>

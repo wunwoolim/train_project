@@ -1,4 +1,26 @@
 $(document).ready(function() {
+
+	/*********************************************
+	*
+	* 우대예약 등록
+	*
+	*******************************	**************/
+	
+	$("#preferential_btn").click(function() {
+	    if ($("#chkAgree").is(":checked")) {
+	
+	        var fileInput = $("#file");
+	        if (fileInput[0].files.length === 0) {
+	            alert("첨부파일을 첨부하여 주시기 바랍니다.");
+	        } else {
+	        	//파일 전송
+	        	
+	        }
+	
+	    } else {
+	        alert("개인정보 제공에 동의하셔야 합니다.");
+	    }
+	});
 	
 	var checked;
 
@@ -56,17 +78,14 @@ $(document).ready(function() {
 			 */
 			
 			$("#with-confirm").click(function() {
-				if ($("input[name='usrPw']").val() === "") {
+				if ($("input[name='usrPw']").val().trim() === "") {
 					alert("비밀번호 입력");
 					$("#usrPw").focus();
 				} else {
+				 initAjax(npass, cpass);
 					$.ajax({
-					url : "mypage_verification.do?",
+					url : "mypage_cpassProc.do?npass=" + npass +"cpass" + cpass,
 					type : "post",
-					data : {
-						pass: $("#usrPw").val()
-					},
-					
 					success:function(result) {
 						if(result == 1) {
 						alert("회원탈퇴 완료");
@@ -461,12 +480,14 @@ $(document).ready(function() {
 		  alert("잘못된 조회");
 		}
 	});
-	
+
+/*	
 	if (checked == "payments" || checked == "all") {
 	  checked = 0;
 	} else {
 	  checked = 1;
 	}
+*/
 
 	function initAjax(id, date1Str, date2Str, checked) {
 	  $.ajax({
@@ -500,6 +521,10 @@ $(document).ready(function() {
 		        output += '<tbody>';
 				
 				for (obj of jdata.jlist) {
+				
+				var time = obj.time.substr(0, 4) + '.' + obj.time.substr(4, 2) + '.' + obj.time.substr(6, 2);
+ 				var stime = obj.stime.substr(0, 2) + ':' + obj.stime.substr(2, 2);
+		        
 		        output += '<tr>';
 		        output += '<td>' + obj.rdate + '</td>';
 		        output += '<td><span class="txt_purple"> 편도 </span></td>';
@@ -508,10 +533,10 @@ $(document).ready(function() {
 		        output += '<span class="roundBox">' + obj.sstation + '</span> <span class="roundBox">' + obj.dstation + '</span>';
 		        output += '</div>';
 		        output += '</td>';
-		        output += '<td><span class="tbl_ico ico_departure">' + + obj.time + " " + obj.stime + '<span class="txt_date"> 고속 </span></span></td>';
+		        output += '<td><span class="tbl_ico ico_departure">' + time + " " + stime + " "+ '<span class="txt_date"> 고속 </span></span></td>';
 		        output += '<td> 일반 ' + obj.qty + '<br></td>';
-		        output += '<td><span class="txt_price">' + obj.price + '원</span> <span class="txt_div"> 카드 </span></td>';
-				if (obj.cancel === 1){
+		        output += '<td><span class="txt_price">' + obj.price.toLocaleString() + '원</span> <span class="txt_div"> 카드 </span></td>';
+				if (obj.status === 1){
 				  output += '<td class="bg_payment_cancel" style="background: url(./images/bg_payment_cancel_s.png) 100% 100% no-repeat;"></td>';
 				} else {
 				  output += '<td class="bg_payment_cancel"></td>';
@@ -525,6 +550,7 @@ $(document).ready(function() {
 			//output 출력
 			$("table.tbl_search_result").remove();
 			$("div.search_result_wrap").after(output);
+			
 	    } // success
 	  }); // ajax
 	}

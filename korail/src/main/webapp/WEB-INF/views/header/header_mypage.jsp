@@ -51,12 +51,12 @@
 				<li class="payment">
 					<div class="row">
 						<a
-							href="http://localhost:9000/t3/payment_history/payment_history_view.jsp"
+							href="http://localhost:9000/ktx/pmyhis.do"
 							class="txt_myMenu"> <span>결제내역</span><strong>&nbsp;</strong></a>
 					</div>
 					<div class="btnBox">
 						<a
-							href="http://localhost:9000/t3/payment_history/payment_history_view.jsp"
+							href="http://localhost:9000/ktx/pmyhis.do"
 							class="btn btn_sm_link_white">결제내역 조회</a>
 					</div>
 				</li>

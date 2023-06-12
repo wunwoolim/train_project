@@ -41,7 +41,7 @@
 															id="status02" name="status" value="payments"> <label
 															for="status02" >결제</label>
 													</span> <span class="custom_radio"> <input type="radio"
-															id="status03" name="status" value="cancle"> <label
+															id="status03" name="status" value="cancel"> <label
 															for="status03">취소</label>
 													</span> <input type="hidden" id="staCd" name="staCd" value="0">
 													</span>
@@ -74,14 +74,14 @@
 													<p class="text">
 														<span class="text_date text_date1" id="today">오늘</span><input
 															type="text" id="datepicker3" name="srchBltnSttDt"
-															readonly="" class="hasDatepicker"> <img
+															 class="hasDatepicker"> <img
 															class="ui-datepicker-trigger1"
 															src="./images/ico_calender.png" alt="달력" title="달력">
 														<input type="date" class="calendar" id="start"	
 															name="trip-start">
 													<form name="modalForm" method="get">
 														<div id="modal1" style="display: none;">
-															<div class="modal-content" action="#">
+															<div class="modal-content">
 																<div class="datepicker-header">
 																	<a class="ui-datepicker-prev ui-corner-all"
 																		data-handler="prev" data-event="click" title="이전달"><span
@@ -95,7 +95,6 @@
 															</div>
 														</div>
 													</form>
-													</p>
 												</div>
 											</li>
 											<li class="label_tag">
@@ -105,12 +104,12 @@
 													<p class="text">
 														<span class="text_date text_date2">2023. 5. 17. 수</span><input
 															type="text" id="datepicker4" name="srchBltnEndDt"
-															readonly="" class="hasDatepicker" value="2023. 5. 17. 수"><img
+															 class="hasDatepicker" value="2023. 5. 17. 수"><img
 															class="ui-datepicker-trigger2"
 															src="./images/ico_calender.png" alt="달력" title="달력">
 													<form name="modalForm" method="get">
 														<div id="modal2" style="display: none;">
-															<div class="modal-content" action="#">
+															<div class="modal-content" >
 																<div class="datepicker-header">
 																	<a class="ui-datepicker-prev ui-corner-all"
 																		data-handler="prev" data-event="click" title="이전달"><span
@@ -124,8 +123,6 @@
 															</div>
 														</div>
 													</form>
-
-
 												</div>
 											</li>
 										</ul>
@@ -137,47 +134,6 @@
 									</p>
 								</form>
 								<div class="search_result_wrap">
-<!-- 									<table class="tbl_search_result"> -->
-<%-- 										<colgroup> --%>
-<%-- 											<col style="width: 11%;"> --%>
-<%-- 											<col style="width: 7%;"> --%>
-<%-- 											<col style="width: 16%;"> --%>
-<%-- 											<col style="width: 24%;"> --%>
-<%-- 											<col style="width: 17%;"> --%>
-<%-- 											<col style="width: 12%;"> --%>
-<%-- 											<col style="width: auto;"> --%>
-<%-- 										</colgroup> --%>
-<!-- 										<thead> -->
-<!-- 											<tr> -->
-<!-- 												<th scope="col">결제일시</th> -->
-<!-- 												<th scope="col">구분</th> -->
-<!-- 												<th scope="col">노선</th> -->
-<!-- 												<th scope="col">배차정보</th> -->
-<!-- 												<th scope="col">매수</th> -->
-<!-- 												<th scope="col">결제금액</th> -->
-<!-- 												<th scope="col">상세조회</th> -->
-<!-- 											</tr> -->
-<!-- 										</thead> -->
-<!-- 										<tbody> -->
-<!-- 											<tr> -->
-<!-- 												<td>2023.05.01<br>20:27 -->
-<!-- 												</td> -->
-<!-- 												<td><span class="txt_puple">편도</span></td> -->
-<!-- 												<td> -->
-<!-- 													<div class="tbl_routeBox"> -->
-<!-- 														<span class="roundBox">동서울</span> <span class="roundBox">동해</span> -->
-<!-- 													</div> -->
-<!-- 												</td> -->
-<!-- 												<td><span class="tbl_ico ico_departure"> -->
-<!-- 														2023.05.04 07:20 <span class="txt_date">고속</span> -->
-<!-- 												</span></td> -->
-<!-- 												<td>일반 1<br></td> -->
-<!-- 												<td><span class="txt_price">17,300원</span> <span -->
-<!-- 													class="txt_div"> 카드</span></td> -->
-<!-- 												<td class="bg_payment_cancel"></td> -->
-<!-- 											</tr> -->
-<!-- 										</tbody> -->
-<!-- 									</table> -->
 									<div class="mob_search_result">
 										<section class="sec_search_result">
 											<section class="sec_head">
@@ -216,7 +172,7 @@
 												<div class="box_inputForm">
 													<strong>상태</strong> <span class="radio_wrap"> <span
 														class="custom_radio"> <input type="radio"
-															id="status04" name="status" checked="true"
+															id="status04" name="status"
 															onclick="javascript:staCdCheck(this.id);"> <label
 															for="status04">전체</label>
 													</span> <span class="custom_radio"> <input type="radio"
@@ -260,7 +216,7 @@
 													<p class="text">
 														<span class="text_date text_date1">2023. 4. 17. 월</span><input
 															type="date" id="datepicker5" name="srchBltnSttDt1"
-															readonly="" class="hasDatepicker" value="2023. 4. 17. 월"><img
+															 class="hasDatepicker" value="2023. 4. 17. 월"><img
 															class="ui-datepicker-trigger1"
 															src="/images/ico_calender.png" alt="달력" title="달력">
 													</p>
@@ -273,7 +229,7 @@
 													<p class="text">
 														<span class="text_date text_date2">2023. 5. 17. 수</span><input
 															type="text" id="datepicker6" name="srchBltnEndDt1"
-															readonly="" class="hasDatepicker" value="2023. 5. 17. 수"><img
+															 class="hasDatepicker" value="2023. 5. 17. 수"><img
 															class="ui-datepicker-trigger2"
 															src="/images/ico_calender.png" alt="달력" title="달력">
 													</p>
@@ -335,84 +291,6 @@
 								</ul>
 							</div>
 							<div class="tab_conts" style="display: none;">
-								<form id="adtnSrchForm" name="adtnSrchForm" method="post">
-									<div class="receipt_wrap">
-										<ul class="innerBox col4">
-											<li>
-												<div class="box_inputForm">
-													<strong>상태</strong> <span class="radio_wrap"> <span
-														class="custom_radio"> <input type="radio"
-															id="status04" name="status" checked="true"
-															onclick="javascript:staCdCheck(this.id);"> <label
-															for="status04">전체</label>
-													</span> <span class="custom_radio"> <input type="radio"
-															id="status05" name="status"
-															onclick="javascript:staCdCheck(this.id);"> <label
-															for="status05">결제</label>
-													</span> <span class="custom_radio"> <input type="radio"
-															id="status06" name="status"
-															onclick="javascript:staCdCheck(this.id);"> <label
-															for="status06">취소</label>
-													</span> <input type="hidden" id="adtnStaCd" name="adtnStaCd"
-														value="">
-													</span>
-												</div>
-											</li>
-											<li>
-												<div class="box_inputForm">
-													<strong>기간</strong> <span class="radio_wrap"> <span
-														class="custom_radio"> <input type="radio"
-															id="term04" name="term2"> <label for="term05">1개월</label>
-													</span> <span class="custom_radio"> <input type="radio"
-															id="term05" name="term2"> <label for="term06">2개월</label>
-													</span> <span class="custom_radio"> <input type="radio"
-															id="term06" name="term2"> <label for="term07">3개월</label>
-													</span>
-													</span> <input type="hidden" id="preAdtnTerm" name="preAdtnTerm">
-													<input type="hidden" id="befAdtnTerm" name="befAdtnTerm"
-														value="">
-												</div>
-											</li>
-											<li class="label_tag">
-												<div class="date_picker_wrap">
-													<span class="name">조회시작일</span> <input type="hidden"
-														id="adtnAgePageSttDt" name="adtnAgePageSttDt" value="">
-													<input type="hidden" id="adtnAgePageEndDt"
-														name="adtnAgePageEndDt" value=""> <input
-														type="hidden" id="adtnOrignDate" name="adtnOrignDate"
-														value="20230417"> <input type="hidden"
-														id="adtnStartMonth" name="adtnStartMonth" value="4">
-													<p class="text">
-														<span class="text_date text_date1">2023. 4. 17. 월</span><input
-															type="text" id="frpsDatepicker1" name="srchBltnSttDt2"
-															readonly="" class="hasDatepicker" value="2023. 4. 17. 월">
-														<img class="ui-datepicker-trigger"
-															src="/images/ico_calender.png" alt="달력" title="달력">
-													</p>
-												</div>
-											</li>
-											<li class="label_tag">
-												<div class="date_picker_wrap">
-													<span class="name">조회종료일</span> <input type="hidden"
-														id="adtnOrignDate1" name="adtnOrignDate1" value="20230517">
-													<p class="text">
-														<span class="text_date text_date2">2023. 5. 17. 수</span><input
-															type="text" id="frpsDatepicker2" name="srchBltnEndDt2"
-															readonly="" class="hasDatepicker" value="2023. 5. 17. 수"><img
-															class="ui-datepicker-trigger"
-															src="/images/ico_calender.png" alt="달력" title="달력">
-													</p>
-												</div>
-											</li>
-										</ul>
-									</div>
-									<input type="hidden" id="adtnPageNo" name="adtnPageNo"
-										value="1">
-									<p class="btns col1">
-										<a href="#" class="btnL btn_confirm"
-											onclick="javascript:adtnSrchFormClick();">조회</a>
-									</p>
-								</form>
 								<div class="search_result_wrap">
 									<table class="tbl_search_result">
 										<caption>
