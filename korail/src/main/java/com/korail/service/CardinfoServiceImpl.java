@@ -16,7 +16,8 @@ public class CardinfoServiceImpl {
       return cardinfoDao.insert(cardVo);
    }
    
-   public int getPaymentUpdate(CardinfoVo cardVo) {
-      return cardinfoDao.insertUpdate(cardVo);
-   }
+	/*
+	 * public int getPaymentUpdate(CardinfoVo cardVo) { return
+	 * cardinfoDao.insertUpdate(cardVo); }
+	 */
 }
