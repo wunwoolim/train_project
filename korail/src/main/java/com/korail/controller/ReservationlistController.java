@@ -29,7 +29,7 @@ public class ReservationlistController {
 	 * reservation_main.do - 예매내역
 	 */
 	@RequestMapping(value="/reservation_main.do", method=RequestMethod.GET)
-	public ModelAndView reservation_main(String id) {
+	public ModelAndView reservation_main() {
 		ModelAndView model = new ModelAndView();
 		
 		ArrayList<OrderVo> orderList = orderService.getSelect();
