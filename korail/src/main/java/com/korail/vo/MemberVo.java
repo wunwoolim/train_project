@@ -1,8 +1,26 @@
 package com.korail.vo;
 
 public class MemberVo {
-	String id, pass, name, email1, email2, tel, phonenumber , year , month, date,
+	String id, pass, name, email1, email2, tel, phonenumber1, phonenumber2, phonenumber3 , year , month, date,
 	gender;
+	public String getPhonenumber1() {
+		return phonenumber1;
+	}
+	public void setPhonenumber1(String phonenumber1) {
+		this.phonenumber1 = phonenumber1;
+	}
+	public String getPhonenumber2() {
+		return phonenumber2;
+	}
+	public void setPhonenumber2(String phonenumber2) {
+		this.phonenumber2 = phonenumber2;
+	}
+	public String getPhonenumber3() {
+		return phonenumber3;
+	}
+	public void setPhonenumber3(String phonenumber3) {
+		this.phonenumber3 = phonenumber3;
+	}
 	int rno;
 	String mid, email , pnumber, birth , mdate,pagename,seatNum,ticketQty;
 	
@@ -90,6 +108,9 @@ public class MemberVo {
 		this.email = email;
 	}
 	public String getPnumber() {
+		if(phonenumber1 != null) {
+			pnumber = phonenumber1 + phonenumber2 + phonenumber3;
+		}
 		return pnumber;
 	}
 	public void setPnumber(String pnumber) {

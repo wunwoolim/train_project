@@ -186,13 +186,24 @@ border: 1px solid gray;
 	margin-bottom: 20px;
 	
 }
+.btn_style2{	 
+  width: 60px;
+  height: 30px;
+  margin: auto 0;
+  margin-left:20px;
+  color:white;
+  background:darkgray;
+  border:none;
+  border-radius: 5px;
+	
+}
 
-#btnJoin{
+.btn_style{
 	  width: 90px;
   height: 40px;
   margin: auto 0;
   color:white;
-  background:#66CCFF;
+ background:darkgray;
   border:none;
   border-radius: 5px;
 }
@@ -205,4 +216,95 @@ border: 1px solid gray;
 .girl_jo{
 	margin-left:10px;
 }
-	
+
+
+
+
+						/*cgv  */
+/*****************************
+	Join Form style sheet
+******************************/
+section.join form ul {
+	/* border:1px solid blue; */
+	font-size:10pt;
+	list-style-type:none;
+}
+section.join form ul li {
+	clear:left;
+}
+section.join form ul li > label {
+	display:inline-block;
+	width:150px;
+	padding:10px 0;
+	background:#ddd;
+	color:black;
+	border-radius:4px;
+	font-size:10pt;
+	font-weight:700;
+	float:left;
+	text-align:center;
+	margin:0 10px 5px 0;
+}
+.input1 {
+	width:40%;	
+	padding:8px 20px;
+	border:1px solid #ddd;
+	border-radius:4px;
+}
+input[name='email1'], input[name='email2'] {
+	width:17%;
+	padding:8px 20px;
+	border:1px solid #ddd;
+	border-radius:4px;
+}
+input[name='email2'] +select, select[name='phonenumber1'] {
+	/* border:1px solid red; */
+	width:80px;
+	padding:8px 4px;
+	font-size:9pt;
+	border:1px solid lightgray;
+	border-radius:4px;
+	margin-left:5px;
+}
+input[name='phonenumber2'], input[name='phonenumber3'] {
+	width:80px;
+	border:1px solid #ddd;
+	border-radius:4px;
+	padding:8px 4px;
+	text-align:center;
+}
+textarea[name='intro'] {
+	border:1px solid #ddd;
+	border-radius:4px;
+	width:60%;
+	height:100px;
+	font-size:10pt;
+	padding:8px 15px;
+}
+input[type='radio'], input[type='radio'] +span,
+ input[type='checkbox'], input[type='checkbox'] +span {
+	/* border:1px solid red; */
+	font-size:9pt;
+	margin-left:5px;
+	padding:8px 4px;
+	vertical-align:middle;
+}
+form[name='joinForm'] ul li:last-child {
+	/* border:1px solid red; */
+	text-align:center;
+	padding:20px 0;
+	text-align: start;
+    margin-left: 250px;
+}
+form[name='joinForm'] ul li:last-child button:first-child{
+	margin-right:10px;
+}
+form[name='joinForm'] ul #cmsg {
+	/* border:1px solid red;  */
+	display:none;
+	margin:7px 0px 7px 170px; 
+}
+.joinput{
+	    margin-left: 200px;
+}
+						

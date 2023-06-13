@@ -70,6 +70,7 @@ public class JoinController {
 	 */
 	@RequestMapping(value="/join_proc.do", method=RequestMethod.POST)
 	public ModelAndView join_proc(MemberVo memberVo) {
+		System.out.println(memberVo.getPnumber());
 		ModelAndView model = new ModelAndView();		
 		int result = memberService.getJoinResult(memberVo);
 		if(result == 1) {
@@ -82,17 +83,20 @@ public class JoinController {
 		return model;
 	}
 	
+	/*
+	 *  joinpage.do - È¸¿ø°¡ÀÔ Æû
+	 */
 	
+	
+	@RequestMapping(value="/joinpage.do", method=RequestMethod.GET)
+	public String joinpage() {
+		
+		return "/join/joinpage";
+	}
 	/*
 	 *  join3.do - È¸¿ø°¡ÀÔ Æû
 	 */
 	
-	
-	@RequestMapping(value="/join3.do", method=RequestMethod.GET)
-	public String join3() {
-		
-		return "/join/join3";
-	}
 	
 	
 	
