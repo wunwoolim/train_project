@@ -38,10 +38,11 @@ $(document).ready(function(){
 	          }
 	          
 	          if (!isOccupied) {
+	          	let seatNumber = count.toString().padStart(2, '0');
 	            seat += "<img src='http://localhost:9000/ktx/images/seat_p.gif' id='chairImg_${count}' style='opacity: 0.5;'>";
 	          }
 	          
-	          seat +=  count;
+	          seat +=  count.toString().padStart(2, '0');
 	          seat += "</span></div>";
 	        }
 	        seat += "</div>";
@@ -67,6 +68,7 @@ $(document).ready(function(){
 		  $("#seatNum").val(seatNum);
 		  $("#seatNum1").val(seatNum);
 		  $("#seatNum2").val(seatNum);
+		  //alert(seatNum);
 		  $(".box img").css("opacity", "0.5");
 		  $(this).css("opacity", "1.0");
 		  $("#passengersNum").text($("#adltCnt").text());
