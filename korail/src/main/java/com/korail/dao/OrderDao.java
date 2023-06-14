@@ -1,7 +1,9 @@
 package com.korail.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,22 +48,7 @@ public class OrderDao extends DBConn {
 	 * 예매 취소하기
 	 */
 	public int update(String reservnum) {
-		int result = 0;
-
-		String sql = "update ktx_order set cancel=1 where reservnum=? ";
-		getPreparedStatement(sql);
-
-		try {
-
-			pstmt.setString(1, reservnum);
-
-			result = pstmt.executeUpdate();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return result;
+		return sqlSession.update("mapper.order.cancel", reservnum);
 	}
 
 	/**
@@ -69,80 +56,19 @@ public class OrderDao extends DBConn {
 	 */
 	public OrderVo selected(String reservnum) {
 
-		OrderVo orderVo = new OrderVo();
-
-		String sql = "SELECT sstation, depPlandTime, stime, dstation, price, reservnum, trainnum, chairnum, cancel, depPlaceId, arrPlaceId  FROM KTX_ORDER where reservnum=? ";
-
-		getPreparedStatement(sql);
-
-		try {
-			pstmt.setString(1, reservnum);
-			rs = pstmt.executeQuery();
-
-			while (rs.next()) {
-
-				orderVo.setSstation(rs.getString(1));
-				orderVo.setDepPlandTime(rs.getString(2));
-				orderVo.setStime(rs.getString(3));
-				orderVo.setDstation(rs.getString(4));
-				orderVo.setPrice(rs.getInt(5));
-				orderVo.setReservnum(rs.getString(6));
-				orderVo.setTrainnum(rs.getInt(7));
-				orderVo.setChairnum(rs.getString(8));
-				orderVo.setCancel(rs.getInt(9));
-				orderVo.setDepPlaceId(rs.getString(10));
-				orderVo.setArrPlaceId(rs.getString(11));
-
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return orderVo;
+		return sqlSession.selectOne("mapper.order.selected",reservnum);
 	}
 
 	/**
-	 * 예매내역 출력
+	 * 예매내역 전체 출력
 	 */
-	public ArrayList<OrderVo> orderselect() {
-
-		ArrayList<OrderVo> orderList = new ArrayList<OrderVo>();
-
-		String sql = "SELECT sstation, rdate, depPlandTime, stime, dtime, dstation, price, reservnum, trainnum, chairnum, id, cardnum,cancel FROM KTX_ORDER order by rdate";
-
-		getPreparedStatement(sql);
-
-		try {
-
-			rs = pstmt.executeQuery();
-
-			while (rs.next()) {
-
-				OrderVo orderVo = new OrderVo();
-
-				orderVo.setSstation(rs.getString(1));
-				orderVo.setRdate(rs.getString(2));
-				orderVo.setDepPlandTime(rs.getString(3));
-				orderVo.setStime(rs.getString(4));
-				orderVo.setDtime(rs.getString(5));
-				orderVo.setDstation(rs.getString(6));
-				orderVo.setPrice(rs.getInt(7));
-				orderVo.setReservnum(rs.getString(8));
-				orderVo.setTrainnum(rs.getInt(9));
-				orderVo.setChairnum(rs.getString(10));
-				orderVo.setId(rs.getString(11));
-				orderVo.setCardnum(rs.getString(12));
-				orderVo.setCancel(rs.getInt(13));
-
-				orderList.add(orderVo);
-			}
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return orderList;
+	public List<Object> orderselect(int startCount, int endCount) {
+		Map<String, Integer> param = new HashMap<String, Integer>();
+		param.put("start", startCount);
+		param.put("end", endCount);
+		
+		return sqlSession.selectList("mapper.order.orderselect", param);
+		
 	}
 
 	/**

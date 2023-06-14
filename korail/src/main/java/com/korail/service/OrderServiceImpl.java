@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.korail.dao.OrderDao;
+import com.korail.vo.MemberVo;
 import com.korail.vo.OrderVo;
 import com.korail.vo.ReservationVo;
 import com.korail.vo.SeatNumberVo;
@@ -42,9 +43,16 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
-	public ArrayList<OrderVo> getOrderSelect(){
-		return orderDao.orderselect();
+	public ArrayList<OrderVo> getOrderSelect(int startCount, int endCount){
+		ArrayList<OrderVo> rlist = new ArrayList<OrderVo>();
+		List<Object> list = orderDao.orderselect(startCount, endCount);
+		for(Object obj : list) {
+			OrderVo orderVo = (OrderVo)obj;
+			rlist.add(orderVo);
+		}
+		return rlist;
 	}
+	
 	
 	@Override
 	public int getPayment(OrderVo orderVo) {

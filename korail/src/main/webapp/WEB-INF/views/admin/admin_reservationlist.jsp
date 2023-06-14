@@ -7,9 +7,36 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/reservationlist.css">
+<link rel="stylesheet" href="http://localhost:9000/ktx/css/am-pagination.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
+<script src="http://localhost:9000/ktx/js/am-pagination.js"></script>
 <!-- <script src="http://localhost:9000/ktx/js/reservation_jquery.js"></script> -->
-
+<script>
+	$(document).ready(function(){
+		var pager = jQuery('#ampaginationsm').pagination({
+		
+		    maxSize: '${maxSize}',	    		// max page size
+		    totals: '${totals}',	// total pages	
+		    page: '${page}',		// initial page		
+		    pageSize: '${pageSize}',			// max number items per page
+		
+		    // custom labels		
+		    lastText: '&raquo;&raquo;', 		
+		    firstText: '&laquo;&laquo;',		
+		    prevText: '&laquo;',
+		    nextText: '&raquo;',
+				     
+		    btnSize:'sm'	// 'sm'  or 'lg'		
+		});
+		
+		jQuery('#ampaginationsm').on('am.pagination.change',function(e){
+			   jQuery('.showlabelsm').text('The selected page no: '+e.page);
+	           $(location).attr('href', "http://localhost:9000/ktx/admin_reservationlist.do?page="+e.page);         
+	    });
+		
+ 	});
+	
+</script> 
 <style>
 </style>
 </head>
@@ -58,6 +85,9 @@
 			        </tr>
 			      </c:if>
 			    </c:forEach>
+			    <tr>
+			    	<td colspan="11"><div id="ampaginationsm"></div></td>
+			    </tr>
 			</table>
 		  	<div>
 				<input type="hidden" id="admin_input" name="admin_input">			  	

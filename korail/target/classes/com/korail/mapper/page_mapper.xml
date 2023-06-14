@@ -33,6 +33,9 @@
 		<if test='sname == "board"'>
 			mycgv_board
 		</if>
+		<if test='sname == "adminReserv"'>
+			ktx_order
+		</if>
 	</select>
 	
 </mapper>    

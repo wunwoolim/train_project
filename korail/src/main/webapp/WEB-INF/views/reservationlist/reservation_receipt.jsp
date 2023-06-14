@@ -39,12 +39,12 @@
 					<li>카드사<span class="taR fr">BC</span></li>
 					<li>카드번호<span class="taR fr">54802058****542*</span></li>
 					<li>승인번호<span class="taR fr">65816385</span></li>
-					<li>승인일자<span class="taR fr">2023.05.08</span></li>
-					<li>승인시간<span class="taR fr">18:03:55</span></li>
-					<li>승인금액<span class="taR fr">11,800원</span></li>
+					<li>승인일자<span class="taR fr">${ovo.rdate}</span></li>
+					<li>승인시간<span class="taR fr">${ovo.rdate}</span></li>
+					<li>승인금액<span class="taR fr">${ovo.price}원</span></li>
 					<li>환불금액<span class="taR fr">0원</span></li>
 					<li>취소수수료<span class="taR fr">0원</span></li>
-					<li class="txt_strong">결제금액<span class="taR fr">11,800원</span></li>
+					<li class="txt_strong">결제금액<span class="taR fr">${ovo.price}원</span></li>
 				</ul>
 				<span class="bg_dashed"><img src="http://localhost:9000/ktx/images/bg_dashed.png"></span>
 			</div>

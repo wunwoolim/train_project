@@ -50,6 +50,24 @@
 		where cardnum=#{cardnum}
 	</select>
 	
+	<update id="cancel" parameterType="String">
+		update ktx_order set cancel=1 where reservnum=#{reservnum}
+	</update>
+	
+	<select id="selected" parameterType="String" resultType="com.korail.vo.OrderVo">
+		SELECT sstation, depPlandTime, stime, dstation, price, reservnum, trainnum, chairnum, cancel, depPlaceId, arrPlaceId 
+		FROM KTX_ORDER 
+		where reservnum=#{reservnum}
+	</select>
+	
+	<select id="orderselect" resultType="com.korail.vo.OrderVo">
+        SELECT sstation, rdate, depPlandTime, stime, dtime, dstation, price, reservnum, trainnum, chairnum, id, cardnum, cancel 
+        FROM KTX_ORDER
+        order by rdate
+    </select>
+	
+	
+	
 </mapper>
 
 

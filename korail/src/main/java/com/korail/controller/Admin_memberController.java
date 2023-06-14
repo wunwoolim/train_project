@@ -39,7 +39,7 @@ public class Admin_memberController {
 		
 		ModelAndView model = new ModelAndView();
 		if(category.equals("total")){
-			param = pageService.getPageResult(page, "member");		
+			param = pageService.getPageResult(page, "member");
 		}else {
 			param = pageService.getPageResult(page, "member", category, cvalue);		
 			

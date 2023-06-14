@@ -1,6 +1,7 @@
 package com.korail.controller;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -12,7 +13,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.korail.service.OrderService;
+import com.korail.service.PageServiceImpl;
 import com.korail.vo.CardinfoVo;
+import com.korail.vo.MemberVo;
 import com.korail.vo.OrderVo;
 import com.korail.vo.SessionVo;
 import com.korail.vo.UpdateVo;
@@ -23,7 +26,8 @@ public class ReservationlistController {
 	@Autowired
 	private OrderService orderService;
 	
-	
+	@Autowired
+	private PageServiceImpl pageService;
 	
 	/**
 	 * reservation_main.do - 예매내역
@@ -115,34 +119,41 @@ public class ReservationlistController {
 	 * admin_reservationlist.do - 예매 전체 리스트 - 관리자페이지 
 	 */
 	@RequestMapping(value="/admin_reservationlist.do", method=RequestMethod.GET)
-	public ModelAndView admin_reservationlist() {
-		
+	public ModelAndView admin_reservationlist(String page) {
 		ModelAndView model = new ModelAndView();
 		
-		ArrayList<OrderVo> orderList = orderService.getOrderSelect();
+		Map<String, Integer> param = pageService.getPageResult(page, "adminReserv");		
+		
+		ArrayList<OrderVo> orderList = orderService.getOrderSelect(param.get("startCount"), param.get("endCount"));
 		
 		model.addObject("orderList", orderList);
+		model.addObject("totals", param.get("dbCount"));
+		model.addObject("pageSize", param.get("pageSize"));
+		model.addObject("maxSize", param.get("maxSize"));
+		model.addObject("page", param.get("page"));
+	
 		model.setViewName("/admin/admin_reservationlist");
 		
 		return model;
 	}
-	
+
 	
 	
 	/**
 	 * admin_cancellist.do - 예매취소 전체 리스트 - 관리자페이지 
 	 */
-	@RequestMapping(value="/admin_cancellist.do", method=RequestMethod.GET)
-	public ModelAndView admin_cancellist() {
-		ModelAndView model = new ModelAndView();
-		
-		ArrayList<OrderVo> orderList = orderService.getOrderSelect();
-		
-		model.addObject("orderList", orderList);
-		model.setViewName("/admin/admin_cancellist");
-		
-		return model;
-	}
+	/*
+	 * @RequestMapping(value="/admin_cancellist.do", method=RequestMethod.GET)
+	 * public ModelAndView admin_cancellist() { ModelAndView model = new
+	 * ModelAndView();
+	 * 
+	 * ArrayList<OrderVo> orderList = orderService.getOrderSelect();
+	 * 
+	 * model.addObject("orderList", orderList);
+	 * model.setViewName("/admin/admin_cancellist");
+	 * 
+	 * return model; }
+	 */
 	
 	
 	
