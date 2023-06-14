@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>회원가입2</title>
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/join2.css">
+<script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
+<script src="http://localhost:9000/ktx/js/join.js"></script>
 </head>
 <body>
 <div>
@@ -29,19 +31,34 @@
 	<div class= "v_noti">
 	<h2 > 본인 인증을 위한 이메일을 입력해 주세요.</h2>
 	</div>
-		<h4>이메일</h4>
-	<ul class= "loginBoth">
-						<li> 
 						<div class="login_id">
-                		<input type="text" name="usrId" class ="input"id="id" placeholder="이메일을  입력하세요">
-						</div>
-						</li>
+                		 <div class="input-group">
+							<input type="text" class="form-control" name="userEmail1" id="userEmail1" placeholder="이메일" >@
+							<input type="text" name="userEmail2" id="userEmail2" placeholder ="이메일 주소를 입력해주세요">
+						<select  id ="userEmail3" name="userEmail3">
+							<option value="default">선택</option>
+							<option value="naver.com">네이버</option>
+							<option value="gmail.com">구글</option>
+							<option value="daum.net">다음</option>
+							<option value="korea.com">코리아</option>
+							<option value="self">직접입력</option>
+						</select>
+						</div>  
+	<ul class= "loginBoth">
 		<li>		
-				<button type="button"  class ="btnJoin" onclick ="location.href='http://localhost:9000/ktx/join3.do'">  인증번호 발송</button>
+				<button type="button"  id="mail-Check-Btn"  class ="btnJoin" >  인증번호 발송 </button>
 		</li>	
 	
 	</ul>	
+						</div>	
+			<div class="mail-check-box">
 					
+					인증번호를 입력해주세요
+				<input class="form-control mail-check-input" placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6">
+					<span id="mail-check-warn"></span>
+				</div>
+				
+									
 	</form>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
