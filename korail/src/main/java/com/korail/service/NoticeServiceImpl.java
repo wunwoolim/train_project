@@ -51,4 +51,15 @@ public class NoticeServiceImpl implements NoticeService {
 		noticeDao.updateHits(nid);
 	}
 
+	@Override
+	public ArrayList<NoticeVo> getList(int startCount, int endCount, String category, String cvalue) {
+		ArrayList<NoticeVo> rlist = new ArrayList<NoticeVo>();
+		List<Object> list = noticeDao.select(startCount, endCount, category, cvalue);
+		for(Object obj : list) {
+			NoticeVo noticeVo = (NoticeVo) obj;
+			rlist.add(noticeVo);
+		}
+		return rlist;
+	}
+
 }

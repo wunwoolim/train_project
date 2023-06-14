@@ -52,6 +52,33 @@ public class NoticeController {
 		
 		return model;
 	}
-
+	
+	@RequestMapping(value="/notice_list_search.do", method=RequestMethod.POST)
+	public ModelAndView notice_list_search(String page, String category, String cvalue) {
+		System.out.println(page);
+		System.out.println(category);
+		System.out.println(cvalue);
+		Map<String, Integer> param = null;
+		
+		ModelAndView model = new ModelAndView();
+		if(category.equals("all")) {
+			param = pageService.getPageResult(page, "notice");
+		} else {
+			param = pageService.getPageResult(page, "notice", category, cvalue);
+		}
+		
+		ArrayList<NoticeVo> list = noticeService.getList(param.get("startCount"), param.get("endCount"), category, cvalue);
+		model.addObject("list", list);
+		model.addObject("totals", param.get("dbCount"));
+		model.addObject("pageSize", param.get("pageSize"));
+		model.addObject("maxSize", param.get("maxSize"));
+		model.addObject("page", param.get("page"));
+		
+		model.setViewName("notice/notice_list");
+		
+		return model;
+	}
+	
+	
 }
 

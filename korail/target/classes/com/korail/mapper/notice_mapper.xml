@@ -23,6 +23,22 @@
 				where rno between #{start} and #{end}
 	</select>
 	
+	<select id="notice_list" parameterType="map" resultType="com.korail.vo.NoticeVo">
+		select rno, nid, ntitle, ncontent, nhits, ndate 
+		from (select rownum rno, nid, ntitle, ncontent, nhits, to_char(ndate, 'yyyy-mm-dd') ndate 
+			from (select nid, ntitle, ncontent, nhits, ndate from ktx_notice order by ndate desc))
+			<if test= 'category == "title"'>
+				where ntitle like '%'||#{cvalue}||'%'
+			</if>
+			<if test= 'category == "content"'>
+				where ncontent like '%'||#{cvalue}||'%'
+			</if>
+			<if test= 'category == "title_content"'>
+				(where ntitle like '%'||#{cvalue}||'%') || (ncontent like '%'||#{cvalue}||'%')
+			</if>
+				where rno between #{start} and #{end}
+	</select>
+	
 	<select id="list2" resultType="com.korail.vo.NoticeVo">
 		select rownum rno, nid, ntitle, nhits, to_char(ndate, 'yyyy-mm-dd') ndate
 		from (select nid, ntitle, nhits, ndate from ktx_notice order by ndate desc)

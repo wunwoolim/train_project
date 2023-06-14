@@ -11,6 +11,15 @@
 		from
 		<if test='sname == "notice"'>
 			ktx_notice
+			<if test= 'category =="title"'>
+				where ntitle = #{cvalue}
+			</if>
+			<if test= 'category =="content"'>
+				where ncontent = #{cvalue}
+			</if>
+			<if test= 'category =="title_content"'>
+				where (ntitle = #{cvalue}) || (ncontent = #{cvalue})
+			</if>
 		</if>
 		<if test='sname == "member"'>
 			mycgv_member

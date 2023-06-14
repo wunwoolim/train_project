@@ -38,6 +38,17 @@ public class NoticeDao implements MyktxDao {
 		return sqlSession.selectList("mapper.notice.list", param);		
 	}
 	
+	
+	public List<Object> select(int startCount, int endCount, String category, String cvalue) {
+		Map<String, String> param = new HashMap<String, String>();
+		param.put("start", String.valueOf(startCount));
+		param.put("end", String.valueOf(endCount));
+		param.put("category", category);
+		param.put("cvalue", cvalue);
+		
+		return sqlSession.selectList("mapper.notice.notice_list", param);
+	}
+	
 	//공지사항 등록
 	public int insert(Object noticeVo) {
 		return sqlSession.insert("mapper.notice.insert", noticeVo);		

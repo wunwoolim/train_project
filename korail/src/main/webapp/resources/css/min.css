@@ -10,7 +10,7 @@ body {
 }
 
 .title-wrap {
-	width: 1700px;
+	width: 100vw;
 	height: 105px;
 	padding: 75px 0 0 0;
 	background-image:url("../images/train.jpg");
@@ -560,7 +560,8 @@ table.notice_content th {
 }
 
 .notice_list tr:first-child>th {
-	background-color: #ddd;
+	background-color: #E91E63;
+	color: #FFF;
 }
 .notice_search tr>td {
 	text-align: center;
@@ -701,5 +702,9 @@ table.notice_content tr:last-child td button:first-child {
 }
 
 .notice_search tr:nth-child(even) {
+  background: #F5F4F4;
+}
+
+.notice_list tr:nth-child(even) {
   background: #F5F4F4;
 }

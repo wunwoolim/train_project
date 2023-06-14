@@ -7,9 +7,9 @@ import com.korail.vo.NoticeVo;
 public interface NoticeService {
 	int getInsert(NoticeVo noticeVo);
 	ArrayList<NoticeVo> getSelect(int startCount, int endCount);
-	NoticeVo getSelect(String bid);
-	int getUpdate(NoticeVo boardVo);
-	int getDelete(String bid);
-	void getUpdateHits(String bid);
-
+	NoticeVo getSelect(String nid);
+	int getUpdate(NoticeVo noticeVo);
+	int getDelete(String nid);
+	void getUpdateHits(String nid);
+	ArrayList<NoticeVo> getList(int startCount, int endCount, String category, String cvalue);
 }

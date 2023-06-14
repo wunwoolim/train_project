@@ -18,7 +18,6 @@
 	</style>
 	<script>
 	$(document).ready(function(){
-		alert("1111");
 		var pager = jQuery('#ampaginationsm').pagination({
 		
 		    maxSize: '${maxSize}',	    		// max page size
@@ -54,14 +53,16 @@
 	</div>
 	<h2 class="title-notice">KTX 홈페이지의 새로운 소식을 확인하세요.</h2>
 	<div class="search">
-		<form class="search-form" method="get" action="https://search.jsp">
-			<select>
+		<form class="search-form" action="notice_list_search.do" name="notice_search" method="post" >
+			<select name="category" id="category" class="notice_search">
 				<option value="title">제목</option>
 				<option value="content">내용</option>
 				<option value="title_content">제목+내용</option>
+				<option value="all">전체조건</option>
 			</select>
-			<input type="text" name="search-notification" maxlength=100 autocomplete="off" placeholder="검색어를 입력하세요" required>
-			<button type="submit">검색</button> 
+			<input type="text" name="cvalue" id="cvalue" maxlength=100 autocomplete="off" placeholder="검색어를 입력하세요" required>
+			<input type="hidden" name="page" value="1">
+			<button type="button" id="notice_search">검색</button> 
 			<button type="reset">다시입력</button> 
 		</form>
 	</div>

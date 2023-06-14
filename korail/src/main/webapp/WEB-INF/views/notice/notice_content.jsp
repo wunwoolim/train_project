@@ -41,8 +41,8 @@
 			<div class="button">
 				<a href="http://localhost:9000/ktx/notice_list.do" class="btn">리스트</a>
 				<a href="#" class="btn">홈으로</a>
-				<a href="#" class="btn"><</a>
-				<a href="#" class="btn">></a>
+				<a href="#" class="btn" id="click_before"><</a>
+				<a href="#" class="btn" id="click_after">></a>
 			</div>
 			</td>
 		</tr>

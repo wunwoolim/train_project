@@ -31,4 +31,5 @@ public class PageDao {
 		
 		return sqlSession.selectOne("mapper.page.count", param);		
 	}
+	
 }
