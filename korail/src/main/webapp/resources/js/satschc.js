@@ -1,9 +1,10 @@
 $(document).ready(function(){
-	initAjax(1);
+	trInitAjax(1);
 	
-	function initAjax(trnumber) {
+	function trInitAjax(trnumber) {
+		//alert(trnumber);
 	  $.ajax({
-	    url: "train_reservation_satschc_json.do",
+	    url: "train_reservation_satschc_json.do?trnumber="+trnumber,
 	    success: function (result) {
 	      //alert(result);
 	      let jdata = JSON.parse(result);
@@ -37,7 +38,7 @@ $(document).ready(function(){
 	          }
 	          
 	          if (!isOccupied) {
-	            seat += "<img src='http://localhost:9000/ktx/images/seat_p.gif' id='chairImg' style='opacity: 0.5;'>";
+	            seat += "<img src='http://localhost:9000/ktx/images/seat_p.gif' id='chairImg_${count}' style='opacity: 0.5;'>";
 	          }
 	          
 	          seat +=  count;
@@ -60,24 +61,20 @@ $(document).ready(function(){
 	
 	//좌석 선택 이벤트
 	
-	$(".seatList").on("click", "#chairImg", function (){
-		
-		//alert($("#chldCnt").text() + "호차 " + $(this).text()+"좌석");
-		let seatNum = $("#chldCnt").text() + "호 " + $(this).text($().())+ "좌석";
-		
-			
-					$("#seatNum").val(seatNum);
-					$("#seatNum1").val(seatNum);
-					$("#seatNum2").val(seatNum);
-					$(".box img").css("opacity", "0.5");
-					$(this).find("img").css("opacity","1.0");
-					$("#passengersNum").text($("#adltCnt").text());
-					let ticketQty = $("#adltCnt").text();
-					$("#ticketQty1").val(ticketQty);
-					$("#ticketQty2").val(ticketQty);
-				
-		
+	$(".seatList").on("click", "[id^='chairImg_']", function() {
+		  let seatNum = $("#chldCnt").text() + "호 " +  $(this).parent().text() + "좌석";
+		  
+		  $("#seatNum").val(seatNum);
+		  $("#seatNum1").val(seatNum);
+		  $("#seatNum2").val(seatNum);
+		  $(".box img").css("opacity", "0.5");
+		  $(this).css("opacity", "1.0");
+		  $("#passengersNum").text($("#adltCnt").text());
+		  let ticketQty = $("#adltCnt").text();
+		  $("#ticketQty1").val(ticketQty);
+		  $("#ticketQty2").val(ticketQty);
 	});
+	
 	
 	//모달창의  비로그인 클릭시 이벤트
 	$("#btn_nonmember").click(function(){
@@ -157,21 +154,24 @@ $(document).ready(function(){
 	  
 		
 		//기차 호실 증감 이벤트
-		$(".Kind_add").click(function() {
-			  var count = parseInt($("#chldCnt").text()) + 1; // 현재 카운트 값을 가져와 1 증가
-			  if(count >10){
-			  	count = 10;
+		$("#Kind_add").click(function() {
+			var trnumber = parseInt($("#chldCnt").text()) + 1;// 현재 카운트 값을 가져와 1 증가
+			//alert(trnumber);
+			  if(trnumber >9){
+			  	trnumber = 9;
 			  }
 			  
-			  $("#chldCnt").text(count); // 증가된 값을 화면에 표시
+			  $("#chldCnt").text(trnumber); // 증가된 값을 화면에 표시
+			  trInitAjax(trnumber);
 			});
 
-		$(".Kind_minus").click(function() {
-			  var count = parseInt($("#chldCnt").text()) - 1; // 현재 카운트 값을 가져와 1 감소
-			  if (count < 1) {
-			    count = 1; // 음수 값이 되지 않도록 조정
+		$("#Kind_minus").click(function() {
+			  var trnumber = parseInt($("#chldCnt").text()) - 1; // 현재 카운트 값을 가져와 1 감소
+			  if (trnumber < 1) {
+			    trnumber = 1; // 음수 값이 되지 않도록 조정
 			  }
-			  $("#chldCnt").text(count); // 감소된 값을 화면에 표시
+			  $("#chldCnt").text(trnumber); // 감소된 값을 화면에 표시
+			  trInitAjax(trnumber);
 			});
 			
 	  

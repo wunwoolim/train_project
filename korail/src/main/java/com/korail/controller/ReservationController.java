@@ -41,10 +41,7 @@ public class ReservationController {
 		ReservationVo rvo = (ReservationVo)session.getAttribute("rvo");
 		UUID uuid = UUID.randomUUID();
 	
-		System.out.println(rvo.getId());
-		System.out.println(cardVo.getBirthday());
-		System.out.println(cardVo.getCardcomp());
-		System.out.println(cardVo.getCardnum());
+		
 		//System.out.println(cardVo.getRecognizenum()); //½ÂÀÎ¹øÈ£
 		
 		cardVo.setRecognizenum(uuid.toString().replaceAll("-", "").substring(0, 10));
@@ -139,8 +136,6 @@ public class ReservationController {
 		ReservationVo rvo = (ReservationVo)session.getAttribute("rvo");
 		
 		rvo.setTrnumber(trnumber);
-		
-		
 		ArrayList<SeatNumberVo> list  = (ArrayList<SeatNumberVo>)orderService.getSeatnum(rvo);
 		
 		
@@ -150,7 +145,6 @@ public class ReservationController {
 		for(SeatNumberVo seatvo : list) {
 			JsonObject jobj = new JsonObject();
 			jobj.addProperty("seat", seatvo.getSeatnum());
-			
 			seatList.add(jobj);
 		}
 		slist.add("seatList", seatList);

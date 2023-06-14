@@ -150,13 +150,13 @@
 									<div class="btn_wrap">
 										<ul>
 											<li>
-												<button type="button" class="btn Kind_add">
+												<button type="button" class="btn Kind_add" id="Kind_add">
 													<span class="ico_plus">증가</span>
 												</button>
 											</li>
 											
 											<li>
-												<button type="button" class="btn Kind_minus">
+												<button type="button" class="btn Kind_minus" id="Kind_minus">
 													<span class="ico_minus">감소</span>
 												</button>
 											</li>

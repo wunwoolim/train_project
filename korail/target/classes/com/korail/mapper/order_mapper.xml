@@ -10,7 +10,7 @@
 			select SUBSTR(CHAIRNUM, 4,2) seatnum 
 				from( select CHAIRNUM  from ktx_order
 				where SSTATION = #{start_add} and DSTATION= #{end_add} and DEPPLANDTIME = #{rtime}  and STIME = #{start_date})
-				where substr(CHAIRNUM, 1,1) = '1' 
+				where substr(CHAIRNUM, 1,1) = #{trnumber} 
 				ORDER by seatnum
 		<!-- select SUBSTR(CHAIRNUM, 4,2) seatnum from
 		(select CHAIRNUM  from ktx_order where SSTATION ='' and DSTATION='부산' and DEPPLANDTIME = '20230613' and DTIME='09시38분')
