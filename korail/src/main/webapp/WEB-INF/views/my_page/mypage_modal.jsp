@@ -5,6 +5,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="styleSheet" type="text/css" href="http://localhost:9000/ktx/css/mypage_modal.css">
+<script>
+
+</script>
 </head>
 <body>
 	<div class="with_modal">
@@ -83,7 +86,8 @@
 								<strong>비밀번호</strong> <span class="box_label"><input type="password" name="usrPw4" id="usrPw4" class="input" placeholder=" 현재 사이트에 등록된 비밀번호를 입력하세요"> </span><span id="cmsg2"></span>
 							</div>
 							<div class="box_inputForm" id="phDiv2">
-								<strong>휴대폰번호</strong> <span class="box_label"><input type="text" name="usrPw5" id="usrPw5" class="input" placeholder=" 휴대폰번호를 입력하세요"> </span><span id="cmsg3"></span>
+								<strong>휴대폰번호</strong> <span class="box_label"><input maxlength="11" type="text" name="usrPw5" id="usrPw5" class="input" placeholder=" 휴대폰번호를 입력하세요"> </span><span id="cmsg3"></span>
+								<span id="cmsg8"></span>
 							</div>
 						</div>
 					</div>

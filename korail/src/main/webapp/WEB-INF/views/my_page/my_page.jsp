@@ -26,7 +26,7 @@
 	}
 	
 	$(document).ready(function() {
-		
+			
 		$("#usrPw4").on("input", function() {
 			  let pass = "${sessionScope.memberPass}";
 			  let currentPassword = $(this).val().trim();
@@ -41,10 +41,14 @@
 			});
 
 		
-		$("#phone-confirm").click(function() {
-			if ($("#cmsg2").css("color") === "rgb(0, 128, 0)" && $("#usrPw5").slice(0, 11)){
-				phonenumForm.submit();
-			}
+		$("#usrPw5").on("input", function() {
+		    if (this.value.length !== 11) {
+		        $("#cmsg8").text("잘못된 휴대폰 번호")
+		            .css("color", "red").css("font-size", "11px").css("display", "block");
+		    } else {
+		        $("#cmsg8").text("변경된 번호 확인 완료")
+		            .css("color", "green").css("font-size", "11px").css("display", "block");
+		    }
 		});
 		
 		$("#with-confirm").click(function() {
@@ -124,7 +128,11 @@
 				  passForm.submit();
 				}
 		 });
-		 
+		 $("#phone-confirm").click(function() {
+		 	if($("#cmsg2").css("color") === "rgb(0, 128, 0)" && $("#usrPw5").val().length == 11) {
+		 		phonenumForm.submit();
+		 	}
+		 });
 	});
 
 </script>

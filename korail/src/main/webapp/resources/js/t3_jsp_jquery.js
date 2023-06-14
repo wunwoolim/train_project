@@ -61,12 +61,13 @@ $(document).ready(function() {
 					$(".phonenum_modal_cotents").toggle().css("display", "block");
 				}
 				$("#usrPw5").on("input", function() {
-				  let inputValue = $(this).val().trim();
-				  let numericInput = inputValue.replace(/[^0-9]/g, "").slice(0, 11);
-				  $(this).val(numericInput);
+				    let inputValue = $(this).val().trim();
+				    let numericInput = inputValue.replace(/[^0-9]/g, "");
+				
+				    $(this).val(numericInput);
 				});
 			});
-
+			
 			/**
 			 * 마이페이지 회원탈퇴 취소, 영역 외 클릭
 			 */
