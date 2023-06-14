@@ -60,6 +60,11 @@ $(document).ready(function() {
 					$(".with_modal").toggle().css("display", "block");
 					$(".phonenum_modal_cotents").toggle().css("display", "block");
 				}
+				$("#usrPw5").on("input", function() {
+				  let inputValue = $(this).val().trim();
+				  let numericInput = inputValue.replace(/[^0-9]/g, "").slice(0, 11);
+				  $(this).val(numericInput);
+				});
 			});
 
 			/**
@@ -71,65 +76,12 @@ $(document).ready(function() {
 				$(".with_modal_contents").toggle().css("display", "none");
 				$(".pass_modal_cotents").toggle().css("display", "none");
 				$(".phonenum_modal_cotents").toggle().css("display", "none");
+				$(".with_modal_contents input").val("");
+				$(".pass_modal_cotents input").val("");
+				$(".phonenum_modal_cotents input").val("");
+				$("span[id*='cmsg']").text("");
 			});
-			
-			/**
-			 * 마이페이지 비밀번호 변경완료
-			 */
-			
-			$("#pass-confimr").click(function() {
-				if ($("input[name='usrPw']").val().trim() === "") {
-					alert("비밀번호 입력");
-					$("#usrPw").focus();
-				} else {
-				 initAjax(npass, cpass);
-					$.ajax({
-					url : "mypage_cpassProc.do?npass=" + npass +"cpass" + cpass,
-					type : "post",
-					success:function(result) {
-						if(result == 1) {
-						alert("회원탈퇴 완료");
-						} else if (result ==0) {
-						alert("wrong");
-						}
-					}
-					
-					});	
-					// 로그아웃 처리
-				}
-			});
-			/**
-			 * 마이페이지 비밀번호 확인
-			 */
-			
-			$("#usrPw3").on("blur", function(){		
-				if($("#usrPw3").val() != "" && $("#usrPw3").val() != ""){
-					if($("#usrPw2").val() == $("#usrPw3").val()){
-						$("#cmsg").text("비밀번호가 동일합니다").css("color","blue")
-						.css("font-size","11px").css("display","block");
-						$("#usrPw2").focus();
-					}else{
-						$("#cmsg").text("비밀번호가 동일하지 않습니다. 다시  입력해주세요")
-						.css("color","red").css("font-size","11px").css("display","block");
-						
-						$("#usrPw2").val("").focus();
-					}
-				}
-			});
-			
-			/**
-			 * 마이페이지 휴대폰번호 변경 완료
-			 */
-			
-			$("#phone-confirm").click(function() {
-				if ($("input[name='usrPw5']").val() === "") {
-					phonenumForm.submit();
-					$(".with_modal").toggle().css("display", "none");
-					alert("비밀번호 변경 완료");
-					// 로그아웃 처리
-				}
-			});
-			
+
 	/***************************************************************************
 	 * 
      *	gnb
@@ -463,7 +415,7 @@ $(document).ready(function() {
 		var date2Str = formatDate(date2);
 		
 		if (date1 <= date2) {
-		  initAjax('GUEST', date1Str, date2Str, checked);
+		  initAjax(date1Str, date2Str, checked);
 //			  alert(date1);
 		} else {
 		  alert("잘못된 조회");
@@ -478,9 +430,9 @@ $(document).ready(function() {
 	}
 */
 
-	function initAjax(id, date1Str, date2Str, checked) {
+	function initAjax(date1Str, date2Str, checked) {
 	  $.ajax({
-	    url: "paypment_json_data.do?id=" + id + "&date1Str=" + date1Str + "&date2Str=" + date2Str + "&checked=" + checked,
+	    url: "paypment_json_data.do?&date1Str=" + date1Str + "&date2Str=" + date2Str + "&checked=" + checked,
 	    method: 'POST',
 	    success: function(response) {
 //	    alert(id + date1 + date2 + checked);

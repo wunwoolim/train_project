@@ -3,6 +3,8 @@ package com.korail.controller;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +16,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.korail.service.PmyhisServiceImpl;
 import com.korail.vo.OrderVo;
+import com.korail.vo.SessionVo;
 
 @Controller
 public class PaymentController {
@@ -49,14 +52,13 @@ public class PaymentController {
 	@RequestMapping(value="/paypment_json_data.do", method = RequestMethod.POST,
 			produces="text/plain;charset=UTF-8")
 	@ResponseBody
-	public String plahis_json_data(String id, String date1Str, String date2Str, String checked) {
+	public String plahis_json_data(HttpSession session, String date1Str, String date2Str, String checked) {
 		//Payment_historyVo payVo =  pymService.getPageResult(bid);
 		HashMap<String, String> param = new HashMap<String, String>();
 		
-//		System.out.println("id : " + id);
-//		System.out.println("date1Str : " + date1Str);
-//		System.out.println("date2Str : " + date2Str);
-//		System.out.println("checked : " + checked);
+		SessionVo svo = (SessionVo) session.getAttribute("svo");
+		String id = svo.getId();
+
 		param.put("id", id);
 		param.put("date1", date1Str);
 		param.put("date2", date2Str);
