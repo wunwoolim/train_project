@@ -21,7 +21,7 @@ body, input, select, div, textarea, table, button {
     color: #666;
 }
 
-html {
+#gnb html {
     height: 100%;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -32,7 +32,7 @@ html {
 	padding-top:28px;
 }
 
-h1 {
+#gnb h1 {
     display: block;
     font-size: 2em;
     margin-block-start: 0.67em;
@@ -51,12 +51,12 @@ h1 {
     max-width:219px;
 }
 
-a{
+#gnb a{
 	text-decoration:none;
 	color: #333;
 }
 
-div{
+#gnb div{
 	display:block;
 }
 

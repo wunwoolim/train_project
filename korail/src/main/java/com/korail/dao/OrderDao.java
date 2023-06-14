@@ -8,12 +8,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.korail.vo.OrderVo;
+import com.korail.vo.ReservationVo;
+import com.korail.vo.SeatNumberVo;
 
 @Repository
 public class OrderDao extends DBConn {
 
 	@Autowired
 	private SqlSessionTemplate sqlSession;
+	
+	/*
+	 *  예매된 좌석 출력
+	 */
+	public List<SeatNumberVo> seatnum(ReservationVo rvo){
+		
+		return sqlSession.selectList("mapper.order.seatnum", rvo);
+	}
 
 	/**
 	 * 예매내역 출력

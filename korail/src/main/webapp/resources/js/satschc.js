@@ -1,46 +1,81 @@
 $(document).ready(function(){
+	initAjax(1);
 	
-	// 좌석 만들기 
-	let width = 4;
-	let height  = 10;
-	let count = 0;
+	function initAjax(trnumber) {
+	  $.ajax({
+	    url: "train_reservation_satschc_json.do",
+	    success: function (result) {
+	      //alert(result);
+	      let jdata = JSON.parse(result);
+	      let seatList = jdata.seatList;
 	
-	let seat = "";
+	      //alert(seatList[0].seat);
 	
-	for(let i = 0; i<height; i++){
-				seat += "<div>";
-		for(let j = 0; j<width; j++){
-		
-				count++;
-				seat +="<div class='box'>";
-			 	seat +="<span class='seatBox'>";
-				seat +="<img src='http://localhost:9000/ktx/images/seat_p.gif' id='chairImg' style='opacity: 0.5;'>";
-				seat +=  count 
-				seat +="</span></div>";
-		
-				
-		}
-				seat +="</div>";
-	}
+	      // 좌석 만들기
+	      let width = 4;
+	      let height = 10;
+	      let count = 0;
+	      let seat = "";
 	
-	$(".seatList").append(seat);
+	      for (let i = 0; i < height; i++) {
+	        seat += "<div>";
+	        
+	        for (let j = 0; j < width; j++) {
+	          count++;
+	          seat += "<div class='box'>";
+	          seat += "<span class='seatBox'>";
+	          
+	          let isOccupied = false;
+	          
+	          for (let seatObj of seatList) {
+	          
+	            if (seatObj.seat == count) {
+	              seat += "<img src='http://localhost:9000/ktx/images/seat_c.gif' style='opacity: 0.5;'>";
+	              isOccupied = true;
+	              break;
+	            }
+	          }
+	          
+	          if (!isOccupied) {
+	            seat += "<img src='http://localhost:9000/ktx/images/seat_p.gif' id='chairImg' style='opacity: 0.5;'>";
+	          }
+	          
+	          seat +=  count;
+	          seat += "</span></div>";
+	        }
+	        seat += "</div>";
+	      }
+	
+	      $(".seatList").empty();
+	      $(".seatList").append(seat);
+	    } //success
+	  }); //ajax
+	} //initAjax
+	
+	
+	
+	
+	
 	
 	
 	//좌석 선택 이벤트
 	
-	$(".box").click(function(){
+	$(".seatList").on("click", "#chairImg", function (){
 		
 		//alert($("#chldCnt").text() + "호차 " + $(this).text()+"좌석");
-		let seatNum = $("#chldCnt").text() + "호 " + $(this).text()+"좌석";
-		$("#seatNum").val(seatNum);
-		$("#seatNum1").val(seatNum);
-		$("#seatNum2").val(seatNum);
-		$(".box img").css("opacity", "0.5");
-		$(this).find("img").css("opacity","1.0");
-		$("#passengersNum").text($("#adltCnt").text());
-		let ticketQty = $("#adltCnt").text();
-		$("#ticketQty1").val(ticketQty);
-		$("#ticketQty2").val(ticketQty);
+		let seatNum = $("#chldCnt").text() + "호 " + $(this).text($().())+ "좌석";
+		
+			
+					$("#seatNum").val(seatNum);
+					$("#seatNum1").val(seatNum);
+					$("#seatNum2").val(seatNum);
+					$(".box img").css("opacity", "0.5");
+					$(this).find("img").css("opacity","1.0");
+					$("#passengersNum").text($("#adltCnt").text());
+					let ticketQty = $("#adltCnt").text();
+					$("#ticketQty1").val(ticketQty);
+					$("#ticketQty2").val(ticketQty);
+				
 		
 	});
 	
@@ -160,4 +195,4 @@ $(document).ready(function(){
 	
 	
 	    
-});
+}); //ready

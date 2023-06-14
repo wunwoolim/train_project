@@ -3,6 +3,8 @@ package com.korail.service;
 import java.util.ArrayList;
 
 import com.korail.vo.OrderVo;
+import com.korail.vo.ReservationVo;
+import com.korail.vo.SeatNumberVo;
 
 public interface OrderService {
 	
@@ -19,4 +21,6 @@ public interface OrderService {
 	public int getPaymentUpdate(OrderVo orderVo);
 	
 	public int getCardnum(String cardnum);
+	
+	public ArrayList<SeatNumberVo> getSeatnum(ReservationVo rvo);
 }
