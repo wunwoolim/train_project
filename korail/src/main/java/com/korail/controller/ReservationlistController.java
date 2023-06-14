@@ -12,11 +12,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.korail.service.OrderService;
 import com.korail.service.PageServiceImpl;
 import com.korail.vo.CardinfoVo;
 import com.korail.vo.MemberVo;
 import com.korail.vo.OrderVo;
+import com.korail.vo.ReservationVo;
+import com.korail.vo.SeatNumberVo;
 import com.korail.vo.SessionVo;
 import com.korail.vo.UpdateVo;
 
@@ -55,10 +60,12 @@ public class ReservationlistController {
 	    
 		ArrayList<OrderVo> orderList = orderService.getSelect(orderVo);
 	    
-		System.out.println(orderList.get(0).getCardnum());
+		/* System.out.println(orderList.get(0).getCardnum()); */
+		if(orderList != null) {
+			model.addObject("orderList", orderList);
+		    model.setViewName("/reservationlist/reservation_main");
+		}
 		
-		model.addObject("orderList", orderList);
-	    model.setViewName("/reservationlist/reservation_main");
 	    return model;
 	}
 	
@@ -223,6 +230,41 @@ public class ReservationlistController {
 		return "/reservationlist/reservation_updatechair";
 	}
 	
+	/*
+	 * 예매 좌석 선택 페이지 json
+	 */
+	@RequestMapping(value="/reservationlist_update_chair_json.do",method=RequestMethod.GET,produces="text/plain;charset=UTF-8")
+	@ResponseBody
+	public String reservationlist_update_chair_json(String trnumber, HttpSession session) {
+		
+		UpdateVo uvo = (UpdateVo)session.getAttribute("uvo");
+		System.out.println(uvo.getDepplacename());
+		System.out.println(uvo.getArrplacename());
+		System.out.println(uvo.getStart_date());
+		System.out.println(uvo.getRtimes());
+		
+		uvo.setTrnumber(trnumber);
+		ArrayList<SeatNumberVo> list  = (ArrayList<SeatNumberVo>)orderService.getSeatnumUp(uvo);
+		
+		System.out.println("trnumber -->"+ trnumber);
+		
+		JsonArray seatList = new JsonArray(); //배열로 만들애
+		JsonObject slist = new JsonObject();
+		
+		for(SeatNumberVo seatvo : list) {
+			JsonObject jobj = new JsonObject();
+			jobj.addProperty("seat", seatvo.getSeatnum());
+			seatList.add(jobj);
+		}
+		slist.add("seatList", seatList);
+		
+		System.out.println("slist -->"+slist);
+		
+		return new Gson().toJson(slist);
+	}
+	
+	
+	
 	/**
 	 *   reservation_updatepay.do - 예매변경 4번째 페이지 - 비회원 결제 
 	 */
@@ -271,7 +313,7 @@ public class ReservationlistController {
 		orderVo.setCardnum(cardVo.getCardnum());
 		orderVo.setPrice(Integer.parseInt(uvo.getAdultcharge()));
 		orderVo.setTrainnum(Integer.parseInt(uvo.getTrainno()));
-		orderVo.setTicketqty(Integer.parseInt(uvo.getTicketQty()));
+		/* orderVo.setTicketqty(Integer.parseInt(uvo.getTicketQty())); */
 		
 		int result = orderService.getPaymentUpdate(orderVo);
 		//cardService.getPaymentUpdate(cardVo);

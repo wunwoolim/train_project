@@ -6,6 +6,15 @@
     
 <mapper namespace="mapper.order">
 
+
+	<select id="seatnumUp" parameterType="com.korail.vo.UpdateVo" resultType="com.korail.vo.SeatNumberVo">
+			select SUBSTR(CHAIRNUM, 4,2) seatnum 
+				from( select CHAIRNUM  from ktx_order
+				where SSTATION = #{depplacename} and DSTATION= #{arrplacename} and DEPPLANDTIME = #{rtimes}  and STIME = #{start_date})
+				where substr(CHAIRNUM, 1,1) = #{trnumber} 
+				ORDER by seatnum
+	</select>
+
 	<select id="seatnum" parameterType="com.korail.vo.ReservationVo" resultType="com.korail.vo.SeatNumberVo">
 			select SUBSTR(CHAIRNUM, 4,2) seatnum 
 				from( select CHAIRNUM  from ktx_order

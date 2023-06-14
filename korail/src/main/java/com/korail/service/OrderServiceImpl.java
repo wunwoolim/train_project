@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.korail.dao.OrderDao;
-import com.korail.vo.MemberVo;
 import com.korail.vo.OrderVo;
 import com.korail.vo.ReservationVo;
 import com.korail.vo.SeatNumberVo;
+import com.korail.vo.UpdateVo;
 
 @Service
 public class OrderServiceImpl implements OrderService{
@@ -22,6 +22,14 @@ public class OrderServiceImpl implements OrderService{
 	public ArrayList<SeatNumberVo> getSeatnum(ReservationVo rvo){
 		
 		List<SeatNumberVo> list = orderDao.seatnum(rvo);	
+		
+		return (ArrayList<SeatNumberVo>)list;
+	}
+	
+	@Override
+	public ArrayList<SeatNumberVo> getSeatnumUp(UpdateVo uvo){
+		
+		List<SeatNumberVo> list = orderDao.seatnumUp(uvo);	
 		
 		return (ArrayList<SeatNumberVo>)list;
 	}

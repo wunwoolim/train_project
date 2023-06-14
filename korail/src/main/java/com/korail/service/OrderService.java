@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.korail.vo.OrderVo;
 import com.korail.vo.ReservationVo;
 import com.korail.vo.SeatNumberVo;
+import com.korail.vo.UpdateVo;
 
 public interface OrderService {
 	
@@ -23,4 +24,6 @@ public interface OrderService {
 	public int getCardnum(String cardnum);
 	
 	public ArrayList<SeatNumberVo> getSeatnum(ReservationVo rvo);
+	
+	public ArrayList<SeatNumberVo> getSeatnumUp(UpdateVo uvo);
 }

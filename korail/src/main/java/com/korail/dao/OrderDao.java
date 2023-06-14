@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import com.korail.vo.OrderVo;
 import com.korail.vo.ReservationVo;
 import com.korail.vo.SeatNumberVo;
+import com.korail.vo.UpdateVo;
 
 @Repository
 public class OrderDao extends DBConn {
@@ -27,6 +28,14 @@ public class OrderDao extends DBConn {
 		return sqlSession.selectList("mapper.order.seatnum", rvo);
 	}
 
+	/*
+	 *  예매된 좌석 출력 - 예매 변경
+	 */
+	public List<SeatNumberVo> seatnumUp(UpdateVo uvo){
+		
+		return sqlSession.selectList("mapper.order.seatnumUp", uvo);
+	}
+	
 	/**
 	 * 예매내역 출력
 	 */

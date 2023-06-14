@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/train_reservation_satschc.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
-<script src="http://localhost:9000/ktx/js/satschc.js"></script>
+<script src="http://localhost:9000/ktx/js/chairupdate.js"></script>
 <style>
 .title_wrap { 
 	background: url(http://localhost:9000/ktx/images/visual_chkTicket_bg.gif) center 0 no-repeat; 
@@ -42,7 +42,9 @@
 				
 					<div class="route_wrap" id="satsRotInfo">
 						<div class="inner">
+							<p class="roundBox_start">출발</p>
 							<p class="roundBox departure " id="satsDeprTmlNm"> ${ sessionScope.uvo.depplacename }</p><!-- 출발지 -->
+							<p class="roundBox_end">도착</p>
 							<p class="roundBox arrive " id="satsArvlTmlNm">${ sessionScope.uvo.arrplacename }</p><!-- 도착지 -->
 						</div>
 						<div class="detail_info">
@@ -145,13 +147,13 @@
 									<div class="btn_wrap">
 										<ul>
 											<li>
-												<button type="button" class="btn Kind_add">
+												<button type="button" class="btn Kind_add" id="Kind_add">
 													<span class="ico_plus">증가</span>
 												</button>
 											</li>
 											
 											<li>
-												<button type="button" class="btn Kind_minus">
+												<button type="button" class="btn Kind_minus" id="Kind_minus">
 													<span class="ico_minus">감소</span>
 												</button>
 											</li>
