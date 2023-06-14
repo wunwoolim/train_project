@@ -15,8 +15,8 @@ public class OrderServiceImpl implements OrderService{
 	private OrderDao orderDao;
 	
 	@Override
-	public ArrayList<OrderVo> getSelect() {
-		return orderDao.select();
+	public ArrayList<OrderVo> getSelect(OrderVo orderVo) {
+		return orderDao.select(orderVo);
 	}
 	
 	@Override
@@ -44,5 +44,10 @@ public class OrderServiceImpl implements OrderService{
 	@Override
 	public int getPaymentUpdate(OrderVo orderVo) {
 		return orderDao.updatePayment(orderVo);
+	}
+	
+	@Override
+	public int getCardnum(String cardnum) {
+		return orderDao.selectCardnum(cardnum);
 	}
 }

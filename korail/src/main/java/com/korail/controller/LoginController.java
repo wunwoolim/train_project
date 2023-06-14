@@ -39,7 +39,14 @@ public class LoginController {
 	}
 	
 	
-	
+	/**
+	 * reservation_login.do - 예매확인 회원/비회원 로그인 페이지
+	 */
+	@RequestMapping(value="/login2.do", method=RequestMethod.GET)
+	public String reservation_login() {
+		
+		return "/reservationlist/login2";
+	} 
 	
 	
 	
@@ -50,11 +57,19 @@ public class LoginController {
 	}
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
 	/**
 	 * login_proc.do - 로그인 처리
 	 */
 	@RequestMapping(value="/login_proc.do", method=RequestMethod.POST)
-	public ModelAndView login_proc(MemberVo memberVo, HttpSession session) {
+	public ModelAndView login_proc(MemberVo memberVo, HttpSession session, String userId) {
 		
 		ReservationVo rvo = (ReservationVo)session.getAttribute("rvo");
 		
@@ -64,13 +79,12 @@ public class LoginController {
 		
 		
 		if(svo.getLoginResult() == 1) {
-			
+			session.setAttribute("svo" , svo);
 			//index 이동
 			//viewName = "index";  viewResolver를 호출--> index.jsp: header.do,footer.do 호출안됨
 			if(memberVo.getPagename().equals("mainlogin")) {
-			session.setAttribute("svo" , svo);
-			model.addObject("login_result", "ok");
-			model.setViewName("redirect:/train_reservation_rotinf.do"); //sendRedirect 
+				model.addObject("login_result", "ok");
+				model.setViewName("redirect:/train_reservation_rotinf.do"); //sendRedirect 
 			
 			}else if(memberVo.getPagename().equals("reservation")){
 				 rvo.setSeatNum(memberVo.getSeatNum());
@@ -78,6 +92,9 @@ public class LoginController {
 				 rvo.setId(memberVo.getId()); 
 				 
 				model.setViewName("redirect:/train_reservation_stplcfmpym1.do");
+			}else if(memberVo.getPagename().equals("reservationlist")) {
+				session.setAttribute("id", memberVo.getId());
+				model.setViewName("redirect:/reservation_main.do");
 			}
 		}else {
 			//login_fail.jsp

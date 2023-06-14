@@ -106,8 +106,8 @@
 			<div id="reserv">
 			
 			<section class="detail_info_wrap homeTicket marT30 ">
-				<c:forEach var="ovo" items="${orderList}">	       
-				<c:if test="${ovo.cancel == 0}">                 	 
+				<c:forEach var="ovo" items="${orderList}">
+				<c:if test="${ovo.cancel == 0}">     
 				<div class="box_detail_info" id="${ovo.reservnum}">
 					<div class="routeHead">
 						<p class="date" id="depPlandTime">${ovo.depPlandTime}</p>

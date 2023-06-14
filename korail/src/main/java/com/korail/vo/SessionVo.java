@@ -2,8 +2,14 @@ package com.korail.vo;
 
 public class SessionVo {
 	int loginResult;
-	String name, id, pass;
+	String name, id, pass, cardnum;
 	
+	public String getCardnum() {
+		return cardnum;
+	}
+	public void setCardnum(String cardnum) {
+		this.cardnum = cardnum;
+	}
 	public int getLoginResult() {
 		return loginResult;
 	}

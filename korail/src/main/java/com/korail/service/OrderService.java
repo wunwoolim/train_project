@@ -6,7 +6,7 @@ import com.korail.vo.OrderVo;
 
 public interface OrderService {
 	
-	ArrayList<OrderVo> getSelect();
+	ArrayList<OrderVo> getSelect(OrderVo orderVo);
 
 	OrderVo getSelected(String reservnum);
 	
@@ -17,4 +17,6 @@ public interface OrderService {
 	public int getPayment(OrderVo orderVo);
 	
 	public int getPaymentUpdate(OrderVo orderVo);
+	
+	public int getCardnum(String cardnum);
 }

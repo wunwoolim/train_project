@@ -44,7 +44,23 @@ $("#pass").val("");
 
 
 
-
+/*************************
+		로그인2 -예매내역용 
+*************************/
+$("#btnLogin").click(function(){
+	if($("#id").val() == ""){
+		alert("아이디를 입력해주세요");
+		$("#id").focus();
+		return false;
+	}else if($("#pass").val()==""){
+		alert("패스워드를 입력해주세요");
+		$("#pass").focus();
+		return false;
+	}else{
+		loginForm.submit();
+	}
+	
+});
 
 
 }); //ready

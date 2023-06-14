@@ -40,6 +40,10 @@
 			<mapping path="/admin*"/>
 			<beans:ref bean="sessionAuthInterceptor"></beans:ref>
 		</interceptor>
+		<interceptor>
+			<mapping path="/reservation_*"/>
+			<beans:ref bean="sessionAuthInterceptor"></beans:ref>
+		</interceptor>
 	</interceptors>
 	
 	

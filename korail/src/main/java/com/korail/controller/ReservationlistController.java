@@ -1,7 +1,6 @@
 package com.korail.controller;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
 
@@ -15,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.korail.service.OrderService;
 import com.korail.vo.CardinfoVo;
 import com.korail.vo.OrderVo;
+import com.korail.vo.SessionVo;
 import com.korail.vo.UpdateVo;
 
 @Controller
@@ -29,17 +29,33 @@ public class ReservationlistController {
 	 * reservation_main.do - 예매내역
 	 */
 	@RequestMapping(value="/reservation_main.do", method=RequestMethod.GET)
-	public ModelAndView reservation_main() {
+	public ModelAndView reservation_main(OrderVo orderVo, HttpSession session) {
 		ModelAndView model = new ModelAndView();
 		
-		ArrayList<OrderVo> orderList = orderService.getSelect();
-			
+		SessionVo svo = (SessionVo) session.getAttribute("svo");
+		String id = svo.getId();
+		String cardnum = svo.getCardnum();
+		
+		System.out.println(id);
+		System.out.println(cardnum);
+		
+	    if(id == null) {
+	        // userId 값이 없는 경우 로그인 페이지로 리다이렉트
+	        model.setViewName("redirect:/login2.do");
+	        return model;
+	    }
+	    
+	    // 로그인한 사용자의 id와 cardnum을 설정하여 조회
+	    orderVo.setId(id);
+	    orderVo.setCardnum(cardnum);
+	    
+		ArrayList<OrderVo> orderList = orderService.getSelect(orderVo);
+	    
+		System.out.println(orderList.get(0).getCardnum());
 		
 		model.addObject("orderList", orderList);
-		model.setViewName("/reservationlist/reservation_main");
-		
-		return model;
-		
+	    model.setViewName("/reservationlist/reservation_main");
+	    return model;
 	}
 	
 	/**
@@ -127,16 +143,6 @@ public class ReservationlistController {
 		
 		return model;
 	}
-	
-	
-	/**
-	 * reservation_login.do - 예매확인 회원/비회원 로그인 페이지
-	 */
-	@RequestMapping(value="/reservation_login.do", method=RequestMethod.GET)
-	public String reservation_login() {
-		
-		return "/reservationlist/reservation_login";
-	} 
 	
 	
 	
@@ -282,7 +288,30 @@ public class ReservationlistController {
 	
 	
 	
+	/**
+	 * cardnum_check_proc.do - 로그인2 카드번호로 조회하기 처리
+	 */
+	 @RequestMapping(value="/cardnum_check_proc.do", method=RequestMethod.POST)
+	 public ModelAndView cardnum_check_proc(String cardnum, String userId, HttpSession session) {
+		 ModelAndView model = new ModelAndView();
+		 int result = orderService.getCardnum(cardnum);
+		 
+		 if (result == 1) {
+		        // 카드번호 조회 성공 시 세션에 사용자 정보 저장
+		        SessionVo svo = new SessionVo();
+		        svo.setId(userId);
+		        svo.setCardnum(cardnum);
+		        session.setAttribute("svo", svo);
+
+		        model.setViewName("redirect:/reservation_main.do");
+		 } else {
+		        model.setViewName("redirect:/login_fail.do");
+		 }
+		 
+		 return model;
+	 }
 	
+	 
 	
 	
 	

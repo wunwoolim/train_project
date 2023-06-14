@@ -7,7 +7,12 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/reservationlist.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
-<script src="http://localhost:9000/ktx/js/reservation_jquery.js"></script>
+<script src="http://localhost:9000/ktx/js/login.js"></script>
+<style>
+	.box_inputForm, #nonMemberbox{
+	margin-top: 4px;
+	}
+</style>
 </head>
 <body>
 <div>
@@ -21,79 +26,11 @@
 		</div>
 	</div>
 	
-	<!------------------------ 메뉴바 ---------------------------->
-	<div class="breadcrumb">
-		<ul class="breadcrumb_list">
-			<li><a href="/main.do">HOME</a></li>
-			<li>
-				<div class="select-box">
-					<div class="selectricWrapper selectric-select">
-						<div class="selectricHideSelect">
-							<select name="" id="" class="select" tabindex="0">
-								<option value="/mrs/rotinf.do">KTX예매</option>
-								<option value="/mrs/mrscfm.do" selected="selected">예매확인</option>
-								<option value="/oprninf/alcninqr/oprnAlcnPage.do">운행정보</option>
-								<option value="/ugd/mrsgd/Mrsgd.do">이용안내</option>
-								<option value="/cscn/ntcmttr/readNtcList.do">공지사항</option>
-								<option value="/cscn/qna/readQnaList.do">고객센터</option>
-							</select>
-						</div>
-						<!-- <div class="selectric">
-							<p class="label">예매확인</p>
-							<b class="button">▾</b>
-						</div> -->
-						<!-- <div class="selectricItems" tabindex="-1">
-							<div class="selectricScroll">
-								<ul>
-									<li class="">고속버스예매</li>
-									<li class="selected">예매확인</li>
-									<li class="">운행정보</li>
-									<li class="">고속버스 프리패스/정기권</li>
-									<li class="">이용안내</li>
-									<li class="">공지사항</li>
-									<li class="">고객센터</li>
-									<li class="">전국고속버스운송사업조합</li>
-									<li class="last">터미널사업자협회</li>
-								</ul>
-							</div>
-						</div>
-						<input class="selectricInput" tabindex="0"> -->
-					</div>
-				</div>
-			</li>
-			<!-- 예매확인 -->
-			<li>
-				<div class="select-box">
-					<div class="selectricWrapper selectric-select">
-						<div class="selectricHideSelect">
-							<select name="" id="" class="select" tabindex="0">
-								<option value="/mrs/mrscfm.do" selected="selected">예매 확인/취소/변경</option>
-								<option value="/mrs/mrsrecplist.do">영수증 발행</option>
-							</select>
-						</div>
-						<!-- <div class="selectric">
-							<p class="label">예매 확인/취소/변경</p>
-							<b class="button">▾</b>
-						</div>
-							<div class="selectricItems" tabindex="-1">
-							<div class="selectricScroll">
-								<ul>
-									<li class="selected">예매 확인/취소/변경</li>
-									<li class="last">영수증 발행</li>
-								</ul>
-							</div>
-						</div>
-						<input class="selectricInput" tabindex="0"> -->
-					</div>
-				</div>
-			</li>
-		</ul>
-	</div>
 	<!------------------------ 로그인하기 ---------------------------->
 	<div class="page">
 		<div class="login_wrap">
 			<!-- 회원로그인 -->
-			<form id="lgnUsrInfForm" name="lgnUsrInfForm">
+			<form id="loginForm" action="login_proc.do" method="post">
 			<div class="box_login">
 				<h3 class="mob_h3">회원 로그인</h3>
 				<div class="inner">
@@ -104,8 +41,8 @@
 								<div class="box_inputForm">
 									<strong>아이디</strong>
 									<span class="box_label">
-										<label for="usrId">아이디를 입력하세요</label>
-										<input type="text" name="usrId" id="usrId" class="input" onkeyup="fnIcoCheck(this);">
+										<!-- <label for="usrId">아이디를 입력하세요</label> -->
+										<input type="text" name="id" id="id" class="input">
 									</span>
 								</div>
 							</li>
@@ -113,8 +50,8 @@
 								<div class="box_inputForm">
 									<strong>비밀번호</strong>
 									<span class="box_label">
-										<label for="usrPwd">비밀번호를 입력하세요</label>
-										<input type="password" name="usrPwd" id="usrPwd" class="input" onkeyup="fnIcoCheck(this);" data-tk-kbdtype="qwerty" onfocus="tk.onKeyboard(this);">
+										<!-- <label for="usrPwd">비밀번호를 입력하세요</label> -->
+										<input type="password" name="pass" id="pass" class="input">
 									</span>
 								</div>
 							</li>
@@ -134,11 +71,19 @@
 					<input type="hidden" id="transkeyUuid_lgnUsrInfForm" name="transkeyUuid_lgnUsrInfForm" value="a8faa6eb38350229c3950316465f5e6755b404b31270294d21fafa58b2086f59">
 					<input type="hidden" id="transkey_usrPwd_lgnUsrInfForm" name="transkey_usrPwd_lgnUsrInfForm" value="">
 					<input type="hidden" id="transkey_HM_usrPwd_lgnUsrInfForm" name="transkey_HM_usrPwd_lgnUsrInfForm" value="">
+				<input type="hidden" name="pagename" class ="input" id="pagename" value="reservationlist">
 			</form> 
 			<!-- //회원로그인 -->
 				
+				
+				
+				
+				
+				
+				
+				
 			<!-- 비회원로그인 -->
-			<form id="lgnNonUsrFrm" name="lgnNonUsrFrm">
+			<form id="lgnNonUsrFrm" name="lgnNonUsrFrm" action="cardnum_check_proc.do" method="post">
 			<div class="box_login non-member">
 				<h3 class="mob_h3">비회원 예매확인</h3>
 				<p class="h3_desc">예매 시 입력하신 정보를 정확히 입력해주세요.</p>
@@ -152,11 +97,11 @@
 					<ul class="loginList">
 						<li class="phone_wrap">
 							<ul class="ph_form">
-								<li class="clearfix send no_member_ticketing01 " style="display: list-item;">
+								<li class="clearfix send no_member_ticketing01" id="nonMemberbox" style="display: list-item;">
 									<div class="box_inputForm_no_member">
 										<strong>휴대폰번호</strong>
 										<span class="box_label">
-											<label for="nonMbrsHp">휴대폰번호를 입력하세요</label>
+											<!-- <label for="nonMbrsHp">휴대폰번호를 입력하세요</label> -->
 											<input type="text" name="nonMbrsHp" id="nonMbrsHp" class="input" maxlength="11" onkeyup="fnIcoCheck(this),fnNumCheck(this);">
 										</span>
 									</div>
@@ -172,7 +117,7 @@
 									<div class="box_inputForm_no_member">
 										<strong>수신된 인증번호</strong>
 										<span class="box_label">
-											<label for="nonMbrsAuthNo">인증번호를 입력하세요</label>
+											<!-- <label for="nonMbrsAuthNo">인증번호를 입력하세요</label> -->
 											<input type="text" name="nonMbrsAuthNo" id="nonMbrsAuthNo" maxlength="6" onkeyup="fnIcoCheck(this),fnNumCheck(this);" class="input">
 										</span>
 									</div>
@@ -192,12 +137,12 @@
 									</div>
 								</li>
 								
-								<li class="clearfix no_member_tab no_member_tab01">
+								<!-- <li class="clearfix no_member_tab no_member_tab01">
 									<p class="credit on">신용카드 예매 티켓</p>
 									<p class="easypay">간편결제 예매 티켓</p>
-								</li>
+								</li> -->
 									
-								<li class="credit01 mt0">
+								<!-- <li class="credit01 mt0">
 									<div class="box_inputForm"> 
 										<strong>생년월일(YYMMDD)</strong>
 										<span class="box_label">
@@ -205,9 +150,9 @@
 											<input type="text" name="birthday1" id="birthday1" maxlength="10" onkeyup="fnIcoCheck(this),fnNumCheck(this);" class="input">
 										</span>
 									</div>
-								</li>
+								</li> -->
 								
-								<li class="credit02 mt0">
+								<!-- <li class="credit02 mt0">
 									<div class="box_inputForm"> 
 										<strong>출발일(YYYYMMDD)</strong>
 										<span class="box_label">
@@ -215,7 +160,7 @@
 											<input type="text" name="start_date1" id="start_date1" maxlength="8" onkeyup="fnIcoCheck(this),fnNumCheck(this);" class="input">
 										</span>
 									</div>
-								</li>
+								</li> -->
 								<li class="credit01"><span class="notice02 ">※ 법인카드로 결제 한 경우 사업자번호(10자리)를 입력하세요.</span></li>
 								<li class="wh100_notice credit02" style="margin-left:25px; text-align:left;"><span class="notice02 ">※ 스마일페이/티머니페이/페이코로 결제 한 경우<br> 생년월일(6자리)대신 출발일(8자리)을 입력하세요.</span></li>
 							</ul>
@@ -235,12 +180,14 @@
 											<span class="hyp">-</span>
 											<input type="password" name="card_number04" id="card_number04" class="input02" maxlength="4" onkeydown="this.value = onlyNumPlus(this.value);" onblur="" data-tk-kbdtype="number" onfocus="tk.onKeyboard(this);">
 										</span>
+										<input type="hidden" id="cardnum" name="cardnum">
+										<input type="hidden" id="userId" name="userId" value="guest">
 									</div>
 								</li>
-								<li class="clearfix no_member_tab no_member_tab02">
+								<!-- <li class="clearfix no_member_tab no_member_tab02">
 									<p class="credit on">신용카드 예매 티켓</p>
-								</li>
-								<li class=" credit03 mt0">
+								</li> -->
+								<!-- <li class=" credit03 mt0">
 									<div class="box_inputForm"> 
 										<strong>생년월일(YYMMDD)</strong>
 										<span class="box_label">
@@ -248,15 +195,15 @@
 											<input type="text" name="birthday2" id="birthday2" maxlength="10" onkeyup="fnIcoCheck(this),fnNumCheck(this);" class="input">
 										</span>
 									</div>
-								</li>
-								<li class="credit03"><span class="notice02 ">※ 법인카드로 결제 한 경우 사업자번호(10자리)를 입력하세요.</span></li>
+								</li> -->
+								<!-- <li class="credit03"><span class="notice02 ">※ 법인카드로 결제 한 경우 사업자번호(10자리)를 입력하세요.</span></li> -->
 							</ul>
 						</li>		
 					</ul>
 				</fieldset>
 				<p class="btn_squareBox no_member_ticketing01" style="display: block;"><button type="button" onclick="javascript:alert('휴대폰인증이 필요합니다.'), $('#nonMbrsHp').val(''), $('#nonMbrsHp').focus();" class="btn_confirm ready">조회</button></p>
 				<p class="btn_squareBox pay_wrap_ph pay_wrap_ph_btn" style="display: none;"><button type="button" onclick="javascript:fnNonUsr_Search();" class="btn_confirm ready">조회</button></p>
-				<p class="btn_squareBox pay_wrap_card pay_wrap_card_btn" style="display: none;"><button type="button" onclick="javascript:fnNonUsr_Search();" class="btn_confirm ready">조회</button></p>
+				<p class="btn_squareBox pay_wrap_card pay_wrap_card_btn" style="display: none; "><button type="button" id="cardnumSearch" class="btn_confirm ready" style="height: 60px; line-height: 0px;">조회</button></p>
 				
 				<input type="hidden" id="popUpDvs" name="popUpDvs" value="N">
 				<input type="hidden" id="returnUrl" name="returnUrl" value="/mrs/mrscfm.do">
@@ -275,10 +222,28 @@
 </form>
 
 	<script>
+	
+	
+	$("#cardnumSearch").click(function(){
+		var card_number = $("#card_number01").val() +"-"+ $("#card_number02").val() +"-"+ $("#card_number03").val() +"-"+ $("#card_number04").val();
+		
+		if (card_number.length < 15){
+			alert('카드번호를 확인해주세요.');
+			$("#card_number01").focus();
+			return;
+		}else{
+			$("#cardnum").val(card_number);
+			$('#lgnNonUsrFrm').submit();
+		}
+		
+	});
+	
+	
+	
+	
+	
 				/* 1-1, 1-2  */
-					$(".send_btn").on("click",function(){
-//	 					$(".send").hide();
-//	 					$(".resend").show();
+					/* $(".send_btn").on("click",function(){
 						if ($("#nonMbrsHp").val().length < 10){
 							alert("휴대폰번호를 확인해주세요.");
 							return;
@@ -319,10 +284,10 @@
 					        }
 						});
 						
-					});
+					}); */
 				
 					/*  1, 2  */
-					$(".ph_check").on("click",function(){
+					/* $(".ph_check").on("click",function(){
 						
 						if ($("#nonMbrsHp").val().length < 10){
 							alert("휴대폰번호를 확인해주세요.");
@@ -367,7 +332,7 @@
 					        }
 						});
 						
-					});
+					}); */
 					/*  2-2 */
 					$(".no_member_tab01 p").on("click", function(){
 						$(".no_member_tab01 p").removeClass("on");
@@ -400,7 +365,7 @@
 						}
 					});
 					/* 3-2 */
-					$(".no_member_tab02 p").on("click", function(){
+					/* $(".no_member_tab02 p").on("click", function(){
 						$(".no_member_tab02 p").removeClass("on");
 						$(this).addClass("on");
 						if($(".no_member_tab02 p.easypay").hasClass("on")){
@@ -422,8 +387,9 @@
 					function fnNonUsr_Search(){
 						var cal_flg1 = Number($("#cal_flg1").val());
 						var cal_flg2 = Number($("#cal_flg2").val());
-						var card_number = $("#card_number01").val() +""+ $("#card_number02").val() +""+ $("#card_number03").val() +""+ $("#card_number04").val();
-						if(cal_flg1 == 0 && $("#nonMbrsAuthYn").val() != "Y"){
+						var card_number = $("#card_number01").val() +"-"+ $("#card_number02").val() +"-"+ $("#card_number03").val() +"-"+ $("#card_number04").val(); */
+						
+						/* if(cal_flg1 == 0 && $("#nonMbrsAuthYn").val() != "Y"){
 							alert("비회원 인증이 필요합니다.");
 							return;
 						}
@@ -440,29 +406,29 @@
 							alert('출발일을 확인해주세요.');
 							$("#start_date1").focus();
 							return;
-						}
-						if (cal_flg1 == 2 && card_number.length < 15){
+						} */
+						/* if (cal_flg1 == 2 && card_number.length < 15){
 							alert('카드번호를 확인해주세요.');
 							$("#card_number01").focus();
 							return;
-						}
-						if (cal_flg1 == 2 && cal_flg2 == 1 && $("#birthday2").val().length != 6 && $("#birthday2").val().length != 10){
+						} */
+						/* if (cal_flg1 == 2 && cal_flg2 == 1 && $("#birthday2").val().length != 6 && $("#birthday2").val().length != 10){
 							alert('생년월일을 확인해주세요.');
 							$("#birthday2").focus();
 							return;
-						}
-						if (cal_flg1 == 2 && cal_flg2 == 2 && $("#start_date2").val().length != 8){
+						} */
+						/* if (cal_flg1 == 2 && cal_flg2 == 2 && $("#start_date2").val().length != 8){
 							alert('출발일을 확인해주세요.');
 							$("#start_date2").focus();
 							return;
-						}
+						} */
 
-						if (cal_flg1 == 2){
+						/* if (cal_flg1 == 2){
 							if (ajaxDecode('card_number03') == false) { return; }
 							if (ajaxDecode('card_number04') == false) { return; }
-						}
+						} */
 						
-						var returnUrl = $('#lgnNonUsrFrm #returnUrl').val();
+						/* var returnUrl = $('#lgnNonUsrFrm #returnUrl').val();
 						if(returnUrl != ""){
 							$('#lgnNonUsrFrm').attr('method', 'post');
 							$('#lgnNonUsrFrm').attr('action', returnUrl);
@@ -470,7 +436,7 @@
 						 }else{
 							location.href = "/main.do";
 						 }
-					}
+					} */
 				</script>
 				
 				<!-- //비회원로그인 -->
