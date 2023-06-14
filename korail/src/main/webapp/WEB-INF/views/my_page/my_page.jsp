@@ -11,11 +11,16 @@
 <script>
 	let c_pass = "${c_pass}";
 	let c_pnum = "${c_pnum}";
+	
 	if (c_pass == "ok") {
 		alert("비밀번호 변경 완료");
+		var url = "http://localhost:9000/ktx/mypage.do";
+		$(location).attr('href', url);
 	}
 	if (c_pnum == "ok") {
 		alert("휴대폰번호 변경 완료");
+		var url = "http://localhost:9000/ktx/mypage.do";
+		$(location).attr('href', url);
 	} else if (c_pnum == "fail") {
 		alert("변경 실패");
 	}

@@ -83,6 +83,7 @@ public class MypageController {
 			int result = mypageService.getPnumberUpdate(param);
 			if (result == 1) {
 				model.addObject("c_pnum", "ok");
+				model.addObject("pnumber", usrPw5);
 				model.setViewName("/my_page/my_page");
 			} else {
 				model.addObject("passc_receipt", "fail");
