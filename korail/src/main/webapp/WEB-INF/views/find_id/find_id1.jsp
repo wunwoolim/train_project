@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>아이디 찾기 1</title>
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/find.css">
+ 	 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
+	 <script src="http://localhost:9000/ktx/js/join.js"></script>
 </head>
 <body>
 <div>

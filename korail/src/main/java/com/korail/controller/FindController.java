@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class FindController {
 		
 			
-		@RequestMapping(value="/find_id1.do", method=RequestMethod.GET)
-		public String findid() {
+		@RequestMapping(value="/find_id1.do")
+		public String findid() throws Exception{
 			
 			return "/find_id/find_id1";
 		}

@@ -1,9 +1,13 @@
 $(document).ready(function(){
 
-
-
-
-
+/****************************
+아이디 찾기 
+****************************/
+	$(function(){
+		$("#find_id_btn").click(function(){
+			location.href ='../find_id/find_id1';	
+		})
+	})
 
 
 
@@ -57,23 +61,6 @@ $(document).ready(function(){
 		}		
 		
 	});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
