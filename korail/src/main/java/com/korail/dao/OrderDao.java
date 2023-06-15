@@ -15,7 +15,7 @@ import com.korail.vo.SeatNumberVo;
 import com.korail.vo.UpdateVo;
 
 @Repository
-public class OrderDao extends DBConn {
+public class OrderDao implements MyktxDao {
 
 	@Autowired
 	private SqlSessionTemplate sqlSession;
@@ -71,12 +71,35 @@ public class OrderDao extends DBConn {
 	/**
 	 * 예매내역 전체 출력
 	 */
-	public List<Object> orderselect(int startCount, int endCount) {
+	@Override
+	public List<Object> select(int startCount, int endCount) {
 		Map<String, Integer> param = new HashMap<String, Integer>();
+	
 		param.put("start", startCount);
 		param.put("end", endCount);
-		
+		/*
+		 * ArrayList<OrderVo> rlist = new ArrayList<OrderVo>(); List<Object> list =
+		 * sqlSession.selectList("mapper.order.orderselect", param); for(Object obj :
+		 * list) { OrderVo orderVo = (OrderVo)obj; rlist.add(orderVo);
+		 * System.out.println("vo.getRno()->" + orderVo.getRno());
+		 * System.out.println("vo.getCancel()->" +orderVo.getCancel()); }
+		 */
 		return sqlSession.selectList("mapper.order.orderselect", param);
+		
+	}
+	
+	/**
+	 * 예매내역 전체 출력 - 검색
+	 */
+	public List<Object> select(int startCount, int endCount, String category, String cvalue) {
+		
+		Map<String, String> param = new HashMap<String, String>();
+		param.put("start", String.valueOf(startCount));
+		param.put("end", String.valueOf(endCount));
+		param.put("category", category);
+		param.put("cvalue", cvalue);
+		
+		return sqlSession.selectList("mapper.order.search", param);
 		
 	}
 
@@ -89,11 +112,14 @@ public class OrderDao extends DBConn {
 	}
 
 	/**
-	 * 예매처리
+	 * 예매변경처리
 	 */
 	public int updatePayment(OrderVo orderVo) {
 
 		return sqlSession.update("mapper.order.updatePayment", orderVo);
 	}
 
+	
+	
+	
 }

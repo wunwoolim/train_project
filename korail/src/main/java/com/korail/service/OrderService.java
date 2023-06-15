@@ -17,6 +17,8 @@ public interface OrderService {
 	
 	ArrayList<OrderVo> getOrderSelect(int startCount, int endCount);
 	
+	public ArrayList<OrderVo> getOrderSearch(int startCount, int endCount, String category, String cvalue);
+	
 	public int getPayment(OrderVo orderVo);
 	
 	public int getPaymentUpdate(OrderVo orderVo);

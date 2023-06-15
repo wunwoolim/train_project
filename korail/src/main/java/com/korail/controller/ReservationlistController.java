@@ -18,9 +18,7 @@ import com.google.gson.JsonObject;
 import com.korail.service.OrderService;
 import com.korail.service.PageServiceImpl;
 import com.korail.vo.CardinfoVo;
-import com.korail.vo.MemberVo;
 import com.korail.vo.OrderVo;
-import com.korail.vo.ReservationVo;
 import com.korail.vo.SeatNumberVo;
 import com.korail.vo.SessionVo;
 import com.korail.vo.UpdateVo;
@@ -45,8 +43,9 @@ public class ReservationlistController {
 		String id = svo.getId();
 		String cardnum = svo.getCardnum();
 		
-		System.out.println(id);
-		System.out.println(cardnum);
+		/*
+		 * System.out.println(id); System.out.println(cardnum);
+		 */
 		
 	    if(id == null) {
 	        // userId 값이 없는 경우 로그인 페이지로 리다이렉트
@@ -131,9 +130,9 @@ public class ReservationlistController {
 		
 		Map<String, Integer> param = pageService.getPageResult(page, "adminReserv");		
 		
-		ArrayList<OrderVo> orderList = orderService.getOrderSelect(param.get("startCount"), param.get("endCount"));
+		ArrayList<OrderVo> list = orderService.getOrderSelect(param.get("startCount"), param.get("endCount"));
 		
-		model.addObject("orderList", orderList);
+		model.addObject("list", list);
 		model.addObject("totals", param.get("dbCount"));
 		model.addObject("pageSize", param.get("pageSize"));
 		model.addObject("maxSize", param.get("maxSize"));
@@ -144,6 +143,35 @@ public class ReservationlistController {
 		return model;
 	}
 
+	/**
+	 * admin_reservationlist_search.do - 예매 전체 리스트 - 관리자페이지   검색메소드
+	 */
+	@RequestMapping(value="/admin_reservationlist_search.do", method=RequestMethod.POST)
+	public ModelAndView admin_reservationlist_search(String page, String category, String cvalue) {
+		
+		Map<String, Integer> param = null;
+		
+		ModelAndView model = new ModelAndView();
+		if(category.equals("total")){
+			param = pageService.getPageResult(page, "adminReserv");
+		}else {
+			param = pageService.getPageResult(page, "adminReserv", category, cvalue);		
+			
+		}
+		ArrayList<OrderVo> orderList = orderService.getOrderSearch(param.get("startCount"), param.get("endCount"), category, cvalue);
+		
+		model.addObject("list", orderList);
+		model.addObject("totals", param.get("dbCount"));
+		model.addObject("pageSize", param.get("pageSize"));
+		model.addObject("maxSize", param.get("maxSize"));
+		model.addObject("page", param.get("page"));
+		
+		model.setViewName("/admin/admin_reservationlist");
+		
+		return model;
+	}
+	
+	
 	
 	
 	/**
@@ -197,7 +225,6 @@ public class ReservationlistController {
 		
 		UpdateVo uvo = (UpdateVo)session.getAttribute("uvo");
 		
-		System.out.println(uvo.getReservnum());
 		uvo.setRtime(traintime);
 		uvo.setStartId(depPlaceId);
 		uvo.setEndId(arrPlaceId);
@@ -238,15 +265,16 @@ public class ReservationlistController {
 	public String reservationlist_update_chair_json(String trnumber, HttpSession session) {
 		
 		UpdateVo uvo = (UpdateVo)session.getAttribute("uvo");
-		System.out.println(uvo.getDepplacename());
-		System.out.println(uvo.getArrplacename());
-		System.out.println(uvo.getStart_date());
-		System.out.println(uvo.getRtimes());
+		/*
+		 * System.out.println(uvo.getDepplacename());
+		 * System.out.println(uvo.getArrplacename());
+		 * System.out.println(uvo.getStart_date()); System.out.println(uvo.getRtimes());
+		 */
 		
 		uvo.setTrnumber(trnumber);
 		ArrayList<SeatNumberVo> list  = (ArrayList<SeatNumberVo>)orderService.getSeatnumUp(uvo);
 		
-		System.out.println("trnumber -->"+ trnumber);
+		/* System.out.println("trnumber -->"+ trnumber); */
 		
 		JsonArray seatList = new JsonArray(); //배열로 만들애
 		JsonObject slist = new JsonObject();
@@ -258,7 +286,7 @@ public class ReservationlistController {
 		}
 		slist.add("seatList", seatList);
 		
-		System.out.println("slist -->"+slist);
+		/* System.out.println("slist -->"+slist); */
 		
 		return new Gson().toJson(slist);
 	}
@@ -276,8 +304,9 @@ public class ReservationlistController {
 		uvo.setSeatNum(seatNum);
 		uvo.setTicketQty(ticketQty);
 		
-		System.out.println(seatNum);
-		System.out.println(ticketQty);
+		/*
+		 * System.out.println(seatNum); System.out.println(ticketQty);
+		 */
 		
 		
 		//model.addObject("seatNum", reservationVo.getSeatNum() );

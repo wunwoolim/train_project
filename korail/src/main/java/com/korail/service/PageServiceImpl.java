@@ -13,9 +13,6 @@ public class PageServiceImpl {
 	
 	@Autowired
 	private PageDao pageDao;
-
-	
-	
 	
 
 		
@@ -37,7 +34,7 @@ public class PageServiceImpl {
 			pageSize = 3;
 		}else if(serviceName.equals("member")) {			
 			pageSize = 5;
-		}else if(serviceName.equals("board")) {			
+		}else if(serviceName.equals("adminReserv")) {
 			pageSize = 10;
 		}		
 		
@@ -88,8 +85,6 @@ public class PageServiceImpl {
 			pageSize = 3;
 		}else if(serviceName.equals("member")) {			
 			pageSize = 5;
-		}else if(serviceName.equals("board")) {			
-			pageSize = 10;
 		}else if(serviceName.equals("adminReserv")) {
 			pageSize = 10;
 		}

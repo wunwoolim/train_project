@@ -3,11 +3,17 @@ package com.korail.vo;
 public class OrderVo {
 
 	String sstation, rdate, stime, dtime, dstation, reservnum, chairnum, id, depPlaceId, arrPlaceId, depPlandTime, cardnum;
-	int price, trainnum, ticketqty, cancel;
+	int rno, price, trainnum, ticketqty, cancel;
 	
 	
 	public String getSstation() {
 		return sstation;
+	}
+	public int getRno() {
+		return rno;
+	}
+	public void setRno(int rno) {
+		this.rno = rno;
 	}
 	public void setSstation(String sstation) {
 		this.sstation = sstation;

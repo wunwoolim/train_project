@@ -25,6 +25,7 @@ public class PageDao {
 		
 		return sqlSession.selectOne("mapper.page.count", param);		
 	}
+	
 	public int totalRowCount(String sname) {
 		Map<String, String> param = new HashMap<String, String>();
 		param.put("sname", sname);

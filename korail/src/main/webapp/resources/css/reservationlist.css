@@ -1794,7 +1794,7 @@ fieldset{
 	border-collapse: collapse;
 	width:900px;
   	margin: auto;
-    margin-top: 50px
+    margin-top: 10px
 }
 
 #admin_reservationlist th, #admin_reservationlist td{

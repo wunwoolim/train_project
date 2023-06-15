@@ -34,10 +34,33 @@
 	           $(location).attr('href', "http://localhost:9000/ktx/admin_reservationlist.do?page="+e.page);         
 	    });
 		
+		
+		/* 검색 */
+		$("#reserv_search").click(function(){
+			if ( $("#category").val() == "reservnumber"){
+					if($("#cvalue").val() == ""){
+						alert("예매번호를 입력해주세요");
+						$("#cvalue").focus(); 
+						return false;
+					}
+			}else if($("#category").val() =="id"){
+					if($("#cvalue").val() == ""  ){
+						alert("아이디를 입력해주세요");
+						 $("#cvalue").focus(); 
+						 return false;
+					}
+			}
+			searchform.submit();		
+
+		});
+		
  	});
 	
 </script> 
 <style>
+	.search_put{
+		margin: 50px 5px 0px 90px;
+	}
 </style>
 </head>
 <body>
@@ -52,8 +75,22 @@
 		</div>
 		<!-- ---------------------content---------------------------->		
 		<div id="admin_reservationlist">
+			<section class="adminReserv">
+			<!-- 검색 form -->
+			<form action ="admin_reservationlist_search.do" class ="reserv_search" name ="searchform" method ="POST">
+				<select name ="category" class ="search_put" id="category">
+					<option value ="total">전체</option>
+					<option value ="reservnumber">예매번호</option>
+					<option value ="id">아이디</option>
+				</select>
+				<input type ="text" name ="cvalue" class ="search_put1" id="cvalue">
+				<input type ="hidden" name ="page" value=1>
+				<button type = "button" class ="search_button"  id ="reserv_search">검색하기</button>
+			</form>
+			
 			<table>
 			  <tr class="admin_table_title">
+			  	<th>번호</th>
 			  	<th>예매일자</th>
 			    <th>출발역</th>
 			    <th>도착역</th>
@@ -67,32 +104,30 @@
 			    <th>좌석번호</th>
 			    <th>아이디(회원이름)</th>
 			  </tr>
-			   <c:forEach var="ovo" items="${orderList}">
-			      <c:if test="${ovo.cancel == 0}">
-			        <tr class="admin_reserv" id="${ovo.reservnum}">
-			          <td>${ovo.rdate}</td>
-			          <td>${ovo.sstation}</td>
-			          <td>${ovo.dstation}</td>
-			          <td>${ovo.depPlandTime}</td>
-			          <td>${ovo.stime}</td>
-			          <td>${ovo.dtime}</td>
-			          <%-- <td>${ovo.runtime}</td> --%>
-			          <td>${ovo.price}</td>
-			          <td class="admin_reservnum">${ovo.reservnum}</td>
-			          <td>${ovo.trainnum}</td>
-			          <td>${ovo.chairnum}</td>
-			          <td>${ovo.id}</td>
+			  
+			   <c:forEach var="orderVo" items="${list}">
+			      <c:if test="${orderVo.cancel == 0}">
+			        <tr class="admin_reserv" id="${orderVo.reservnum}">
+			          <td>${orderVo.rno}</td>
+			          <td>${orderVo.rdate}</td>
+			          <td>${orderVo.sstation}</td>
+			          <td>${orderVo.dstation}</td>
+			          <td>${orderVo.depPlandTime}</td>
+			          <td>${orderVo.stime}</td>
+			          <td>${orderVo.dtime}</td>
+			          <td>${orderVo.price}</td>
+			          <td>${orderVo.reservnum}</td>
+			          <td>${orderVo.trainnum}</td>
+			          <td>${orderVo.chairnum}</td>
+			          <td>${orderVo.id}</td>
 			        </tr>
-			      </c:if>
+			     </c:if>
 			    </c:forEach>
 			    <tr>
-			    	<td colspan="11"><div id="ampaginationsm"></div></td>
+			    	<td colspan="12" class="paging"><div id="ampaginationsm" class="paging"></div></td>
 			    </tr>
 			</table>
-		  	<div>
-				<input type="hidden" id="admin_input" name="admin_input">			  	
-		  	</div>
-		  	<button></button>
+		</section>
 		</div>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>

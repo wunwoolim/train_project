@@ -53,14 +53,29 @@ public class OrderServiceImpl implements OrderService{
 	@Override
 	public ArrayList<OrderVo> getOrderSelect(int startCount, int endCount){
 		ArrayList<OrderVo> rlist = new ArrayList<OrderVo>();
-		List<Object> list = orderDao.orderselect(startCount, endCount);
+		List<Object> list = orderDao.select(startCount, endCount);
+		for(Object obj : list) {
+			OrderVo orderVo = (OrderVo)obj;
+			rlist.add(orderVo);
+			/*
+			 * System.out.println("vo.getRno()->" + orderVo.getRno());
+			 * System.out.println("vo.getCancel()->" +orderVo.getCancel());
+			 */
+		}
+		
+		return rlist;
+	}
+	
+	@Override
+	public ArrayList<OrderVo> getOrderSearch(int startCount, int endCount, String category, String cvalue){
+		ArrayList<OrderVo> rlist = new ArrayList<OrderVo>();
+		List<Object> list = orderDao.select(startCount, endCount, category , cvalue);
 		for(Object obj : list) {
 			OrderVo orderVo = (OrderVo)obj;
 			rlist.add(orderVo);
 		}
 		return rlist;
 	}
-	
 	
 	@Override
 	public int getPayment(OrderVo orderVo) {

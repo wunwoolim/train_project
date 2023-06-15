@@ -195,7 +195,7 @@
 				
 					<p class="btns multi mainclfix col4">
 				
-						<a href="http://localhost:9000/ktx/reservation_update.do"  class="btnL btn_cancel" id="change_btn">시간변경</a>
+						<a href="http://localhost:9000/ktx/reservation_update.do"  class="btnL btn_cancel" id="change_btn">예매변경</a>
 						<a href="http://localhost:9000/ktx/reservation_receipt.do" target="_blank"  class="btnL btn_cancel" id="receipt_btn">영수증 발행</a>
 						<a href="#" onclick="fnRecpCanInfo(0,'');" class="btnL btn_cancel" id="cancelReserv">예매취소</a>
 						<a href="http://localhost:9000/ktx/reservation_hometicket.do" target="_blank"  class="btnL btn_confirm" id="hometicket_btn">홈티켓 발행</a>
