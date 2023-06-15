@@ -80,7 +80,6 @@ $(document).ready(function(){
 	
 	//모달창의  비로그인 클릭시 이벤트
 	$("#btn_nonmember").click(function(){
-		
 		lgnUsrInfForm.submit();
 	});
 	
@@ -108,11 +107,7 @@ $(document).ready(function(){
 	
 
 	
-	//선택 완료 시 로그인 모달창
-	$(".btn_selectSeat").click(function() {
-		  $(".modal").css("display", "block");
-	  });
-	  
+	
 	  $(".modalclose").click(function() {
 		  $(".modal").css("display", "none");
 	  });

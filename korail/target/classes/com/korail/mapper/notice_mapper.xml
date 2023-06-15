@@ -19,7 +19,7 @@
 	<select id="list" parameterType="map" resultType="com.korail.vo.NoticeVo">
 		select rno, nid, ntitle, nhits, ndate 
 			from (select rownum rno, nid, ntitle, nhits, to_char(ndate, 'yyyy-mm-dd') ndate 
-				from (select nid, ntitle, nhits, ndate from ktx_notice order by ndate desc))
+				f7rom (select nid, ntitle, nhits, ndate from ktx_notice order by ndate desc))
 					where rno between #{start} and #{end}
 	</select>
 	

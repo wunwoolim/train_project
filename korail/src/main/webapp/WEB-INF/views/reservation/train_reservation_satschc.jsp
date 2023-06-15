@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,28 @@
 	display:inline-block;
 }
 </style>
+<script>
+$(document).ready(function(){
+//선택 완료 
+$(".btn_selectSeat").click(function() {
+	let sid = "${sessionScope.svo.id}";
+	let seatNum = $("#seatNum1").val();
+	let ticketQty = $("#ticketQty1").val();
+	alert(sid);
+	alert(seatNum);
+	alert(ticketQty);
+	
+	if(sid == ""){
+	  $(".modal").css("display", "block");
+	  }else{
+		  alert("회원 아이디가 있습니다");
+		  $(location).attr("href",'http://localhost:9000/ktx/stplcfmpym.do?seatNum='+seatNum +"&ticketQty="+ticketQty+"&id="+sid );
+	  }
+
+  });
+});
+  
+</script>
 </head>
 <body>
 <div>
@@ -244,7 +267,7 @@
 					
 					<!-- //선택좌석 상세보기 -->
 					<div class=" btns btn_selectSeat">
-						<a href="#" id="satsChcCfmBtn" class="btnL btn_confirm ready">선택완료</a>
+						<span id="satsChcCfmBtn" class="btnL btn_confirm ready">선택완료</span>
 					</div>
 				
 				</div>
@@ -259,85 +282,93 @@
 				<jsp:include page="../footer.jsp"></jsp:include>	
 		</div>
 			
+
+		<div id="myModal" class="modal">
+			<div class="remodal w590 popLogin full remodal-is-initialized plogin remodal-is-opened" data-remodal-id="popLogin" data-remodal-options="closeOnOutsideClick: false, modifier: plogin" role="dialog" tabindex="-1">
+			<div class="loading pop" id="loading" style="height: 1236px; top: 180px;"><p class="load" style="margin-left: 57px;"></p></div>
+				<div class="title type_blue">
+					로그인
+					<span class="modalclose"></span>
+				</div>
 			
-	<div id="myModal" class="modal">
-		<div class="remodal w590 popLogin full remodal-is-initialized plogin remodal-is-opened" data-remodal-id="popLogin" data-remodal-options="closeOnOutsideClick: false, modifier: plogin" role="dialog" tabindex="-1">
-		<div class="loading pop" id="loading" style="height: 1236px; top: 180px;"><p class="load" style="margin-left: 57px;"></p></div>
-			<div class="title type_blue">
-				로그인
-				<span class="modalclose"></span>
-			</div>
-		
-			<div class="cont">
-				<div class="login_wrap pop">
-					<div class="box_login">
-						<h3 class="pop_h3 mob_h3">회원 로그인</h3>
-						<p class="h3_desc">회원으로 예매하시면 예매 후 아이디/비밀번호로 간편하게 조회가 가능합니다.</p>
-						<div class="inner">
-		<form name ="loginForm"  action="login_proc.do" method="post">
-							<fieldset>
-								<legend>회원로그인</legend>
-								<ul class="loginList">
-									<li>
-										<div class="box_inputForm">
-											<strong>아이디</strong>
-											<span class="box_label">
-												<label for=""></label>
-												<input type="text" name="id" id="id" class="input" >
-											</span>
-										</div>
-									</li>
-									<li>
-										<div class="box_inputForm">
-											<strong>비밀번호</strong>
-											<span class="box_label">
-												<label for="usrPwd"></label>
-												<input type="password" name="pass" id="pass" class="input" onkeyup="" data-tk-kbdtype="qwerty">
-											</span>
-										</div>
-									</li>
-								</ul>
-									<input type="hidden" name="pagename" class ="input" id="pagename" value="reservation">
+				<div class="cont">
+					<div class="login_wrap pop">
+						<div class="box_login">
+							<h3 class="pop_h3 mob_h3">회원 로그인</h3>
+							<p class="h3_desc">회원으로 예매하시면 예매 후 아이디/비밀번호로 간편하게 조회가 가능합니다.</p>
+							<div class="inner">
+			<form name ="loginForm"  action="login_proc.do" method="post">
+								<fieldset>
+									<legend>회원로그인</legend>
+									<ul class="loginList">
+										<li>
+											<div class="box_inputForm">
+												<strong>아이디</strong>
+												<span class="box_label">
+													<label for=""></label>
+													<input type="text" name="id" id="id" class="input" >
+												</span>
+											</div>
+										</li>
+										<li>
+											<div class="box_inputForm">
+												<strong>비밀번호</strong>
+												<span class="box_label">
+													<label for="usrPwd"></label>
+													<input type="password" name="pass" id="pass" class="input" onkeyup="" data-tk-kbdtype="qwerty">
+												</span>
+											</div>
+										</li>
+									</ul>
+										<input type="hidden" name="pagename" class ="input" id="pagename" value="reservation">
+										
+									</fieldset>
+									<input type="hidden" id="popUpDvs" name="popUpDvs" value="Y">
 									
-								</fieldset>
-								<input type="hidden" id="popUpDvs" name="popUpDvs" value="Y">
+									<p class="btn_squareBox">
+										<button type="button" class="btn_confirm ready" id="btn_confirm">로그인</button>
+										<input type="hidden" name="seatNum" id="seatNum1">
+										<input type="hidden" name="ticketQty" id ="ticketQty1">
+									</p>
+			</form>
 								
-								<p class="btn_squareBox">
-									<button type="button" class="btn_confirm ready" id="btn_confirm">로그인</button>
-									<input type="hidden" name="seatNum" id="seatNum1">
-									<input type="hidden" name="ticketQty" id ="ticketQty1">
-								</p>
-		</form>
-							
-							
-							
-							<div class="box_searchId col2">
-								<a href=""><span class="ico_searchId">아이디찾기</span></a>
-								<a href=""><span class="ico_searchPW">비밀번호찾기</span></a>
+								
+								
+								<div class="box_searchId col2">
+									<a href=""><span class="ico_searchId">아이디찾기</span></a>
+									<a href=""><span class="ico_searchPW">비밀번호찾기</span></a>
+								</div>
 							</div>
 						</div>
-					</div>
-					
-		<form id="lgnUsrInfForm" name="lgnUsrInfForm" action="train_reservation_stplcfmpym2.do" method="post">
-					<div class="box_login non-member">
-						<div class="inner">
-							<h3 class="pop_h3 mob_h3">비회원 예매</h3>
-							<p class="h3_desc">비회원 예매 시 일부 서비스 이용이 제한됩니다.</p>
-							<p class="btn_squareBox">
-								<button type="button" class="btn_normal btn_" id="btn_nonmember">비회원 예매</button>
-							</p>
-							<!--fnNonUsrMrs() 각 페이지의 해당 함수의 기능제어 요망  -->
+						
+			<form id="lgnUsrInfForm" name="lgnUsrInfForm" action="train_reservation_stplcfmpym2.do" method="post">
+						<div class="box_login non-member">
+							<div class="inner">
+								<h3 class="pop_h3 mob_h3">비회원 예매</h3>
+								<p class="h3_desc">비회원 예매 시 일부 서비스 이용이 제한됩니다.</p>
+								<p class="btn_squareBox">
+									<button type="button" class="btn_normal btn_" id="btn_nonmember">비회원 예매</button>
+								</p>
+								<!--fnNonUsrMrs() 각 페이지의 해당 함수의 기능제어 요망  -->
+							</div>
 						</div>
+						<input type="hidden" name="division" id="division" value="nomember">	
+						<input type="hidden" name="seatNum2" id="seatNum2" >
+						<input type="hidden" name="ticketQty2" id ="ticketQty2">
+						
+			</form>
+			
 					</div>
-					<input type="hidden" name="division" id="division" value="nomember">	
-					<input type="hidden" name="seatNum2" id="seatNum2" >
-					<input type="hidden" name="ticketQty2" id ="ticketQty2">
-		</form>
-		
-				</div>
-			</div>	
+				</div>	
+			</div>
 		</div>
-	</div>
+	
+		<form id="LoginForm" name="LoginForm" action="train_reservation_stplcfmpym1.do" method="post">
+			<input type="hidden" name="seatNum" id="seatNum1">
+			<input type="hidden" name="ticketQty" id ="ticketQty1">
+			<input type="hidden" name="ticketQty" id ="ticketQty1" value=" ${sessionScope.svo.id }">
+		</form>
+
 
 </div>
 </body>

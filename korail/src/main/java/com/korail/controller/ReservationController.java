@@ -104,6 +104,26 @@ public class ReservationController {
 	}
 	
 	/*
+	 * 
+	 */
+	@RequestMapping(value="/stplcfmpym.do", method=RequestMethod.GET)
+	public String stplcfmpym(String seatNum, String ticketQty, String id ,HttpSession session) {
+		
+		System.out.println("seatNum-->"+seatNum);
+		System.out.println("ticketQty-->"+ticketQty);
+		System.out.println("id-->"+id);
+		
+		ReservationVo rvo = (ReservationVo)session.getAttribute("rvo");
+		
+		rvo.setSeatNum(seatNum);
+		rvo.setTicketQty(ticketQty);
+		rvo.setId(id);
+		//"redirect:/train_reservation_stplcfmpym1.do"
+		return "redirect:/train_reservation_stplcfmpym1.do";
+	}
+	
+	
+	/*
 	 * 예매 좌석 선택 페이지
 	 */
 	@RequestMapping(value="/train_reservation_satschc.do",method=RequestMethod.POST)
