@@ -10,7 +10,7 @@
 		select count(*) 
 		from
 		<if test='sname == "notice"'>
-			ktx_notice
+			ktx_notice 
 			<if test= 'category =="title"'>
 				where ntitle = #{cvalue}
 			</if>
@@ -18,7 +18,7 @@
 				where ncontent = #{cvalue}
 			</if>
 			<if test= 'category =="title_content"'>
-				where (ntitle = #{cvalue}) || (ncontent = #{cvalue})
+				where ntitle = #{cvalue} || ncontent = #{cvalue}
 			</if>
 		</if>
 		<if test='sname == "member"'>
@@ -30,15 +30,9 @@
 				where id = #{cvalue}
 			</if>
 		</if> 
-		<if test='sname == "adminReserv"'>
-			ktx_order
-			<if test='category =="reservnumber"'>
-				where reservnum = #{cvalue}
-			</if>
-			<if test= 'category == "id"'>
-				where id = #{cvalue}
-			</if>
+		<if test='sname == "board"'>
+			mycgv_board
 		</if>
 	</select>
 	
-</mapper>    
+</mapper>

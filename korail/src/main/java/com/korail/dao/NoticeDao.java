@@ -45,7 +45,6 @@ public class NoticeDao implements MyktxDao {
 		param.put("end", String.valueOf(endCount));
 		param.put("category", category);
 		param.put("cvalue", cvalue);
-		
 		return sqlSession.selectList("mapper.notice.notice_list", param);
 	}
 	

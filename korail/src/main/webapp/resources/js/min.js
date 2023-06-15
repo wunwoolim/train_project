@@ -271,28 +271,29 @@ $(document).ready(function() {
 $(document).ready(function() {
 	//공지사항 검색
 	$("#notice_search").click(function() {
-	//alert("1111");
-		if($("#category").val() == "title") {
-			if($("#cvalue").val() == ""){
+	var category = $("#category").val();
+	var cvalue = $("#cvalue").val();
+		if(category == "title") {
+			if(cvalue == ""){
 				alert("제목을 입력해주세요");
 					$("#cvalue").focus(); 
 						return false;
 			} 
-		} else if($("#category").val() == "content") {
-			if($("#cvalue").val() == ""){
+		} else if(category == "content") {
+			if(cvalue == ""){
 				alert("내용을 입력해주세요");
 					$("#cvalue").focus(); 
 						return false;
 			} 
-		} else if($("#category").val() == "title_content") {
-			if($("#cvalue").val() == ""){
+		} else if(category == "title_content") {
+			if(cvalue == ""){
 				alert("제목 또는 내용을 입력해주세요");
 					$("#cvalue").focus(); 
 						return false;
 			} 
 			
-		}
-		notice_search.submit();
+		} 
+		notice_list.submit();
 	});
 	
 });

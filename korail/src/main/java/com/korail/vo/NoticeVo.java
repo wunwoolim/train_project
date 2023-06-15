@@ -2,7 +2,7 @@ package com.korail.vo;
 
 public class NoticeVo {
 	int rno, nhits;
-	String nid, ntitle, ncontent, ndate;
+	String nid, ntitle, ncontent, ndate, page, category, cvalue;
 	public int getRno() {
 		return rno;
 	}
@@ -38,6 +38,24 @@ public class NoticeVo {
 	}
 	public void setNdate(String ndate) {
 		this.ndate = ndate;
+	}
+	public String getPage() {
+		return page;
+	}
+	public void setPage(String page) {
+		this.page = page;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	public String getCvalue() {
+		return cvalue;
+	}
+	public void setCvalue(String cvalue) {
+		this.cvalue = cvalue;
 	}
 
 	

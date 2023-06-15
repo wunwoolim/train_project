@@ -53,12 +53,12 @@
 	</div>
 	<h2 class="title-notice">KTX 홈페이지의 새로운 소식을 확인하세요.</h2>
 	<div class="search">
-		<form class="search-form" action="notice_list_search.do" name="notice_search" method="post" >
+		<form class="search-form" action="notice_list_search.do" name="notice_list" method="post" >
 			<select name="category" id="category" class="notice_search">
+				<option value="all">전체</option>
 				<option value="title">제목</option>
 				<option value="content">내용</option>
 				<option value="title_content">제목+내용</option>
-				<option value="all">전체조건</option>
 			</select>
 			<input type="text" name="cvalue" id="cvalue" maxlength=100 autocomplete="off" placeholder="검색어를 입력하세요" required>
 			<input type="hidden" name="page" value="1">
