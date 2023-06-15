@@ -375,13 +375,13 @@
 					<h3 class="pop_h3 mob_h3">취소수수료</h3>
 						<div class="tbl_type1">
 							<table><colgroup><col style="width: 60%;"><col style="width: auto"></colgroup>
-								<thead>
+								<thead class="cancel_thead">
 									<tr>
 										<th scope="col">취소시기</th>
-										<th scope="col">수수료</th>
+										<th scope="col" class="cancel_thead2">수수료</th>
 									</tr>
 								</thead>
-								<tbody>
+								<tbody class="cancel_tbody">
 									<tr>
 										<td>예매 당일 또는 승차일 2일전 취소<br>(단, 당일출발차량 예매 후 1시간 이후 취소는 수수료 발생)</td>
 										<td>없음</td>

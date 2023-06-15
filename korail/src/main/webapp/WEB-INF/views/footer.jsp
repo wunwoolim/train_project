@@ -14,15 +14,15 @@
 					<a href="http://localhost:9000/ktx/svcStpl.do">서비스 이용약관</a> 
 					<a href="http://localhost:9000/ktx/IndlStpl.do" class="indl">개인정보 처리방침</a> 
 					<a href="http://localhost:9000/ktx/BusStpl.do">고속버스 운송약관</a> 
-					<a href="http://www.tmoney.co.kr" class="btn_intro_footer" target="_blank">티머니</a> 
-					<a>고객센터 1644-9030</a>
+					<a href="https://www.letskorail.com/ebizprd/prdMain.do" class="btn_intro_footer" target="_blank">Korail</a> 
+					<a>고객센터 1544-7788</a>
 				</p>
 				
 				<p class="foot_addr">
 					서울특별시 서초구 신반포로 194 <span class="mo_block">통신판매업신고: 2009-서울서초 0587호 대표자 : 이광재</span>
 				</p>
 				
-				<p class="foot_copy">COPYRIGHT© 2016. WWW.KOBUS.CO.KR . ALL RIGHT RESERVED</p>
+				<p class="foot_copy">COPYRIGHT© KOREA RAILROAD.ALL RIGHTS RESERVED.</p>
 				
 				<p class="foot_com">
 					<img src="http://localhost:9000/ktx/images/pngwing.png" class="korail_logo" alt="KOBUS 전국고속버스운송사업조합">

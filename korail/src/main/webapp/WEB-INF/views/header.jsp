@@ -22,7 +22,9 @@
 			</c:when>
 			<c:otherwise>
 				<ul>
-					<li class="account">[${sessionScope.svo.name}]님! 반갑습니다~</li>
+					<c:if test="${sessionScope.svo.name != null }">
+					<li class="account">${sessionScope.svo.name}님! 반갑습니다~</li>
+					</c:if>
 					<li class="logout"><a href="http://localhost:9000/ktx/logout.do"><span>로그아웃</span></a></li>
 					<li><a href="http://localhost:9000/ktx/mypage.do">마이페이지</a></li>
 					<li><a href="http://localhost:9000/ktx/pmyhis.do">결제내역조회</a></li>

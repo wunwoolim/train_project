@@ -35,7 +35,7 @@ public class PageServiceImpl {
 		}else if(serviceName.equals("member")) {			
 			pageSize = 5;
 		}else if(serviceName.equals("adminReserv")) {
-			pageSize = 10;
+			pageSize = 3;
 		}		
 		
 		//총 페이지 수 계산
@@ -86,7 +86,7 @@ public class PageServiceImpl {
 		}else if(serviceName.equals("member")) {			
 			pageSize = 5;
 		}else if(serviceName.equals("adminReserv")) {
-			pageSize = 10;
+			pageSize = 3;
 		}
 		
 		//총 페이지 수 계산

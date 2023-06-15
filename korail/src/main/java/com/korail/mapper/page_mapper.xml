@@ -30,9 +30,15 @@
 				where id = #{cvalue}
 			</if>
 		</if> 
-		<if test='sname == "board"'>
-			mycgv_board
-		</if>
+		<if test='sname == "adminReserv"'>
+ 			ktx_order
+			<if test='category =="reservnumber"'>
+				where reservnum = #{cvalue}
+			</if>
+			<if test= 'category == "id"'>
+				where id = #{cvalue}
+			</if>
+ 		</if>
 	</select>
 	
 </mapper>

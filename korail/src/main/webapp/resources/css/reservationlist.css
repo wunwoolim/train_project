@@ -1,3 +1,17 @@
+.tbl_type3{
+	margin-left : 20px;
+}
+.tbl_type3 th, .tbl_type3 td{
+	padding-bottom: 5px;
+}
+.cancel_thead th{
+	text-align: center;
+	font-weight: bold;
+}
+.cancel_thead2{
+	padding-left: 80px;
+}
+
 .roundBox_start {
     display: block;
     position: absolute;
