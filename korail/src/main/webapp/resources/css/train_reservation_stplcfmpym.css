@@ -707,6 +707,7 @@ h4 + .desc, .h4_box + .desc {
     font-size: 12px;
     text-align: center;
     line-height: 35px;
+    border: 1px solid lightgray;
 }
 .roundBox_end{
 	display: block;
@@ -720,6 +721,8 @@ h4 + .desc, .h4_box + .desc {
     font-size: 12px;
     text-align: center;
     line-height: 35px;
+    border: 1px solid lightgray;
+    margin-top: 19px;
 }
 
 

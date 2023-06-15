@@ -5,7 +5,7 @@
 	width: calc(100% - 58px);
 	min-height: 90px;
 	padding: 20px 0 25px;
-	border-top: 1px solid #e5e5e5;
+	/* border-top: 1px solid #e5e5e5; */
 }
 
 #footer {
@@ -24,7 +24,7 @@
 }
 
 .foot_menu a:first-child {
-	padding-left: 0;
+	padding-left: 20px;
 }
 
 .foot_menu a {
@@ -43,10 +43,12 @@
 .foot_addr {
 	margin: 3px 0;
 	font-size: 11px;
+	padding-left:20px;
 }
 
 .foot_copy {
 	font-size: 10px;
+	padding-left:20px;
 }
 
 .foot_com {

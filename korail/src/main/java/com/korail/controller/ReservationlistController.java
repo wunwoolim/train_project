@@ -19,6 +19,7 @@ import com.korail.service.OrderService;
 import com.korail.service.PageServiceImpl;
 import com.korail.vo.CardinfoVo;
 import com.korail.vo.OrderVo;
+import com.korail.vo.ReservationVo;
 import com.korail.vo.SeatNumberVo;
 import com.korail.vo.SessionVo;
 import com.korail.vo.UpdateVo;
@@ -292,26 +293,32 @@ public class ReservationlistController {
 	}
 	
 	
-	
 	/**
-	 *   reservation_updatepay.do - 예매변경 4번째 페이지 - 비회원 결제 
+	 *   reservation_updatepay.do - 예매 변경 3.5 페이지
 	 */
-	@RequestMapping(value="/reservation_updatepay.do", method=RequestMethod.POST)
-	public String reservation_updatepay(UpdateVo updateVo, HttpSession session, String seatNum, String ticketQty) {
-		//ModelAndView model = new ModelAndView();
+	@RequestMapping(value="/reservation_updateselect.do", method=RequestMethod.GET)
+	public String stplcfmpym(String seatNum, String id ,HttpSession session) {
+		
+		System.out.println("seatNum-->"+seatNum);
+		System.out.println("id-->"+id);
+		
 		UpdateVo uvo = (UpdateVo)session.getAttribute("uvo");
 		
 		uvo.setSeatNum(seatNum);
-		uvo.setTicketQty(ticketQty);
-		
-		/*
-		 * System.out.println(seatNum); System.out.println(ticketQty);
-		 */
-		
+		uvo.setId(id);
+		//"redirect:/train_reservation_stplcfmpym1.do"
+		return "redirect:/reservation_updatepay.do";
+	}
+	
+	
+	/**
+	 *   reservation_updatepay.do - 예매변경 4번째 페이지
+	 */
+	@RequestMapping(value="/reservation_updatepay.do", method=RequestMethod.GET)
+	public String reservation_updatepay(UpdateVo updateVo, HttpSession session) {
+
 		
 		//model.addObject("seatNum", reservationVo.getSeatNum() );
-		
-		//model.setViewName("/reservation/train_reservation_stplcfmpym");
 		return "/reservationlist/reservation_updatepay";
 	}
 	
@@ -324,18 +331,13 @@ public class ReservationlistController {
 		String viewName="";
 		UpdateVo uvo = (UpdateVo)session.getAttribute("uvo");
 	
-		/*
-		 * UUID uuid = UUID.randomUUID();
-		 * 
-		 * cardVo.setRecognizenum(uuid.toString().replaceAll("-", "").substring(0, 10));
-		 */
 		orderVo.setReservnum(uvo.getReservnum());
 		orderVo.setSstation(uvo.getDepplacename());
 		orderVo.setStime(uvo.getStart_date());
 		orderVo.setDtime(uvo.getEnd_date());
 		orderVo.setDstation(uvo.getArrplacename());
 		orderVo.setChairnum(uvo.getSeatNum());
-		/* orderVo.setId(); */
+		orderVo.setId(uvo.getId());
 		orderVo.setDepPlaceId(uvo.getStartId());
 		orderVo.setArrPlaceId(uvo.getEndId());
 		orderVo.setDepPlandTime(uvo.getRtimes());

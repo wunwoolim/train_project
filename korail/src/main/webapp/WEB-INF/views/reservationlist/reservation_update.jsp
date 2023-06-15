@@ -94,7 +94,7 @@
 										<input type="text" id="datepicker11" readonly="" class="hasDatepicker">
 										<img class="ui-datepicker-trigger" id="calenderImg" src="http://localhost:9000/ktx/images/ico_calender.png" alt="달력" title="달력">
 										</p>
-										
+										<input type="hidden" >
 									</div>
 								</li>
 								

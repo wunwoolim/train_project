@@ -8,6 +8,19 @@
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/train_reservation_satschc.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/ktx/js/chairupdate.js"></script>
+<script>
+$(document).ready(function(){
+	$(".btn_selectSeat").click(function() {
+		let sid = "${sessionScope.svo.id}";
+		let seatNum = $("#seatNum").val();
+		alert(sid);
+		alert(seatNum);
+		
+		$(location).attr("href", 'http://localhost:9000/ktx/reservation_updateselect.do?seatNum='+seatNum+"&id="+sid);
+	});
+});	
+	
+</script>
 <style>
 .title_wrap { 
 	background: url(http://localhost:9000/ktx/images/visual_chkTicket_bg.gif) center 0 no-repeat; 
@@ -258,7 +271,7 @@
 		</div>
 			
 			
-	<div id="myModal" class="modal">
+	<!-- <div id="myModal" class="modal">
 		<div class="remodal w590 popLogin full remodal-is-initialized plogin remodal-is-opened" data-remodal-id="popLogin" data-remodal-options="closeOnOutsideClick: false, modifier: plogin" role="dialog" tabindex="-1">
 		<div class="loading pop" id="loading" style="height: 1236px; top: 180px;"><p class="load" style="margin-left: 57px;"></p></div>
 			<div class="title type_blue">
@@ -315,19 +328,15 @@
 							<p class="btn_squareBox">
 								<button type="button" class="btn_normal btn_" id="btn_nonmember_update">비회원 예매</button>
 							</p>
-							<!--fnNonUsrMrs() 각 페이지의 해당 함수의 기능제어 요망  -->
+							
 						</div>
 					</div>			
 				</div>
 			</div>
-			<!-- <input type="hidden" id="hidfrmId" name="hidfrmId" value="lgnUsrInfForm">
-			<input type="hidden" id="transkeyUuid_lgnUsrInfForm" name="transkeyUuid_lgnUsrInfForm" value="f37fa89ba7cd9984a920d7cc83fdc1ce8355b5619b0eccc088e86d3024edb79b">
-			<input type="hidden" id="transkey_usrPwd_lgnUsrInfForm" name="transkey_usrPwd_lgnUsrInfForm" value="">
-			<input type="hidden" id="transkey_HM_usrPwd_lgnUsrInfForm" name="transkey_HM_usrPwd_lgnUsrInfForm" value=""> -->
 		</form>		
 		</div>
-	</div>
-
+	</div> -->
+	
 </div>
 </body>
 </html>

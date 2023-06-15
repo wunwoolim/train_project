@@ -122,13 +122,13 @@ $.getJSON(url, function(citys){
 					<p class="date" id="alcnDeprDtm"></p>
 						<div class="route_wrap" id="alcnRotInfo">
 							<div class="inner">
+								<p class="roundBox_start">출발</p>
 								<p class="roundBox departure" id="alcnDeprTmlNm"></p>
-								
+								<p class="roundBox_end">도착</p>
 								<p class="roundBox arrive" id="alcnArvlTmlNm"></p>
 							</div>
 							<div class="detail_info">
 								<span id="takeDrtm">2시간 50분 소요</span>
-								<span id="dist">227.9 Km</span>
 							</div>
 							<div class="btn_r">
 								<a href="#none" class="btn btn_modify white">수정</a>

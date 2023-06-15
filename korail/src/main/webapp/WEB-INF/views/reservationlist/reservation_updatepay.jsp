@@ -13,6 +13,8 @@
 	background: url(http://localhost:9000/ktx/images/visual_chkTicket_bg.gif) center 0 no-repeat; 
 	background-size: cover;
 	}
+
+
 </style>
 </head>
 <body>
@@ -399,12 +401,10 @@
 					<div class="routeBody">
 						<div class="routeArea route_wrap">
 							<div class="inner">
-								
-									
+										<p class="roundBox_start">출발</p>
 										<span class="roundBox departure">${ sessionScope.uvo.depplacename }</span>
+										<p class="roundBox_end">도착</p>
 										<span class="roundBox arrive">${ sessionScope.uvo.arrplacename }</span>
-									
-								
 							</div>
 							<div class="detail_info">
 								<span id="takeDrtm">4시간 15분 소요</span>

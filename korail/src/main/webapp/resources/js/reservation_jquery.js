@@ -242,10 +242,15 @@ $(document).ready(function(){
 	    var depPlaceId = $("#update_depPlaceId").text();
 	    var arrPlaceId = $("#update_arrPlaceId").text();
 	
+		if($("#traintime").text() != ""){
 		
-	
-	    var url = "reservation_updatetime.do?traintime=" + encodeURIComponent(traintime) + "&depPlaceId=" + encodeURIComponent(depPlaceId) + "&arrPlaceId=" + encodeURIComponent(arrPlaceId);
-	    window.location.href = url;
+			var url = "reservation_updatetime.do?traintime=" + encodeURIComponent(traintime) + "&depPlaceId=" + encodeURIComponent(depPlaceId) + "&arrPlaceId=" + encodeURIComponent(arrPlaceId);
+		    window.location.href = url;
+		
+		}else{
+			alert("출발일을 선택해주세요.");	
+		}
+	    
 });
 	
 	
