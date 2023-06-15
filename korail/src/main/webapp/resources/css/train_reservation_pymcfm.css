@@ -83,6 +83,11 @@
     color: #fff;
 }
 
+.title_wrap.in_process .process li#last:after {
+    display: none;
+    background:none;
+}
+
 .page.depth3 {
     padding-top: 40px;
 }
@@ -220,17 +225,6 @@
     border-left: 1px solid #d0d1d3;
 }
 
-.route_wrap .inner:before {
-    display: block;
-    content: "";
-    position: absolute;
-    left: 37px;
-    top: 0;
-    width: 1px;
-    height: 100%;
-    background-color: #fff;
-}
-
 .route_wrap .roundBox {
     display: block;
     overflow: hidden;
@@ -250,15 +244,7 @@
     color: #000;
 }
 
-.route_wrap .departure:before {
-    content: "Ãâ¹ß";
-}
-
-.route_wrap .arrive:before {
-    content: "µµÂø";
-}
-
-.route_wrap .roundBox:before {
+.roundBox_start {
     display: block;
     position: absolute;
     left: 20px;
@@ -271,6 +257,22 @@
     font-size: 12px;
     text-align: center;
     line-height: 35px;
+    border: 1px solid lightgray;
+}
+.roundBox_end{
+	display: block;
+    position: absolute;
+    left: 20px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #74b3c7;
+    font-size: 12px;
+    text-align: center;
+    line-height: 35px;
+    border: 1px solid lightgray;
+    margin-top: 19px;
 }
 
 .routeArea.route_wrap .roundBox:before {

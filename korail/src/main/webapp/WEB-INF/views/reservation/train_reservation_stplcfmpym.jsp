@@ -33,7 +33,7 @@
 						<div class="agreement_tit">
 							<h4 class="first">서비스 이용약관 동의</h4>
 							<span class="custom_check chk_blue">
-								<input type="checkbox" id="agree1" onclick="fnChgCfmBtn();">
+								<input type="checkbox" name="agree" id="agree1">
 								<label for="agree1">동의</label>
 							</span>
 						</div>
@@ -245,7 +245,7 @@
 						<div class="agreement_tit">
 							<h4>개인정보 수집 및 이용 동의</h4>
 							<span class="custom_check chk_blue">
-								<input type="checkbox" id="agree3" onclick="fnChgCfmBtn();">
+								<input type="checkbox" name="agree" id="agree3">
 								<label for="agree3">동의</label>
 							</span>
 						</div>
@@ -278,7 +278,7 @@
 						<div class="agreement_tit">
 							<h4>개인정보 제3자 제공에 대한 동의</h4>
 							<span class="custom_check chk_blue">
-								<input type="checkbox" id="agree4" onclick="fnChgCfmBtn();">
+								<input type="checkbox" name="agree" id="agree4">
 								<label for="agree4">동의</label>
 							</span>
 						</div>
@@ -305,7 +305,7 @@
 					
 					<p class="agree_all chk_bor">
 						<span class="custom_check chk_purple">
-							<input type="checkbox" id="agreeAll">
+							<input type="checkbox" name="agreeAll" id="agreeAll">
 							<label for="agreeAll">전체 약관에 동의합니다.</label>
 						</span>
 					</p>

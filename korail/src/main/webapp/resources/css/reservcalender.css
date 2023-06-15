@@ -56,7 +56,7 @@ EDIT ON /* 占쎈뼎占쎌젾 */
 }
 
 /* �넫�슣�뒭 甕곌쑵�뱣 */
-.btn {
+.prevDay ,.nextDay{
 	display: block;
 	width: 20px;
 	height: 20px;

@@ -65,7 +65,7 @@ $(document).ready(function(){
 	$(".seatList").on("click", "[id^='chairImg_']", function() {
 		  let seatNum = $("#chldCnt").text() + "호 " +  $(this).parent().text() + "좌석";
 		  
-		  $("#seatNum").val(seatNum);
+		  $("#seatNum").text(seatNum);
 		  $("#seatNum1").val(seatNum);
 		  $("#seatNum2").val(seatNum);
 		  //alert(seatNum);

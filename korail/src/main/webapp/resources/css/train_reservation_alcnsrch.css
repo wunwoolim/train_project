@@ -100,11 +100,43 @@ ul, ol {
     border:1px solid red;
 }
 
-.process li {
+.title_wrap.in_process .process {
     display: inline-block;
-    color: #fff;
-    
+    margin-top: 10px;
 }
+
+.title_wrap.in_process .process li {
+    display: inline-block;
+    font-size: 15px;
+    color: #a1a6b3;
+}
+
+.title_wrap.in_process .process .active {
+    color: #fff;
+}
+
+.title_wrap.in_process .process li.active:after {
+    background-position: right 0;
+}
+
+.title_wrap.in_process .process li.last:after {
+    display: none;
+}
+
+.title_wrap.in_process .process li:after {
+    display: inline-block;
+    content: '';
+    background: url("http://localhost:9000/ktx/images/arrow_process.png") right -18px no-repeat;
+    background-size: 28px auto;
+    width: 28px;
+    height: 18px;
+    margin: 0 0 -3px 30px;
+}
+
+.title_wrap.in_process .process li + li {
+    margin-left: 30px;
+}
+
 .buscheck_wrap {
     margin-top: 25px;
 }
@@ -319,15 +351,6 @@ img, fieldset, button {
     border: 0;
 }
 
-
-
-.detailBox_head > div {
-    float: left;
-    height: 100%;
-    font-size: 0;
-    text-align: center;
-    vertical-align: middle;
-}
 .head_date, .bustime_wrap {
     width: 100%;
     padding-left: 65px;

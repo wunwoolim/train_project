@@ -18,12 +18,13 @@
 $(document).ready(function(){
 //선택 완료 
 $(".btn_selectSeat").click(function() {
+	if($("#seatNum").text() == ""){
+		alert("좌석을 선택해주세요");
+	}else{
+		
 	let sid = "${sessionScope.svo.id}";
 	let seatNum = $("#seatNum1").val();
 	let ticketQty = $("#ticketQty1").val();
-	alert(sid);
-	alert(seatNum);
-	alert(ticketQty);
 	
 	if(sid == ""){
 	  $(".modal").css("display", "block");
@@ -32,6 +33,8 @@ $(".btn_selectSeat").click(function() {
 		  $(location).attr("href",'http://localhost:9000/ktx/stplcfmpym.do?seatNum='+seatNum +"&ticketQty="+ticketQty+"&id="+sid );
 	  }
 
+	}
+	
   });
 });
   
@@ -44,7 +47,7 @@ $(".btn_selectSeat").click(function() {
 	<div class="title_wrap in_process ticketingT">
 		<jsp:include page="../header.jsp"></jsp:include>
 	 
-	 <h2>고속버스예매</h2>
+	 <h2>KTX 예매</h2>
 				
 				<ol class="process">
 					<li class="active">예매정보입력</li>
@@ -55,7 +58,7 @@ $(".btn_selectSeat").click(function() {
 
 
 	<div class="page" id="seatChcPage">
-		<h3>매수 및 좌석선택</h3>
+		<h3> 좌석 선택 </h3>
 				
 		<div class="selectSeat_wrap">
 					<!-- compareBox -->
@@ -218,9 +221,7 @@ $(".btn_selectSeat").click(function() {
 									<strong class="txt_tit">선택좌석</strong>
 								</div>
 								<div>
-								<input type="text" name="seatNum" id="seatNum" >
-										
-									
+								<span id="seatNum" ></span>
 								</div>
 							</section>
 							<!-- //선택좌석 -->

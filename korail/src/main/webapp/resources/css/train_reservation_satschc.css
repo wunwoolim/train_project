@@ -661,6 +661,42 @@ strong {
     text-align: center;
 }
 
+.title_wrap.in_process .process {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.title_wrap.in_process .process li {
+    display: inline-block;
+    font-size: 15px;
+    color: #a1a6b3;
+}
+
+.title_wrap.in_process .process .active {
+    color: #fff;
+}
+
+.title_wrap.in_process .process li.active:after {
+    background-position: right 0;
+}
+.title_wrap.in_process .process li:after {
+    display: inline-block;
+    content: '';
+    background: url("http://localhost:9000/ktx/images/arrow_process.png") right -18px no-repeat;
+    background-size: 28px auto;
+    width: 28px;
+    height: 18px;
+    margin: 0 0 -3px 30px;
+}
+
+.title_wrap.in_process .process li + li {
+    margin-left: 30px;
+}
+
+.title_wrap.in_process .process li.last:after {
+    display: none;
+}
+
 .page {
     width: auto;
     min-width: 628px;

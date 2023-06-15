@@ -52,6 +52,10 @@
     color: #fff;
 }
 
+.title_wrap.in_process .process li.last:after {
+    display: none;
+}
+
 .page.depth3 {
     padding-top: 40px;
 }

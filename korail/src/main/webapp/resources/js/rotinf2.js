@@ -71,18 +71,22 @@ $(document).ready(function(){
 	}//test
 	//});
 	
-	
-	
+		
+		$(".ui-datepicker-trigger").click(function() {
+			  if ($("#start_add").text() != "선택" && $("#end_add").text() != "선택") {
+			    $("#btnsearch").css("background", "#5754b5");
+			  }
+		});
 		
 		
-		
+			
 		$("#btnsearch").click(function(){
 			if($("#start_add").text() == "선택"){
 				alert("출발지를 선택해주세요");
 			}else if($("#end_add").text() == "선택"){
 				alert("도착지를 선택해주세요");
 			}else if($("#traintime").text() == ""){
-				alert("날짜를 선택해주세요");
+				alert("출발일를 선택해주세요");
 			}else{
 				
 				var result = confirm("승차권 예매에 따른 취소수수료 내용에 동의하십니까?");
