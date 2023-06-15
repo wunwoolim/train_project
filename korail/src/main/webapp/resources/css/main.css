@@ -606,7 +606,7 @@ input[type=text]{
 
 #contents {
     position: relative;
-    background: url(http://localhost:9000/ktx/images/main_bg.gif) center 0 no-repeat;
+    background: url(http://localhost:9000/ktx/images/ktx_korail.jpg) center 0 no-repeat;
     background-size: cover;
     min-height: 828px;
     position: relative;
