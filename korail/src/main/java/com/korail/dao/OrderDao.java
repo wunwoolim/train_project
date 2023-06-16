@@ -49,8 +49,14 @@ public class OrderDao implements MyktxDao {
 	/**
 	 * 카드번호 조회
 	 */
-	public int selectCardnum(String cardnum) {
-		return sqlSession.selectOne("mapper.order.selectcard", cardnum);
+	public int selectCardnum(String cardnum, String email) {
+		
+		Map<String, String> param = new HashMap<String, String>();
+		
+		param.put("cardnum", cardnum);
+	    param.put("email", email);
+	    
+		return sqlSession.selectOne("mapper.order.selectcard", param);
 	}
 	
 	/**

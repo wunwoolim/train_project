@@ -89,7 +89,7 @@ public class OrderServiceImpl implements OrderService{
 	}
 	
 	@Override
-	public int getCardnum(String cardnum) {
-		return orderDao.selectCardnum(cardnum);
+	public int getCardnum(String cardnum, String email) {
+		return orderDao.selectCardnum(cardnum, email);
 	}
 }

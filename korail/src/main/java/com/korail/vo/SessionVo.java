@@ -2,8 +2,15 @@ package com.korail.vo;
 
 public class SessionVo {
 	int loginResult;
-	String name, id, pass, cardnum;
+	String name, id, pass, cardnum, email;
 	
+	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getCardnum() {
 		return cardnum;
 	}

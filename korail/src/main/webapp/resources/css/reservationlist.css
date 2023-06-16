@@ -1,9 +1,38 @@
 
-.login_id input{
-	border:none;
+.btnJoin{
+	width: 515px;
+	color: #fff;
+    font-size: 16px;
+    border: none;
+    /* line-height: 128px; */
+    background: #b8becc;
+    margin-top: 10px;
+    height: 60px;
 }
 
 
+#mailinput, .login_id > .input-group input{
+	outline: none;
+	width: 100%;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    color: #000;
+    
+}
+
+.input-group > .input_email div, .checknum{
+	/* width:100px; */
+	position: relative;
+    padding: 7px 1px;
+    background-color: #f3f4f6;
+    text-align: left;
+    display:inline-block;
+}
+}
 
 .tbl_type3{
 	margin-left : 20px;
@@ -1681,7 +1710,7 @@ script {
     text-align: center;
 }
 
-.login_wrap button{
+.login_wrap .btn_confirm{
 	margin: 0;
     padding: 0;
     font-weight: normal;

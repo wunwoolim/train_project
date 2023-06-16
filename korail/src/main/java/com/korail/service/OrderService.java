@@ -23,7 +23,7 @@ public interface OrderService {
 	
 	public int getPaymentUpdate(OrderVo orderVo);
 	
-	public int getCardnum(String cardnum);
+	public int getCardnum(String cardnum, String email);
 	
 	public ArrayList<SeatNumberVo> getSeatnum(ReservationVo rvo);
 	

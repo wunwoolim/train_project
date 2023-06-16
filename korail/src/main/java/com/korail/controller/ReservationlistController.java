@@ -43,10 +43,12 @@ public class ReservationlistController {
 		SessionVo svo = (SessionVo) session.getAttribute("svo");
 		String id = svo.getId();
 		String cardnum = svo.getCardnum();
+		String email = svo.getEmail();
 		
-		/*
-		 * System.out.println(id); System.out.println(cardnum);
-		 */
+	
+		System.out.println("id->"+id); 
+		System.out.println("email2->"+email);
+		 
 		
 	    if(id == null) {
 	        // userId 값이 없는 경우 로그인 페이지로 리다이렉트
@@ -57,6 +59,7 @@ public class ReservationlistController {
 	    // 로그인한 사용자의 id와 cardnum을 설정하여 조회
 	    orderVo.setId(id);
 	    orderVo.setCardnum(cardnum);
+	    orderVo.setEmail(email);
 	    
 		ArrayList<OrderVo> orderList = orderService.getSelect(orderVo);
 	    
@@ -376,15 +379,20 @@ public class ReservationlistController {
 	 * cardnum_check_proc.do - 로그인2 카드번호로 조회하기 처리
 	 */
 	 @RequestMapping(value="/cardnum_check_proc.do", method=RequestMethod.POST)
-	 public ModelAndView cardnum_check_proc(String cardnum, String userId, HttpSession session) {
+	 public ModelAndView cardnum_check_proc(String cardnum, String userId, String email, HttpSession session) {
 		 ModelAndView model = new ModelAndView();
-		 int result = orderService.getCardnum(cardnum);
 		 
-		 if (result == 1) {
+		 System.out.println("email->"+email);
+		 System.out.println("cardnum->"+cardnum);
+		
+		 int result = orderService.getCardnum(cardnum, email);
+		 
+		 if (result != 0) {
 		        // 카드번호 조회 성공 시 세션에 사용자 정보 저장
 		        SessionVo svo = new SessionVo();
 		        svo.setId(userId);
 		        svo.setCardnum(cardnum);
+		        svo.setEmail(email);
 		        session.setAttribute("svo", svo);
 
 		        model.setViewName("redirect:/reservation_main.do");
@@ -394,9 +402,6 @@ public class ReservationlistController {
 		 
 		 return model;
 	 }
-	
-	 
-	
 	
 	
 	

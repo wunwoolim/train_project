@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/reservationlist.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/ktx/js/login.js"></script>
-<script src="http://localhost:9000/ktx/js/mailAuth.js"></script>
+<script src="http://localhost:9000/ktx/js/mailcheck2.js"></script>
 <style>
 	.box_inputForm, #nonMemberbox{
 	margin-top: 4px;
@@ -102,31 +102,39 @@
 						<li class="phone_wrap">
 							<ul class="ph_form">
 								<li class="clearfix send no_member_ticketing01" id="nonMemberbox" style="display: list-item;">
-									<div class= "v_noti">
-										</div>
-						<div class="login_id">
+									<div class= "v_noti"></div>
+						<div class="login_id" style="width: 515px;">
                 		 <div class="input-group">
-          					
-							<div><input type="text" class="form-control" name="userEmail1" id="userEmail1" placeholder="이메일" > @</div>
-							<div><input type="text"  class="email_input"name ="userEmail2" id="userEmail2"  placeholder ="이메일 주소를 입력해주세요"></div>
-							<div><select  id ="userEmail3" name="userEmail3">
-						<option value="default">선택</option>
-						<option value="naver.com">네이버</option>
-						<option value="gmail.com">구글</option>
-						<option value="daum.net">다음</option>
-						<option value="korea.com">코리아</option>
-						<option value="self">직접입력</option>		
-							</select></div>
+          					<div class="input_email" style="background-color:#f3f4f6;">
+								<div style="width:190px;"><strong>이메일</strong>
+								<input type="text" class="form-control" name="userEmail1" id="userEmail1" style="margin-left:20px;"></div>
+								<div style="width:20px;"><strong style="color:#f3f4f6;">이</strong>
+								<input type="text" readonly placeholder="@" style="::placeholder { color: black; }"></div>
+								<div style="width:190px;"><strong style="color:#f3f4f6;">이</strong>
+								<input type="text"  class="email_input"name ="userEmail2" id="userEmail2" style="margin-left:60px;" ></div>
+							
+							<select  id ="userEmail3" name="userEmail3" style="display:inline-block;">
+								<option value="default">선택</option>
+								<option value="naver.com">네이버</option>
+								<option value="gmail.com">구글</option>
+								<option value="daum.net">다음</option>
+								<option value="korea.com">코리아</option>
+								<option value="self">직접입력</option>		
+							</select>
+							</div>
 						</div>  
-	<ul class= "loginBoth">
-		<li>		
-				<button type="button"  id="mail-Check-Btn"  class ="btnJoin" >  인증번호 발송 </button>
-		</li>	
-	
-	</ul>	
-						</div>	
-				<div class="mail-check-box">
-					<div><input class="form-control mail-check-input" placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6"></div>
+					<ul class= "loginBoth">
+						<li>
+							<button type="button"  id="mail-Check-Btn"  class ="btnJoin" >  인증번호 발송 </button>
+						</li>
+					</ul>
+				</div>	
+				
+				
+				<div class="mail-check-box" style="display:none">
+					<div class="checknum" style="width: 515px;"><strong>인증번호 6자리를 입력해주세요</strong>
+					<input class="form-control mail-check-input" id="mailinput" disabled="disabled" maxlength="6"></div>
+					<input type="hidden" name="email" id="email">
 					<div><span id="mail-check-warn"></span></div>
 					<div><button type="button"  id="authcheckBtn"  class ="btnJoin" >  인증번호 확인 </button></div>
 				</div>
@@ -213,24 +221,27 @@
 </form>
 
 	<script>
+	$(document).ready(function() {
+	
+		$("#cardnumSearch").click(function(){
+			var card_number = $("#card_number01").val() +"-"+ $("#card_number02").val() +"-"+ $("#card_number03").val() +"-"+ $("#card_number04").val();
+			
+			if (card_number.length < 15){
+				alert('카드번호를 확인해주세요.');
+				$("#card_number01").focus();
+				return;
+			}else{
+				$("#cardnum").val(card_number);
+				$('#lgnNonUsrFrm').submit();
+			}
+			
+		});
 	
 	
-	$("#cardnumSearch").click(function(){
-		var card_number = $("#card_number01").val() +"-"+ $("#card_number02").val() +"-"+ $("#card_number03").val() +"-"+ $("#card_number04").val();
-		
-		if (card_number.length < 15){
-			alert('카드번호를 확인해주세요.');
-			$("#card_number01").focus();
-			return;
-		}else{
-			$("#cardnum").val(card_number);
-			$('#lgnNonUsrFrm').submit();
-		}
-		
+	
+	
+	
 	});
-	
-	
-	
 	
 	
 				/* 1-1, 1-2  */
