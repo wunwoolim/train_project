@@ -6,7 +6,8 @@
 			console.log('완성된 이메일 : ' + email); // 이메일 오는지 확인
 			const checkInput = $('.mail-check-input') // 인증번호 입력하는곳 
 			alert(email);
-			
+				$("#email1").val($('#userEmail1').val());
+				$("#email2").val($('#userEmail2').val());
 			$.ajax({
 				type : 'get',
 				url : 'mailCheck.do?email='+email, // GET방식이라 Url 뒤에 email을 뭍힐수있다.
@@ -15,7 +16,9 @@
 					checkInput.attr('disabled',false);
 					code =data;
 					alert('인증번호가 전송되었습니다.')
-				}			
+				}	
+				
+					
 			}); // end ajax
 		}); // end send eamil
 		

@@ -13,6 +13,9 @@
 .box{
 	display:inline-block;
 }
+input:focus {
+  		outline: none;
+}
 </style>
 <script>
 $(document).ready(function(){

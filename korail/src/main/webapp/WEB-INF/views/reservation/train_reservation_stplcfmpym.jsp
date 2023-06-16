@@ -8,6 +8,13 @@
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/train_reservation_stplcfmpym.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/ktx/js/nomember_stplcfmpym.js"></script>
+<script src="http://localhost:9000/ktx/js/mailAuth.js"></script>
+<style>
+	input:focus {
+  		outline: none;
+	}
+	
+</style>
 </head>
 <body>
 <div>
@@ -313,16 +320,7 @@
 				</div>	
 			
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+
 			
 			
 			
@@ -331,54 +329,40 @@
 						<p class="desc">예매사항을 조회하기 위한 필수항목 입니다. </p>				
 						<div class="boxinput_wrap01 clfix">
 							
-							<!-- 170410 휴대폰번호 셀렉박스 추가 -->
-							<div class="buy_wrap">
-								<div class="send clearfix buy-t01">
-									<div class="box_inputForm">
-										<strong>휴대폰번호</strong>
-										<span class="box_label">
-											<label for="nonMbrsHp">휴대폰 번호를 입력하세요</label>
-											<input type="number" name="nonMbrsHp" id="nonMbrsHp" class="input" maxlength="11" >
-										</span>
-										
-									</div>
-									<button type="button" class="pym_send_btn send-btn">인증번호 발송</button>
+							<form name = "verti" action ="train_reservation_pymcfm.do" method ="get">
+								<div class= "v_noti">
+								<p class="join2_p"> 본인 인증을 위한 이메일을 입력해 주세요.</p>
 								</div>
 								
-								<div class="resend buy-t01">
-									<div class="box_inputForm">
-										<strong></strong>
-										<span class="box_label">
-											<label for="nonMbrsPw">인증번호가 발송 완료되었습니다.</label>
-											<input type="text" name="nonMbrsPw" id="nonMbrsPw" class="input" >
-										</span>
+								<div class="login_id">
+		                		 <div class="input-group">
+									<input type="text" class="form-control" name="userEmail1" id="userEmail1" placeholder="이메일" >  @ 
+									<input type="text"  class="email_input"name ="userEmail2" id="userEmail2"  placeholder ="이메일 주소를 입력해주세요"> 
+									<select  id ="userEmail3" name="userEmail3">
+									<option value="default">선택</option>
+									<option value="naver.com">네이버</option>
+									<option value="gmail.com">구글</option>
+									<option value="daum.net">다음</option>
+									<option value="korea.com">코리아</option>
+									<option value="self">직접입력</option>		
+										</select>
+									 
+										<ul class= "loginBoth">
+											<li>		
+													<button type="button"  id="mail-Check-Btn"  class ="btnJoin" >  인증번호 발송 </button>
+											</li>	
 										
-									</div>
-									<button type="button" class="pym_send_btn resend-btn">인증번호 재발송</button>
-								</div>
-								<div class="certifi buy-t02">
-									<button type="button" class="pym_send_btn last_check">확인</button>
-									 <div class="box_inputForm">
-										<strong>수신된 인증번호</strong>
-										<span class="box_label">
-											<label for="nonMbrsAuthNo">인증번호를 입력하세요</label>
-											<input type="text" name="nonMbrsAuthNo" id="nonMbrsAuthNo" class="input" maxlength="6" >
-										</span>
+										</ul>	
 									</div> 
-								</div>
+								</div>	
 								
-								
-								<p style="padding-left: 10px; text-align: left;">
-									<input type="checkbox" name="sms_yn" id="sms_yn" value="Y"> <label for="sms_yn">SMS로 인증번호 받기</label>
-								</p>
-								
-							</div>
-							<div class="certifi_complete">
-								<p>
-									인증이 완료되었습니다.
-									<input type="hidden" name="nonMbrsAuthYn" id="nonMbrsAuthYn">
-								</p>
-							</div>
+									<div class="mail-check-box">
+										<p>인증번호를 입력해주세요<p>
+										<input class="form-control mail-check-input" placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6">
+										<span id="mail-check-warn"></span>
+									</div>
+										
+							</form>
 
 						</div>
 					</div>
@@ -412,7 +396,7 @@
 							<div class="tbl_type2">
 								<table class="tbl_info">
 									<caption>
-										<strong>버스 정보</strong>
+										<strong>역 정보</strong>
 										<p>고속사, 등급, 출발</p>
 									</caption>
 									<colgroup>
@@ -518,20 +502,20 @@
 							<div class="box_inputForm card_num clfix">
 								<strong>카드번호</strong>
 								<span class="box_label">
-									<label for="cardNum1">입력</label>
-									<input type="text" name="cardNum1" id="cardNum1" class="input" maxlength="4">
+									<!-- <label for="cardNum1">입력</label> -->
+									<input type="text" name="cardNum1" id="cardNum1" class="input" maxlength="4" placeholder="입력">
 								</span>
 								<span class="box_label">
-									<label for="cardNum2">입력</label>
-									<input type="text" name="cardNum2" id="cardNum2" class="input" maxlength="4">
+									<!-- <label for="cardNum2">입력</label> -->
+									<input type="text" name="cardNum2" id="cardNum2" class="input" maxlength="4"  placeholder="입력">
 								</span>
 								<span class="box_label">
-									<label for="cardNum3">입력</label>
-									<input type="password" name="cardNum3" id="cardNum3" class="input" maxlength="4">
+									<!-- <label for="cardNum3">입력</label> -->
+									<input type="password" name="cardNum3" id="cardNum3" class="input" maxlength="4"  placeholder="입력">
 								</span>
 								<span class="box_label">
-									<label for="cardNum4">입력</label>
-									<input type="password" name="cardNum4" id="cardNum4" class="input" maxlength="4">
+									<!-- <label for="cardNum4">입력</label> -->
+									<input type="password" name="cardNum4" id="cardNum4" class="input" maxlength="4"  placeholder="입력">
 								</span>
 							</div>
 
@@ -542,15 +526,15 @@
 								<div class="box_inputForm">
 									<strong>유효기간 월(MONTH)</strong>
 									<span class="box_label">
-										<label for="cardMonth">2자리 입력(MM)</label>
-										<input type="text" name="cardMonth" id="cardMonth" class="input" maxlength="2">
+										<!-- <label for="cardMonth">2자리 입력(MM)</label> -->
+										<input type="text" name="cardMonth" id="cardMonth" class="input" maxlength="2"  placeholder="2자리 입력(MM)">
 									</span>
 								</div>
 								<div class="box_inputForm">
 									<strong>유효기간 년(YEAR)</strong>
 									<span class="box_label">
-										<label for="cardYear">2자리 입력(YY)</label>
-										<input type="text" name="cardYear" id="cardYear" class="input" maxlength="2">
+										<!-- <label for="cardYear">2자리 입력(YY)</label> -->
+										<input type="text" name="cardYear" id="cardYear" class="input" maxlength="2" placeholder="2자리 입력(YY)">
 									</span>
 								</div>
 							</div>
@@ -558,8 +542,8 @@
 								<div class="box_inputForm">
 									<strong>카드 비밀번호</strong>
 									<span class="box_label">
-										<label for="cardPw">**** 비밀번호 앞 2자리 입력</label> <!-- 170118 텍스트 수정 -->
-										<input type="password" name="cardPw" id="cardPw" class="input" maxlength="2">
+										<!-- <label for="cardPw">**** 비밀번호 앞 2자리 입력</label> 170118 텍스트 수정 -->
+										<input type="password" name="cardPw" id="cardPw" class="input" maxlength="2" placeholder="**** 비밀번호 앞 2자리 입력">
 									</span>
 								</div>
 							</div>
@@ -568,14 +552,15 @@
 							<div class="box_inputForm" id="indlBrdtCard">
 								<strong>생년월일 6자리(YYMMDD)</strong>
 								<span class="box_label">
-									<label for="caBirth">예)1980년11월11일 → 801111</label>
-									<input type="text" name="birthday" id="birthday" class="input" maxlength="6">
+									<!-- <label for="caBirth">예)1980년11월11일 → 801111</label> -->
+									<input type="text" name="birthday" id="birthday" class="input" maxlength="6" placeholder="예)1980년11월11일 → 801111">
 								</span>
 							</div>
 						
 							
 						</div>
-						
+							<input type="hidden" name="email1" id="email1" class="email">
+							<input type="hidden" name="email2" id="email2" class="email">
 							
 								<div class="tab_conts" id="tab2" style="display: none;">
 						 
@@ -622,9 +607,8 @@
 						
 							<div class="tab_desc active"> <!-- 190109 추가 : wrapper 추가 - tab_desc -->						
 								<ul class="desc_list" id="cardNotice"> 
-									<li class="txt_puple">고속버스 탑승 시 결제에 사용된 카드(창구, 무인기 발권 시), 모바일티켓, 홈티켓 중 하나를 가져오셔야 됩니다.</li>
+									<li class="txt_puple">열차 탑승 시 결제에 사용된 카드(창구, 무인기 발권 시), 모바일티켓, 홈티켓 중 하나를 가져오셔야 됩니다.</li>
 									<li>예매가 완료된 후 예매확인/취소/변경 메뉴를 통해 예매내역을 확인 하시기 바랍니다.</li>
-									<li>고속버스에 설치된 통합단말기에 기 결제한 카드(교통카드 기능이 있는 신용카드만 해당)를 태그하시면 영수증과 승차권을 한번에 발권하실 수 있습니다.</li>
 									<li>모든 결제정보는 암호화 처리 후 안전하게 전송됩니다.</li>
 									<li>비밀번호 입력 오류가 3회 이상 발생할 경우 홈페이지에서 결제가 불가하니 카드사/은행을 방문하셔서 처리 후 다시 시도 바랍니다.</li>
 								

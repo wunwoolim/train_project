@@ -4,9 +4,37 @@ public class ReservationVo {
 	
 	String ticketQty1,ticketQty2,ticketQty,seatNum,startId,endId,start_add,end_add,rtime,depplacename, arrplacename,start_date,end_date,traingradename,trainno,adultcharge,rtimes,seatNum1,seatNum2;
 	String division,id,trnumber;
+	String email,email1, email2;
 	
 	
 	
+	public String getEmail() {
+		if(email1 != null) {
+			email = email1 +"@" + email2;
+		}
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getEmail1() {
+		return email1;
+	}
+
+	public void setEmail1(String email1) {
+		this.email1 = email1;
+	}
+
+	public String getEmail2() {
+		return email2;
+	}
+
+	public void setEmail2(String email2) {
+		this.email2 = email2;
+	}
+
 	public String getTrnumber() {
 		return trnumber;
 	}

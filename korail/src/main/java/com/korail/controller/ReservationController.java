@@ -36,7 +36,7 @@ public class ReservationController {
 	 * 결제 완료 페이지 
 	 */
 	@RequestMapping(value="/train_reservation_pymcfm.do", method=RequestMethod.POST)
-	public ModelAndView train_reservation_pymcfm(HttpSession session, OrderVo orderVo, CardinfoVo cardVo) {
+	public ModelAndView train_reservation_pymcfm(HttpSession session, OrderVo orderVo, CardinfoVo cardVo,ReservationVo reservationVo) {
 		ModelAndView model = new ModelAndView();
 		ReservationVo rvo = (ReservationVo)session.getAttribute("rvo");
 		UUID uuid = UUID.randomUUID();
@@ -60,14 +60,13 @@ public class ReservationController {
 		orderVo.setPrice(Integer.parseInt(rvo.getAdultcharge()));
 		orderVo.setTrainnum(Integer.parseInt(rvo.getTrainno()));
 		orderVo.setTicketqty(Integer.parseInt(rvo.getTicketQty()));
+		orderVo.setEmail(reservationVo.getEmail());
 		
-		
-		
+		System.out.println("reservationVo.getEmail()-->" + reservationVo.getEmail());
 		orderService.getPayment(orderVo);
 		cardService.getPayment(cardVo);
 		
 		
-		System.out.println(cardVo.getRecognizenum());
 		
 		model.setViewName("/reservation/train_reservation_pymcfm");
 		

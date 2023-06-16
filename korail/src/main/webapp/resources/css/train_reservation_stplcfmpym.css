@@ -514,9 +514,9 @@ h4 + .desc, .h4_box + .desc {
     vertical-align: middle;
 }
 
-.boxinput_wrap01 .buy-t01 {
+.input-group {
     float: left;
-    width: 50%;
+    
 }
 
 .resend {
@@ -537,11 +537,52 @@ h4 + .desc, .h4_box + .desc {
     border:none;
 }
 
-.box_inputForm {
+#userEmail1{
+   width: 250px;
     position: relative;
     padding: 7px 12px;
     background-color: #f3f4f6;
     text-align: left;
+    border: none;
+    margin-right: 5px;
+}
+
+#userEmail2{
+    width: 250px;
+    position: relative;
+    padding: 7px 12px;
+    background-color: #f3f4f6;
+    text-align: left;
+    border: none;
+    margin-left: 5px;
+}
+
+#mail-Check-Btn{
+	height: 32px;
+    width: 100px;
+    background-color: #b8becc;
+    color: #fff;
+    border:none;
+}
+
+.mail-check-box p{
+	display:inline-block;
+	margin: 10px;
+	height: 22px;
+}
+
+.mail-check-input{
+	width: 180px;
+}
+
+.login_id{
+	height: 32px;
+}
+
+.loginBoth{
+	width: 200px;
+    display: inline-block;
+    margin-left: 20px;
 }
 
 .boxinput_wrap01 .buy-t02 .box_inputForm {
@@ -980,7 +1021,8 @@ input[type="checkbox"], input[type="radio"] {
 
 html:first-child select {
     padding-right: 6px;
-    height: 20px;
+    height: 32px;
+    margin-left: 5px;
 }
 
 .payment.select-box select {
