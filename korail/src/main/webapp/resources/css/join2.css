@@ -95,7 +95,6 @@ list-style:none;
 	.loginBoth {
 		list-style:none;
 		display:block;
-		width:80%;
 		margin:0px;
 		padding:0px;
 	}
@@ -117,7 +116,8 @@ list-style:none;
 	}
 	
 .input-group input{
-		width:17%;
+	background-color: #f3f4f6;
+	width:25%;
 	padding:8px 20px;
 	border:1px solid #ddd;
 	border-radius:4px;
@@ -132,3 +132,18 @@ list-style:none;
 	text-align:center;
 	
 }
+
+.join2_p{
+	text-align: center;
+    font-size: 20pt;
+    color: black;
+    margin: 30px 0px;
+}
+
+.input-group{
+	border: 1px solid #e6e6e6;
+    padding: 50px 0;
+    width: 90%;
+    margin-left: 40px;
+    }
+    

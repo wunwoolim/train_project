@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.korail.service.MailSendService;
 import com.korail.service.MemberService;
 import com.korail.vo.MemberVo;
 
@@ -15,6 +16,34 @@ import com.korail.vo.MemberVo;
 public class JoinController {
 	@Autowired
 	private MemberService memberService;
+	
+	@Autowired
+	private MailSendService mailService;
+	
+	
+	
+	
+	/**
+	 * 메일 인증 테스트 화면
+	 */
+	@RequestMapping(value="/joinAuth.do", method=RequestMethod.GET)
+	public String mailAuth() {
+		return "/join/join2";
+	}
+	
+	/**
+	 * 메일 인증 체크
+	 */
+	@ResponseBody
+	@RequestMapping(value="/mailjoin.do", method=RequestMethod.GET)
+	public String mailCheck(String email) {
+		System.out.println("email------->>" + email);
+		
+		return mailService.joinEmail(email);
+	}
+	
+	
+	
 	
 	
 	
@@ -30,17 +59,6 @@ public class JoinController {
 		return "/join/join";
 	}
 	
-	
-	/*
-	 * 회원가입 인증 페이지
-	 */
-	
-	
-	@RequestMapping(value="/join2.do", method=RequestMethod.GET)
-	public String join2() {
-		
-		return "/join/join2";
-	}
 	
 	
 

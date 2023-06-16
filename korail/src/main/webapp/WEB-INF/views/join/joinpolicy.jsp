@@ -5,6 +5,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+	.tcontent  th{
+	padding: 6px 0;
+    font-size: 13px;
+    font-weight: bold;
+    color: #68b3ce;
+    text-align: left;
+	}
+	.tcontent th {
+	border-bottom: 1px solid #f1f2f4;
+	}
+	caption{
+		color: #000;	
+	}
+	.tcontent t td{
+	    padding: 9px 10px 9px 0;
+    	font-size: 14px;
+    	color: #333;
+   		vertical-align: top;
+	}
+</style>
 </head>
 <body>
 <table>
@@ -16,7 +37,7 @@
 				</colgroup>
 				<thead>
 				
-				<tr>
+				<tr class="tcontent">
 				<th scope ="col"> 수집 및 이용 목적 </th>
 				<th scope ="col"> 수집 및 이용 항목 </th>
 				<th scope ="col"> 보유기간 </th>

@@ -196,4 +196,13 @@ display:inline-block;	}
     right: 0;
     line-height: 20px;
     }
+	.scroll_agreement h1, .terms_wrap h1{
+	font-size:20px;
+	margin:20px;
+	}
 	
+	#video2, #video1{
+	    border-top: 2px solid lightgray;
+ 	   	border-right: none;
+    	border-left: none;
+}

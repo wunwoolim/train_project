@@ -5,9 +5,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+	.sstory h1{
+		margin: 10px 0;
+    	font-weight: bold;
+    	color: #000;
+    	text-align: center;
+	}
+	.sstory *{
+		font-size: 13px;
+	}
+	
+</style>
 </head>
 <body>
-<dl>
+<dl class="sstory">
+	<h1> <서비스 이용약관> </h1>
 		<dt>제1장 총칙</dt>
 		<dd>
 			<ol class="terms_list">
@@ -180,15 +193,14 @@
 				</li>
 			</ol>
 		</dd>
-	</dl>
-	<p class="add_rules" style="margin-bottom:20px;"><strong>부칙</strong>제1조 (시행일)<br>본 약관은 2019년 10월 1일부터 시행합니다.</p>
+		
+		<p class="add_rules" style="margin-bottom:20px;"><strong>부칙</strong>제1조 (시행일)<br>본 약관은 2019년 10월 1일부터 시행합니다.</p>
 
-		</div>
-</div>
-<p class="agree_all chk_bor">
+	<p class="agree_all chk_bor">
 					
 				</p>
 				<p>코레일 홈페이지에서 제공하는 다양한 서비스를 이용하기 위하여 고객님의 동의가 필요합니다.</p>
 		<p>본 서비스는 만 14세 이상만 이용이 가능하며 , 서비스 이용 전 아래 사항을 확인하시고 동의하여 주시기 바랍니다.</p>
+</dl>
 </body>
 </html>
