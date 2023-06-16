@@ -2,8 +2,16 @@ package com.korail.vo;
 
 public class OrderVo {
 
-	String sstation, rdate, stime, dtime, dstation, reservnum, chairnum, id, depPlaceId, arrPlaceId, depPlandTime, cardnum;
+	String sstation, rdate, stime, dtime, dstation, reservnum, chairnum, id, depPlaceId, arrPlaceId, depPlandTime, cardnum, cdate;
 	int rno, price, trainnum, ticketqty, cancel;
+	
+	
+	public String getCdate() {
+		return cdate;
+	}
+	public void setCdate(String cdate) {
+		this.cdate = cdate;
+	}
 	
 	
 	public String getSstation() {

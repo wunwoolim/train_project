@@ -8,6 +8,11 @@
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/reservationlist.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/ktx/js/login.js"></script>
+<style>
+	#login_page{
+	padding: 80px 40px 100px;
+	}
+</style>
 </head>
 <body>
 <div>
@@ -17,47 +22,11 @@
 	<div class="title_wrap_checkTicketingT">
 		<div class="title_wrap">
 			<jsp:include page="../header.jsp"></jsp:include>
-			<h2>예매확인/취소/변경</h2>
+			<h2>로그인</h2>
 		</div>
 	</div>
-	
-	<!------------------------ 메뉴바 ---------------------------->
-	<div class="breadcrumb">
-		<ul class="breadcrumb_list">
-			<li><a href="/main.do">HOME</a></li>
-			<li>
-				<div class="select-box">
-					<div class="selectricWrapper selectric-select">
-						<div class="selectricHideSelect">
-							<select name="" id="" class="select" tabindex="0">
-								<option value="/mrs/rotinf.do">KTX예매</option>
-								<option value="/mrs/mrscfm.do" selected="selected">예매확인</option>
-								<option value="/oprninf/alcninqr/oprnAlcnPage.do">운행정보</option>
-								<option value="/ugd/mrsgd/Mrsgd.do">이용안내</option>
-								<option value="/cscn/ntcmttr/readNtcList.do">공지사항</option>
-								<option value="/cscn/qna/readQnaList.do">고객센터</option>
-							</select>
-						</div>
-					</div>
-				</div>
-			</li>
-			<!-- 예매확인 -->
-			<li>
-				<div class="select-box">
-					<div class="selectricWrapper selectric-select">
-						<div class="selectricHideSelect">
-							<select name="" id="" class="select" tabindex="0">
-								<option value="/mrs/mrscfm.do" selected="selected">로그인</option>
-								<option value="/mrs/mrsrecplist.do">영수증 발행</option>
-							</select>
-						</div>
-					</div>
-				</div>
-			</li>
-		</ul>
-	</div>
 	<!------------------------ 로그인하기 ---------------------------->
-	<div class="page">
+	<div class="page" id="login_page">
 		<div class="login_wrap">
 			<!-- 회원로그인 -->
 			<form name ="loginForm" action="login_proc.do" method="post">

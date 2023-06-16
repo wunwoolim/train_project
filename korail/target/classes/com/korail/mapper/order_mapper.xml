@@ -42,7 +42,7 @@
 	</update>
 
 	<select id="select" parameterType = "com.korail.vo.OrderVo" resultType="com.korail.vo.OrderVo">
-		SELECT id, sstation, depPlandTime, stime, dstation, price, reservnum, trainnum, chairnum, cancel, depPlaceId, arrPlaceId, cardnum
+		SELECT id, sstation, depPlandTime, stime, dstation, price, reservnum, trainnum, chairnum, cancel, depPlaceId, arrPlaceId, cardnum, to_char(cdate,'yyyy-mm-dd') cdate
 		FROM KTX_ORDER
         <choose>
         	<when test='cardnum == null'>
@@ -60,7 +60,9 @@
 	</select>
 	
 	<update id="cancel" parameterType="String">
-		update ktx_order set cancel=1 where reservnum=#{reservnum}
+		update ktx_order set 
+		cancel=1, cdate=sysdate
+		where reservnum=#{reservnum}
 	</update>
 	
 	<select id="selected" parameterType="String" resultType="com.korail.vo.OrderVo">

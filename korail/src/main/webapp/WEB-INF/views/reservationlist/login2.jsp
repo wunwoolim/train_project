@@ -8,9 +8,13 @@
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/reservationlist.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/ktx/js/login.js"></script>
+<script src="http://localhost:9000/ktx/js/mailAuth.js"></script>
 <style>
 	.box_inputForm, #nonMemberbox{
 	margin-top: 4px;
+	}
+	.phone_wrap{
+		width:430px;
 	}
 </style>
 </head>
@@ -88,7 +92,7 @@
 				<h3 class="mob_h3">비회원 예매확인</h3>
 				<p class="h3_desc">예매 시 입력하신 정보를 정확히 입력해주세요.</p>
 				<div class="find_tab clearfix">
-					<p class="ph_find on">휴대폰번호로 찾기</p>
+					<p class="ph_find on">이메일로 찾기</p>
 					<p class="card_find">카드번호로 찾기</p>
 				</div>
 				<div class="inner">
@@ -98,44 +102,34 @@
 						<li class="phone_wrap">
 							<ul class="ph_form">
 								<li class="clearfix send no_member_ticketing01" id="nonMemberbox" style="display: list-item;">
-									<div class="box_inputForm_no_member">
-										<strong>휴대폰번호</strong>
-										<span class="box_label">
-											<!-- <label for="nonMbrsHp">휴대폰번호를 입력하세요</label> -->
-											<input type="text" name="nonMbrsHp" id="nonMbrsHp" class="input" maxlength="11" onkeyup="fnIcoCheck(this),fnNumCheck(this);">
-										</span>
-									</div>
-									<button type="button" class="phone_send_btn send_btn">인증번호 발송</button>
-								</li>
-								<li class="resend " style="display: none;">
-									<div class="box_inputForm_no_member">
-										<strong class="send_txt">인증번호가 발송 완료되었습니다.</strong>
-									</div>
-									<button class="phone_send_btn resend_btn">인증번호 재발송</button>
-								</li>
-								<li class="clearfix no_member_ticketing01" style="display: list-item;">
-									<div class="box_inputForm_no_member">
-										<strong>수신된 인증번호</strong>
-										<span class="box_label">
-											<!-- <label for="nonMbrsAuthNo">인증번호를 입력하세요</label> -->
-											<input type="text" name="nonMbrsAuthNo" id="nonMbrsAuthNo" maxlength="6" onkeyup="fnIcoCheck(this),fnNumCheck(this);" class="input">
-										</span>
-									</div>
-									<button type="button" class="phone_send_btn ph_check">확인</button>
-									<p style="padding-left: 10px; text-align: left;">
-										<input type="checkbox" name="sms_yn" id="sms_yn" value="Y"> <label for="sms_yn">SMS로 인증번호 받기</label>
-									</p>
-								</li>
-							</ul>
-						</li>
-						<li class="pay_wrap_ph" style="display: none;">
-							<ul>
-								<li class=" ">
-									<div class="box_inputForm ticketing02"> 
-										<strong class="ph_done">인증이 완료되었습니다.</strong>
-										<input type="hidden" name="nonMbrsAuthYn" id="nonMbrsAuthYn">
-									</div>
-								</li>
+									<div class= "v_noti">
+										</div>
+						<div class="login_id">
+                		 <div class="input-group">
+          					
+							<div><input type="text" class="form-control" name="userEmail1" id="userEmail1" placeholder="이메일" > @</div>
+							<div><input type="text"  class="email_input"name ="userEmail2" id="userEmail2"  placeholder ="이메일 주소를 입력해주세요"></div>
+							<div><select  id ="userEmail3" name="userEmail3">
+						<option value="default">선택</option>
+						<option value="naver.com">네이버</option>
+						<option value="gmail.com">구글</option>
+						<option value="daum.net">다음</option>
+						<option value="korea.com">코리아</option>
+						<option value="self">직접입력</option>		
+							</select></div>
+						</div>  
+	<ul class= "loginBoth">
+		<li>		
+				<button type="button"  id="mail-Check-Btn"  class ="btnJoin" >  인증번호 발송 </button>
+		</li>	
+	
+	</ul>	
+						</div>	
+				<div class="mail-check-box">
+					<div><input class="form-control mail-check-input" placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6"></div>
+					<div><span id="mail-check-warn"></span></div>
+					<div><button type="button"  id="authcheckBtn"  class ="btnJoin" >  인증번호 확인 </button></div>
+				</div>
 								
 								<!-- <li class="clearfix no_member_tab no_member_tab01">
 									<p class="credit on">신용카드 예매 티켓</p>
@@ -161,8 +155,6 @@
 										</span>
 									</div>
 								</li> -->
-								<li class="credit01"><span class="notice02 ">※ 법인카드로 결제 한 경우 사업자번호(10자리)를 입력하세요.</span></li>
-								<li class="wh100_notice credit02" style="margin-left:25px; text-align:left;"><span class="notice02 ">※ 스마일페이/티머니페이/페이코로 결제 한 경우<br> 생년월일(6자리)대신 출발일(8자리)을 입력하세요.</span></li>
 							</ul>
 						</li>
 							
@@ -201,7 +193,6 @@
 						</li>		
 					</ul>
 				</fieldset>
-				<p class="btn_squareBox no_member_ticketing01" style="display: block;"><button type="button" onclick="javascript:alert('휴대폰인증이 필요합니다.'), $('#nonMbrsHp').val(''), $('#nonMbrsHp').focus();" class="btn_confirm ready">조회</button></p>
 				<p class="btn_squareBox pay_wrap_ph pay_wrap_ph_btn" style="display: none;"><button type="button" onclick="javascript:fnNonUsr_Search();" class="btn_confirm ready">조회</button></p>
 				<p class="btn_squareBox pay_wrap_card pay_wrap_card_btn" style="display: none; "><button type="button" id="cardnumSearch" class="btn_confirm ready" style="height: 60px; line-height: 0px;">조회</button></p>
 				

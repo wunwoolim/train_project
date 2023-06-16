@@ -221,7 +221,7 @@
 					<div class="routeHead">
 						<p class="date txt_black">${ovo.depPlandTime}&nbsp;${ovo.stime}  출발</p>
 						<p class="ticketPrice cancel">취소일시 
-							<span class="txt_cancelDate">2023. 05. 01(월)15:00</span>
+							<span class="txt_cancelDate">${ovo.cdate}</span>
 						</p>
 					</div>
 					<div class="routeBody">
