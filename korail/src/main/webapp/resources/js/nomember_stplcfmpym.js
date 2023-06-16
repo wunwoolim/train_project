@@ -27,6 +27,7 @@ $(document).ready(function(){
 	
 	
 	
+	
 	//카드 정보 입력 이벤트
 	$(".box_inputForm span").click(function(){
 		
