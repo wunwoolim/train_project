@@ -45,7 +45,7 @@
 		$('#authcheckBtn').click(function () {
 		
 			if($('#mail-check-warn').text() == '인증번호가 일치합니다.'){
-				
+				verti.submit();
 			}
 		});
 		

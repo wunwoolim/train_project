@@ -1,7 +1,7 @@
 package com.korail.vo;
 
 public class MemberVo {
-	String id, pass, name, email1, email2, tel, phonenumber1, phonenumber2, phonenumber3 , year , month, date,
+	String id, pass, name, userEmail1, userEmail2, tel, phonenumber1, phonenumber2, phonenumber3 , year , month, date,
 	gender;
 	public String getPhonenumber1() {
 		return phonenumber1;
@@ -62,17 +62,18 @@ public class MemberVo {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getEmail1() {
-		return email1;
+	
+	public String getUserEmail1() {
+		return userEmail1;
 	}
-	public void setEmail1(String email1) {
-		this.email1 = email1;
+	public void setUserEmail1(String userEmail1) {
+		this.userEmail1 = userEmail1;
 	}
-	public String getEmail2() {
-		return email2;
+	public String getUserEmail2() {
+		return userEmail2;
 	}
-	public void setEmail2(String email2) {
-		this.email2 = email2;
+	public void setUserEmail2(String userEmail2) {
+		this.userEmail2 = userEmail2;
 	}
 	public String getTel() {
 		return tel;
@@ -99,8 +100,8 @@ public class MemberVo {
 		this.mid = mid;
 	}
 	public String getEmail() {
-		if(email1 != null) {
-			email = email1 +"@" + email2;
+		if(userEmail1 != null) {
+			email = userEmail1 +"@" + userEmail2;
 		}
 		return email;
 	}

@@ -45,8 +45,8 @@
 					</li>
 					<li>
 						<label>이메일</label>
-						<input type="text" name="email1" id="email1" placeholder ="이메일을 입력해주세요"> @
-						<input type="text" name="email2" id="email2" placeholder ="이메일 주소를 입력해주세요">
+						<input type="text" name="userEmail1" id="email1" placeholder ="이메일을 입력해주세요" value="${sessionScope.mvo.userEmail1}"> @
+						<input type="text" name="userEmail2" id="email2" placeholder ="이메일 주소를 입력해주세요" value="${sessionScope.mvo.userEmail2}">
 						<select id="email3" id="email3">
 							<option value="default">선택</option>
 							<option value="naver.com">네이버</option>
