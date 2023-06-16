@@ -51,7 +51,7 @@
 						<button type="button" class ="btn_style1" > 전체 약관에 동의합니다. </button>
 				</div> -->
 		<div class="btn_logbox">		
-						<button type="reset" class="btn_style3" onclick ="location.href='http://localhost:9000/ktx/join2.do'">동의함</button>			
+						<button type="reset" class="btn_style3" onclick ="location.href='http://localhost:9000/ktx/joinAuth.do'">동의함</button>			
 						<!-- <button type="button" class="btn_style2" onclick ="location.href='http://localhost:9000/train_project/login.do'">동의하지않음</button> -->
 		</div>
 		</section>

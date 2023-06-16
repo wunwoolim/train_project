@@ -307,4 +307,17 @@ form[name='joinForm'] ul #cmsg {
 .joinput{
 	    margin-left: 200px;
 }
+.join2_p{
+	
+    text-align: center;
+    font-size: 20pt;
+    color: black;
+    margin: 30px 0px
+	}
 						
+						
+	.join_email{ width: 20%;
+    padding: 8px 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}

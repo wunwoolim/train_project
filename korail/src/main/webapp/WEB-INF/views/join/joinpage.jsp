@@ -21,7 +21,9 @@
 			<!-- content -->
 	<div class="content">
 		<section class="join">
-			<h1 class="title">회원가입</h1>
+		<div class= "v_noti">
+		<p class="join2_p"> 회원가입을 위한 정보를 입력해주세요.</p>
+		</div>
 			<form name="joinForm" action="join_proc.do" method="post" class="joinput">
 				<ul>
 					<li>
@@ -45,16 +47,8 @@
 					</li>
 					<li>
 						<label>이메일</label>
-						<input type="text" name="userEmail1" id="email1" placeholder ="이메일을 입력해주세요" value="${sessionScope.mvo.userEmail1}"> @
-						<input type="text" name="userEmail2" id="email2" placeholder ="이메일 주소를 입력해주세요" value="${sessionScope.mvo.userEmail2}">
-						<select id="email3" id="email3">
-							<option value="default">선택</option>
-							<option value="naver.com">네이버</option>
-							<option value="gmail.com">구글</option>
-							<option value="daum.net">다음</option>
-							<option value="korea.com">코리아</option>
-							<option value="self">직접입력</option>
-						</select>
+						<input type="text"  class ="join_email" name="userEmail1" id="email1" placeholder ="이메일을 입력해주세요" readonly value="${sessionScope.mvo.userEmail1}"> @
+						<input type="text"   class ="join_email" name="userEmail2" id="email2" placeholder ="이메일 주소를 입력해주세요" readonly value="${sessionScope.mvo.userEmail2}">
 					</li>
 					<li>
 						<label>휴대폰</label>

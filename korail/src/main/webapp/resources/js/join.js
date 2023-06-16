@@ -12,58 +12,6 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
-
-
-
-/*******************************************
-		인증번호 이메일 폼 체크 
-	********************************************/
-
-
-
-	$("#userEmail3").on("change", function(){
-		if($("#userEmail3").val() == "default"){
-			alert("이메일을 선택해주세요");
-			$("#userEmail2").val("");
-			$("#usereEmail3").focus();
-		}else if($("#userEmail3").val() == "self"){
-			$("#userEmail2").val("").focus();
-		}else{
-			$("#userEmail2").val($("#userEmail3").val());
-		}		
-		
-	});
-
-
-
-
-	/*******************************************
-		이메일 폼 체크 
-	********************************************/
-
-
-
-	$("#email3").on("change", function(){
-		if($("#email3").val() == "default"){
-			alert("이메일을 선택해주세요");
-			$("#email2").val("");
-			$("#email3").focus();
-		}else if($("#email3").val() == "self"){
-			$("#email2").val("").focus();
-		}else{
-			$("#email2").val($("#email3").val());
-		}		
-		
-	});
-
-
-
 	/*******************************************
 	아이디 중복체크
 	********************************************/
@@ -140,17 +88,11 @@ $(document).ready(function(){
 			alert("성명을 입력해주세요");
 			$("#name").focus();
 			return false;
-		
-		}else if($("#email1").val() == ""){
-			alert("이메일 주소를 입력해주세요");
-			$("#email1").focus();
-			return false;
-		}else if($("#email2").val() == ""){
-			alert("이메일 주소를 선택해주세요");
-			$("#email3").focus();
-			return false;
 		}else if($("input[name='tel']:checked").length == 0){
 			alert("통신사를 선택해주세요");
+			return false;
+		}else if($("input[name='birth']:checked").length == 0){
+			alert("출생년도를 입력해주세요");
 			return false;
 		}else if($("#pnumber").val() == ""){
 			alert("폰번호를 입력해주세요");

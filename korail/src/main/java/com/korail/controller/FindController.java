@@ -14,12 +14,21 @@ public class FindController {
 	@Autowired
 	private MailSendService mailService;
 	
+	/**
+	 * 메일 인증 테스트 화면
+	 */
+	@RequestMapping(value="/findAuth.do", method=RequestMethod.GET)
+	public String mailAuth() {
+		return "/find_id/find_id1";
+	}
 	
+		
+		@RequestMapping(value="/find_id2.do")
+		public String findid2(){
 			
-		@RequestMapping(value="/find_id1.do")
-		public String findid() throws Exception{
 			
-			return "/find_id/find_id1";
+			
+			return "/find_id/find_id2";
 		}
 		
 		@RequestMapping(value="/find_pass.do", method=RequestMethod.GET)
@@ -28,25 +37,6 @@ public class FindController {
 			return "/find_pass/find_pass1";
 		}
 		
-		/**
-		 * 메일 인증 테스트 화면
-		 */
-		@RequestMapping(value="/mailAuthTest.do", method=RequestMethod.GET)
-		public String mailAuth() {
-			return "/find_id/mailAuthTest";
-		}
 		
-		/**
-		 * 메일 인증 체크
-		 */
-		@ResponseBody
-		@RequestMapping(value="/mailCheck.do", method=RequestMethod.GET)
-		public String mailCheck(String email) {
-			System.out.println("email------->>" + email);
-			
-			return mailService.joinEmail(email);
-		}
-		
-	
 	
 }

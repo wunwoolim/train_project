@@ -37,19 +37,12 @@ public class JoinController {
 	 * 메일 인증 체크
 	 */
 	@ResponseBody
-	@RequestMapping(value="/mailjoin.do", method=RequestMethod.GET)
+	@RequestMapping(value="/mailCheck.do", method=RequestMethod.GET)
 	public String mailCheck(String email) {
 		System.out.println("email------->>" + email);
 		
 		return mailService.joinEmail(email);
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	/*
@@ -75,14 +68,6 @@ public class JoinController {
 		int result = memberService.getIdCheckResult(id);
 		return String.valueOf(result);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	/*

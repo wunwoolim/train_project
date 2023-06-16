@@ -23,9 +23,6 @@ public class MemberVo {
 	}
 	int rno;
 	String mid, email , pnumber, birth , mdate,pagename,seatNum,ticketQty;
-	
-	
-	
 	public String getSeatNum() {
 		return seatNum;
 	}
