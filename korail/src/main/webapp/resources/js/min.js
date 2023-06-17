@@ -296,4 +296,22 @@ $(document).ready(function() {
 		notice_list.submit();
 	});
 	
+	/*$(document).ready(function() {
+	
+	function innid() {
+		url : "notice_content.do?nid="+nid,
+		success:function(result) {
+			
+		let jdata = JSON.parse(result);
+		
+		}
+		
+		$('#next').click(function() {
+		alert("11");
+		$('#next_hidden').val(jdata);
+	}	
+		
+	});
+});*/
+	
 });

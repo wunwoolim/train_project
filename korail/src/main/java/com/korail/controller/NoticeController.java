@@ -57,21 +57,6 @@ public class NoticeController {
 		model.setViewName("/notice/notice_list");
 		
 		return model;
-		
-		
-		
-		/*
-		 * ModelAndView model = new ModelAndView(); Map<String, Integer> param =
-		 * pageService.getPageResult(page, "notice"); ArrayList<NoticeVo> list =
-		 * noticeService.getSelect(param.get("startCount"), param.get("endCount"));
-		 * 
-		 * model.addObject("list", list); model.addObject("totals",
-		 * param.get("dbCount")); model.addObject("pageSize", param.get("pageSize"));
-		 * model.addObject("maxSize", param.get("maxSize")); model.addObject("page",
-		 * param.get("page"));
-		 * 
-		 * model.setViewName("/notice/notice_list"); return model;
-		 */
 	}
 	
 	@RequestMapping(value="/notice_content.do", method=RequestMethod.GET)
@@ -134,6 +119,7 @@ public class NoticeController {
 		public ModelAndView notice_list_nid(String nid) {
 			ModelAndView model = new ModelAndView();
 			ArrayList<NoticeVo> nlist = noticeService.getNid(nid);
+			System.out.println(nlist);
 			
 			model.addObject("nlist", nlist);
 			model.setViewName("notice/notice_list");

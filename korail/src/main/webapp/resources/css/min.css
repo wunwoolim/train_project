@@ -18,6 +18,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 	margin: 0 0 20px 0;
+	
 }
 
 
@@ -500,6 +501,7 @@ h1 {
     min-width: 708px;
     position: absolute;
     top: 0;
+    
 }
 
 .body {
@@ -509,6 +511,13 @@ h1 {
 
 .notice_content {
 	width: 70%;
+	margin: 200px auto;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+#testTable {
+	width: 100%;
 	margin: 200px auto;
 	text-align: center;
 	box-sizing: border-box;
@@ -539,6 +548,10 @@ h1 {
 	text-align: center;
 }
 
+#testTable {
+	text-align: center;
+}
+
 .notice_list tr:last-child td {
 	border: none;
 }
@@ -554,12 +567,24 @@ table.notice_content th {
 	padding:10px 0;
 	border: 1px solid black;
 }
+table #testTable th {
+	background:#ddd;
+	color:#333;	
+	width:140px;
+	padding:10px 0;
+	border: 1px solid black;
+}
 
 .notice_list tr>td {
 	text-align: center;
 }
 
 .notice_list tr:first-child>th {
+	background-color: #E91E63;
+	color: #FFF;
+}
+
+#testTable tr:first-child>th {
 	background-color: #E91E63;
 	color: #FFF;
 }
@@ -583,6 +608,19 @@ table.notice_content th {
 }
 
 table.notice_content tr:first-child td {
+	background:white;
+}
+#testTable th, td {
+	border-collapse: collapse;
+	border: 1px solid black;
+	padding: 20px 0;
+}
+
+#testTable tr:last-child td {
+	border: 1px solid black;
+}
+
+table #testTable tr:first-child td {
 	background:white;
 }
 
@@ -696,9 +734,9 @@ table.notice_content tr:last-child td button:first-child {
 }
 
 #testTable {
-	display: flex; 
-	justify-content: center;
-	align-items: center;
+	font-size: 12px;
+	width: 90%;
+	margin: 200px auto;
 }
 
 .notice_search tr:nth-child(even) {
@@ -708,3 +746,4 @@ table.notice_content tr:last-child td button:first-child {
 .notice_list tr:nth-child(even) {
   background: #F5F4F4;
 }
+

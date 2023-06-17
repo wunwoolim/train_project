@@ -39,10 +39,9 @@
 		<tr>
 			<td colspan="2">
 			<div class="button">
-				<a href="http://localhost:9000/ktx/notice_list.do" class="btn">리스트</a>
-				<a href="#" class="btn">홈으로</a>
-				<a href="#" class="btn" id="click_before"><</a>
-				<a href="#" class="btn" id="click_after">></a>
+				<a href="http://localhost:9000/ktx/notice_list.do?category=all&cvalue=all&page=1" class="btn">리스트</a>
+				<button class="btn" id="click_before"><</button>
+				<button class="btn" id="click_after">></button>
 			</div>
 			</td>
 		</tr>
