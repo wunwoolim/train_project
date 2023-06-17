@@ -57,6 +57,5 @@ public class NoticeVo {
 	public void setCvalue(String cvalue) {
 		this.cvalue = cvalue;
 	}
-
 	
 }

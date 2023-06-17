@@ -21,7 +21,7 @@ public class NoticeServiceImpl implements NoticeService {
 	}
 	
 	@Override
-	public ArrayList<NoticeVo> getSelect(int startCount, int endCount){
+	public ArrayList<NoticeVo> getSelect(int startCount, int endCount) {
 		ArrayList<NoticeVo> rlist = new ArrayList<NoticeVo>();
 		List<Object> list = noticeDao.select(startCount, endCount);
 		for(Object obj : list) {
@@ -30,6 +30,18 @@ public class NoticeServiceImpl implements NoticeService {
 		}
 		return rlist;
 	}
+	
+	
+	 public ArrayList<NoticeVo> getNid(String nid) { 
+		 ArrayList<NoticeVo> nlist = new ArrayList<NoticeVo>(); 
+		 List<NoticeVo> list = noticeDao.selectNid(nid);
+		 for(NoticeVo nobj : list ) { 
+			 NoticeVo noticeVo = nobj; 
+			 nlist.add(nobj); 
+		}
+		 return nlist; 
+		}
+	 
 	
 	@Override
 	public NoticeVo getSelect(String nid) {
@@ -53,13 +65,12 @@ public class NoticeServiceImpl implements NoticeService {
 
 	@Override
 	public ArrayList<NoticeVo> getList(int startCount, int endCount, String category, String cvalue) {
-		ArrayList<NoticeVo> rlist = new ArrayList<NoticeVo>();
-		List<Object> list = noticeDao.select(startCount, endCount, category, cvalue);
-		for(Object obj : list) {
-			NoticeVo noticeVo = (NoticeVo) obj;
-			rlist.add(noticeVo);
-		}
-		return rlist;
+		/*
+		 * ArrayList<NoticeVo> rlist = new ArrayList<NoticeVo>(); //List<Object> list =
+		 * noticeDao.select(startCount, endCount, category, cvalue); for(Object obj :
+		 * list) { NoticeVo noticeVo = (NoticeVo) obj; rlist.add(noticeVo); }
+		 */
+		return noticeDao.select(startCount, endCount, category, cvalue);
 	}
 
 }

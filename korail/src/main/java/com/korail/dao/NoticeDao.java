@@ -28,6 +28,11 @@ public class NoticeDao implements MyktxDao {
 		return (ArrayList<NoticeVo>)list;		
 	}
 	
+	public ArrayList<NoticeVo> selectNid(String nid) {
+		List<NoticeVo> list = sqlSession.selectList("mapper.notice.list3");
+		return (ArrayList<NoticeVo>)list;
+	}
+	
 	//공지사항 전체 리스트(페이징 처리)
 	@Override
 	public List<Object> select(int startCount, int endCount){
@@ -39,13 +44,14 @@ public class NoticeDao implements MyktxDao {
 	}
 	
 	
-	public List<Object> select(int startCount, int endCount, String category, String cvalue) {
+	public ArrayList<NoticeVo> select(int startCount, int endCount, String category, String cvalue) {
 		Map<String, String> param = new HashMap<String, String>();
 		param.put("start", String.valueOf(startCount));
 		param.put("end", String.valueOf(endCount));
 		param.put("category", category);
 		param.put("cvalue", cvalue);
-		return sqlSession.selectList("mapper.notice.notice_list", param);
+		List<NoticeVo> nlist = sqlSession.selectList("mapper.notice.notice_list", param);
+		return (ArrayList<NoticeVo>)nlist;
 	}
 	
 	//공지사항 등록

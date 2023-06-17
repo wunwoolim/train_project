@@ -12,4 +12,6 @@ public interface NoticeService {
 	int getDelete(String nid);
 	void getUpdateHits(String nid);
 	ArrayList<NoticeVo> getList(int startCount, int endCount, String category, String cvalue);
+	public ArrayList<NoticeVo> getNid(String nid);
+		
 }

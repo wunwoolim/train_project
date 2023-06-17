@@ -6,21 +6,24 @@
 
 <mapper namespace="mapper.page">
 
-	<select id="count" parameterType="map" resultType="int">
+	<select id="noticecount" parameterType="map" resultType="int">
 		select count(*) 
-		from
-		<if test='sname == "notice"'>
-			ktx_notice 
-			<if test= 'category =="title"'>
-				where ntitle = #{cvalue}
+		from  ktx_notice 
+		
+			 <if test = 'category == "title"'>
+				where ntitle like '%'||#{cvalue}||'%' 
 			</if>
-			<if test= 'category =="content"'>
-				where ncontent = #{cvalue}
+			<if test = 'category == "content"'>
+				where ncontent like '%'||#{cvalue}||'%' 
 			</if>
-			<if test= 'category =="title_content"'>
-				where ntitle = #{cvalue} || ncontent = #{cvalue}
-			</if>
-		</if>
+			<if test = 'category == "title_content"'>
+				where ntitle like '%'||#{cvalue}||'%' or ncontent like '%'||#{cvalue}||'%'
+			</if>				
+	</select>
+
+
+	<select id="count" parameterType="map" resultType="int">
+		select count(*)	from 
 		<if test='sname == "member"'>
 			mycgv_member
 			<if test= 'category =="custname"'>

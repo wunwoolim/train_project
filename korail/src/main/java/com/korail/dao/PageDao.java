@@ -33,4 +33,11 @@ public class PageDao {
 		return sqlSession.selectOne("mapper.page.count", param);		
 	}
 	
+	public int noticeTotalRowCount(String category, String cvalue) {
+		Map<String, String> param = new HashMap<String, String>();
+		param.put("category", category);
+		param.put("cvalue", cvalue);
+		
+		return sqlSession.selectOne("mapper.page.noticecount", param);		
+	}
 }

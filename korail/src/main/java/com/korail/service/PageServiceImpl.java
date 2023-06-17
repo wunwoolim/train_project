@@ -27,14 +27,16 @@ public class PageServiceImpl {
 		int pageCount = 1;	//전체 페이지 수
 		int dbCount = 0;	//DB에서 가져온 전체 행수
 		
-		dbCount = pageDao.totalRowCount(serviceName, category, cvalue);
+		//dbCount = pageDao.totalRowCount(serviceName, category, cvalue);
 		
-		
-		if(serviceName.equals("notice")) {			
+		if(serviceName.equals("notice")) {	
+			dbCount = pageDao.noticeTotalRowCount(category, cvalue);
 			pageSize = 3;
-		}else if(serviceName.equals("member")) {			
+		}else if(serviceName.equals("member")) {	
+			dbCount = pageDao.totalRowCount(serviceName, category, cvalue);
 			pageSize = 5;
 		}else if(serviceName.equals("adminReserv")) {
+			dbCount = pageDao.totalRowCount(serviceName, category, cvalue);
 			pageSize = 3;
 		}		
 		
@@ -117,14 +119,3 @@ public class PageServiceImpl {
 		return param;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
