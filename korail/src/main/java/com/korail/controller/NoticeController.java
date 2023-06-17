@@ -30,18 +30,8 @@ public class NoticeController {
 		ModelAndView model = new ModelAndView();
 		if(noticeVo.getCategory().equals("all")) {
 			param = pageService.getPageResult(noticeVo.getPage(), "notice", noticeVo.getCategory(), noticeVo.getCvalue());
-			System.out.println("noticeVo.getCvalue()---->" + noticeVo.getCvalue());
-			System.out.println("noticeVo.getCategory()---->" + noticeVo.getCategory());
-			System.out.println("noticeVo.getNtitle()---->" + noticeVo.getNtitle());
-			System.out.println("noticeVo.getNid()---->" + noticeVo.getNid());
-			System.out.println("noticeVo.getNdate()---->" + noticeVo.getNdate());
 			
 		} else {
-			System.out.println("noticeVo.getCvalue()---->" + noticeVo.getCvalue());
-			System.out.println("noticeVo.getCategory()---->" + noticeVo.getCategory());
-			System.out.println("noticeVo.getNtitle()---->" + noticeVo.getNtitle());
-			System.out.println("noticeVo.getNid()---->" + noticeVo.getNid());
-			System.out.println("noticeVo.getNdate()---->" + noticeVo.getNdate());
 			param = pageService.getPageResult(noticeVo.getPage(), "notice", noticeVo.getCategory(), noticeVo.getCvalue());
 		}
 		
@@ -82,19 +72,8 @@ public class NoticeController {
 		ModelAndView model = new ModelAndView();
 		if(noticeVo.getCategory().equals("all")) {
 			param = pageService.getPageResult(noticeVo.getPage(), "notice", noticeVo.getCategory(), noticeVo.getCvalue());
-			System.out.println("noticeVo.getCvalue()---->" + noticeVo.getCvalue());
-			System.out.println("noticeVo.getCategory()---->" + noticeVo.getCategory());
-			System.out.println("noticeVo.getNtitle()---->" + noticeVo.getNtitle());
-			System.out.println("noticeVo.getNid()---->" + noticeVo.getNid());
-			System.out.println("noticeVo.getNdate()---->" + noticeVo.getNdate());
 			
 		} else {
-			System.out.println("333333");
-			System.out.println("noticeVo.getCvalue()---->" + noticeVo.getCvalue());
-			System.out.println("noticeVo.getCategory()---->" + noticeVo.getCategory());
-			System.out.println("noticeVo.getNtitle()---->" + noticeVo.getNtitle());
-			System.out.println("noticeVo.getNid()---->" + noticeVo.getNid());
-			System.out.println("noticeVo.getNdate()---->" + noticeVo.getNdate());
 			param = pageService.getPageResult(noticeVo.getPage(), "notice", noticeVo.getCategory(), noticeVo.getCvalue());
 		}
 		
