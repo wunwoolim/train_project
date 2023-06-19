@@ -9,11 +9,13 @@
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/ktx/js/nomember_stplcfmpym.js"></script>
 <style>
-.title_wrap { 
-	background: url(http://localhost:9000/ktx/images/visual_chkTicket_bg.gif) center 0 no-repeat; 
-	background-size: cover;
+	.title_wrap { 
+		background: url(http://localhost:9000/ktx/images/visual_chkTicket_bg.gif) center 0 no-repeat; 
+		background-size: cover;
+		}
+	input:focus {
+  		outline: none;
 	}
-
 
 </style>
 </head>
@@ -40,7 +42,7 @@
 						<div class="agreement_tit">
 							<h4 class="first">서비스 이용약관 동의</h4>
 							<span class="custom_check chk_blue">
-								<input type="checkbox" id="agree1" onclick="fnChgCfmBtn();">
+								<input type="checkbox" name="agree" id="agree1" onclick="fnChgCfmBtn();">
 								<label for="agree1">동의</label>
 							</span>
 						</div>
@@ -252,7 +254,7 @@
 						<div class="agreement_tit">
 							<h4>개인정보 수집 및 이용 동의</h4>
 							<span class="custom_check chk_blue">
-								<input type="checkbox" id="agree3" onclick="fnChgCfmBtn();">
+								<input type="checkbox" name="agree" id="agree3" onclick="fnChgCfmBtn();">
 								<label for="agree3">동의</label>
 							</span>
 						</div>
@@ -285,7 +287,7 @@
 						<div class="agreement_tit">
 							<h4>개인정보 제3자 제공에 대한 동의</h4>
 							<span class="custom_check chk_blue">
-								<input type="checkbox" id="agree4" onclick="fnChgCfmBtn();">
+								<input type="checkbox" name="agree" id="agree4" onclick="fnChgCfmBtn();">
 								<label for="agree4">동의</label>
 							</span>
 						</div>
@@ -312,7 +314,7 @@
 					
 					<p class="agree_all chk_bor">
 						<span class="custom_check chk_purple">
-							<input type="checkbox" id="agreeAll">
+							<input type="checkbox" name="agreeAll" id="agreeAll">
 							<label for="agreeAll">전체 약관에 동의합니다.</label>
 						</span>
 					</p>
@@ -333,12 +335,12 @@
 			
 			
 			
-					<div class="section pass_user">
+					<!-- <div class="section pass_user">
 						<h4>예매 조회정보 입력</h4>
 						<p class="desc">예매사항을 조회하기 위한 필수항목 입니다. </p>				
 						<div class="boxinput_wrap01 clfix">
 							
-							<!-- 170410 휴대폰번호 셀렉박스 추가 -->
+							170410 휴대폰번호 셀렉박스 추가
 							<div class="buy_wrap">
 								<div class="send clearfix buy-t01">
 									<div class="box_inputForm">
@@ -388,7 +390,7 @@
 							</div>
 
 						</div>
-					</div>
+					</div> -->
 						
 						
 				

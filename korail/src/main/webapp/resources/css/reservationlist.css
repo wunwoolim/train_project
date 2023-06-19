@@ -1,4 +1,6 @@
-
+input:focus {
+  		outline: none;
+	}
 .btnJoin{
 	width: 515px;
 	color: #fff;

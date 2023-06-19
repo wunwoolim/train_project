@@ -172,13 +172,13 @@
 									<div class="box_inputForm ht47">
 										<strong class="send_number">카드번호</strong>
 										<span class="box_label clearfix">
-											<input type="text" name="card_number01" id="card_number01" class="input02" maxlength="4" onkeydown="this.value = onlyNumPlus(this.value);" onkeyup="fnChkNext(this,'card_number02')">
+											<input type="text" name="card_number01" id="card_number01" class="input02" maxlength="4" >
 											<span class="hyp">-</span>
-											<input type="text" name="card_number02" id="card_number02" class="input02" maxlength="4" onkeydown="this.value = onlyNumPlus(this.value);" onkeyup="fnChkNext(this,'card_number03')">
+											<input type="text" name="card_number02" id="card_number02" class="input02" maxlength="4" >
 											<span class="hyp">-</span>
-											<input type="password" name="card_number03" id="card_number03" class="input02" maxlength="4" onkeydown="this.value = onlyNumPlus(this.value);" onkeyup="fnChkNext(this,'card_number04')" data-tk-kbdtype="number" onfocus="tk.onKeyboard(this);">
+											<input type="password" name="card_number03" id="card_number03" class="input02" maxlength="4"  data-tk-kbdtype="number" onfocus="tk.onKeyboard(this);">
 											<span class="hyp">-</span>
-											<input type="password" name="card_number04" id="card_number04" class="input02" maxlength="4" onkeydown="this.value = onlyNumPlus(this.value);" onblur="" data-tk-kbdtype="number" onfocus="tk.onKeyboard(this);">
+											<input type="password" name="card_number04" id="card_number04" class="input02" maxlength="4"  onblur="" data-tk-kbdtype="number" onfocus="tk.onKeyboard(this);">
 										</span>
 										<input type="hidden" id="cardnum" name="cardnum">
 										<input type="hidden" id="userId" name="userId" value="guest">

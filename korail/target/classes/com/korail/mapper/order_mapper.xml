@@ -85,7 +85,7 @@
         SELECT rno, sstation, rdate, depPlandTime, stime, dtime, dstation, price, reservnum, trainnum, chairnum, id, cardnum, cancel
 		FROM (select rownum rno, sstation, to_char(rdate,'yy-mm-dd') rdate, depPlandTime, stime, dtime, dstation, price, reservnum, trainnum, chairnum, id, cardnum, cancel  
 				 from (select sstation, rdate, depPlandTime, stime, dtime, dstation, price, reservnum, trainnum, chairnum, id, cardnum, cancel 
-				 	FROM KTX_ORDER
+				 	FROM KTX_ORDER where cancel=0
 				    order by rdate desc))
 		where rno between #{start} and #{end}
     </select>

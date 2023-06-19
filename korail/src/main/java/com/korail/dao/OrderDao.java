@@ -75,7 +75,7 @@ public class OrderDao implements MyktxDao {
 	}
 
 	/**
-	 * 예매내역 전체 출력
+	 * 관리자 - 예매내역 전체 출력
 	 */
 	@Override
 	public List<Object> select(int startCount, int endCount) {
