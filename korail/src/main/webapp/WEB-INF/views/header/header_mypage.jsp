@@ -26,23 +26,26 @@
 				</li>
 				<li class="additional">
 					<div class="row">
-						<a href="javascript:adtnPrdPT();" class="txt_myMenu"> <span>프리패스/정기권</span><strong
-							id="adtnPrdPT">0개</strong></a>
+						<a class="txt_myMenu adtnPrdPT" style="cursor:pointer;">
+							<span>영수증 출력</span>
+							<strong>&nbsp;</strong>
+						</a>
 					</div>
 					<div class="btnBox">
-						<a href="javascript:adtnPrdPT();" class="btn btn_sm_link_white">구매내역
-							확인</a>
+						<a class="btn btn_sm_link_white adtnPrdPT" style="cursor:pointer;">영수증 출력
+						</a>
 					</div>
 				</li>
 				<li class="mileage">
 					<div class="row">
-						<a href="http://localhost:9000/ktx/mypage_receipt.do"
-							class="txt_myMenu"> <span>프리미엄 마일리지<span
-								class="ico_mileage">왕관</span>
-						</span> <strong>&nbsp;</strong></a>
+						<a href="http://localhost:9000/ktx/mypage_receipt.do" class="txt_myMenu">
+							<span>프리미엄 마일리지<span class="ico_mileage">왕관</span>
+							</span>
+							<strong>&nbsp;</strong>
+						</a>
 					</div>
 					<div class="btnBox">
-						<a href="jhttp://localhost:9000/ktx/mypage_receipt.do"
+						<a href="http://localhost:9000/ktx/mypage_receipt.do"
 							class="btn btn_sm_link_white">프리미엄 마일리지 조회</a>
 					</div>
 				</li>

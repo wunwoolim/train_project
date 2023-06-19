@@ -29,6 +29,16 @@ $(document).ready(function() {
 	 *	Mypage
 	 * 
 	 **************************************************************************/
+	 
+	 		/**
+	 		 * 마이페이지 '영수증 출력' 클릭
+	 		 */
+	 		
+			$(".adtnPrdPT").click(function(event) {
+			  var url = "http://localhost:9000/ktx/mypage_receipt.do";
+			  window.location.href = url;
+			});
+	 		
 			/**
 			 * 마이페이지 '회원탈퇴' 클릭
 			 */
@@ -422,14 +432,6 @@ $(document).ready(function() {
 		  alert("잘못된 조회");
 		}
 	});
-
-/*	
-	if (checked == "payments" || checked == "all") {
-	  checked = 0;
-	} else {
-	  checked = 1;
-	}
-*/
 
 	function initAjax(date1Str, date2Str, checked) {
 	  $.ajax({

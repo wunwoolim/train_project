@@ -1,5 +1,6 @@
 HTML CSS JSResult Skip Results Iframe
-EDIT ON /* ï¿½ë––ï¿½ì ° */      
+EDIT ON 
+	
 .dateHead div {
 	background: #e31b20;
 	color: #fff;
@@ -8,13 +9,12 @@ EDIT ON /* ï¿½ë––ï¿½ì ° */
 }
 
 .grid.dateBoard .cdate:nth-child(7n+1) {
-  background-color: rgb(248 210 206 / 50%);
+	background-color: rgb(248 210 206/ 50%);
 }
 
 .grid.dateBoard .cdate:nth-child(7n) {
-  background-color: rgb(217 233 250 / 50%);
+	background-color: rgb(217 233 250/ 50%);
 }
-
 
 .grid {
 	display: grid;
@@ -55,8 +55,8 @@ EDIT ON /* ï¿½ë––ï¿½ì ° */
 	padding: 16px 32px 5px;
 }
 
-/* é†«ëš¯ìŠ¦ è¸°ê¾ªë“‰ */
-.btn {
+/*  †« š¯ Š¦ è¸°ê¾ª “‰ */
+.cbtn {
 	display: block;
 	width: 20px;
 	height: 20px;

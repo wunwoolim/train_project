@@ -11,9 +11,9 @@
 <body>
 	<div class='rap'>
 		<div class="header">
-			<div class="btn prevDay"></div>
+			<div class="cbtn prevDay"></div>
 			<h2 class='dateTitle'></h2>
-			<div class="btn nextDay"></div>
+			<div class="cbtn nextDay"></div>
 		</div>
 		<div class="grid dateHead">
 			<div style="color: #e54c2e;">일</div>

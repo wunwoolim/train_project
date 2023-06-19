@@ -1,3 +1,32 @@
+.receipt_primary {
+	background-color: #441d7c;
+	padding: 2rem;
+	text-align: center;
+	color: white;
+}
+
+.innerpage-title {
+	font-size: 28px;
+	font-weight: 400;
+}
+
+span.radio_wrap {
+	display: flex;
+}
+
+.adtnPrdPT_modal {
+	width: 80%;
+	position: static;
+	margin: auto;
+	margin-top: 50px;
+}
+
+.subtitle {
+	padding: 20px;
+	font-weight: 200;
+	font-size: 18px;
+}
+
 .title_wrap.mypageT {
 	background: url(../images/visual_pc_mypage.jpg) center 0 no-repeat;
 	background-size: cover;
@@ -343,7 +372,7 @@ span.paging {
 	text-align: center;
 }
 /********************
-		 嶺뚮ㅄ維�占쎈펿嶺뚢댙�삕 
+		 嶺뚮ㅄ維 占쎈펿嶺뚢댙 삕 
 *********************/
 input.calendar {
 	display: none;

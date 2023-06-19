@@ -12,6 +12,11 @@
 	let c_pass = "${c_pass}";
 	let c_pnum = "${c_pnum}";
 	
+	$(".adtnPrdPT").click(function() {
+		var url = "http://localhost:9000/ktx/mypage_receipt.do";
+		window.location.href = url;
+	});
+	
 	if (c_pass == "ok") {
 		alert("비밀번호 변경 완료");
 		var url = "http://localhost:9000/ktx/mypage.do";

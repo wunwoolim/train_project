@@ -21,10 +21,10 @@ public class MypageController {
 	@Autowired
 	private MypageService mypageService;
 
-//		@RequestMapping(value="/mypage.do", method=RequestMethod.GET)
-//		public String my_page() {
-//			return "/my_page/my_page";
-//		}
+	@RequestMapping(value="/mypage_receipt.do", method=RequestMethod.GET)
+	public String mypage_receipt() {
+		return "/my_page/mypage_receipt";
+	}
 
 	@RequestMapping(value = "/mypage.do", method = RequestMethod.GET)
 	public ModelAndView my_page(HttpSession session) {
@@ -58,11 +58,6 @@ public class MypageController {
 	public String my_page_modal() {
 
 		return "/my_page/mypage_modal";
-	}
-
-	@RequestMapping(value = "/mypage_receipt.do", method = RequestMethod.GET)
-	public String my_page_receipt() {
-		return "/my_page/my_page_receipt";
 	}
 
 	@RequestMapping(value = "/mypage_Phoneproc.do", method = RequestMethod.POST)
