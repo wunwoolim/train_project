@@ -36,7 +36,7 @@ $(document).ready(function() {
 	 		
 			$(".adtnPrdPT").click(function(event) {
 			  var url = "http://localhost:9000/ktx/mypage_receipt.do";
-			  window.location.href = url;
+			  window.open(url, "_blank");
 			});
 	 		
 			/**

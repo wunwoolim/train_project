@@ -8,9 +8,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HeaderContorller {
 	@RequestMapping(value = "/header_util.do", method = RequestMethod.GET)
 	public String header_util() {
-		
+
 		return "/header/header_util";
 	}
+	@RequestMapping(value = "/header_mypage_receipt.do", method = RequestMethod.GET)
+	public String header_mypage_receipt() {
+		
+		return "/header/header_mypage_receipt";
+	}
+
 	@RequestMapping(value = "/header_cart_list.do", method = RequestMethod.GET)
 	public String header_cart_list() {
 
@@ -28,10 +34,10 @@ public class HeaderContorller {
 
 		return "/header/header_reservation";
 	}
-	
+
 	@RequestMapping(value = "/header_payment.do", method = RequestMethod.GET)
 	public String header_payment() {
-		
+
 		return "/header/header_payment";
 	}
 
@@ -40,10 +46,10 @@ public class HeaderContorller {
 
 		return "/header/header_sitemap";
 	}
-	
+
 	@RequestMapping(value = "/header_sreser.do", method = RequestMethod.GET)
 	public String header_sreser() {
-		
+
 		return "/header/header_sreser";
 	}
 

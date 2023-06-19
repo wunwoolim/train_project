@@ -23,7 +23,7 @@ public class MypageController {
 
 	@RequestMapping(value="/mypage_receipt.do", method=RequestMethod.GET)
 	public String mypage_receipt() {
-		return "/my_page/mypage_receipt";
+		return "/my_page/my_page_receipt";
 	}
 
 	@RequestMapping(value = "/mypage.do", method = RequestMethod.GET)
