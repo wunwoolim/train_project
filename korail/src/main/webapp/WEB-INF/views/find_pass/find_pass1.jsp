@@ -51,7 +51,7 @@
 						<option value="self">직접입력</option>		
 							</select>
 						</div>  
-                	<input type="text" name ="email" id="email" > 
+                	<input type="hidden" name ="email" id="email" > 
 	<ul class= "loginBoth">
 		<li>		
 				<button type="button"  id="mail-Check-Btn"  class ="btnJoin" >  인증번호 발송 </button>

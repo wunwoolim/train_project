@@ -78,7 +78,7 @@ public class LoginController {
 		SessionVo svo = memberService.getLoginResult(memberVo);
 		
 		
-		if(svo.getLoginResult() == 1) {
+		if(svo != null) {
 			session.setAttribute("svo" , svo);
 			//index 이동
 			//viewName = "index";  viewResolver를 호출--> index.jsp: header.do,footer.do 호출안됨
@@ -96,8 +96,7 @@ public class LoginController {
 				session.setAttribute("id", memberVo.getId());
 				model.setViewName("redirect:/reservation_main.do");
 			}
-		}else {
-			//login_fail.jsp
+		}else{
 			model.setViewName("redirect:/login_fail.do");
 		}
 		

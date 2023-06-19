@@ -2025,6 +2025,25 @@ fieldset{
 
 
 
+/*kimd 인증 css
+*/
+
+box_find{
+	text-align:center;
+	margin-top:20px;
+}
+.log_fail{
+	text-align:center;
+	margin:50px;}
+	
+.find1{
+margin-right:10px;
+}
+
+
+
+
+
 
 /* 고속버스 홈티켓 발행 팝업 */
 /*.pop_ticket .btns {  margin-top: 0; padding-top: 0; border-top: none;}*/

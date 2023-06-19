@@ -58,9 +58,13 @@
 					인증번호를 입력해주세요
 				<input class="form-control mail-check-input" placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6">
 					<span id="mail-check-warn"></span>
-					<button type="button"  id="authcheckBtn"  class ="btnJoin" >  인증번호 확인 </button>
 				</div>
 				
+	<ul class= "loginBoth">
+		<li>		
+					<button type="button"  id="authcheckBtn"  class ="btnJoin" >  인증번호 확인 </button>
+		</li>	
+	</ul>				
 									
 	</form>
 		<jsp:include page="../footer.jsp"></jsp:include>

@@ -59,7 +59,7 @@
 							<p class="btn_squareBox"><button onclick="fnMngChkCfm(this);" type="button" class="btn_confirm ready" id="btn_login">로그인</button></p>
 							<div class="box_searchId">
 								<a href="http://localhost:9000/ktx/findAuth.do" onclick="lgnSearchId();"><span class="ico_searchId">아이디찾기</span></a>
-								<a href="#none" onclick="lgnSearchPwd();"><span class="ico_searchPW">비밀번호찾기</span></a>
+								<a href="http://localhost:9000/ktx/find_pass.do" onclick="lgnSearchPwd();"><span class="ico_searchPW">비밀번호찾기</span></a>
 								<a href="#none" onclick="mbrsJoin();"><span class="ico_joinUs">회원가입</span></a>
 							</div>
 						</div>

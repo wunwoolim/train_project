@@ -91,16 +91,23 @@ $(document).ready(function(){
 		}else if($("input[name='tel']:checked").length == 0){
 			alert("통신사를 선택해주세요");
 			return false;
-		}else if($("input[name='birth']:checked").length == 0){
+		}else if($("#phonenumber1").val() == "default"){
+			alert("번호를 입력해주세요");
+			return false;
+		}else if($("#phone2").val() == ""){
+			alert("번호을 입력해주세요");
+			$("#phone2").focus();
+			return false;
+		}else if($("#phone3").val() == ""){
+			alert("번호을 입력해주세요");
+			$("#phone3").focus();
+			return false;
+		}else if($("#birth").val() == ""){
 			alert("출생년도를 입력해주세요");
 			return false;
-		}else if($("#pnumber").val() == ""){
-			alert("폰번호를 입력해주세요");
-			$("#pnumber").focus();
-			return false;
-			}else if($("input[name='gender']:checked").length == 0){
-			alert("성별을 선택해주세요");
-			return false;
+		}else if($("input[name='gender']:checked").length == 0){
+		alert("성별을 선택해주세요");
+		return false;
 		}else{
 			//서버전송
 			alert("회원가입에 성공하셨습니다.")

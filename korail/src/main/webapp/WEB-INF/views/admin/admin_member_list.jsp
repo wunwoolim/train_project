@@ -62,12 +62,12 @@
 <!--header  -->
 		<div class= "title_wrap loginT">
 		<jsp:include page="../header.jsp"></jsp:include>
-			 <h2 class= "login_ti" >회원관리</h2>
+			 <h2 class= "login_ti" >관리자 - 회원관리</h2>
 		 </div>	
 <!--contents  -->
 <div class="admin_member">
 		<section class="notice">
-			<h1 class="title_am">관리자 - 회원관리</h1>			
+			<h1 class="title_am"></h1>			
 			<table class = "amem_table">
 				<tr>
 					<th>번호</th>

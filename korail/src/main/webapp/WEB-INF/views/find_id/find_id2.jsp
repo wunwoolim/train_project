@@ -37,7 +37,7 @@
 	
 	</div>
       <div class="input-group">
-						<label>이메일</label>
+						<label>아이디</label>
 						<input type="text" name="userEmail1" id="email1" readonly value="${mvo.id}"> 
       
       

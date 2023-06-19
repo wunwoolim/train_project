@@ -5,37 +5,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="http://localhost:9000/ktx/css/login.css">
+<link rel="stylesheet" href="http://localhost:9000/ktx/css/reservationlist.css">
+<script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
+<script src="http://localhost:9000/ktx/js/login.js"></script>
 </head>
 <body>
 <div>
-<jsp:include page="../gnb.jsp"></jsp:include>
-<div id="contentWrap">
-<!--header  -->
-		<div class= "title_wrap loginT">
-			<div class="util">
-			
-			<ul>
-			<li>
-			<a href="http://localhost:9000/ktx/login.do"><span>로그인</span></a>
-			</li>
-			<li>
-			<a href="http://localhost:9000/ktx/join.do"><span>회원가입</span></a>
-			</li>
-			<li>
-			<a href="#"><span>마이페이지</span></a>
-			</li>
-			
-			<li>
-			<a href="#"><span>결제내역조회</span></a>
-			</li>
-			<li>
-			<a href="#"><span>사이트맵</span></a>
-			</li>
-			 </ul>
-			 </div>
-			 <h2 class= "login_ti" >로그인 실패</h2>
-		 </div>	
+	<jsp:include page="../gnb.jsp"></jsp:include>
+	<!------------------------ 타이틀 ---------------------------->
+	<div id="contentWrap">
+	<div class="title_wrap_checkTicketingT">
+		<div class="title_wrap">
+			<jsp:include page="../header.jsp"></jsp:include>
+			<h2>로그인 실패</h2>
+		</div>
+	</div>
 <!-- contents  -->
 
 <div class="content">
