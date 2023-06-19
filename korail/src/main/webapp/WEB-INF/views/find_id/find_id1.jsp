@@ -38,7 +38,7 @@
 	<p class="join2_p"> 본인 인증을 위한 이메일을 입력해 주세요.</p>
 	</div>
                 	 
-						<div class="login_id">
+						<div class="login_id" id="authsend">
                 		 <div class="input-group">
 							<input type="text" class="form-control" name="userEmail1" id="userEmail1" placeholder="이메일"  > @
 							<input type="text"  class="email_input"name ="userEmail2" id="userEmail2"  placeholder ="이메일 주소를 입력해주세요" > 
@@ -59,6 +59,7 @@
 	
 	</ul>	
 						</div>	
+		<div class="authnum">
 			<div class="mail-check-box">
 					
 					인증번호를 입력해주세요
@@ -72,6 +73,7 @@
 					</li>
 				</ul>
 									
+		</div>				
 	</form>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>

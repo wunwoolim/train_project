@@ -62,9 +62,10 @@ public class Admin_memberController {
 	@RequestMapping(value="/admin_member.do", method=RequestMethod.GET)
 	public ModelAndView admin_member_list(String page) {
 		ModelAndView model = new ModelAndView();
-		Map<String, Integer> param = pageService.getPageResult(page, "member");		
+		Map<String, Integer> param = pageService.getPageResult(page, "member","all","all");		
 		ArrayList<MemberVo> list 
 			= memberService.getList(param.get("startCount"), param.get("endCount"));
+		System.out.println(param.get("dbCount"));
 		model.addObject("list", list);
 		model.addObject("totals", param.get("dbCount"));
 		model.addObject("pageSize", param.get("pageSize"));

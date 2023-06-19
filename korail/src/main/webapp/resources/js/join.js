@@ -114,7 +114,13 @@ $(document).ready(function(){
 			joinForm.submit();
 		}
 	});	//btnJoin
+/******
 
+인증번호 발송 후 나오게 하기
+******/
+	$("#mail-Check-Btn").click(function(){
+			$(".authnum").css('display','block');
+});
 
 });
  

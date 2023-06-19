@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="http://localhost:9000/ktx/css/reservationlist.css">
+<link rel="stylesheet" href="http://localhost:9000/ktx/css/login.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/ktx/js/login.js"></script>
 </head>
@@ -24,11 +24,13 @@
 
 <div class="content">
 		<section class="login_fail">
-			<div class ="log_fail">
-			<img src="http://localhost:9000/ktx/images/login_fail.png">
-			<h1 class="title">로그인에 실패하셨습니다.</h1>
+			<div class ="fail_image">
+			<img src="http://localhost:9000/ktx/images/login_fail.png" >
+			</div>
+			<div class= "fail_alert">
+			<h1 class="failtitle">로그인에 실패하셨습니다.</h1>
 			<a href="http://localhost:9000/ktx/login.do"><span></span>
-				<button type="button" class="btn_style">로그인 페이지 이동</button>
+				<button type="button" class="btn_fail" >로그인 페이지 이동</button>
 			</a>
 			</div>
 		</section>

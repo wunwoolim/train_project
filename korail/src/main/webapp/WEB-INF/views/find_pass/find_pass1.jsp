@@ -38,10 +38,10 @@
 	<p class="join2_p"> 본인 인증을 위한 이메일을 입력해 주세요.</p>
 	</div>
                 	 
-						<div class="login_id">
+						<div class="login_id" id="authsend">
                 		 <div class="input-group">
 							<input type="text" class="form-control" name="userEmail1" id="userEmail1" placeholder="이메일"  > @
-							<input type="text"  class="email_input"name ="userEmail2" id="userEmail2"  placeholder ="이메일 주소를 입력해주세요" > 
+							<input type="text"  class="email_input" name ="userEmail2" id="userEmail2"  placeholder ="이메일 주소를 입력해주세요" > 
 							<select  id ="userEmail3" name="userEmail3">
 						<option value="default">선택</option>
 						<option value="naver.com">네이버</option>
@@ -59,15 +59,21 @@
 	
 	</ul>	
 						</div>	
+			<div class="authnum">
 			<div class="mail-check-box">
 					
 					인증번호를 입력해주세요
 				<input class="form-control mail-check-input" placeholder="인증번호 6자리를 입력해주세요!" disabled="disabled" maxlength="6">
 					<span id="mail-check-warn"></span>
-					<button type="button"  id="authcheckBtn"  class ="btnJoin" >  인증번호 확인 </button>
 				</div>
 				
+				<ul class= "loginBoth">
+					<li>	
+					<button type="button"  id="authcheckBtn"  class ="btnJoin" >  인증번호 확인 </button>
+					</li>
+				</ul>
 									
+		</div>				
 	</form>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>

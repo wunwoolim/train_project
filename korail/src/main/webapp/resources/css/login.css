@@ -1,3 +1,10 @@
+.failtitle{
+	font-weight: bold;
+    font-size: 30px;
+    color: black;
+    margin-bottom: 30px;
+}
+
 
 .login_ti{
 	margin:0;
@@ -184,10 +191,17 @@ font-weight: 1000px;
 	text-align:center;
 	margin-top:20px;
 }
-.log_fail{
+.fail_image{
 	text-align:center;
-	margin:50px;}
-	
+	margin: 50px 50px 20px 50px;
+}	
+.title_wrap{
+	background : url("http://localhost:9000/ktx/images/visual_joinT_bg.gif")center 0 no-repeat;
+	background-size: cover;
+	color:white;
+	font-size: 34px;
+	font-weight: normal;
+}	
 .find1{
 margin-right:10px;
 }
@@ -199,5 +213,27 @@ margin-right:10px;
 	height:300px;
 	text-align:center;
     padding-top: 100px;
+}
+.fail_alert{
+	    text-align: center;
+
+}
 	
+.btn_fail{
+    margin-top: 30px;
+    -webkit-font-smoothing: antialiased;
+    background-color: darkgray;
+    border: none;
+    color: #fff;
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+    text-decoration: none;
+    user-select: none;
+    letter-spacing: 1px;
+    color: white;
+    padding: 20px 40px;
+    text-transform: uppercase;
+    transition: all 0.1s ease-out;
 }

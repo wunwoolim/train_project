@@ -212,3 +212,12 @@ button {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
+
+
+
+/*떴다 안떴다 인증번호
+*/
+.authnum{
+display :none;	
+	
+}

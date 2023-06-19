@@ -56,7 +56,7 @@ public class PageServiceImpl {
 			startCount = 1;
 			endCount = pageSize;
 		}
-		
+		System.out.println("dbcount-----"+dbCount);
 		//param 객체에  데이터 put
 		param.put("startCount", startCount);
 		param.put("endCount", endCount);

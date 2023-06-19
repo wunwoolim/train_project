@@ -30,7 +30,7 @@
 		
 		jQuery('#ampaginationsm').on('am.pagination.change',function(e){
 			   jQuery('.showlabelsm').text('The selected page no: '+e.page);
-	           $(location).attr('href', "http://localhost:9000/mycgv_jsp/board_list.do?page="+e.page);         
+	           $(location).attr('href', "http://localhost:9000/ktx/admin_member.do?page="+e.page);         
 	    });
 		
 		$("#member_search").click(function(){
@@ -69,6 +69,7 @@
 		<section class="notice">
 			<h1 class="title_am"></h1>			
 			<table class = "amem_table">
+			<thead>
 				<tr>
 					<th>번호</th>
 					<th>아이디</th>
@@ -80,6 +81,7 @@
 					<th>성별</th>
 					<th>가입일자</th>
 				</tr>
+			</thead>
 				<c:forEach var="memberVo" items="${list}">
 				<tr>
 					<td>${memberVo.rno}</td>
@@ -94,7 +96,7 @@
 				</tr>	
 				</c:forEach>
 				<tr>
-					<td colspan="9" class="paging"><div id="ampaginationsm" class="paging"></div></td>
+					<td colspan="9" class="paging"><div id="ampaginationsm" class="paging" style="border:none" style ="border-top:1px solid black"></div></td>
 				</tr>	
 			</table>
 			

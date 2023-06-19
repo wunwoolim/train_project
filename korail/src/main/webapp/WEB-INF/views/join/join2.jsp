@@ -7,6 +7,8 @@
 <title>회원가입2</title>
 <link rel="stylesheet" href="http://localhost:9000/ktx/css/join2.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
+
+<script src="http://localhost:9000/ktx/js/join.js"></script>
 <script src="http://localhost:9000/ktx/js/mailAuth.js"></script>
 </head>
 <body>
@@ -31,8 +33,7 @@
 	<div class= "v_noti">
 	<p class="join2_p"> 본인 인증을 위한 이메일을 입력해 주세요.</p>
 	</div>
-                	 
-						<div class="login_id">
+                	 <div class="login_id" id="authsend">
                 		 <div class="input-group">
 							<input type="text" class="form-control" name="userEmail1" id="userEmail1" placeholder="이메일"  > @
 							<input type="text"  class="email_input"name ="userEmail2" id="userEmail2"  placeholder ="이메일 주소를 입력해주세요" > 
@@ -53,6 +54,7 @@
 	
 	</ul>	
 						</div>	
+			<div class="authnum">
 			<div class="mail-check-box">
 					
 					인증번호를 입력해주세요
@@ -60,12 +62,13 @@
 					<span id="mail-check-warn"></span>
 				</div>
 				
-	<ul class= "loginBoth">
-		<li>		
+				<ul class= "loginBoth">
+					<li>	
 					<button type="button"  id="authcheckBtn"  class ="btnJoin" >  인증번호 확인 </button>
-		</li>	
-	</ul>				
+					</li>
+				</ul>
 									
+		</div>								
 	</form>
 		<jsp:include page="../footer.jsp"></jsp:include>
 	</div>

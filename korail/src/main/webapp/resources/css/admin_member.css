@@ -87,22 +87,43 @@ padding-left:50px;
 ul{
 list-style:none;
 }
+.amem_table th{
+	color:white;
+	
+}
 
 
-
+.amem_table thead{
+	font-weight: bold;
+  color: white;
+  background: #73685d;
+	}
 .amem_table{
 	    border: 1px solid black;
     width: 70%;
-    height: 300px;
     text-align: center;
+    
+     border: 1px #a39485 solid;
+  font-size: .9em;
+  box-shadow: 0 2px 5px rgba(0,0,0,.25);
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+  margin:auto;
 }
 .amem_table tr{
 	border:1px solid black;
 }
+
+.amem_table th {
+	height: 30px;
+}
+
+.amem_table td {
+	height:50px;
+	}
 .mem_search{
-	    width: 	 650px;
 	    text-align: center;
-	    margin-left: 50px;
 	    margin-top: 30px;
 }
 .search_put{
@@ -118,9 +139,6 @@ list-style:none;
 .paging{
 height:	30px;
 }
-.admin_member{
-	margin-left:200px;
-	}
 .title_am{
 	    margin-bottom: 30px;
 }

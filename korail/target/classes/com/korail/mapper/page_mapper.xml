@@ -25,7 +25,7 @@
 	<select id="count" parameterType="map" resultType="int">
 		select count(*)	from 
 		<if test='sname == "member"'>
-			mycgv_member
+			ktx_member
 			<if test= 'category =="custname"'>
 				where name = #{cvalue}
 			</if>
