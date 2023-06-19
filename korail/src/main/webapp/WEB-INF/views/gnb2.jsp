@@ -9,6 +9,23 @@
 	href="http://localhost:9000/ktx/css/layout.css">
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/ktx/js/t3_jsp_jquery.js"></script>
+<style>
+	.gnb_pc table img {
+		width:60px;
+		vertical-align: middle;
+	}
+	.gnb_pc table {
+		margin-left: 15px;
+		border-collapse: collapse;
+		position: absolute;
+   		top: 200%;
+	}
+	.gnb_pc table td{
+		border: 1px solid #ddd;
+	}
+	
+	
+</style>
 </head>
 <body>
 	<div id="gnb" class="gnb_pc">
@@ -52,6 +69,24 @@
 				<li><a href="http://localhost:9000/ktx/admin_main.do">공지사항</a></li>
 			</ul>
 		</div>
+		
+		<div>
+			<table>
+				<tbody>
+					<tr>
+						<td><a href="https://blog.naver.com/korailblog" target="blank"><img src="http://localhost:9000/ktx/images/sns_blog.png"></a></td>
+						<td><a href="https://www.facebook.com/KoreaRailroad" target="blank"><img src="http://localhost:9000/ktx/images/sns_facebook.png"></a></td>
+						<td><a href="https://www.instagram.com/korail_official_/" target="blank"><img src="http://localhost:9000/ktx/images/sns_instagram.png" style="height:68.79px;"></a></td>
+					</tr>
+					<tr>
+						<td><a href="https://www.youtube.com/c/한국철도TV" target="blank"><img src="http://localhost:9000/ktx/images/sns_youtube.png"></a></td>
+						<td><a href="https://twitter.com/korail_official" target="blank"><img src="http://localhost:9000/ktx/images/sns_twitter.png"></a></td>
+						<td><img src="http://localhost:9000/ktx/images/sns_blank.png" style="height:68.79px;"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
 	</div>
 </body>
 </html>

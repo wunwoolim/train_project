@@ -62,7 +62,7 @@ $(document).ready(function(){
 		if($("input[name='agree']:checked").length != 3){
 			alert("서비스 이용약관 동의를 체크해주세요");
 			return false;
-		}else if($(".email").text() == null){
+		}else if($("#mail-check-warn").text() != "인증번호가 일치합니다."){
 			alert("이메일 인증을 진행해주세요");
 		}else if($(".label").text() == "카드를 선택하세요"){
 			alert("카드를 선택해주세요");

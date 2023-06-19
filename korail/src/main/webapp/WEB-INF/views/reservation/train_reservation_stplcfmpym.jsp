@@ -336,7 +336,7 @@
 								
 								<div class="login_id">
 		                		 <div class="input-group">
-									<input type="text" class="form-control" name="userEmail1" id="userEmail1" placeholder="이메일" >  @ 
+									<input type="text" class="form-control" name="useremail1" id="userEmail1" placeholder="이메일" >  @ 
 									<input type="text"  class="email_input"name ="userEmail2" id="userEmail2"  placeholder ="이메일 주소를 입력해주세요"> 
 									<select  id ="userEmail3" name="userEmail3">
 									<option value="default">선택</option>

@@ -30,7 +30,7 @@ public class PageDao {
 		Map<String, String> param = new HashMap<String, String>();
 		param.put("sname", sname);
 		
-		return sqlSession.selectOne("mapper.page.count", param);		
+		return sqlSession.selectOne("mapper.page.noticecount", param);		
 	}
 	
 	public int noticeTotalRowCount(String category, String cvalue) {

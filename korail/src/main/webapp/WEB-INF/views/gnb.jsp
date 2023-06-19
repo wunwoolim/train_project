@@ -46,10 +46,13 @@ $(document).ready(function() {
 	.gnb_pc table {
 		margin-left: 15px;
 		border-collapse: collapse;
+		position: absolute;
+    	top: 200%;
 	}
 	.gnb_pc table td{
 		border: 1px solid #ddd;
 	}
+	
 	
 </style>
 </head>

@@ -78,10 +78,7 @@ $(".btn_selectSeat").click(function() {
 							<p class="roundBox_end">도착</p>
 							<p class="roundBox arrive " id="satsArvlTmlNm">${ sessionScope.rvo.arrplacename }</p><!-- 도착지 -->
 						</div>
-						<div class="detail_info">
-							<span id="satsTakeDrtm">4시간 15분 소요</span>
-							<span id="satsDist">386.6 Km</span>
-						</div>
+						
 						<div class="btn_r">
 							<a href="#" class="btn btn_modify white" id="back2">수정</a>
 						</div>
