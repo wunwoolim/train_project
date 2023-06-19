@@ -59,4 +59,15 @@ public class MemberServiceImpl implements  MemberService{
 		 return memberDao.loginCheck(memberVo); 
 	 }
 	 
+	 @Override
+	 	public MemberVo getFindIdResult(String email) {
+		 return memberDao.findID(email);
+	 }
+	 
+	 @Override
+	 public MemberVo getFindPassResult(String email) {
+		 return memberDao.findPASS(email);
+	 }
+	 
 }
+	 

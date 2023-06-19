@@ -18,13 +18,19 @@ public class MemberDao implements MyktxDao{
 	private SqlSessionTemplate sqlSession;
 	
 	
-	/**
-	 * 회원관리 검색
-	 */
 	
-	public List<MemberVo> memberSelectAll(MemberVo membervo) {
-		return sqlSession.selectList("member-mapper.memberSelectAll", membervo);
+	
+	public MemberVo findID(String email) {
+		return sqlSession.selectOne("mapper.member.findId",email);
 	}
+	
+	
+	
+	public MemberVo findPASS(String email) {
+		return sqlSession.selectOne("mapper.member.findPass",email);
+	}
+	
+	
 	
 	
 	

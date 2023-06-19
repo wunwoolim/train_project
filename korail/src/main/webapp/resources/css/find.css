@@ -115,7 +115,11 @@ list-style:none;
 		cursor:pointer;
 	}
 	
+.input-group{
+	text-align: center;
+}
 .input-group input{
+	
 	background-color: #f3f4f6;
 	width:25%;
 	padding:8px 20px;
@@ -167,6 +171,9 @@ list-style:none;
     font-size: 0;
     text-align: left;
 }
+.box_searchId {
+margin-left: 450px;
+	}
 button {
     cursor: pointer;
 }

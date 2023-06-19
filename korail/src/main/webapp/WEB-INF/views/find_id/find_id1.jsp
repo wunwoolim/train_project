@@ -33,7 +33,7 @@
 	<div class ="content">
 	<div class = "verti_form">
 	
-	<form name = "verti" action ="#" method ="get">
+	<form name = "verti" action ="find_id2.do" method ="POST">
 	<div class= "v_noti">
 	<p class="join2_p"> 본인 인증을 위한 이메일을 입력해 주세요.</p>
 	</div>
@@ -51,7 +51,7 @@
 						<option value="self">직접입력</option>		
 							</select>
 						</div>  
-                	
+                	<input type="text" name ="email" id="email" > 
 	<ul class= "loginBoth">
 		<li>		
 				<button type="button"  id="mail-Check-Btn"  class ="btnJoin" >  인증번호 발송 </button>

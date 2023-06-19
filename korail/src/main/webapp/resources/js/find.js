@@ -1,6 +1,27 @@
 $(document).ready(function(){
 
 /****************************
+아이디 찾기 인증번호 같을 시 다음페이지
+****************************/
+	$("#authcheckBtn").click(function(){
+			if($('#mail-check-warn').text() == '인증번호가 일치합니다.'){
+				const email = $('#userEmail1').val()+ '@' + $('#userEmail2').val();
+				
+				$("#email").val(email);
+				
+				verti.submit();
+			}
+
+
+
+
+	});
+
+
+
+
+
+/****************************
 아이디 찾기 
 ****************************/
 	$(function(){

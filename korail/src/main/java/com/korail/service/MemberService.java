@@ -11,6 +11,7 @@ public interface MemberService {
 	public int getJoinResult(MemberVo memberVo); 	
 	 public ArrayList<MemberVo> getList(int startCount, int endCount); 
 	public ArrayList<MemberVo> getList(int startCount, int endCount, String category, String cvalue);
-
+ 	public MemberVo getFindIdResult(String email);
+ 	public MemberVo getFindPassResult(String email);
 		/* public int getTotalRowCount(); */
 }

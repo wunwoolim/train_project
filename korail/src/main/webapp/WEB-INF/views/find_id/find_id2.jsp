@@ -38,9 +38,7 @@
 	</div>
       <div class="input-group">
 						<label>이메일</label>
-						<input type="text" name="userEmail1" id="email1" placeholder ="이메일을 입력해주세요" readonly value="${sessionScope.mvo.userEmail1}"> @
-						<input type="text" name="userEmail2" id="email2" placeholder ="이메일 주소를 입력해주세요" readonly value="${sessionScope.mvo.userEmail2}">
-   						<input type="text"	name="id_find_result" id ="id_find_result">   
+						<input type="text" name="userEmail1" id="email1" readonly value="${mvo.id}"> 
       
       
       </div>            	 

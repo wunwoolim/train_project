@@ -4,33 +4,56 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>비밀번호 찾기 2</title>
+<title>아이디 찾기 1</title>
+<link rel="stylesheet" href="http://localhost:9000/ktx/css/find.css">
+ 	 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
+	 <script src="http://localhost:9000/ktx/js/find.js"></script>
 </head>
 <body>
+<div>
+<jsp:include page="../gnb.jsp"></jsp:include>
 
-<div class ="content">
-<h2 > 회원가입시 입력한 정보를 입력하세요.</h2>
-			<form name = "find" action ="#" method ="get">
-			<ul>
-			<li>
-			<label>아이디</label>
-			<input type="text" name="phonenumber" id="phonenumber" placeholder="아이디를 입력하세요">
-			<button type="button" class="find" id="find">확인</button>
-			</li>
-			</ul>
-			</form>
+<div id="contentWrap">
+<!--header  -->
+		<div class= "title_wrap loginT">
+			<jsp:include page="../header.jsp"></jsp:include>
+			 <h2 class= "login_ti" >비밀번호 찾기</h2>
+		 </div>	
+	<!--body  -->
 	
+	<div class ="content">
+		<div class ="verti_form">
+		<div class= "v_noti">
+		</div>
+			
+			<div class="login_inner">
+				</div>
+<!-- content -->
+	<div class ="content">
+	<div class = "verti_form">
 	
-	<ul>
-	<li>회원 정보에 들어있는 휴대폰 번호로 임시번호를 발송합니다.</li>
+	<div class= "v_noti">
+	<p class="join2_p"> 회원님의 비밀번호는 다음과 같습니다.</p>
 	
-	<li><button type="button">임시번호 발송</button> </li>
-	</ul>
-	
-	
+	</div>
+      <div class="input-group">
+						<label>비밀번호</label>
+						<input type="text" name="userEmail1" id="email1" readonly value="${mvo.pass}"> 
+      
+      
+      </div>            	 
+             <div class="box_searchId">
+ 	           		<a href="http://localhost:9000/ktx/login.do" onclick="lgnSearchId();"><span class="ico_searchId">아이디찾기</span></a>
+					<a href="#none" onclick="lgnSearchPwd();"><span class="ico_searchPW">비밀번호찾기</span></a>
+             </div>
+             
+                	
+		<jsp:include page="../footer.jsp"></jsp:include>
+	</div>
+	</div>
+	</div>
+	</div>
 </div>
-
-
-
+</div>
 </body>
 </html>

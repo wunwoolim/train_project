@@ -7,6 +7,20 @@
 <mapper namespace="mapper.member">
 	
 	
+	<select id="findPass" parameterType="String" resultType="com.korail.vo.MemberVo">
+		 SELECT PASS FROM KTX_MEMBER  WHERE EMAIL = #{email}
+	
+	</select>
+
+
+
+	<select id="findId" parameterType="String" resultType="com.korail.vo.MemberVo">
+		 SELECT ID FROM KTX_MEMBER  WHERE EMAIL = #{email}
+	
+	</select>
+	
+	
+	
 	
 	<select id="memberSelectAll" resultType="com.korail.vo.MemberVo">
 		SELECT * 
