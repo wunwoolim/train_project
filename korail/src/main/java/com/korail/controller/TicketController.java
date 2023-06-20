@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class TicketController {
 	
-	@RequestMapping(value="/payment_info.do", method=RequestMethod.GET)
+	@RequestMapping(value="/info_payment.do", method=RequestMethod.GET)
 	public String payment_info() {
-		return "ticket_info/payment_info";
+		return "ticket_info/info_payment";
 	}
 	
-	@RequestMapping(value="/refund_info.do", method=RequestMethod.GET)
+	@RequestMapping(value="/info_refund.do", method=RequestMethod.GET)
 	public String refund_info() {
-		return "ticket_info/refund_info";
+		return "ticket_info/info_refund";
 	}
 	
-	@RequestMapping(value="/reservation_info.do", method=RequestMethod.GET)
+	@RequestMapping(value="/info_reservation.do", method=RequestMethod.GET)
 	public String reservation_info() {
-		return "ticket_info/reservation_info";
+		return "ticket_info/info_reservation";
 	}
 
 }
