@@ -50,6 +50,26 @@ $(document).ready(function() {
 					let output = "<div class='station'><div class='station-section two-column'><div class='col-left'>";	
 						output += "<img src='http://localhost:9000/ktx/images/" + obj.clink1 + "' class= 'train_category'>";
 						output += "<img src='http://localhost:9000/ktx/images/" + obj.clink2 + "' class= 'category_map'>";
+						output += "<ul><li class='station01'><a href='#'>서울</a></li></ul>";
+						output += "<ul><li class='station02'><a href='#'>수원</a></li></ul>";
+						output += "<ul><li class='station03'><a href='#'>부산</a></li></ul>";
+						output += "<ul><li class='station04'><a href='#'>용산</a></li></ul>";
+						output += "<ul><li class='station05'><a href='#'>천안아산(온양온천)</a></li></ul>";
+						output += "<ul><li class='station06'><a href='#'>광주송정</a></li></ul>";
+						output += "<ul><li class='station07'><a href='#'>대전</a></li></ul>";
+						output += "<ul><li class='station08'><a href='#'>동대구</a></li></ul>";
+						output += "<ul><li class='station09'><a href='#'>서대전</a></li></ul>";
+						output += "<ul><li class='station10'><a href='#'>여수엑스포</a></li></ul>";
+						output += "<ul><li class='station11'><a href='#'>청량리</a></li></ul>";
+						output += "<ul><li class='station12'><a href='#'>횡성</a></li></ul>";
+						output += "<ul><li class='station13'><a href='#'>강릉</a></li></ul>";
+						output += "<ul><li class='station14'><a href='#'>단양</a></li></ul>";
+						output += "<ul><li class='station15'><a href='#'>안동</a></li></ul>";
+						output += "<ul><li class='station16'><a href='#'>부발</a></li></ul>";
+						output += "<ul><li class='station17'><a href='#'>가남</a></li></ul>";
+						output += "<ul><li class='station18'><a href='#'>충주</a></li></ul>";
+						
+						
 						output += "</div><div class='col-right'><div class='container-top'>";
 						output += "<h2 class='title'>" + obj.station + "</h2>";
 						output += "<div class='container-mover'><a class='btn' id='before'><</a><a class='btn' id='next'>></a></div>";
@@ -60,7 +80,7 @@ $(document).ready(function() {
 						output += "<div class='button'><a href='#info' class='btn'>기차역 상세</a></div></div></div></div></div>";
 						output += "<div class='station-basic-info'><div class='info-top'><h3 id='info'>기본 정보</h3>";
 						output += "<div class='station-info'>" + obj.info + "</div></div>";
-						output += "<div class='info-bottom'><h3>서울역 연혁</h3>";
+						output += "<div class='info-bottom'><h3>연혁</h3>";
 						output += "<ol>";
 						for(hobj of obj.jhistory) {
 							output += "<li class='info-bottom'>" + hobj.history + "</li>";
@@ -295,23 +315,5 @@ $(document).ready(function() {
 		} 
 		notice_list.submit();
 	});
-	
-	/*$(document).ready(function() {
-	
-	function innid() {
-		url : "notice_content.do?nid="+nid,
-		success:function(result) {
-			
-		let jdata = JSON.parse(result);
-		
-		}
-		
-		$('#next').click(function() {
-		alert("11");
-		$('#next_hidden').val(jdata);
-	}	
-		
-	});
-});*/
 	
 });

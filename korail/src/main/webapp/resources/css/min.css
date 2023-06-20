@@ -341,8 +341,12 @@ h1 {
 	margin-left: 20px;
 }
 
-.station-basic-info .info-top, .info-bottom {
+.station-basic-info {
 	margin: 50px;
+}
+
+.info-top, .info-bottom {
+	margin: 50px 50px 50px 0;	
 }
 
 .container-bottom table {
@@ -761,4 +765,138 @@ table.notice_content tr:last-child td button:first-child {
 
 #click_after:hover {
 	cursor: pointer;
+}
+
+.col-left li a{
+	display:block;
+	position:absolute;
+	height:16px;
+	text-align:center;
+	font-size:11px;
+	border:1px solid #9e9e9e;
+	border-radius:1px;
+	text-decoration: none;
+	box-shadow:1px 1px 0 rgba(0,0,0,.2);
+	text-decoration: none;
+	background: white;
+}
+
+.col-left ul {
+	list-style-type: none;
+	text-decoration: none;
+}
+
+.col-left ul>li {
+	text-decoration: none;
+}
+#map {
+	margin: auto;
+}
+
+.station01 a {
+	width: 25px;
+	left: 127px;
+	top: 78px;
+}
+
+.station02 a {
+	width: 30px;
+	left: 162px;
+	top: 180px;
+}
+
+.station03 a {
+	width: 30px;
+	left: 375px;
+	top: 433px;
+}
+
+.station04 a {
+	width: 40px;
+	left:150px;
+	top: 110px;
+}
+
+.station05 a {
+	width: 100px;
+	left: 25px;
+	top: 220px;
+}
+
+.station06 a {
+	width: 50px;
+	left: 122px;
+	top: 437px;
+}
+
+.station07 a {
+	width: 30px;
+	left: 194px;
+	top: 280px;
+}
+
+.station08 a {
+	width: 40px;
+	left: 314px;
+	top: 320px;
+}
+
+.station09 a {
+	width: 40px;
+	left: 196px;
+	top: 284px;
+}
+
+.station10 a {
+	width: 58px;
+	left: 170px;
+	top: 502px;
+}
+
+.station11 a {
+	width: 35px;
+	left: 155px;
+	top: 78px;
+}
+
+.station12 a {
+	width: 25px;
+	left: 230px;
+	top: 116px;
+}
+
+.station13 a {
+	width: 25px;
+	left: 358px;
+	top: 98px;
+}
+
+.station14 a {
+	width: 25px;
+	left: 247px;
+	top: 188px;
+}
+
+.station15 a {
+	width: 25px;
+	left: 339px;
+	top: 250px;
+}
+
+.station16 a {
+	width: 25px;
+	left: 170px;
+	top: 133px;
+}
+
+.station17 a {
+	width: 25px;
+	left: 207px;
+	top: 160px;
+}
+
+.station18 a {
+	width: 25px;
+	left: 252px;
+	top: 198px;
 }
