@@ -32,10 +32,10 @@ public class PageServiceImpl {
 		if(serviceName.equals("notice")) {	
 			dbCount = pageDao.noticeTotalRowCount(category, cvalue);
 			pageSize = 3;
-		}else if(serviceName.equals("member")) {	
+		} else if(serviceName.equals("member")) {	
 			dbCount = pageDao.totalRowCount(serviceName, category, cvalue);
 			pageSize = 5;
-		}else if(serviceName.equals("adminReserv")) {
+		} else if(serviceName.equals("adminReserv")) {
 			dbCount = pageDao.totalRowCount(serviceName, category, cvalue);
 			pageSize = 5;
 		}		
@@ -43,7 +43,7 @@ public class PageServiceImpl {
 		//총 페이지 수 계산
 		if(dbCount % pageSize == 0){
 			pageCount = dbCount/pageSize;
-		}else{
+		} else{
 			pageCount = dbCount/pageSize+1;
 		}
 		
@@ -52,7 +52,7 @@ public class PageServiceImpl {
 			reqPage = Integer.parseInt(page);
 			startCount = (reqPage-1) * pageSize+1; 
 			endCount = reqPage *pageSize;
-		}else{
+		} else{
 			startCount = 1;
 			endCount = pageSize;
 		}
@@ -85,16 +85,16 @@ public class PageServiceImpl {
 		
 		if(serviceName.equals("notice")) {			
 			pageSize = 3;
-		}else if(serviceName.equals("member")) {			
+		} else if(serviceName.equals("member")) {			
 			pageSize = 5;
-		}else if(serviceName.equals("adminReserv")) {
+		} else if(serviceName.equals("adminReserv")) {
 			pageSize = 5;
 		}
 		
 		//총 페이지 수 계산
 		if(dbCount % pageSize == 0){
 			pageCount = dbCount/pageSize;
-		}else{
+		} else{
 			pageCount = dbCount/pageSize+1;
 		}
 
@@ -103,7 +103,7 @@ public class PageServiceImpl {
 			reqPage = Integer.parseInt(page);
 			startCount = (reqPage-1) * pageSize+1; 
 			endCount = reqPage *pageSize;
-		}else{
+		} else{
 			startCount = 1;
 			endCount = pageSize;
 		}
