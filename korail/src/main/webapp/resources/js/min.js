@@ -16,7 +16,7 @@ $(document).ready(function() {
 						rno = '2';
 					}
 					
-					if(route == 'kyeongbu') {
+					if(route == 'kyeongbu') {					
 						station = "서울역";
 					} else if(route == 'honam') {
 						station = "용산역";
@@ -36,6 +36,39 @@ $(document).ready(function() {
 		initAjax(route, rno, station, 'c');
 		
 		});	//onClick	
+		
+		function display_station(category) {
+			$(".map_station").css("display", "none");
+			if(category == "kyeongbu") {
+				$("#station01").css("display", "block");
+				$("#station02").css("display", "block");
+				$("#station03").css("display", "block");
+			} else if(category == "honam") {
+				$("#station04").css("display", "block");
+				$("#station05").css("display", "block");
+				$("#station06").css("display", "block");
+			} else if(category == "kyeongjeon") {
+				$("#station07").css("display", "block");
+				$("#station08").css("display", "block");
+				$("#station09").css("display", "block");
+			} else if(category == "jeonla") {
+				$("#station10").css("display", "block");
+				$("#station11").css("display", "block");
+				$("#station12").css("display", "block");
+			} else if(category == "kangleung") {
+				$("#station13").css("display", "block");
+				$("#station14").css("display", "block");
+				$("#station15").css("display", "block");
+			} else if(category == "joongang") {
+				$("#station16").css("display", "block");
+				$("#station17").css("display", "block");
+				$("#station18").css("display", "block");
+			} else {
+				$("#station19").css("display", "block");
+				$("#station20").css("display", "block");
+				$("#station21").css("display", "block");
+			}
+		}
 	
 		function initAjax(category, rno, station, type) {
 			$.ajax({
@@ -50,26 +83,27 @@ $(document).ready(function() {
 					let output = "<div class='station'><div class='station-section two-column'><div class='col-left'>";	
 						output += "<img src='http://localhost:9000/ktx/images/" + obj.clink1 + "' class= 'train_category'>";
 						output += "<img src='http://localhost:9000/ktx/images/" + obj.clink2 + "' class= 'category_map'>";
-						output += "<ul><li class='station01'><a href='#'>서울</a></li></ul>";
-						output += "<ul><li class='station02'><a href='#'>수원</a></li></ul>";
-						output += "<ul><li class='station03'><a href='#'>부산</a></li></ul>";
-						output += "<ul><li class='station04'><a href='#'>용산</a></li></ul>";
-						output += "<ul><li class='station05'><a href='#'>천안아산(온양온천)</a></li></ul>";
-						output += "<ul><li class='station06'><a href='#'>광주송정</a></li></ul>";
-						output += "<ul><li class='station07'><a href='#'>대전</a></li></ul>";
-						output += "<ul><li class='station08'><a href='#'>동대구</a></li></ul>";
-						output += "<ul><li class='station09'><a href='#'>서대전</a></li></ul>";
-						output += "<ul><li class='station10'><a href='#'>여수엑스포</a></li></ul>";
-						output += "<ul><li class='station11'><a href='#'>청량리</a></li></ul>";
-						output += "<ul><li class='station12'><a href='#'>횡성</a></li></ul>";
-						output += "<ul><li class='station13'><a href='#'>강릉</a></li></ul>";
-						output += "<ul><li class='station14'><a href='#'>단양</a></li></ul>";
-						output += "<ul><li class='station15'><a href='#'>안동</a></li></ul>";
-						output += "<ul><li class='station16'><a href='#'>부발</a></li></ul>";
-						output += "<ul><li class='station17'><a href='#'>가남</a></li></ul>";
-						output += "<ul><li class='station18'><a href='#'>충주</a></li></ul>";
-						
-						
+						output += "<ul><li class='map_station' id='station01'><a href='#'>서울</a></li>";
+						output += "<li class='map_station' id='station02'><a href='#'>수원</a></li>";
+						output += "<li class='map_station' id='station03'><a href='#'>부산</a></li>";
+						output += "<li class='map_station' id='station04'><a href='#'>용산</a></li>";
+						output += "<li class='map_station' id='station05'><a href='#'>천안아산(온양온천)</a></li>";
+						output += "<li class='map_station' id='station06'><a href='#'>광주송정</a></li>";
+						output += "<li class='map_station' id='station07'><a href='#'>서울</a></li>";
+						output += "<li class='map_station' id='station08'><a href='#'>대전</a></li>";
+						output += "<li class='map_station' id='station09'><a href='#'>동대구</a></li>";
+						output += "<li class='map_station' id='station10'><a href='#'>용산</a></li>";
+						output += "<li class='map_station' id='station11'><a href='#'>서대전</a></li>";
+						output += "<li class='map_station' id='station12'><a href='#'>여수엑스포</a></li>";
+						output += "<li class='map_station' id='station13'><a href='#'>청량리</a></li>";
+						output += "<li class='map_station' id='station14'><a href='#'>횡성</a></li>";
+						output += "<li class='map_station' id='station15'><a href='#'>강릉</a></li>";
+						output += "<li class='map_station' id='station16'><a href='#'>청량리</a></li>";
+						output += "<li class='map_station' id='station17'><a href='#'>단양</a></li>";
+						output += "<li class='map_station' id='station18'><a href='#'>안동</a></li>";
+						output += "<li class='map_station' id='station19'><a href='#'>부발</a></li>";
+						output += "<li class='map_station' id='station20'><a href='#'>가남</a></li>";
+						output += "<li class='map_station' id='station21'><a href='#'>충주</a></li></ul>";
 						output += "</div><div class='col-right'><div class='container-top'>";
 						output += "<h2 class='title'>" + obj.station + "</h2>";
 						output += "<div class='container-mover'><a class='btn' id='before'><</a><a class='btn' id='next'>></a></div>";
@@ -103,8 +137,93 @@ $(document).ready(function() {
 					$(".station-map-info").remove();
 					$(".station").remove();
 					$(".station-basic-info").remove();
-					$(".route").after(output);				
+					$(".route").after(output);
 					
+					display_station(category);
+					
+					$("#station01").click(function() {
+						initAjax("kyeongbu", '1', '서울역', 'c');
+					});
+					
+					$("#station02").click(function() {
+						initAjax("kyeongbu", '2', '수원역', 'c');
+					});
+					
+					$("#station03").click(function() {
+						initAjax("kyeongbu", '3', '부산역', 'c');
+					});
+					
+					$("#station04").click(function() {
+						initAjax("honam", '1', '용산역', 'c');
+					});
+					
+					$("#station05").click(function() {
+						initAjax("honam", '2', '천안아산역', 'c');
+					});
+					
+					$("#station06").click(function() {
+						initAjax("honam", '3', '광주송정역', 'c');
+					});
+					
+					$("#station07").click(function() {
+						initAjax("kyeongjeon", '1', '서울역', 'c');
+					});
+					
+					$("#station08").click(function() {
+						initAjax("kyeongjeon", '2', '대전역', 'c');
+					});
+					
+					$("#station09").click(function() {
+						initAjax("kyeongjeon", '3', '동대구역', 'c');
+					});
+					
+					$("#station10").click(function() {
+						initAjax("jeonla", '1', '용산역', 'c');
+					});
+					
+					$("#station11").click(function() {
+						initAjax("jeonla", '2', '서대전역', 'c');
+					});
+					
+					$("#station12").click(function() {
+						initAjax("jeonla", '3', '여수엑스포역', 'c');
+					});
+					
+					$("#station13").click(function() {
+						initAjax("kangleung", '2', '청량리역', 'c');
+					});
+					
+					$("#station14").click(function() {
+						initAjax("kangleung", '3', '횡성역', 'c');
+					});
+					
+					$("#station15").click(function() {
+						initAjax("kangleung", '1', '강릉역', 'c');
+					});
+					
+					$("#station16").click(function() {
+						initAjax("joongang", '1', '청량리역', 'c');
+					});
+					
+					$("#station17").click(function() {
+						initAjax("joongang", '2', '단양역', 'c');
+					});
+					
+					$("#station18").click(function() {
+						initAjax("joongang", '3', '안동역', 'c');
+					});
+					
+					$("#station19").click(function() {
+						initAjax("joongbu", '1', '부발역', 'c');
+					});
+					
+					$("#station20").click(function() {
+						initAjax("joongbu", '2', '가남역', 'c');
+					});
+					
+					$("#station21").click(function() {
+						initAjax("joongbu", '3', '충주역', 'c');
+					});
 										
 					$("#before").on("click", function() {
 						var count = $("#station_count2").val();
@@ -249,7 +368,6 @@ $(document).ready(function(){
 
 });
 	
-
 //공지사항 등록
 $(document).ready(function() {
 	$("#btnSubmit").click(function() {

@@ -793,110 +793,133 @@ table.notice_content tr:last-child td button:first-child {
 	margin: auto;
 }
 
-.station01 a {
+#station01 a {
 	width: 25px;
 	left: 127px;
 	top: 78px;
 }
 
-.station02 a {
+#station02 a {
 	width: 30px;
 	left: 162px;
 	top: 180px;
 }
 
-.station03 a {
+#station03 a {
 	width: 30px;
 	left: 375px;
 	top: 433px;
 }
 
-.station04 a {
+#station04 a {
 	width: 40px;
 	left:150px;
 	top: 110px;
 }
 
-.station05 a {
+#station05 a {
 	width: 100px;
 	left: 25px;
 	top: 220px;
 }
 
-.station06 a {
+#station06 a {
 	width: 50px;
 	left: 122px;
 	top: 437px;
 }
 
-.station07 a {
+#station07 a {
+	width: 25px;
+	left: 127px;
+	top: 78px;
+}
+
+#station08 a {
 	width: 30px;
 	left: 194px;
 	top: 280px;
 }
 
-.station08 a {
+#station09 a {
 	width: 40px;
 	left: 314px;
 	top: 320px;
 }
 
-.station09 a {
+#station10 a {
+	width: 40px;
+	left:150px;
+	top: 110px;
+}
+
+#station11 a {
 	width: 40px;
 	left: 196px;
 	top: 284px;
 }
 
-.station10 a {
+#station12 a {
 	width: 58px;
-	left: 170px;
-	top: 502px;
+	left: 210px;
+	top: 498px;
 }
 
-.station11 a {
+#station13 a {
 	width: 35px;
-	left: 155px;
-	top: 78px;
+	left: 128px;
+	top: 80px;
 }
 
-.station12 a {
+#station14 a {
 	width: 25px;
 	left: 230px;
 	top: 116px;
 }
 
-.station13 a {
+#station15 a {
 	width: 25px;
 	left: 358px;
-	top: 98px;
+	top: 96px;
 }
 
-.station14 a {
+#station16 a {
+	width: 35px;
+	left: 128px;
+	top: 80px;
+}
+
+#station17 a {
 	width: 25px;
 	left: 247px;
 	top: 188px;
 }
 
-.station15 a {
+#station18 a {
 	width: 25px;
 	left: 339px;
 	top: 250px;
 }
 
-.station16 a {
+#station19 a {
 	width: 25px;
 	left: 170px;
 	top: 133px;
 }
 
-.station17 a {
+#station20 a {
 	width: 25px;
 	left: 207px;
 	top: 160px;
 }
 
-.station18 a {
+#station21 a {
 	width: 25px;
 	left: 252px;
 	top: 198px;
+}
+
+.col-left li a:hover {
+	background-color: magenta;
+	color: white;
 }

@@ -9,11 +9,6 @@ public class StationDao extends DBConn {
 	
 	public StationVo select(String category, int rno, String sname, String type) {
 		
-		System.out.println(category);
-		System.out.println(rno);
-		System.out.println(sname);
-		System.out.println(type);
-		
 		StationVo stationVo = new StationVo();
 		String sql="";
 		if(type.equals("c")) {
