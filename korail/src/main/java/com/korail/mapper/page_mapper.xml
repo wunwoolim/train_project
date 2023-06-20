@@ -7,10 +7,8 @@
 <mapper namespace="mapper.page">
 
 	<select id="noticecount" parameterType="map" resultType="int">
-		select count(*) 
-		from  ktx_notice 
-		
-			 <if test = 'category == "title"'>
+		select count(*) from  ktx_notice 
+		    <if test = 'category == "title"'>
 				where ntitle like '%'||#{cvalue}||'%' 
 			</if>
 			<if test = 'category == "content"'>

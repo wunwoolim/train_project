@@ -30,7 +30,6 @@ public class NoticeController {
 		ModelAndView model = new ModelAndView();
 		if(noticeVo.getCategory().equals("all")) {
 			param = pageService.getPageResult(noticeVo.getPage(), "notice", noticeVo.getCategory(), noticeVo.getCvalue());
-			
 		} else {
 			param = pageService.getPageResult(noticeVo.getPage(), "notice", noticeVo.getCategory(), noticeVo.getCvalue());
 		}
@@ -54,11 +53,37 @@ public class NoticeController {
 		ModelAndView model = new ModelAndView();
 		
 		NoticeVo noticeVo = noticeService.getSelect(nid);
+		ArrayList<NoticeVo> nlist = noticeService.getNid(nid);
+		int pidx = 0;
+		int nidx = 0;
+		int idx = 0;
+		
+		for(int i=0; i<nlist.size(); i++) {
+			NoticeVo nvo = nlist.get(i);
+			if(nvo.getNid().equals(nid)) {
+				idx = i;
+				if(idx == 0) {
+					pidx = nlist.size()-1;
+					nidx = idx+1;
+				} else if(idx == nlist.size()-1) {
+					pidx = idx-1;
+					nidx = 0;
+				} else {
+					pidx = idx-1;
+					nidx = idx+1;
+				}
+			}
+			
+		}
+		
 		if(noticeVo != null) {
 			noticeService.getUpdateHits(nid);
 		}
 		
 		model.addObject("noticeVo", noticeVo);
+		model.addObject("nprev", nlist.get(pidx).getNid());
+		model.addObject("nnext", nlist.get(nidx).getNid());
+		
 		model.setViewName("/notice/notice_content");
 		
 		return model;
@@ -94,15 +119,14 @@ public class NoticeController {
 		return model;
 	}
 	
-		@RequestMapping(value="/notice_list_nid.do", method= RequestMethod.GET)	
+		/*@RequestMapping(value="/notice_list_nid.do", method= RequestMethod.GET)	
 		public ModelAndView notice_list_nid(String nid) {
 			ModelAndView model = new ModelAndView();
 			ArrayList<NoticeVo> nlist = noticeService.getNid(nid);
-			System.out.println(nlist);
 			
 			model.addObject("nlist", nlist);
-			model.setViewName("notice/notice_list");
+			model.setViewName("notice/notice_content");
 			return model;
-		}
+		}*/
 	
 }

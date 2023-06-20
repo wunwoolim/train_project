@@ -19,7 +19,7 @@ public class NoticeDao implements MyktxDao {
 	
 	//공지사항 상세보기
 	public NoticeVo select(String nid){
-		return sqlSession.selectOne("mapper.notice.content", nid);		
+		return sqlSession.selectOne("mapper.notice.content", nid);
 	}
 	
 	//공지사항 전체 리스트
@@ -28,7 +28,7 @@ public class NoticeDao implements MyktxDao {
 		return (ArrayList<NoticeVo>)list;		
 	}
 	
-	public ArrayList<NoticeVo> selectNid(String nid) {
+	public ArrayList<NoticeVo> selectNid() {
 		List<NoticeVo> list = sqlSession.selectList("mapper.notice.list3");
 		return (ArrayList<NoticeVo>)list;
 	}

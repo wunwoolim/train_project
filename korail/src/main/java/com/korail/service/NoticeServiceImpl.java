@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import com.korail.dao.NoticeDao;
 import com.korail.vo.NoticeVo;
 
@@ -30,18 +31,9 @@ public class NoticeServiceImpl implements NoticeService {
 		}
 		return rlist;
 	}
-	
-	
 	 public ArrayList<NoticeVo> getNid(String nid) { 
-		 ArrayList<NoticeVo> nlist = new ArrayList<NoticeVo>(); 
-		 List<NoticeVo> list = noticeDao.selectNid(nid);
-		 for(NoticeVo nobj : list ) { 
-			 NoticeVo noticeVo = nobj; 
-			 nlist.add(nobj); 
+		 return noticeDao.selectNid(); 
 		}
-		 return nlist; 
-		}
-	 
 	
 	@Override
 	public NoticeVo getSelect(String nid) {

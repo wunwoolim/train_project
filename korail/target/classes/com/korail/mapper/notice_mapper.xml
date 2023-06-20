@@ -23,8 +23,8 @@
 					where rno between #{start} and #{end}
 	</select>
 	
-	<select id="list3" parameterType="map" resultType="com.korail.vo.NoticeVo">
-		select nid from ktx_notice where nid=#{nid}
+	<select id="list3" parameterType="String" resultType="com.korail.vo.NoticeVo">
+		select nid from ktx_notice order by ndate desc
 	</select>
 	
 	<select id="notice_list" parameterType="map" resultType="com.korail.vo.NoticeVo">
