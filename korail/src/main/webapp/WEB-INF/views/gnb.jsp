@@ -75,9 +75,9 @@ $(document).ready(function() {
 				</li>
 				<li><a class="admin">이용안내</a>
 					<ul class="admin_menu" style="display:none;">
-						<li><a href="http://localhost:9000/ktx/payment_info.do">결제 안내</a></li>
-						<li><a href="http://localhost:9000/ktx/refund_info.do">환불 안내</a></li>
-						<li><a href="http://localhost:9000/ktx/reservation_info.do">예매 안내</a></li>
+						<li><a href="http://localhost:9000/ktx/info_payment.do">결제 안내</a></li>
+						<li><a href="http://localhost:9000/ktx/info_refund.do">환불 안내</a></li>
+						<li><a href="http://localhost:9000/ktx/info_reservation.do">예매 안내</a></li>
 					</ul>
 				</li>
 				<li><a href="http://localhost:9000/ktx/notice_list.do?category=all&cvalue=all&page=1">공지사항</a></li>
