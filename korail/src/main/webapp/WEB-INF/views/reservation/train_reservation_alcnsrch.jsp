@@ -10,6 +10,11 @@
 <script src="http://localhost:9000/ktx/js/jquery-3.6.4.min.js"></script>
 <script src="http://localhost:9000/ktx/js/alcnsrch.js"></script>
 <script src="http://localhost:9000/ktx/js/rotinf2.js"></script>
+<style>
+.bus_time span {
+	height: 40px;
+}
+</style>
 <script>
 let startId = "${sessionScope.rvo.startId}";
 let endId = "${sessionScope.rvo.endId}";
@@ -22,8 +27,8 @@ let url ="https://apis.data.go.kr/1613000/TrainInfoService/getStrtpntAlocFndTrai
 $.getJSON(url, function(citys){
 	
 	let code = "<p class='bustime_head' id='d2'>";
-		code += "<span style='width: 53px'>출발역</span><span>도착역</span><span class='start_time' style='width: 70px'>출발시간</span><span class='end_time' style='width: 70px'>도착시간</span>"
-		code += "<span class='bus_com' style='text-align: center'>열차명</span><span class='grade'>열차번호</span><span class='fare'>운임</span><span class='status' style='width: 70px'></span></p>";
+		code += "<span style='width: 60px'>출발역</span><span style='width:75px'>도착역</span><span class='start_time' style='width: 75px'>출발시간</span><span class='end_time' style='width: 95px'>도착시간</span>"
+		code += "<span class='bus_com' style='width:50px'>열차명</span><span class='grade' style='width: 101px'>열차번호</span><span class='fare'>운임</span><span class='status' style='width: 70px'></span></p>";
 		code += "<div class='bus_time'>";
 	for(kobi of citys.response.body.items.item){
 		
@@ -44,7 +49,7 @@ $.getJSON(url, function(citys){
 		code +="<span id='input3'>"+start_date+"</span>";
 		code +="<span id='input4'>"+end_date+"</span>";
 		code +="<span style='text-align: center' id='input5'>"+kobi.traingradename+"</span>";
-		code +="<span id='input6'>"+kobi.trainno+"</span>";
+		code +="<span id='input6' style='text-indent: 10px'>"+kobi.trainno+"</span>";
 		code +="<span id='input7'>"+kobi.adultcharge+"</span>";
 		code +="<span class='accent btn_arrow' id='input_add'>선택</span>";
 		code +="</p>"

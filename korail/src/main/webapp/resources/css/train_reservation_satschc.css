@@ -1069,7 +1069,7 @@ ul.sel_list > li .btn_wrap ul li .btn span.ico_minus {
 
 .selectSeat_box {
     float: left;
-    width: 382px;
+    width: 353px;
     height: 822px;
 }
 
@@ -1087,6 +1087,12 @@ ul.sel_list > li .btn_wrap ul li .btn span.ico_minus {
     padding: 30px 20px 0 20px;
     font-size: 0;
     box-sizing: border-box;
+    text-align: center;
+}
+
+.box:nth-child(2){
+	margin-right: 20px;
+	
 }
 
 .seatList span {

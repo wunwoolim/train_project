@@ -14,7 +14,7 @@
 <jsp:include page="../gnb.jsp"></jsp:include>
 </div>
 	<div id="contentWrap">
-	<div class="title-wrap">
+	<div class="title-wrap info">
 		<jsp:include page="../header.jsp"></jsp:include>
 		<h2 class="title_station">결제 안내</h2>
 	</div>

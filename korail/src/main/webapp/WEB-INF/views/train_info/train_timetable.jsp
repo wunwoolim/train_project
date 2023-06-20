@@ -28,14 +28,17 @@
 			</div>
 		</div>
 	<div id="trainList">
-		<span class="start_span">출발지</span>
-		<select id="start_city"></select>
-		<select id="start_train"></select>
-		
-		<span class="end_span">도착지</span>
-		<select id="end_city"></select>
-		<select id="end_train"></select>
-		
+		<div>
+			<span class="start_span">출발지</span>
+			<select id="start_city"></select>
+			<select id="start_train"></select>
+		</div>
+		<div>
+			<span class="end_span">도착지</span>
+			<select id="end_city"></select>
+			<select id="end_train"></select>
+		</div>
+	
 		<input type="text" name="traintime" placeholder="날짜입력 예)20200701" id="traintime">
 		<button type="button" id="btnsearch">조회</button>
 		<input type="hidden" id="start">
