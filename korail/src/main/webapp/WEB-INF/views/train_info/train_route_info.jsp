@@ -25,7 +25,7 @@
 								<div class="title-background">
 									<jsp:include page="../header.jsp"></jsp:include>
 									
-									<h2 class="title_station">KTX역</h2>
+									<h2 class="title_station">KTX역 정보</h2>
 								</div>
 							</div>
 							

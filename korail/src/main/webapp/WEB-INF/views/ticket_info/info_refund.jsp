@@ -13,7 +13,7 @@
 <jsp:include page="../gnb.jsp"></jsp:include>
 </div>
 	<div id="contentWrap">
-	<div class="title-wrap">
+	<div class="title-wrap info">
 		<jsp:include page="../header.jsp"></jsp:include>
 		<h2 class="title">승차권 환불 안내</h2>
 	</div>

@@ -50,7 +50,7 @@
 <jsp:include page="../gnb.jsp"></jsp:include>
 </div>
 	<div id="contentWrap">
-	<div class="title-wrap">
+	<div class="title-wrap notice">
 		<jsp:include page="../header.jsp"></jsp:include>
 		<h2 class="title">공지사항</h2>
 	</div>
@@ -104,10 +104,10 @@
 	</div>
 	<table class="notice_search">
 		<tr>
-			<th>번호</th>
+			<th style="width: 15px">번호</th>
 			<th>제목</th>
-			<th>조회수</th>
-			<th>등록일자</th>
+			<th style="width: 15px">조회수</th>
+			<th style="width: 30px">등록일자</th>
 		</tr>
 		<c:forEach var="noticeVo" items="${list}">
 		<tr>
