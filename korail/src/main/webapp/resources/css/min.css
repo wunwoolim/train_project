@@ -10,7 +10,7 @@ body {
 }
 
 .title-wrap {
-	width: 100vw;
+	width: calc(100vw-220px);
 	height: 105px;
 	padding: 75px 0 0 0;
 	background-image:url("../images/train.jpg");
@@ -747,3 +747,18 @@ table.notice_content tr:last-child td button:first-child {
   background: #F5F4F4;
 }
 
+#before:hover {
+	cursor: pointer;
+}
+
+#next:hover {
+	cursor: pointer;
+}
+
+#click_before:hover {
+	cursor: pointer;
+}
+
+#click_after:hover {
+	cursor: pointer;
+}

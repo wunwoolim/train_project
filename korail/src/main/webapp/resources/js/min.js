@@ -52,7 +52,7 @@ $(document).ready(function() {
 						output += "<img src='http://localhost:9000/ktx/images/" + obj.clink2 + "' class= 'category_map'>";
 						output += "</div><div class='col-right'><div class='container-top'>";
 						output += "<h2 class='title'>" + obj.station + "</h2>";
-						output += "<div class='container-mover'><button id='before'><</button><button id='next'>></button></div>";
+						output += "<div class='container-mover'><a class='btn' id='before'><</a><a class='btn' id='next'>></a></div>";
 						output += "<img src='http://localhost:9000/ktx/images/" + obj.plink + "' class= 'station_map'></div>";
 						output += "<div class='container-bottom'><table><tr><td>위치</td>";
 						output += "<td>" + obj.location + "</td></tr><tr><td>연락처</td>";

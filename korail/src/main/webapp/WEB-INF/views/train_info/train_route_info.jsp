@@ -62,8 +62,8 @@
 													</h2>
 													<div class=
 													"container-mover">
-														<button id="before"><</button>
-														<button id="next">></button>
+														<a class="btn" id="before"><</a>
+														<a class="btn" id="next">></a>
 													</div>
 													<img src="http://localhost:9000/project/images/<%=stationVo.getPlink() %>"
 														class="station_map">
