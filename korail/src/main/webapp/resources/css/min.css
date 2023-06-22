@@ -537,6 +537,18 @@ h1 {
 	text-align: center;
 }
 
+.admin_notice_content {
+	width: 80%;
+	margin: 100px auto;
+	text-align: center;
+}
+
+.admin_notice_content th {
+	border: 1px solid black;
+	width: 20%;
+	background-color: #ddd;
+}
+
 #testTable {
 	width: 100%;
 	margin: 200px auto;
@@ -560,6 +572,16 @@ h1 {
 	padding: 10px 0;
 }
 
+.admin_notice_content tr:last-child td {
+	border: none;
+	padding: 10px 0;
+}
+
+.admin_notice_content tr:nth-of-child(2) tr {
+	border: none;
+	padding: 10px 0;
+}
+
 .notice_list, .notice_search {
 	width: 70%;
 	margin: auto;
@@ -571,6 +593,10 @@ h1 {
 }
 
 .notice_list tr:last-child td {
+	border: none;
+}
+
+.admin_notice_content tr:last-child td {
 	border: none;
 }
 

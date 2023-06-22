@@ -18,7 +18,7 @@
 		<jsp:include page="../header.jsp"></jsp:include>
 	<h2 class="title">관리자 - 공지사항</h2>
 	</div>
-	<table class="notice_content">
+	<table class="admin_notice_content">
 		<tr>
 			<th>제목</th>
 			<td>${noticeVo.ntitle}</td>
