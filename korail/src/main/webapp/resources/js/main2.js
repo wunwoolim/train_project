@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	init();
 	
-	
 	function init(){
 		let url = "https://apis.data.go.kr/1613000/TrainInfoService/getCtyCodeList?serviceKey=fia82dW58XZekM3fyfsYQjw24d3TDN%2FOCdtbCQWjlYjltamNE5UGs23S0OiE%2BdghuBeQ%2Bt%2FLjncovmHroyfk1Q%3D%3D&_type=json";
 		$.getJSON(url, function(city){

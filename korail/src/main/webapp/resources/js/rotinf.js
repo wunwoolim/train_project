@@ -19,6 +19,7 @@ $(document).ready(function(){
 		        $("#myModal").fadeOut();
 		      }
 		    });
+		    
 		  		  
 		  
 		 //편도,왕복 클릭시 변화 이벤트

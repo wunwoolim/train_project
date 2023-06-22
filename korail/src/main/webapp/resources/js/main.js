@@ -10,6 +10,7 @@ $(document).ready(function(){
 			  $(".pop_place .place .focuson").css("border","2px solid #76c6e1").css("box-shadow","0 0 7px 0 rgba(118,198,225,1)").css("background","none");
 		  });
 		  
+		  
 		  $(".modalclose").click(function() {
 			  $(".modal").css("display", "none");
 		  });
