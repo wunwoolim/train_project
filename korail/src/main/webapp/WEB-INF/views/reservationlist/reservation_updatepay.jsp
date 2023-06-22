@@ -670,7 +670,7 @@
 							</table>
 						</div>
 						<p class="btn bottom">
-							<button type="button" id="stplCfmBtn" class="btnL btn_confirm ready" >결제하기</button>
+							<button type="button" id="updatepay" class="btnL btn_confirm ready" >결제하기</button>
 						</p>
 					</div>
 				</div>
