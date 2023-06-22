@@ -69,5 +69,13 @@ public class MemberServiceImpl implements  MemberService{
 		 return memberDao.findPASS(email);
 	 }
 	 
+	 
+	 @Override
+	 public int getEmailCheckResult(String email) {
+		 	int result = memberDao.joinemailcheck(email);	
+			System.out.println("result -->" +result);
+			return result;
+		}	
+	 
 }
 	 

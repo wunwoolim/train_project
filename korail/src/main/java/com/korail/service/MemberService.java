@@ -13,5 +13,6 @@ public interface MemberService {
 	public ArrayList<MemberVo> getList(int startCount, int endCount, String category, String cvalue);
  	public MemberVo getFindIdResult(String email);
  	public MemberVo getFindPassResult(String email);
+ 	public int getEmailCheckResult(String email);
 		/* public int getTotalRowCount(); */
 }

@@ -69,6 +69,26 @@ public class JoinController {
 		return String.valueOf(result);
 	}
 	
+	/**
+	 * id_check.do - 아이디 중복체크 처리
+	 */
+	@RequestMapping(value="/email_check.do", method=RequestMethod.GET)
+	@ResponseBody
+	public String email_check(String email) {
+		
+		System.out.println("email"+email);
+		int result = memberService.getEmailCheckResult(email);
+		return String.valueOf(result);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	/*
 	 *  join_proc.do - 회원가입 처리

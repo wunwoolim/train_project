@@ -92,6 +92,18 @@ public class MemberDao implements MyktxDao{
 		  return sqlSession.insert("mapper.member.join", memberVo);
 	 
 	  }
+	
+	/**
+	 * 회원가입 이메일 체크 - 중복체크
+	 */
+	
+	public int joinemailcheck(String email) {
+		System.out.println("dao------->>"+email);
+		return sqlSession.selectOne("mapper.member.emailcheck", email);
+	}
+	};
+	
+	
+	
 	 
 
-}

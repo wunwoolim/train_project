@@ -10,6 +10,12 @@
 
 <script src="http://localhost:9000/ktx/js/join.js"></script>
 <script src="http://localhost:9000/ktx/js/mailAuth.js"></script>
+
+<style>
+	#mail-Check-Btn{
+		display:none;
+		}
+</style>
 </head>
 <body>
 <div>
@@ -45,6 +51,8 @@
 						<option value="korea.com">코리아</option>
 						<option value="self">직접입력</option>		
 							</select>
+						<button type="button"  id="mail-Val-Btn"  class ="btnJoin" >  중복체크 </button>
+						<span id="idcheck_msg"></span>
 						</div>  
                 	
 	<ul class= "loginBoth">

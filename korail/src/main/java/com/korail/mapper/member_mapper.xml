@@ -78,6 +78,10 @@
 		SELECT COUNT(*) FROM ktx_member WHERE ID=#{id}
 	</select>
 	
+	<select id="emailcheck" parameterType = "String" resultType= "int">
+		SELECT COUNT(*) FROM ktx_member WHERE email= #{email}
+	</select>
+	
 	
 	<insert id="join" parameterType="com.korail.vo.MemberVo">
 		insert into 

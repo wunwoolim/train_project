@@ -122,5 +122,67 @@ $(document).ready(function(){
 			$(".authnum").css('display','block');
 });
 
+
+
+
+
+/*******************************************
+	회원가입시 메일 전송
+	********************************************/
+
+		
+		
+	$("#userEmail3").on("change", function(){
+		if($("#userEmail3").val() == "default"){
+			alert("이메일을 선택해주세요");
+			$("#userEmail2").val("");
+			$("#usereEmail3").focus();
+		}else if($("#userEmail3").val() == "self"){
+			$("#userEmail2").val("").focus();
+		}else{
+			$("#userEmail2").val($("#userEmail3").val());
+		}		
+		
+	});
+		
+
+
+
+
+/*******************************************
+	회원가입시 이메일 중복체크
+	********************************************/
+
+		$("#mail-Val-Btn").click(function(){
+		if($("#userEmail1").val() == "" && $("#userEmail2").val() == "" ){
+			alert("이메일을 입력해주세요");
+			return false;
+		}else{
+				alert("email_check.do?email="+$("#userEmail1").val() + '@' + $('#userEmail2').val());
+			$.ajax({
+				url : "email_check.do?email="+$("#userEmail1").val() + '@' + $('#userEmail2').val() ,
+				success : function(result){
+					if(result == 1){
+						$("#idcheck_msg").text("이미 등록된 이메일 입니다. ")
+						.css("color","red").css("font-size","11px").css("display","block")
+						.css("padding","8px 0px 8px 160px");
+					}else if(result == 0){
+						$("#mail-Check-Btn").css("display","inline-block");
+						$("#idcheck_msg").text("인증번호 발송을 눌러주세요")
+						.css("color","blue").css("font-size","11px").css("display","block")
+						.css("padding","8px 0px 8px 160px");
+						
+			
+					}
+				
+				}
+			});
+		}
+	});
+	
+	
+	
+	
+	
 });
  
