@@ -264,6 +264,13 @@ h1 {
     background-color: rgb(231, 231, 231);
 }
 
+.line2 {
+	height: 2px;
+    width: 100%;
+   	margin: 0;
+    background-color: #bdbdbd;
+}
+
 #kyeongbu {
 	border-bottom: 3px solid rgb(83, 49, 156);
 }
@@ -526,9 +533,8 @@ h1 {
 
 .notice_content {
 	width: 70%;
-	margin: 200px auto;
+	margin: 100px auto;
 	text-align: center;
-	box-sizing: border-box;
 }
 
 #testTable {
@@ -560,10 +566,6 @@ h1 {
 	border-collapse: collapse;
 }
 
-.notice_content {
-	text-align: center;
-}
-
 #testTable {
 	text-align: center;
 }
@@ -576,13 +578,7 @@ h1 {
 	border: none;
 }
 
-table.notice_content th {
-	background:magenta;
-	color:#333;	
-	width:140px;
-	padding:10px 0;
-	border: 1px solid black;
-}
+
 table #testTable th {
 	background:#ddd;
 	color:#333;	
@@ -619,19 +615,7 @@ table #testTable th {
     border: 1px solid black;
 }
 
-.notice_content th, td {
-	border-collapse: collapse;
-	border: 1px solid black;
-	padding: 20px 0;
-}
 
-.notice_content tr:last-child td {
-	border: none;
-}
-
-table.notice_content tr:first-child td {
-	background:white;
-}
 #testTable th, td {
 	border-collapse: collapse;
 	border: 1px solid black;
@@ -644,18 +628,6 @@ table.notice_content tr:first-child td {
 
 table #testTable tr:first-child td {
 	background:white;
-}
-
-table.notice_content tr:nth-child(2) td {
-	text-indent:0px;
-}
-
-table.notice_content tr:last-child td {
-	padding-top:30px;
-}
-
-table.notice_content tr:last-child td button:first-child {
-	margin-right:10px;
 }
 
 .notice_write {
@@ -761,6 +733,7 @@ table.notice_content tr:last-child td button:first-child {
     font-size: 13px;
     color: black;
 }
+
 #cvalue{
 	width: calc(40% - 4px);
 	height: 21px;
@@ -1011,4 +984,46 @@ table.notice_content tr:last-child td button:first-child {
 .col-left li a:hover {
 	background-color: magenta;
 	color: white;
+}
+
+#content_title {
+	font-size: 25px;
+	margin: 20px 0;
+	
+}
+
+#content_content {
+	font-size: 15pt;
+	text-align: left;
+	width: 80%;
+	margin: 0 0 40px 50px;
+}
+
+#content_define {
+	font-size: 20pt;
+	margin-bottom: 30px;
+}
+
+#notice_table1 {
+	display: flex;
+	font-size: 17pt;
+	width: 100%;
+	justify-content: flex-start;
+	margin: 0 0 0 10px;
+}
+#notice_table2 {
+	display: flex;
+	font-size: 17pt;
+	width: 100%;
+	justify-content: flex-end;
+	margin: 0 10px 0 0;
+}
+
+.table_content {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	margin: 0;
+	padding: 10px 0;
+	background-color: #f3f4f6;
 }

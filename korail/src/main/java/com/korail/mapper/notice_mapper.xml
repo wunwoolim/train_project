@@ -13,7 +13,7 @@
 	</insert>
 	
 	<select id="content" parameterType="String" resultType ="com.korail.vo.NoticeVo">
-		select nid, ntitle, ncontent, nhits, ndate from ktx_notice where nid=#{nid}
+		select nid, ntitle, ncontent, nhits, to_char(ndate, 'yy-mm-dd') ndate from ktx_notice where nid=#{nid}
 	</select>
 	
 	<select id="list" parameterType="map" resultType="com.korail.vo.NoticeVo">

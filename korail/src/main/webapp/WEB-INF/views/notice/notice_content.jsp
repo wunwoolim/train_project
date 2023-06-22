@@ -17,27 +17,21 @@
 		<jsp:include page="../header.jsp"></jsp:include>
 		<h2 class="title_station">공지사항</h2>
 	</div>
-	<table class="notice_content">
-		<tr>
-			<th>제목</th>
-			<td>${noticeVo.ntitle}</td>
-		</tr>
-		<tr>
-			<th>내용</th>
-			<td>
-				${noticeVo.ncontent}
-			</td>
-		</tr>
-		<tr>
-			<th>조회수</th>
-			<td>${noticeVo.nhits}</td>
-		</tr>
-		<tr>
-			<th>등록일자</th>
-			<td>${noticeVo.ndate}</td>
-		</tr>
-		<tr>
-			<td colspan="2">
+	<div class="notice_content">
+	
+		<p id="content_define">KTX 홈페이지의 새로운 소식을 확인하세요.</p>
+		
+		<div class="line2"></div>
+		<div class="table_content"><p id="notice_table1">${noticeVo.ntitle}</p><p id="notice_table2">${noticeVo.ndate}</p></div>
+		<div class="line2"></div>
+		
+		<p id="content_title">${noticeVo.ntitle}</p>
+		
+		<p id="content_content">${noticeVo.ncontent}</p>
+		
+		<div>
+		<div class="line2"></div>
+			
 			<div class="button">
 				<a href="http://localhost:9000/ktx/notice_list.do?category=all&cvalue=all&page=1" class="btn">리스트</a>
 				<a href="http://localhost:9000/ktx/notice_content.do?nid=${nprev}" class="btn" id="click_before"><</a>
@@ -45,9 +39,8 @@
 				<input type="hidden" id="before_hidden" value="${nprev}">
 				<input type="hidden" id="next_hidden" value="${nnext}">
 			</div>
-			</td>
-		</tr>
-	</table>
+	</div>
+	</div>
 	<jsp:include page="../footer.jsp"></jsp:include>
 	</div>
 </body>
