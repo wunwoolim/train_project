@@ -75,19 +75,29 @@ $(document).ready(function(){
 		
 		
 		$("#btnsearch").click(function(){
-			var result = confirm("승차권 예매에 따른 취소수수료 내용에 동의하십니까?");
-			let startId = $("#start_id").text();
-		    let endId = $("#end_id").text();
-		    let rtime =$("#traintime").text();
-		    let start_add =$("#start_add").text();
-		    let end_add =$("#end_add").text();
-		    
-		    
-		    if(result){
-		    let url = "http://localhost:9000/ktx/train_reservation_alcnsrch.do?startId=" + startId + "&endId=" + endId + "&rtime=" + rtime + "&start_add="+ start_add + "&end_add=" + end_add;
-		    location.href = url;
+			if($("#start_add").text() == "선택"){
+				alert("출발지를 선택해주세요");
+			}else if($("#end_add").text() == "선택"){
+				alert("도착지를 선택해주세요");
+			}else if($("#traintime").text() == ""){
+				alert("출발일를 선택해주세요");
+			}else{
+				
+				var result = confirm("승차권 예매에 따른 취소수수료 내용에 동의하십니까?");
+				let startId = $("#start_id").text();
+			    let endId = $("#end_id").text();
+			    let rtime =$("#traintime").text();
+			    let start_add =$("#start_add").text();
+			    let end_add =$("#end_add").text();
+			    
+			    
+			    if(result){
+			    let url = "http://localhost:9000/ktx/train_reservation_alcnsrch.do?startId=" + startId + "&endId=" + endId + "&rtime=" + rtime + "&start_add="+ start_add + "&end_add=" + end_add;
+			    location.href = url;
+			    }
+			    return false
+			    
 		    }
-		    return false
 		});
 	
 	

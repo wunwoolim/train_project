@@ -2,6 +2,12 @@ $(document).ready(function(){
 		//모달창 만들기
 		  $(".modal1").click(function() {
 			  $(".modal").css("display", "block");
+			  $("#start").text("");
+			  $("#end").text("선택");
+			  $("#popDeprChc").css("background", "#fff");
+			  $("#popArvlChc").css("background", "#f3f4f6");
+			  $("#popArvlChc").css("border","none").css("box-shadow","none");
+			  $(".pop_place .place .focuson").css("border","2px solid #76c6e1").css("box-shadow","0 0 7px 0 rgba(118,198,225,1)").css("background","none");
 		  });
 		  
 		  $(".modalclose").click(function() {
