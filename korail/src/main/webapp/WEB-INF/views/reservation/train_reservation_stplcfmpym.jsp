@@ -15,6 +15,15 @@
 	}
 	
 </style>
+<script>
+	$(document).ready(function(){
+		let id = "${sessionScope.rvo.id}";
+		
+		if(id != "GUEST"){
+			$(".pass_user").css("display","none");
+		}
+	});
+</script>
 </head>
 <body>
 <div>
