@@ -43,8 +43,7 @@
       
       </div>            	 
              <div class="box_searchId">
- 	           		<a href="http://localhost:9000/ktx/login.do" onclick="lgnSearchId();"><span class="ico_searchId">아이디찾기</span></a>
-					<a href="#none" onclick="lgnSearchPwd();"><span class="ico_searchPW">비밀번호찾기</span></a>
+					<a href="http://localhost:9000/ktx/login.do" onclick="lgnSearchPwd();" style="margin-left:50px"><span class="ico_searchPW">로그인하기</span></a>
              </div>
              
                 	

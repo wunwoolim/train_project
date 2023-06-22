@@ -60,7 +60,7 @@
 							<div class="box_searchId">
 								<a href="http://localhost:9000/ktx/findAuth.do" onclick="lgnSearchId();"><span class="ico_searchId">아이디찾기</span></a>
 								<a href="http://localhost:9000/ktx/find_pass.do" onclick="lgnSearchPwd();"><span class="ico_searchPW">비밀번호찾기</span></a>
-								<a href="#none" onclick="mbrsJoin();"><span class="ico_joinUs">회원가입</span></a>
+								<a href="http://localhost:9000/ktx/join.do" onclick="mbrsJoin();"><span class="ico_joinUs">회원가입</span></a>
 							</div>
 						</div>
 						<input type="hidden" id="returnUrl" name="returnUrl" value="/mrs/mrscfm.do?vltlCnt=Y">
