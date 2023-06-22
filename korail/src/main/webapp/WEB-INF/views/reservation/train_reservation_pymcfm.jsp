@@ -146,7 +146,7 @@
 						</div>
 
 						<p class="btns col1" id="mrsInqrTissu"> 
-							<a href="/mrs/mrscfm.do" class="btnL btn_cancel">예매 확인</a>
+							<a href="http://localhost:9000/ktx/reservation_main.do" class="btnL btn_cancel">예매 확인</a>
 						</p>
 					
 					
