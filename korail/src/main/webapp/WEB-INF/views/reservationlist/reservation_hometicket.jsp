@@ -74,8 +74,8 @@
 						<span class="txt_large15 fr">${ovo.trainnum}</span>
 					</li>
 					<li>
-						<span class="txt_sml fl">소요시간<br>Time</span>
-						<span class="txt_large15 fr"></span>
+						<span class="txt_sml fl">도착시간<br>Time</span>
+						<span class="txt_large15 fr">${ovo.dtime}</span>
 					</li>
 					<li>
 						<span class="txt_sml fl">좌석<br>Seat NO.</span>
