@@ -154,10 +154,7 @@ $(document).ready(function(){
 	********************************************/
 
 		$("#mail-Val-Btn").click(function(){
-		if($("#userEmail1").val() == "" && $("#userEmail2").val() == "" ){
-			alert("이메일을 입력해주세요");
-			return false;
-		}else{
+		if($("#userEmail1").val() != "" && $("#userEmail2").val() != "" ){
 			$.ajax({
 				url : "email_check.do?email="+$("#userEmail1").val() + '@' + $('#userEmail2').val() ,
 				success : function(result){
@@ -176,6 +173,9 @@ $(document).ready(function(){
 				
 				}
 			});
+			return false;
+		}else{
+			alert("이메일을 입력해주세요");
 		}
 	});
 	

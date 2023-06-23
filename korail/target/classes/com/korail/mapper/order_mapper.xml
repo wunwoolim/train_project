@@ -28,9 +28,9 @@
 	
 	<insert id="payment" parameterType="com.korail.vo.OrderVo" >
 		insert into KTX_ORDER
-			(sstation,rdate,stime,dtime,dstation,price,reservnum,trainnum,chairnum,ticketqty,id,cancel,depPlaceId,arrPlaceId,depPlandTime,cardnum,email)
+			(oid,sstation,rdate,stime,dtime,dstation,price,reservnum,trainnum,chairnum,ticketqty,id,cancel,depPlaceId,arrPlaceId,depPlandTime,cardnum,email)
 		values
-			(#{sstation},sysdate,#{stime},#{dtime},#{dstation},#{price},#{reservnum},#{trainnum},#{chairnum},#{ticketqty},
+			('O_'||ltrim(to_char(sequ_ktx_order.nextval,'0000')),#{sstation},sysdate,#{stime},#{dtime},#{dstation},#{price},#{reservnum},#{trainnum},#{chairnum},#{ticketqty},
 			#{id},'0',#{depPlaceId},#{arrPlaceId},#{depPlandTime},#{cardnum},#{email})
 	</insert>
 
