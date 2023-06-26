@@ -13,8 +13,8 @@ $(document).ready(function(){
 	$(".btn_selectSeat").click(function() {
 		let sid = "${sessionScope.svo.id}";
 		let seatNum = $("#seatNum").val();
-		alert(sid);
-		alert(seatNum);
+		/* alert(sid);
+		alert(seatNum); */
 		
 		$(location).attr("href", 'http://localhost:9000/ktx/reservation_updateselect.do?seatNum='+seatNum+"&id="+sid);
 	});

@@ -34,10 +34,7 @@
 
 				<div class="box_detail_info">
 					<div class="routeHead">
-						<p class="date">2023.05.31(수) 16:00 출발</p>
-						<p class="ticket_number">
-							예매번호<span class="num">20230515479724</span>
-						</p>
+						<p class="date">${ sessionScope.rvo.rtimes }   ${ sessionScope.rvo.start_date }</p>
 					</div>
 					<div class="routeBody">
 						<div class="routeArea route_wrap">
@@ -100,10 +97,6 @@
 										<col style="width:*;">
 									</colgroup>
 									<tbody>
-										<tr>
-											<th scope="row">결제일시</th>
-											<td>2023.05.15 (월) 19:59</td>
-										</tr>
 										<tr>
 											<th scope="row">결제수단</th>
 											<td>

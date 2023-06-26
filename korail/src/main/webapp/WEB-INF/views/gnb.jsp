@@ -33,6 +33,18 @@ $(document).ready(function() {
           adminMenuVisible = false;
         }     
     });
+    
+    let depthMenuVisible = false;
+    
+    $(".depth4").click(function() {
+        if (!depthMenuVisible) {
+          $(".depth4-1").css("display", "block");
+          depthMenuVisible = true;
+        } else {
+          $(".depth4-1").css("display", "none");
+          depthMenuVisible = false;
+        }     
+    });
 });
 </script>
 <style>
@@ -78,6 +90,14 @@ $(document).ready(function() {
 						<li><a href="http://localhost:9000/ktx/info_payment.do">결제 안내</a></li>
 						<li><a href="http://localhost:9000/ktx/info_refund.do">환불 안내</a></li>
 						<li><a href="http://localhost:9000/ktx/info_reservation.do">예매 안내</a></li>
+					</ul>
+				</li>
+				<li><a class="depth4">회원정보관리</a>
+					<ul class="depth4-1"  style="display: none;">
+						<li><a href="mypage.do">나의정보수정</a></li>
+						<li><a href="s_reservation.do">우대예약 등록</a></li>
+						<li><a href="#">간편구매 정보 등록</a></li>
+						<li><a href="mypage.do" onclick="bye(event)">회원탈퇴</a></li>
 					</ul>
 				</li>
 				<li><a href="http://localhost:9000/ktx/notice_list.do?category=all&cvalue=all&page=1">공지사항</a></li>

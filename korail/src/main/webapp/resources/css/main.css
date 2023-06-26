@@ -1,7 +1,9 @@
 #mainID .rap{
 	margin: 117px 30px;
 } 
-
+.tabs li a{
+	text-decoration: none;
+}
 
 
 .modal {

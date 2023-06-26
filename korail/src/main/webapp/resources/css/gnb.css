@@ -21,6 +21,10 @@ body, input, select, div, textarea, table, button {
     color: #666;
 }
 
+.depth4{
+	cursor: pointer;	
+}
+
 #gnb html {
     height: 100%;
     -ms-text-size-adjust: 100%;

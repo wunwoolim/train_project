@@ -32,7 +32,6 @@ $(".btn_selectSeat").click(function() {
 	if(sid == ""){
 	  $(".modal").css("display", "block");
 	  }else{
-		  alert("회원 아이디가 있습니다");
 		  $(location).attr("href",'http://localhost:9000/ktx/stplcfmpym.do?seatNum='+seatNum +"&ticketQty="+ticketQty+"&id="+sid );
 	  }
 

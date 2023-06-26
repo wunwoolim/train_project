@@ -13,7 +13,6 @@
 				<p class="foot_menu">
 					<a href="http://localhost:9000/ktx/svcStpl.do">서비스 이용약관</a> 
 					<a href="http://localhost:9000/ktx/IndlStpl.do" class="indl">개인정보 처리방침</a> 
-					<a href="http://localhost:9000/ktx/BusStpl.do">고속버스 운송약관</a> 
 					<a href="https://www.letskorail.com/ebizprd/prdMain.do" class="btn_intro_footer" target="_blank">Korail</a> 
 					<a>고객센터 1544-7788</a>
 				</p>
