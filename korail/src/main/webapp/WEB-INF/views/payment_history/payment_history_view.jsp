@@ -118,7 +118,11 @@
 								</form>
 								<div class="search_result_wrap"></div>
 								<p class="paging_wrap">
-									<span class="paging"> <strong>1</strong>
+									<span class="paging">
+									<button type="button" class ="pmy" id="choose"> 결제 내역만 선택
+									</button>
+									<button type="button" class ="pmy" id="download"> 영수증 다운로드
+									</button>
 									</span>
 								</p>
 								<ul class="desc_list">

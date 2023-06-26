@@ -4,8 +4,6 @@ public class OrderVo {
 
 	String sstation, rdate, stime, dtime, dstation, reservnum, chairnum, id, depPlaceId, arrPlaceId, depPlandTime, cardnum, cdate,email;
 	int rno, price, trainnum, ticketqty, cancel;
-
-	
 	
 	public String getEmail() {
 		return email;

@@ -10,6 +10,27 @@
 	font-weight: 400;
 }
 
+.tbl_search_result tbody tr td input {
+	position: relative;
+	left: 16%;
+	top: 12px;
+}
+
+.paging_wrap {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.pmy {
+	background: #5754b5;
+	color: #fff;
+	cursor: pointer;
+	position: relative;
+	right: auto;
+	padding: 6px 6px;
+	margin-left: 10px;
+}
+
 span.radio_wrap {
 	display: flex;
 }
@@ -231,6 +252,7 @@ caption {
 table.tbl_search_result {
 	width: 100%;
 	border-collapse: collapse;
+	border-bottom: 1px solid #999;
 }
 
 .tbl_search_result thead tr th {

@@ -29,15 +29,6 @@ $(document).ready(function() {
 	 *	Mypage
 	 * 
 	 **************************************************************************/
-	 
-	 		/**
-	 		 * 마이페이지 '영수증 출력' 클릭
-	 		 */
-	 		
-			$(".adtnPrdPT").click(function(event) {
-			  var url = "http://localhost:9000/ktx/mypage_receipt.do";
-			  window.open(url, "_blank");
-			});
 	 		
 			/**
 			 * 마이페이지 '회원탈퇴' 클릭
@@ -443,16 +434,18 @@ $(document).ready(function() {
 			
 		        let output = '<table class="tbl_search_result">';
 		        output += '<colgroup>';
+		        output += '<col style="width: 8%;">';
 		        output += '<col style="width: 11%;">';
 		        output += '<col style="width: 7%;">';
 		        output += '<col style="width: 16%;">';
-		        output += '<col style="width: 24%;">';
-		        output += '<col style="width: 17%;">';
+		        output += '<col style="width: 18%;">';
+		        output += '<col style="width: 11%;">';
 		        output += '<col style="width: 12%;">';
 		        output += '<col style="width: auto%;">';
 		        output += '</colgroup>';
 		        output += '<thead>';
 		        output += '<tr>';
+		        output += '<th scope="col">선택</th>';
 		        output += '<th scope="col">결제일시</th>';
 		        output += '<th scope="col">구분</th>';
 		        output += '<th scope="col">노선</th>';
@@ -470,6 +463,8 @@ $(document).ready(function() {
  				var stime = obj.stime.substr(0, 2) + ':' + obj.stime.substr(3, 3);
 		        
 		        output += '<tr>';
+				output += '<td><input type="checkbox" id="checkbox' + jdata.jlist.indexOf(obj) + '"></td>';
+				output += '<input type="hidden" name="status" value="' + obj.status + '">';
 		        output += '<td>' + obj.rdate + '</td>';
 		        output += '<td><span class="txt_purple"> 편도 </span></td>';
 		        output += '<td>';
