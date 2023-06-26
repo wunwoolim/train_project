@@ -9,18 +9,24 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import com.korail.vo.SessionVo;
 
 public class SessionAuthInterceptor extends HandlerInterceptorAdapter {
-	
-	@Override
-	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-		
-		HttpSession session = request.getSession();
-		SessionVo svo = (SessionVo)session.getAttribute("svo");
-		
-		if(svo == null) {
-		    response.sendRedirect("/ktx/login2.do");
-		    return false;
-		}
-			return true;
-	}
 
+	@Override
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+
+		HttpSession session = request.getSession();
+		SessionVo svo = (SessionVo) session.getAttribute("svo");
+
+		if (svo == null) {
+			response.sendRedirect("/ktx/login2.do");
+			return false;
+		} else {
+			String sessionId = "test";
+			if (session.getId().equals(sessionId)) {
+				session.setMaxInactiveInterval(-1);
+			}
+			return true;
+		}
+
+	}
 }

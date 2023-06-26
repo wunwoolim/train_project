@@ -82,7 +82,7 @@ public class PaymentController {
 		jarray.add(jobj);
 	}
 	jlist.add("jlist", jarray);	
-	System.out.println(jlist.toString());
+//	System.out.println(jlist.toString());
 	return new Gson().toJson(jlist);
 	}
 }

@@ -76,7 +76,7 @@
 	</update>
 	
 	<select id="selected" parameterType="String" resultType="com.korail.vo.OrderVo">
-		SELECT sstation, rdate, depPlandTime, stime, dtime, dstation, price, reservnum, trainnum, chairnum, cancel, depPlaceId, arrPlaceId 
+		SELECT sstation, rdate, depPlandTime, stime, dtime, dstation, price, reservnum, trainnum, chairnum, cancel, depPlaceId, arrPlaceId, cardnum, ticketqty 
 		FROM KTX_ORDER 
 		where reservnum=#{reservnum}
 	</select>

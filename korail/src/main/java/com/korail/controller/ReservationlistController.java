@@ -94,7 +94,7 @@ public class ReservationlistController {
 		
 		model.addObject("ovo", orderVo);
 		model.setViewName("/reservationlist/reservation_receipt");
-		
+
 		return model;
 	}
 	

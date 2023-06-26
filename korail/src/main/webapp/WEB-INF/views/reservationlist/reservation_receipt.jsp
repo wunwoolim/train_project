@@ -37,8 +37,8 @@
 			<div class="box_dot">
 				<ul>
 					<li>카드사<span class="taR fr">BC</span></li>
-					<li>카드번호<span class="taR fr">54802058****542*</span></li>
-					<li>승인번호<span class="taR fr">65816385</span></li>
+					<li>카드번호<span class="taR fr">${ovo.cardnum}</span></li>
+					<li>승인번호<span class="taR fr">${ovo.reservnum}</span></li>
 					<li>승인일시<span class="taR fr">${ovo.rdate}</span></li>
 					<li>승인금액<span class="taR fr">${ovo.price}원</span></li>
 					<li>환불금액<span class="taR fr">0원</span></li>
@@ -53,7 +53,7 @@
 					<li>출발지 : ${ovo.sstation}</li>
 					<li>도착지 : ${ovo.dstation}</li>
 					<li>출발시간 : ${ovo.stime}</li>
-					<li>일반매수 : 일반1명</li>
+					<li>일반매수 : ${ovo.ticketqty}</li>
 				</ul>
 			</div>
 	</div>
