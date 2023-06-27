@@ -18,8 +18,13 @@ public class SessionAuthInterceptor extends HandlerInterceptorAdapter {
 		SessionVo svo = (SessionVo) session.getAttribute("svo");
 
 		if (svo == null) {
-			response.sendRedirect("/ktx/login2.do");
-			return false;
+			String requestURI = request.getRequestURI();
+			if (requestURI.equals("/ktx/reservation_main.do")) {
+			    response.sendRedirect("/ktx/login2.do");
+			} else {
+				response.sendRedirect("/ktx/login.do");
+				return false;
+			}
 		} else {
 			String sessionId = "test";
 			if (session.getId().equals(sessionId)) {
@@ -27,6 +32,7 @@ public class SessionAuthInterceptor extends HandlerInterceptorAdapter {
 			}
 			return true;
 		}
+		return false;
 
 	}
 }
