@@ -10,7 +10,6 @@
 
 <link rel="styleSheet" type="text/css"
 	href="http://localhost:9000/ktx/css/payment_history.css">
-<!-- 	<href="http://localhost:9000/mycgv_jsp/css/am-pagination.css"> -->
 <script src="http://localhost:9000/ktx/js/am-pagination.js"></script>
 </head>
 <body class="sub KO">
@@ -119,10 +118,10 @@
 								<div class="search_result_wrap"></div>
 								<p class="paging_wrap">
 									<span class="paging">
-									<button type="button" class ="pmy" id="choose"> 결제 내역만 선택
-									</button>
-									<button type="button" class ="pmy" id="download"> 영수증 다운로드
-									</button>
+										<button type="button" class="pmy" id="choose">결제 내역만
+											선택</button>
+										<button type="button" class="pmy" id="download">영수증
+											다운로드</button>
 									</span>
 								</p>
 								<ul class="desc_list">

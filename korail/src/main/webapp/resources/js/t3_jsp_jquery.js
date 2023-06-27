@@ -124,6 +124,16 @@ $(document).ready(function() {
 	 * 
 	***************************************************************************/
 	
+	$("#choose").click(function() {
+		$('input[name="check"]').each(function() {
+	    var statusValue = $('input[name="status"]').val();
+	    alert(statusValue);
+	    if (statusValue === "1") {
+	      $(this).prev('input[type="checkbox"]').prop('checked', true);
+	    }
+	  });
+	});
+	
 	  // '전체' 라디오 버튼이 선택되도록 설정
 	  $('input[type="radio"][name="status"]').eq(0).prop('checked', true);
 	  
@@ -253,11 +263,36 @@ $(document).ready(function() {
 	        dayOfWeekString = '토';
 	        break;
 	    }
+	    
+		let dayOfWeekString3 = '';
+		switch (new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDay()) {
+		  case 0:
+		    dayOfWeekString3 = '일';
+		    break;
+		  case 1:
+		    dayOfWeekString3 = '월';
+		    break;
+		  case 2:
+		    dayOfWeekString3 = '화';
+		    break;
+		  case 3:
+		    dayOfWeekString3 = '수';
+		    break;
+		  case 4:
+		    dayOfWeekString3 = '목';
+		    break;
+		  case 5:
+		    dayOfWeekString3 = '금';
+		    break;
+		  case 6:
+		    dayOfWeekString3 = '토';
+		    break;
+		}
 
 		var currentDate = new Date().getFullYear() + ". " + (new Date().getMonth() + 1) + ". " + new Date().getDate() + ". " + dayOfWeekString;
 		document.getElementsByClassName('text_date text_date1')[0].textContent = currentDate;
 		
-		var monthLastDate = new Date().getFullYear() + ". " + (new Date().getMonth() + 1) + ". " + new Date(new Date().getFullYear(), (new Date().getMonth() + 1), 0).getDate() + ". " + dayOfWeekString;
+		var monthLastDate = new Date().getFullYear() + ". " + (new Date().getMonth() + 1) + ". " + new Date(new Date().getFullYear(), (new Date().getMonth() + 1), 0).getDate() + ". " + dayOfWeekString3;
 		document.getElementsByClassName('text_date text_date2')[0].textContent = monthLastDate; 
 		
 		const dateElements = document.querySelectorAll('.cdate');
@@ -379,7 +414,33 @@ $(document).ready(function() {
 			const maxDaysInMonth = new Date(selectedYear, selectedMonth, 0).getDate();
 			const selectedDay = Math.min(currentDate.getDate(), maxDaysInMonth);
 			
-			const dateString = selectedYear + '. ' + selectedMonth + '. ' + selectedDay + '. ' + dayOfWeekString;
+			const dayOfWeek2 = new Date(selectedYear, selectedMonth - 1, selectedDay).getDay();
+			let dayOfWeekString2 = '';
+			switch (dayOfWeek2) {
+			case 0:
+				dayOfWeekString2 = '일';
+      			break;
+			case 1:
+				dayOfWeekString2 = '월';
+				break;
+		    case 2:
+		    	dayOfWeekString2 = '화';
+		    	break;
+		    case 3:
+		    	dayOfWeekString2 = '수';
+		    	break;
+		    case 4:
+		    	dayOfWeekString2 = '목';
+		    	break;
+		    case 5:
+		    	dayOfWeekString2 = '금';
+		    	break;
+		    case 6:
+		    	dayOfWeekString2 = '토';
+		    	break;
+		  	}
+			
+			const dateString = selectedYear + '. ' + selectedMonth + '. ' + selectedDay + '. ' + dayOfWeekString2;
 			document.getElementsByClassName('text_date text_date1')[0].textContent = dateString;
 			
 		});
@@ -463,7 +524,7 @@ $(document).ready(function() {
  				var stime = obj.stime.substr(0, 2) + ':' + obj.stime.substr(3, 3);
 		        
 		        output += '<tr>';
-				output += '<td><input type="checkbox" id="checkbox' + jdata.jlist.indexOf(obj) + '"></td>';
+				output += '<td><input name ="check" type="checkbox" id="checkbox' + jdata.jlist.indexOf(obj) + '"></td>';
 				output += '<input type="hidden" name="status" value="' + obj.status + '">';
 		        output += '<td>' + obj.rdate + '</td>';
 		        output += '<td><span class="txt_purple"> 편도 </span></td>';
