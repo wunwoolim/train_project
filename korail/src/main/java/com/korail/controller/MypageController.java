@@ -31,7 +31,10 @@ public class MypageController {
 		ModelAndView model = new ModelAndView();
 
 		SessionVo svo = (SessionVo) session.getAttribute("svo");
-
+	    if(svo == null) {
+	        model.setViewName("redirect:/mylogin.do");
+	        return model;
+	    }
 		List<MemberVo> getUserinfo = mypageService.getInfo(svo.getId());
 
 		String memberId = getUserinfo.get(0).getId();
@@ -54,6 +57,12 @@ public class MypageController {
 		return model;
 	}
 
+	@RequestMapping(value="/mylogin.do", method=RequestMethod.GET)
+	public String reservation_login() {
+		
+		return "/my_page/loginm";
+	} 
+	
 	@RequestMapping(value = "/mypage_modal.do", method = RequestMethod.GET)
 	public String my_page_modal() {
 

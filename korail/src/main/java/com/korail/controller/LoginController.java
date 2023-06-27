@@ -95,6 +95,8 @@ public class LoginController {
 			}else if(memberVo.getPagename().equals("reservationlist")) {
 				session.setAttribute("id", memberVo.getId());
 				model.setViewName("redirect:/reservation_main.do");
+			} else if(memberVo.getPagename().equals("mylogin")){
+				model.setViewName("redirect:/mypage.do");
 			}
 		}else{
 			model.setViewName("redirect:/login_fail.do");

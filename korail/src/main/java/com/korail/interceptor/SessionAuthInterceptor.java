@@ -20,10 +20,13 @@ public class SessionAuthInterceptor extends HandlerInterceptorAdapter {
 		if (svo == null) {
 			String requestURI = request.getRequestURI();
 			if (requestURI.equals("/ktx/reservation_main.do")) {
-			    response.sendRedirect("/ktx/login2.do");
+				response.sendRedirect("/ktx/login2.do");
+			} else if (requestURI.equals("/ktx/mypage.do")) {
+				response.sendRedirect("/ktx/mylogin.do");
+			} else if (requestURI.equals("s_reservation.do")) {
+				response.sendRedirect("/ktx/s_reservation.do");
 			} else {
 				response.sendRedirect("/ktx/login.do");
-				return false;
 			}
 		} else {
 			String sessionId = "test";
@@ -33,6 +36,5 @@ public class SessionAuthInterceptor extends HandlerInterceptorAdapter {
 			return true;
 		}
 		return false;
-
 	}
 }

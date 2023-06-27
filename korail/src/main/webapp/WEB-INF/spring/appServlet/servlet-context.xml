@@ -74,6 +74,10 @@
 			<beans:ref bean="sessionAuthInterceptor" />
 		</interceptor>
 		<interceptor>
+			<mapping path="/s_reservation.do" />
+			<beans:ref bean="sessionAuthInterceptor" />
+		</interceptor>
+		<interceptor>
 			<mapping path="/pmyhis.do" />
 			<beans:ref bean="sessionAuthInterceptor" />
 		</interceptor>
