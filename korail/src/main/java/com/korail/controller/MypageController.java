@@ -21,11 +21,6 @@ public class MypageController {
 	@Autowired
 	private MypageService mypageService;
 
-	@RequestMapping(value="/mypage_receipt.do", method=RequestMethod.GET)
-	public String mypage_receipt() {
-		return "/my_page/my_page_receipt";
-	}
-
 	@RequestMapping(value = "/mypage.do", method = RequestMethod.GET)
 	public ModelAndView my_page(HttpSession session) {
 		ModelAndView model = new ModelAndView();

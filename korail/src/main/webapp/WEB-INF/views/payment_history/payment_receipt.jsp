@@ -46,6 +46,7 @@
 				</ul>
 			</div>
 	</div>
+	<a href="/download/myFile.pdf" target="_self">PDF 파일 열기</a>
 	<p style="padding: 0 20px">※ 영수증은 승차권이 아닙니다. 이 영수증으로 승차권을 대신하여 탑승하실 수 없습니다.</p>
 </div>
 </body>

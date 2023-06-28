@@ -29,6 +29,11 @@ public class PaymentController {
 	@Autowired
 	private OrderService orderService;
 	
+//    @Autowired
+//    public FileController (ResourceLoader resourceLoader) {
+//        this.resourceLoader = resourceLoader;
+//    }
+	
 	/**
 	 * Payment_histroy
 	 * 
@@ -50,7 +55,7 @@ public class PaymentController {
 		OrderVo orderVo = orderService.getSelected(reservnum);
 		
 		model.addObject("ovo", orderVo);
-		model.setViewName("/my_page/my_page_receipt");
+		model.setViewName("/payment_history/payment_receipt");
 
 		return model;
 	}
