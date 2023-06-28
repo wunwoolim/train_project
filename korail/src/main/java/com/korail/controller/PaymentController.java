@@ -10,10 +10,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.korail.service.OrderService;
 import com.korail.service.PmyhisServiceImpl;
 import com.korail.vo.OrderVo;
 import com.korail.vo.SessionVo;
@@ -23,7 +25,10 @@ public class PaymentController {
 	
 	@Autowired
 	private PmyhisServiceImpl pmyService;
-
+	
+	@Autowired
+	private OrderService orderService;
+	
 	/**
 	 * Payment_histroy
 	 * 
@@ -33,6 +38,23 @@ public class PaymentController {
 
 		return "/payment_history/payment_history_view";
 	}
+	
+	/**
+	 * myreservation_receipt.do - ¿µ¼öÁõ Æû
+	 */
+	@RequestMapping(value="/myreservation_receipt.do", method=RequestMethod.GET)
+	@ResponseBody
+	public ModelAndView reservation_receipt(String reservnum) {
+		ModelAndView model = new ModelAndView();
+		
+		OrderVo orderVo = orderService.getSelected(reservnum);
+		
+		model.addObject("ovo", orderVo);
+		model.setViewName("/my_page/my_page_receipt");
+
+		return model;
+	}
+	
 
 	/**
 	 * Pamyent_history_calender
@@ -79,6 +101,7 @@ public class PaymentController {
 		jobj.addProperty("qty", phv.getTicketqty());
 		jobj.addProperty("time", phv.getDepPlandTime());
 		jobj.addProperty("status", phv.getCancel());
+		jobj.addProperty("rnum", phv.getReservnum());
 		jarray.add(jobj);
 	}
 	jlist.add("jlist", jarray);	

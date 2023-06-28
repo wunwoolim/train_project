@@ -123,14 +123,35 @@ $(document).ready(function() {
      *	payment_history_view
 	 * 
 	***************************************************************************/
-	
+	//결제 내역만 조회 이벤트
 	$("#choose").click(function() {
-		$('input[name="check"]').each(function() {
-	    var statusValue = $('input[name="status"]').val();
-	    alert(statusValue);
-	    if (statusValue === "1") {
-	      $(this).prev('input[type="checkbox"]').prop('checked', true);
-	    }
+		if (!$(".tbl_search_result").length) {
+			alert('테이블 생성');
+		} else {
+			$('input[name="check"]').each(function() {
+			var statusValue = $(this).closest('td').find('input[name="status"]').val();
+		    if (statusValue === "0") {
+				$(this).prop('checked', true);
+		    }
+		  });
+		}
+	});
+	
+	$("#download").click(function() {
+	  var checkboxes = $('input[name="check"]:checked');
+	  var urls = checkboxes.map(function() {
+	    var reservnum = $(this).closest('td').find('input[name="rnum"]').val();
+	    return "myreservation_receipt.do?reservnum=" + reservnum;
+	  }).get();
+	
+	  var openWindow = function(url) {
+	    window.open(url);
+	  };
+	
+	  urls.forEach(function(url, index) {
+	    setTimeout(function() {
+	      openWindow(url);
+	    }, index * 1);
 	  });
 	});
 	
@@ -524,9 +545,9 @@ $(document).ready(function() {
  				var stime = obj.stime.substr(0, 2) + ':' + obj.stime.substr(3, 3);
 		        
 		        output += '<tr>';
-				output += '<td><input name ="check" type="checkbox" id="checkbox' + jdata.jlist.indexOf(obj) + '"></td>';
-				output += '<input type="hidden" name="status" value="' + obj.status + '">';
-		        output += '<td>' + obj.rdate + '</td>';
+				output += '<td><input type="hidden" name="status" value="' + obj.status + '"><input name="check" type="checkbox" id="checkbox' + jdata.jlist.indexOf(obj) + '">';
+				output += '<input type="hidden" name="rnum" value="' + obj.rnum + '"></td>';
+				output += '<td>' + obj.rdate + '</td>';
 		        output += '<td><span class="txt_purple"> 편도 </span></td>';
 		        output += '<td>';
 		        output += '<div class="tbl_routeBox">';
