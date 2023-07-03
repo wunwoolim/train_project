@@ -143,18 +143,23 @@ $(document).ready(function() {
 	    var reservnum = $(this).closest('td').find('input[name="rnum"]').val();
 	    return "myreservation_receipt.do?reservnum=" + reservnum;
 	  }).get();
-	
-	  var openWindow = function(url) {
-	    window.open(url);
+
+	  var downloadFile = function(url, reservnum) {
+	    var link = document.createElement('a');
+	    link.href = url;
+	    link.download = 'korail_recipt_' + reservnum;
+	    link.target = '_blank';
+	    link.click();
 	  };
 	
-	  urls.forEach(function(url, index) {
+	  urls.forEach((url, index) => {
+	    var reservnum = checkboxes.eq(index).closest('td').find('input[name="rnum"]').val();
 	    setTimeout(function() {
-	      openWindow(url);
+	      downloadFile(url, reservnum);
 	    }, index * 1);
 	  });
 	});
-	
+
 	  // '전체' 라디오 버튼이 선택되도록 설정
 	  $('input[type="radio"][name="status"]').eq(0).prop('checked', true);
 	  

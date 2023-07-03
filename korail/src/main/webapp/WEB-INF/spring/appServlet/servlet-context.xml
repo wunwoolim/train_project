@@ -30,7 +30,7 @@
 
 	<!-- <beans:bean id="memberService" class="com.korail.service.MemberServiceImpl"></beans:bean> 
 		<beans:bean id="orderService" class="com.korail.service.OrderServiceImpl"></beans:bean> -->
-
+	
 	<!-- sessionAuthInterceptor -->
 	<beans:bean id="sessionAuthInterceptor"
 		class="com.korail.interceptor.SessionAuthInterceptor">
