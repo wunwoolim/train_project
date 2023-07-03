@@ -43,7 +43,6 @@
     String dstation = ovo.getDstation();
     String stime = ovo.getStime();
     int ticketqty = ovo.getTicketqty();
-    //int cancel = ovo.getCancel();
 
     
     // 폰트 생성
@@ -170,7 +169,20 @@
     PdfWriter writer = new PdfWriter(response.getOutputStream());
     PdfDocument pdf = new PdfDocument(writer);
     Document document = new Document(pdf);
-    
+    if (cancel == 1) {
+    	// 배경 이미지 추가
+    	String imagePath = application.getRealPath("/resources/images/bg_cancelTicket_com.png");
+    	Image backgroundImage = new Image(ImageDataFactory.create(imagePath));
+    	float pageHeight = pdf.getDefaultPageSize().getHeight();
+    	float imageHeight = backgroundImage.getImageHeight();
+    	float imageY = pageHeight - imageHeight - 200;
+
+
+    	backgroundImage.setFixedPosition(35, imageY);
+    	document.add(backgroundImage);
+
+    }
+
     document.add(table_h);
     document.add(table_m);
     document.add(table);
