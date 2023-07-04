@@ -194,6 +194,4 @@
 
     // PDF 문서를 클라이언트로 전송
     pdf.close();
-    out.flush();
-    out.close();
 %>
