@@ -224,7 +224,7 @@
 									</p> -->
 								</div>
 								<div class="terminal_wrap">
-									<p class="stit">지역별 터미널</p>
+									<p class="stit">지역별 역</p>
 									<div class="ternimal_box">
 										<div class="scroll-wrapper area_scroll scrollbar-inner" style="position: relative;">
 										

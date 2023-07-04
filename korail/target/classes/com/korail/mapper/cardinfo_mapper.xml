@@ -9,9 +9,9 @@
 	
 	<insert id="payment" parameterType="com.korail.vo.CardinfoVo" >
 		insert into KTX_CARDINFO
-			(cardcomp,cardnum,recognizenum,birthday)
+			(cardcomp,cardnum,recognizenum,birthday,cid)
 		values
-			(#{cardcomp},#{cardnum},#{recognizenum},#{birthday})
+			(#{cardcomp},#{cardnum},#{recognizenum},#{birthday},'C_'||ltrim(to_char(sequ_ktx_cardinfo.nextval,'0000')))
 	</insert>
 
 <!-- 	<update id="paymentUpdate" parameterType="com.korail.vo.CardinfoVo" >

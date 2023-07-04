@@ -16,11 +16,8 @@
 	</select>
 
 	<select id="seatnum" parameterType="com.korail.vo.ReservationVo" resultType="com.korail.vo.SeatNumberVo">
-			select SUBSTR(CHAIRNUM, 4,2) seatnum 
-				from( select CHAIRNUM  from ktx_order
-				where SSTATION = #{start_add} and DSTATION= #{end_add} and DEPPLANDTIME = #{rtime}  and STIME = #{start_date})
-				where substr(CHAIRNUM, 1,1) = #{trnumber} 
-				ORDER by seatnum
+			select CHAIRNUM  from ktx_order
+				where SSTATION = #{start_add} and DSTATION= #{end_add} and DEPPLANDTIME = #{rtime}  and STIME = #{start_date}
 		<!-- select SUBSTR(CHAIRNUM, 4,2) seatnum from
 		(select CHAIRNUM  from ktx_order where SSTATION ='' and DSTATION='부산' and DEPPLANDTIME = '20230613' and DTIME='09시38분')
 			where substr(CHAIRNUM, 1,1) = '1' -->
@@ -28,9 +25,9 @@
 	
 	<insert id="payment" parameterType="com.korail.vo.OrderVo" >
 		insert into KTX_ORDER
-			(oid,sstation,rdate,stime,dtime,dstation,price,reservnum,trainnum,chairnum,ticketqty,id,cancel,depPlaceId,arrPlaceId,depPlandTime,cardnum,email)
+			(cid,oid,sstation,rdate,stime,dtime,dstation,price,reservnum,trainnum,chairnum,ticketqty,id,cancel,depPlaceId,arrPlaceId,depPlandTime,cardnum,email)
 		values
-			('O_'||ltrim(to_char(sequ_ktx_order.nextval,'0000')),#{sstation},sysdate,#{stime},#{dtime},#{dstation},#{price},#{reservnum},#{trainnum},#{chairnum},#{ticketqty},
+			('C_'||ltrim(to_char(sequ_ktx_order.nextval,'0000')),'O_'||ltrim(to_char(sequ_ktx_order.nextval,'0000')),#{sstation},sysdate,#{stime},#{dtime},#{dstation},#{price},#{reservnum},#{trainnum},#{chairnum},#{ticketqty},
 			#{id},'0',#{depPlaceId},#{arrPlaceId},#{depPlandTime},#{cardnum},#{email})
 	</insert>
 

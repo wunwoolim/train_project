@@ -62,19 +62,38 @@ $(document).ready(function(){
 	
 	//좌석 선택 이벤트
 	
+	let selectedSeats = [];
+	
 	$(".seatList").on("click", "[id^='chairImg_']", function() {
-		  let seatNum = $("#chldCnt").text() + "호 " +  $(this).parent().text() + "좌석";
+		  let seatNum = $("#chldCnt").text() + "호 " +  $(this).parent().text() + "좌석"; // 좌석번호
+		  let adltCnt = parseInt($("#adltCnt").text());
 		  
-		  $("#seatNum").text(seatNum);
-		  $("#seatNum1").val(seatNum);
-		  $("#seatNum2").val(seatNum);
-		  //alert(seatNum);
-		  $(".box img").css("opacity", "0.5");
-		  $(this).css("opacity", "1.0");
-		  $("#passengersNum").text($("#adltCnt").text());
-		  let ticketQty = $("#adltCnt").text();
-		  $("#ticketQty1").val(ticketQty);
-		  $("#ticketQty2").val(ticketQty);
+		  let index = selectedSeats.indexOf(seatNum); // 이미 선택된 좌석인지 확인을 위한 객체
+		  
+		  if (index > -1) {
+		  		selectedSeats.splice(index, 1); // 배열에서 제거
+    			$(this).css("opacity", "0.5"); 
+    			
+  			} else if (adltCnt > 0 && selectedSeats.length < adltCnt) { 
+  					selectedSeats.push(seatNum);
+				    $(this).css("opacity", "1.0");
+					
+				    $("#seatNum").text(selectedSeats.join(","));
+				    
+				    $("#seatNum1").val($("#seatNum").text());
+				    $("#seatNum2").val($("#seatNum").text());
+				  	
+				    $("#passengersNum").text(adltCnt); 
+				    let ticketQty = adltCnt; // adltCnt 변수 사용
+				    $("#ticketQty1").val(ticketQty);
+					$("#ticketQty2").val(ticketQty);
+			    
+			  }else{
+			  	alert("인원수를 늘려주세요");
+			  }
+			  
+		  $("#selectedSeatCount").text(selectedSeats.length);
+		  
 	});
 	
 	
@@ -139,6 +158,13 @@ $(document).ready(function(){
 	  $(".adult_add").click(function() {
 		  var count = parseInt($("#adltCnt").text()) + 1; // 현재 카운트 값을 가져와 1 증가
 		  $("#adltCnt").text(count); // 증가된 값을 화면에 표시
+		  var inputTag = $('<input>').attr({
+		    type: 'text',
+		    name: 'selectedSeat[]',
+		    value: '',
+		    class: 'seatNum-input'
+		  });
+		  
 		});
 
 		$(".adult_minus").click(function() {
@@ -147,13 +173,15 @@ $(document).ready(function(){
 		    count = 1; // 음수 값이 되지 않도록 조정
 		  }
 		  $("#adltCnt").text(count); // 감소된 값을 화면에 표시
+		  
+		  $("#seatNum .seat-input:last-child").remove();
+		  
 		});
 	  
 		
 		//기차 호실 증감 이벤트
 		$("#Kind_add").click(function() {
 			var trnumber = parseInt($("#chldCnt").text()) + 1;// 현재 카운트 값을 가져와 1 증가
-			//alert(trnumber);
 			  if(trnumber >9){
 			  	trnumber = 9;
 			  }

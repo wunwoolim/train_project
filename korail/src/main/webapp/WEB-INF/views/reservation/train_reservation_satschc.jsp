@@ -220,7 +220,7 @@ $(".btn_selectSeat").click(function() {
 									<strong class="txt_tit">선택좌석</strong>
 								</div>
 								<div>
-								<span id="seatNum" ></span>
+								<span id="seatNum" id="selectedSeatCount"></span>
 								</div>
 							</section>
 							<!-- //선택좌석 -->

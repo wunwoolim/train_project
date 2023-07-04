@@ -42,9 +42,12 @@ public class ReservationController {
 		UUID uuid = UUID.randomUUID();
 	
 		
-		//System.out.println(cardVo.getRecognizenum()); //½ÂÀÎ¹øÈ£
+		
 		
 		cardVo.setRecognizenum(uuid.toString().replaceAll("-", "").substring(0, 10));
+		
+		cardService.getPayment(cardVo);
+		
 		
 		orderVo.setSstation(rvo.getDepplacename());
 		orderVo.setStime(rvo.getStart_date());
@@ -62,9 +65,8 @@ public class ReservationController {
 		orderVo.setTicketqty(Integer.parseInt(rvo.getTicketQty()));
 		orderVo.setEmail(reservationVo.getEmail());
 		
-		System.out.println("reservationVo.getEmail()-->" + reservationVo.getEmail());
+		
 		orderService.getPayment(orderVo);
-		cardService.getPayment(cardVo);
 		
 		
 		
@@ -162,9 +164,18 @@ public class ReservationController {
 		JsonObject slist = new JsonObject();
 		
 		for(SeatNumberVo seatvo : list) {
-			JsonObject jobj = new JsonObject();
-			jobj.addProperty("seat", seatvo.getSeatnum());
-			seatList.add(jobj);
+			
+			String chairNum = seatvo.getChairnum();
+			String[] chairNumArray = chairNum.split(",");
+			
+			
+			for (String chair : chairNumArray) {
+	            String seatNum = chair.substring(3, 5);
+	            System.out.println("seatNum -->" + seatNum);
+	            JsonObject jobj = new JsonObject();
+	            jobj.addProperty("seat", seatNum);
+	            seatList.add(jobj);
+	        }
 		}
 		slist.add("seatList", seatList);
 		
