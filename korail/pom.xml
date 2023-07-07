@@ -181,8 +181,6 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.itextpdf/itext7-core -->
-
 	</dependencies>
 	<build>
 		<plugins>
