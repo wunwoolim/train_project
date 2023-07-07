@@ -7,7 +7,6 @@
 <head>
 <meta charset="UTF-8">
 <title>고속버스통합예매 - 결제내역 조회</title>
-
 <link rel="styleSheet" type="text/css"
 	href="http://localhost:9000/ktx/css/payment_history.css">
 <script src="http://localhost:9000/ktx/js/am-pagination.js"></script>
@@ -122,6 +121,8 @@
 											선택</button>
 										<button type="button" class="pmy" id="download">영수증
 											다운로드</button>
+										<button type="button" class="pmy" id="mail">영수증
+											메일 전송</button>
 									</span>
 								</p>
 								<ul class="desc_list">

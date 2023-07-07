@@ -188,14 +188,6 @@
 			<version>7.1.4</version>
 			<type>pom</type>
 		</dependency>
-
-		<dependency>
-			<groupId>com.nbp.ncp</groupId>
-			<artifactId>nes-client</artifactId>
-			<version>1.6.1</version>
-			<scope>compile</scope>
-		</dependency>
-
 	</dependencies>
 	<build>
 		<plugins>

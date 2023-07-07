@@ -159,6 +159,19 @@ $(document).ready(function() {
 	    }, index * 1);
 	  });
 	});
+	
+	$("#mail").click(function() {
+	alert("abc");
+		$.ajax({
+	    url: "paypment_json_data.do?&date1Str=" + date1Str + "&date2Str=" + date2Str + "&checked=" + checked,
+	    method: 'POST',
+	    success: function(response) {
+//	    alert(id + date1 + date2 + checked);
+			let jdata = JSON.parse(response);
+		}
+		
+		});
+	});
 
 	  // '전체' 라디오 버튼이 선택되도록 설정
 	  $('input[type="radio"][name="status"]').eq(0).prop('checked', true);
